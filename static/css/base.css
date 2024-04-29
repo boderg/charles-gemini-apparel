@@ -9,8 +9,15 @@
     --background: #fafafa;
     --primary-colour: rgb(147, 255, 0);
     --secondary-colour: rgb(55, 55, 55);
+
+    /** Box Shadows **/
     --big-box-shadow: 1px 1px 10px rgb(55, 55, 55);
     --small-box-shadow: 1px 1px 5px rgb(55, 55, 55);
+
+    /** Drop Shadows **/
+    --drop-shadow: drop-shadow(0px 0px 2px rgb(55, 55, 55));
+
+    /** Borders **/
     --thick-border: 5px solid rgb(55, 55, 55);
     --thin-border: 1px solid rgb(55, 55, 55);
 }
@@ -21,35 +28,57 @@ h1, h2, h3, h4, h5, h6, p, a, label, input, textarea, button, select, div {
 
 .logo {
     height: 100px;
-    border: 5px solid rgb(55, 55, 55);
+    border: 1px solid rgb(55, 55, 55);
     border-radius: 5px;
     box-shadow: 1px 1px 10px rgb(55, 55, 55);
 }
 
+.logo:hover {
+    content: url('/static/images/white_logo_long.webp');
+}
+
+.logo:active {
+    content: url('/static/images/lime_logo_long.webp');
+}
+
 .navbar {
     border-bottom: 1px solid rgb(55, 55, 55);
-}
-
-.fa-solid {
-    color: rgb(55, 55, 55);
-}
-
-.fa-solid:hover {
-    color: var(--primary-colour);
-    
+    background-color: var(--primary-colour);
 }
 
 ul.dropdown-menu {
     box-shadow: inset 1px 1px 10px rgb(55, 55, 55);
     font-family: var(--main-font);
+    background-color: var(--background);
+}
+
+.dropdown-toggle {
+    border: var(--thin-border);
+    border-radius: 5px;
 }
 
 .dropdown-toggle:hover,
 .dropdown-item:hover {
-    background-color: var(--primary-colour);
     border: var(--thin-border);
     border-radius: 5px;
     box-shadow: var(--small-box-shadow);
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--background);
+}
+
+.dropdown-toggle:active {
+    background-color: var(--primary-colour);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-colour);
+}
+
+.dropdown-item:active {
+    background-color: var(--background);
+    color: var(--secondary-colour);
 }
 
 .search {
@@ -58,13 +87,18 @@ ul.dropdown-menu {
     color: rgb(55, 55, 55);
 }
 
-.search-btn {
+.search-btn, .btn {
     border: var(--thin-border);
     color: rgb(55, 55, 55);
 }
 
-.search-btn:hover {
-    background-color: var(--primary-colour);
+.search-btn:hover, .btn:hover {
+    background-color: var(--background);
     color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+}
+
+input.search:focus {
+    border: var(--thin-border);
     box-shadow: var(--small-box-shadow);
 }
