@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    /** Fonts **/
+    --title: 'Cuprum', sans-serif;
+    --main-font: 'Cuprum', sans-serif;
+
+    /** Colours **/
+}
+
+.logo {
+    height: 100px;
+}
