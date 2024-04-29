@@ -6,8 +6,65 @@
     --main-font: 'Cuprum', sans-serif;
 
     /** Colours **/
+    --background: #fafafa;
+    --primary-colour: rgb(147, 255, 0);
+    --secondary-colour: rgb(55, 55, 55);
+    --big-box-shadow: 1px 1px 10px rgb(55, 55, 55);
+    --small-box-shadow: 1px 1px 5px rgb(55, 55, 55);
+    --thick-border: 5px solid rgb(55, 55, 55);
+    --thin-border: 1px solid rgb(55, 55, 55);
+}
+
+h1, h2, h3, h4, h5, h6, p, a, label, input, textarea, button, select, div {
+    font-family: var(--main-font);
 }
 
 .logo {
     height: 100px;
+    border: 5px solid rgb(55, 55, 55);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(55, 55, 55);
+}
+
+.navbar {
+    border-bottom: 1px solid rgb(55, 55, 55);
+}
+
+.fa-solid {
+    color: rgb(55, 55, 55);
+}
+
+.fa-solid:hover {
+    color: var(--primary-colour);
+    
+}
+
+ul.dropdown-menu {
+    box-shadow: inset 1px 1px 10px rgb(55, 55, 55);
+    font-family: var(--main-font);
+}
+
+.dropdown-toggle:hover,
+.dropdown-item:hover {
+    background-color: var(--primary-colour);
+    border: var(--thin-border);
+    border-radius: 5px;
+    box-shadow: var(--small-box-shadow);
+}
+
+.search {
+    box-shadow: inset 1px 1px 5px rgb(55, 55, 55);
+    border: var(--thin-border);
+    color: rgb(55, 55, 55);
+}
+
+.search-btn {
+    border: var(--thin-border);
+    color: rgb(55, 55, 55);
+}
+
+.search-btn:hover {
+    background-color: var(--primary-colour);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
 }
