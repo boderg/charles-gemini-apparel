@@ -1,50 +1,51 @@
 {% load static %}
 
 <header>
-    <!-- bg-body-tertiary -->
-    <nav class="navbar navbar-expand-lg ">
+   
+    <nav class="navbar top-navbar navbar-expand-lg ">
         <div class="container-fluid">
+
             <!-- Brand Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/lime_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo ms-2 ms-lg-5">
+                <img src="{% static 'images/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo ms-5">
             </a>
-            <!-- Navbar Toggler -->
-            <button class="navbar-toggler me-2 btn" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-menu"
-                aria-controls="dropdown-menu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--Shop Dropdown-->
-            <div class="collapse navbar-collapse" id="dropdown-menu">
-                <ul class="navbar-nav m-2 ms-lg-5 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Shop
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">New</a></li>
-                            <li><a class="dropdown-item" href="#">Tee's</a></li>
-                            <li><a class="dropdown-item" href="#">Hoodies</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Account</a></li>
-                            <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
-                            <li><a class="dropdown-item" href="#">About</a></li>
-                            <li><a class="dropdown-item" href="#">Contact</a></li>
-                            <li><a class="dropdown-item" href="#">Size Chart</a></li>
-                        </ul>
+
+            <!-- Search Bar -->
+            <form class="d-flex" role="search">
+                <input class="form-control ms-lg-5 ms-5 me-2 mt-2 mt-lg-0 search" type="search" placeholder="Enter search" aria-label="Search">
+                <button class="btn btn-outline search-btn ms-4 me-lg-5 mt-2 mt-lg-0" type="submit">Search</button>
+            </form>
+
+        </div>
+    </nav>
+
+    <nav class="navbar bottom-navbar navbar-expand-lg ">
+        <div class="container-fluid">
+
+            <!-- Shop Dropdown -->            
+            <div class="dropdown mx-lg-5 mx-3">
+                <a class="btn btn-outline dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Shop Now!
+                </a>
+                
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">New</a></li>
+                    <li><a class="dropdown-item" href="#">Tee's</a></li>
+                    <li><a class="dropdown-item" href="#">Hoodies</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
                     </li>
+                    <li><a class="dropdown-item" href="#">Account</a></li>
+                    <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                    <li><a class="dropdown-item" href="#">Size Chart</a></li>
                 </ul>
             </div>
-            <!-- Search Bar and button -->
-            <form class="d-flex" role="search">
-                <input class="form-control mx-2 search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline search-btn mx-2 me-lg-5" type="submit">Search</button>
-            </form>
+
             <!-- Shopping Cart -->
-            <div class="basket m-3">
-                <button class="btn btn-outline me-2 me-lg-5"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
+            <div class="basket">
+                <button class="btn btn-outline mx-3 mx-lg-5"><i class="fa-solid fa-cart-shopping fa-xl"></i></button>
             </div>
         </div>
     </nav>
