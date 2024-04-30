@@ -44,11 +44,12 @@
             <div class="message-container"></div>
         {% endif %}
 
-        {% block page_header %}
-        {% endblock %}
-
+        <main>
         {% block content %}
         {% endblock %}
+        </main>
+
+        {% include 'includes/footer.html' %}
 
         {% block postloadjs %}
         {% endblock %}
