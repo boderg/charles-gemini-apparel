@@ -2,4 +2,40 @@
 {% load static %}
 
 {% block content %}
+
+<div class="container-fluid align-self-center text-center my-2">
+    <div class="row">
+        <div class="col my-2 py-lg-5">
+            <div class="card mx-auto">
+                <img src="{% static 'images/tees/volt-tee.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                <div class="card-body">
+                    <h5 class="card-title">Tees</h5>
+                    <p class="card-text">View our Tees. <br> All out tees come in various colours and sizes.</p>
+                    <a href="#" class="btn">View Tees</a>
+                </div>
+            </div>
+        </div>
+        <div class="col my-2 py-lg-5">
+            <div class="card mx-auto">
+                {% include 'includes/carousel.html' %}
+                <div class="card-body">
+                    <h5 class="card-title">New Designs</h5>
+                    <p class="card-text">View our New Designs. <br> All new designs come in various colours and sizes.</p>
+                    <a href="#" class="btn">View New Designs</a>
+                </div>
+            </div>
+        </div>
+        <div class="col my-2 py-lg-5">
+            <div class="card mx-auto">
+                <img src="{% static 'images/hoodies/alien-hoodie.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a hoodie">
+                <div class="card-body">
+                    <h5 class="card-title">Hoodies</h5>
+                    <p class="card-text">View our Hoodies. <br> All out hoodies come in various colours and sizes.</p>
+                    <a href="#" class="btn">View Hoodies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
