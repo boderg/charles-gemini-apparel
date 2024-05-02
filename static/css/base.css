@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
-    background-image: url('/static/images/white-bricks.webp');
+    background-image: url('/static/images/backgrounds/white-bricks.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
