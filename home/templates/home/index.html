@@ -7,17 +7,21 @@
     <div class="row">
         <div class="col my-2 py-lg-5">
             <div class="card mx-auto">
-                <img src="{% static 'images/tees/volt-tee.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                <div class="image">
+                    <img src="{% static 'images/tees/volt-tee.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our Tees. <br> All out tees come in various colours and sizes.</p>
+                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
                     <a href="#" class="btn">View Tees</a>
                 </div>
             </div>
         </div>
         <div class="col my-2 py-lg-5">
             <div class="card mx-auto">
-                {% include 'includes/carousel.html' %}
+                <div class="image">
+                    {% include 'includes/carousel.html' %}
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">New Designs</h5>
                     <p class="card-text">View our New Designs. <br> All new designs come in various colours and sizes.</p>
@@ -27,10 +31,12 @@
         </div>
         <div class="col my-2 py-lg-5">
             <div class="card mx-auto">
-                <img src="{% static 'images/hoodies/alien-hoodie.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a hoodie">
+                <div class="image"> 
+                    <img src="{% static 'images/hoodies/alien-hoodie.jpg' %}" class="card-img-top apparel" alt="Image of a person wearing a hoodie">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">Hoodies</h5>
-                    <p class="card-text">View our Hoodies. <br> All out hoodies come in various colours and sizes.</p>
+                    <p class="card-text">View our range of Hoodies. <br> All out hoodies come in various colours and sizes.</p>
                     <a href="#" class="btn">View Hoodies</a>
                 </div>
             </div>
