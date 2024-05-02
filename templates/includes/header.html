@@ -4,7 +4,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo"></a>
             <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -15,7 +15,7 @@
                     Shop Now!
                 </button>
                 <ul class="dropdown-menu mt-2">
-                    <li><a class="dropdown-item" href="#">New</a></li>
+                    <li><a class="dropdown-item" href="{% url 'new_arrivals' %}">New</a></li>
                     <li><a class="dropdown-item" href="#">Tee's</a></li>
                     <li><a class="dropdown-item" href="#">Hoodies</a></li>
                     <li>

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     # my apps
     'home',
+    'new_arrivals',
 ]
 
 MIDDLEWARE = [
