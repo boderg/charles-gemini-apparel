@@ -44,8 +44,8 @@ body {
     font-family: var(--main-font);
     background-image: url('/static/images/backgrounds/white-bricks.webp');
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: middle;
+    background-repeat: repeat;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, label, input, textarea, button, select, div {
