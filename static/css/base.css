@@ -54,13 +54,13 @@ h1, h2, h3, h4, h5, h6, p, a, label, input, textarea, button, select, div {
 
 main {
     flex: 1 0 auto;
-    background-color: var(--background-translucent);
+    background-color: var(--background-translucent);    
 }
 
 /*** Navbar ***/
 
 .navbar {
-    background-color: var(--primary-colour-translucent); 
+    background-color: var(--primary-colour-translucent);     
     border-bottom: var(--thin-border); 
 }
 
@@ -85,7 +85,7 @@ main {
 /*** Logo ***/
 
 img.logo {
-    height: 100px;
+    height: 125px;
     border: var(--thin-border);
     border-radius: var(--border-radius)
 }
@@ -226,8 +226,7 @@ input.search:focus {
 
 .footer {
     flex-shrink: 0;
-    /* background-color: var(--primary-colour); */
-    background-color: var(--primary-colour-translucent);
+    background-image: linear-gradient(to bottom, var(--primary-colour-translucent) 75%, var(--secondary-colour-translucent));
     border-top: var(--thin-border);  
 }
 
