@@ -42,9 +42,9 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
-    background-image: url('/static/images/backgrounds/white-bricks.webp');
+    background-image: url('/static/images/backgrounds/white_bricks.webp');
     background-size: cover;
-    background-position: middle;
+    background-position: center;
     background-repeat: repeat;
 }
 
@@ -64,8 +64,22 @@ main {
     border-bottom: var(--thin-border); 
 }
 
+.navbar-toggler {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--background);
+    border: var(--thin-border);
+    box-shadow: var(--big-box-shadow);
+    transition: var(--transition-quick);
 }
  
 /*** Logo ***/
@@ -121,9 +135,9 @@ ul.dropdown-menu {
     color: var(--background);
 }
 
-a .nav-link .dropdown-toggle {
+/* a .nav-link .dropdown-toggle {
     margin-left: 10px;
-}
+} */
 
 /*** Search Bar ***/
 
@@ -149,6 +163,10 @@ input.search:focus {
     background-color: var(--background);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
+}
+
+.search-icon {
+    height: 1.5rem;
 }
 
 /*** Main Content ***/

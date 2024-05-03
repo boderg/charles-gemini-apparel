@@ -3,36 +3,46 @@
 <header>
 
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo"></a>
-            <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <div class="container-fluid py-lg-3 px-lg-5"> 
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo">
+            </a>
+            <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" 
+                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle mt-2" data-bs-toggle="dropdown" aria-expanded="false">
-                    Shop Now!
-                </button>
-                <ul class="dropdown-menu mt-2">
-                    <li><a class="dropdown-item" href="{% url 'new_arrivals' %}">New</a></li>
-                    <li><a class="dropdown-item" href="#">Tee's</a></li>
-                    <li><a class="dropdown-item" href="#">Hoodies</a></li>
-                    <li>
-                        <hr class="dropdown-divider w-75 mx-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn dropdown-toggle mt-2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Shop Now!
+                        </button>
+                    <ul class="dropdown-menu mt-2">
+                        <li><a class="dropdown-item" href="{% url 'new_arrivals' %}">New</a></li>
+                        <li><a class="dropdown-item" href="#">Tee's</a></li>
+                        <li><a class="dropdown-item" href="#">Hoodies</a></li>
+                        <li>
+                            <hr class="dropdown-divider w-75 mx-auto">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Account</a></li>
+                        <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="#">Contact</a></li>
+                        <li><a class="dropdown-item" href="#">Size Chart</a></li>
+                    </ul>
                     </li>
-                    <li><a class="dropdown-item" href="#">Account</a></li>
-                    <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
-                    <li><a class="dropdown-item" href="#">About</a></li>
-                    <li><a class="dropdown-item" href="#">Contact</a></li>
-                    <li><a class="dropdown-item" href="#">Size Chart</a></li>
-                </ul>
-                </li>
-            </ul>
-            <form class="d-flex ms-md-3 mt-2" role="search">
-                <input class="form-control search me-2" type="search" placeholder="Enter search" aria-label="Search">
-                <button class="btn search-btn" type="submit">Search</button>
-            </form>
+                </ul> 
+                <form class="d-flex ms-md-3 mt-2" method="GET" action="">
+                    <div class="input-group">
+                        <input class="form-control search me-2" type="text" name="q" placeholder="Search our site" aria-label="Search">
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn search-btn" type="submit">
+                            <img src="{% static 'images/icons/find-icon.svg' %}" class="search-icon" alt="">
+                            <!-- <i class="fas fa-search fa-lg"></i> -->
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </nav>
