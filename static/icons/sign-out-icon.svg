@@ -1,1 +1,39 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.6 122.88"><title>sign-out</title><path d="M66.4,68.66H40.29a7.23,7.23,0,0,1,0-14.45H66.4l-8.48-9.46a7.25,7.25,0,0,1,.51-10.16,7.06,7.06,0,0,1,10.05.5L87.7,56.54a7.27,7.27,0,0,1,.06,9.72L68.48,87.77a7.05,7.05,0,0,1-10.05.51,7.25,7.25,0,0,1-.51-10.16l8.48-9.46ZM42.94,108.57a7.22,7.22,0,0,1-2.83,14.17l-3.37-.68C12.84,117.32,0,114.63,0,80.2V40.63C0,7.65,13.78,5.07,36.6.81L40.17.13A7.21,7.21,0,0,1,42.88,14.3L39.25,15c-15.46,2.89-24.8,4.63-24.8,25.65V80.2c0,22.61,8.77,24.46,25.1,27.7l3.39.67Z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 89.6 122.88"
+   version="1.1"
+   sodipodi:docname="sign-out-icon.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="6.7138673"
+     inkscape:cx="44.832581"
+     inkscape:cy="61.439999"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <title
+     id="title2">sign-out</title>
+  <path
+     d="M66.4,68.66H40.29a7.23,7.23,0,0,1,0-14.45H66.4l-8.48-9.46a7.25,7.25,0,0,1,.51-10.16,7.06,7.06,0,0,1,10.05.5L87.7,56.54a7.27,7.27,0,0,1,.06,9.72L68.48,87.77a7.05,7.05,0,0,1-10.05.51,7.25,7.25,0,0,1-.51-10.16l8.48-9.46ZM42.94,108.57a7.22,7.22,0,0,1-2.83,14.17l-3.37-.68C12.84,117.32,0,114.63,0,80.2V40.63C0,7.65,13.78,5.07,36.6.81L40.17.13A7.21,7.21,0,0,1,42.88,14.3L39.25,15c-15.46,2.89-24.8,4.63-24.8,25.65V80.2c0,22.61,8.77,24.46,25.1,27.7l3.39.67Z"
+     id="path4"
+     style="fill:#373737;fill-opacity:1" />
+</svg>
