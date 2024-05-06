@@ -108,7 +108,9 @@ main {
     border-bottom: var(--thin-border);
 }
 
-.shopping-icon {
+.shopping-icon,
+.login-icon,
+.logout-icon {
     height: 1.5rem;
 }
  
@@ -164,10 +166,6 @@ ul.dropdown-menu {
     background-color: var(--secondary-colour-translucent);
     color: var(--background);
 }
-
-/* a .nav-link .dropdown-toggle {
-    margin-left: 10px;
-} */
 
 /*** Search Bar ***/
 
