@@ -5,104 +5,23 @@
 
 <div class="container-fluid self-align-center text-center my-2">
     <div class="row">
+
+        {% for product in products %}
         <div class="col my2 py-lg-5">
             <div class="card mx-auto">
                 <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">£{{ product.price }}</p>
+                    <a href="#" class="btn">View Product</a>
                 </div>
             </div>
         </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{% static 'images/tees/volt-tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Tees</h5>
-                    <p class="card-text">View our range of Tees. <br> All out tees come in various colours and sizes.</p>
-                    <a href="#" class="btn">View Tees</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+    
     </div>
 </div>
 
