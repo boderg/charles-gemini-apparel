@@ -22,7 +22,7 @@
                     Sale!
                     <h5 class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</h5>
                 </div>
-                    <a href="#" class="btn">View Product</a>
+                    <a href="{% url 'garment' product.id %}" class="btn">View Product</a>
                 </div>
             </div>
         </div>

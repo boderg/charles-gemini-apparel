@@ -16,13 +16,13 @@
                     <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
+                    <h4 class="card-title">{{ product.name }}</h4>
                     <p class="card-text">{{ product.description }}</p>
                     <div class="sale-container mx-auto">
                     Sale!
-                    <p class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</p>
+                    <h5 class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</h5>
                 </div>
-                    <a href="#" class="btn">View Product</a>
+                    <a href="{% url 'garment' product.id %}" class="btn">View Product</a>
                 </div>
             </div>
         </div>
@@ -33,10 +33,10 @@
                     <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
+                    <h4 class="card-title">{{ product.name }}</h4>
                     <p class="card-text">{{ product.description }}</p>
-                    <p class="card-text">£{{ product.price }}</p>
-                    <a href="#" class="btn">View Product</a>
+                    <h5 class="card-text">£{{ product.price }}</h5>
+                <a href="{% url 'garment' product.id %}" class="btn">View Product</a>
                 </div>
             </div>
         </div>
