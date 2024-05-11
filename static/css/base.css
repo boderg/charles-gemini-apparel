@@ -386,3 +386,8 @@ input.search:focus {
     padding: 3px 0;
     margin: 10px 0;
 }
+
+.page-title {
+    color: var(--background);
+    text-shadow: 1px 1px 1px var(--secondary-colour-translucent);
+}
