@@ -21,6 +21,9 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
+    # Discounts
+    discount = models.BooleanField(default=False)
+    discount_price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
 
     def __str__(self):
         return self.name
