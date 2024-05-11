@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid self-align-center text-center my-2">
+    <div class="row">
+
+        {% for product in products %}
+        {%if product.category.name == 'Hooded Tops' %}
+        {% if product.discount %}
+        <div class="col my2 py-lg-5">
+            <div class="card mx-auto">
+                <div class="image">
+                    <span class="badge position-absolute">Sale</span>
+                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <div class="sale-container mx-auto">
+                    Sale!
+                    <p class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</p>
+                </div>
+                    <a href="#" class="btn">View Product</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col my2 py-lg-5">
+            <div class="card mx-auto">
+                <div class="image">
+                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">£{{ product.price }}</p>
+                    <a href="#" class="btn">View Product</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    
+    </div>
+</div>
+
+{% endblock %}

@@ -16,3 +16,11 @@ def tees(request):
     page_title = 'Tees'
 
     return render(request, 'apparel/tees.html', {'products': products, 'page_title': page_title})
+
+
+def hoodies(request):
+    """A view to display the products pages """
+    products = Product.objects.all()
+    page_title = 'Hoodies'
+
+    return render(request, 'apparel/hoodies.html', {'products': products, 'page_title': page_title})
