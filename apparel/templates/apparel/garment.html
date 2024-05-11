@@ -6,8 +6,6 @@
 <div class="container-fluid self-align-center text-center my-2">
     <div class="row">
 
-        {% for product in products %}
-        {%if product.category.name == 'New Designs' %}
         {% if product.discount %}
         <div class="col my2 py-lg-5">
             <div class="card mx-auto">
@@ -22,28 +20,28 @@
                     Sale!
                     <h5 class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</h5>
                 </div>
-                    <a href="#" class="btn">View Product</a>
+                    <a href="#" class="btn">Add to bag</a>
                 </div>
             </div>
         </div>
         {% else %}
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <p class="card-text">{{ product.description }}</p>
-                    <h5 class="card-text">£{{ product.price }}</h5>
-                    <a href="{% url 'garment' product.id %}" class="btn">View Product</a>
+
+            <div class="col my2 py-lg-5">
+                <div class="card mx-auto w-25">
+                    <div class="image">
+                        <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                    </div>
+                    
+                    <div class="card-body">
+                        <h4 class="card-title">{{ product.name }}</h4>
+                        <p class="card-text">{{ product.description }}</p>
+                        <h5 class="card-text">£{{ product.price }}</h5>
+                        <a href="#" class="btn">Add to bag</a>
+                    </div>
+
                 </div>
             </div>
-        </div>
         {% endif %}
-        {% endif %}
-        {% endfor %}
-    
     </div>
 </div>
 

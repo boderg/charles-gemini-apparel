@@ -21,9 +21,6 @@
     --big-inset-box-shadow: inset 1px 1px 5px rgb(55, 55, 55);
     --small-inset-box-shadow: inset 1px 1px 3px rgb(55, 55, 55);
 
-    /** Drop Shadows **/
-    --drop-shadow: drop-shadow(0px 0px 2px rgb(55, 55, 55));
-
     /** Borders **/
     --thick-border: 3px solid rgb(55, 55, 55);
     --thin-border: 1px solid rgb(55, 55, 55);
@@ -309,10 +306,7 @@ input.search:focus {
 .pw-reset-outer a:hover {
     color: var(--primary-colour);
     text-decoration: underline;
-    text-shadow: 1px 1px 1px var(--secondary-colour-translucent);
 }
-
-
 
 .login .button,
 .logout .button,
@@ -389,5 +383,4 @@ input.search:focus {
 
 .page-title {
     color: var(--background);
-    text-shadow: 1px 1px 1px var(--secondary-colour-translucent);
 }
