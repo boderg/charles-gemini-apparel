@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="container-fluid self-align-center text-center my-2">
+<div class="container-fluid self-align-center text-left my-2">
     <div class="row">
 
         {% for product in products %}
@@ -18,11 +18,11 @@
                 <div class="card-body">
                     <h4 class="card-title">{{ product.name }}</h4>
                     <p class="card-text">{{ product.description }}</p>
-                    <div class="sale-container-sm mx-auto">
+                    <div class="sale-container-sm text-center">
                     Sale Price!
                     <h5 class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</h5>
                 </div>
-                    <a href="{% url 'garment' product.id %}" class="btn">View Product</a>
+                    <a href="{% url 'garment' product.id %}" class="btn mt-2">View Product</a>
                 </div>
             </div>
         </div>

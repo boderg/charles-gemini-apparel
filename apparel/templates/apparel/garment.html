@@ -2,116 +2,101 @@
 {% load static %}
 
 {% block content %}
+        
+<div class="container w-75 my-5">
 
-<div class="container-fluid self-align-center text-center my-2">
-    <div class="row">
+    {% if product.discount %}
 
-        {% if product.discount %}
-        <section class="p-5">
-            <div class="container">
-                <div class="row single-product py-2 pe-md-2 align-items-center">
-                    <div class="col-md-6">
-                        <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
-                    </div>
-                    <div class="col-md-6 text-start p-4 mt-2">
-                        <span class="badge fs-5">Sale</span>
-                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
-                        <div class="fs-5 mb-3 sale-container-lg px-2">
-                            Sale Price! &nbsp;
-                            <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
-                        </div>
-                        <p class="lead mb-5">{{ product.description }}.</p>
-                        <div class="d-flex flex-row align-items-center selection">
-                            <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
-                            <div class="dropdown mx-3">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Size
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">XS</a></li>
-                                    <li><a class="dropdown-item" href="#">S</a></li>
-                                    <li><a class="dropdown-item" href="#">M</a></li>
-                                    <li><a class="dropdown-item" href="#">L</a></li>
-                                    <li><a class="dropdown-item" href="#">XL</a></li>
-                                    <li><a class="dropdown-item" href="#">2XL</a></li>
-                                </ul>
-                                </div>
-                                <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Colour
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Heather Black</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        <button class="btn btn-bag flex-shrink-0 my-5" type="button">
-                            Add to bag
-                        </button>
-                    </div>
-                </div>
+    <div class="row single-product py-2 pe-md-2 align-items-center">
+        <div class="col-md-6">
+            <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
+        </div>
+        <div class="col-md-6 text-start p-4 mt-2">
+            <span class="badge fs-5">Sale</span>
+            <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+            <div class="fs-5 mb-3 sale-container-lg px-2">
+                Sale Price! &nbsp;
+                <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
             </div>
-        </section>
-        {% else %}
-
-
-
-        <section class="p-5">
-            <div class="container">
-                <div class="row single-product py-2 pe-md-2 align-items-center">
-                    <div class="col-md-6">
-                        <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
-                    </div>
-                    <div class="col-md-6 text-start p-4 mt-2">
-                        
-                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
-                        <div class="fs-5 mb-3">
-                            <span class="card-text discount"></span>£{{ product.price }}</span>
-                        </div>
-                        <p class="lead mb-5">{{ product.description }}.</p>
-                        <div class="d-flex flex-row align-items-center selection">
-                            <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
-                            <div class="dropdown mx-3">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Size
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">XS</a></li>
-                                    <li><a class="dropdown-item" href="#">S</a></li>
-                                    <li><a class="dropdown-item" href="#">M</a></li>
-                                    <li><a class="dropdown-item" href="#">L</a></li>
-                                    <li><a class="dropdown-item" href="#">XL</a></li>
-                                    <li><a class="dropdown-item" href="#">2XL</a></li>
-                                </ul>
-                                </div>
-                                <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Colour
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Heather Black</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                    <li><a class="dropdown-item" href="#">Any</a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        <button class="btn btn-bag flex-shrink-0 my-5" type="button">
-                            Add to bag
-                        </button>
-                    </div>
-                </div>
+            <p class="lead mb-5">{{ product.description }}.</p>
+            <div class="d-flex flex-row align-items-center selection">
+                <input class="form-control text-left" id="inputQuantity" type="number" value="1"/>    
+                <select class="form-select mx-3 selector" aria-label="Default select example">
+                    <option selected>Select Size</option>
+                    <option value="1">XS</option>
+                    <option value="2">S</option>
+                    <option value="3">M</option>
+                    <option value="1">L</option>
+                    <option value="2">XL</option>
+                    <option value="3">2XL</option>
+                    </select>
+                <select class="form-select selector" aria-label="Default select example">
+                    <option selected>Select Colour</option>
+                    <option value="1">Heather Black</option>
+                    <option value="2">Any</option>
+                    <option value="3">Any</option>
+                    <option value="1">Any</option>
+                    <option value="2">Any</option>
+                    <option value="3">Any</option>
+                    </select>
             </div>
-        </section>
-        {% endif %}
+            <button class="btn btn-bag flex-shrink-0 my-5" type="button">
+                Add to bag
+            </button>
+        </div>
     </div>
+
+    {% else %}
+
+    <div class="row single-product py-2 pe-md-2 align-items-center">
+        <div class="col-md-6">
+            <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
+        </div>
+        <div class="col-md-6 text-start p-4 mt-2">
+            
+            <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+            <div class="fs-5 mb-3">
+                <span class="card-text discount"></span>£{{ product.price }}</span>
+            </div>
+            <p class="lead mb-5">{{ product.description }}.</p>
+            <div class="d-flex flex-row align-items-center selection">
+                <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
+                <div class="dropdown mx-3">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Size
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">XS</a></li>
+                        <li><a class="dropdown-item" href="#">S</a></li>
+                        <li><a class="dropdown-item" href="#">M</a></li>
+                        <li><a class="dropdown-item" href="#">L</a></li>
+                        <li><a class="dropdown-item" href="#">XL</a></li>
+                        <li><a class="dropdown-item" href="#">2XL</a></li>
+                    </ul>
+                    </div>
+                    <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Colour
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Heather Black</a></li>
+                        <li><a class="dropdown-item" href="#">Any</a></li>
+                        <li><a class="dropdown-item" href="#">Any</a></li>
+                        <li><a class="dropdown-item" href="#">Any</a></li>
+                        <li><a class="dropdown-item" href="#">Any</a></li>
+                        <li><a class="dropdown-item" href="#">Any</a></li>
+                    </ul>
+                    </div>
+                </div>
+            <button class="btn btn-bag flex-shrink-0 my-5" type="button">
+                Add to bag
+            </button>
+        </div>
+    </div>
+    
+    {% endif %}
+
 </div>
+
 
 {% endblock %}
