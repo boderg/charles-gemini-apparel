@@ -7,40 +7,109 @@
     <div class="row">
 
         {% if product.discount %}
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto">
-                <div class="image">
-                    <span class="badge position-absolute">Sale</span>
-                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <p class="card-text">{{ product.description }}</p>
-                    <div class="sale-container mx-auto">
-                    Sale!
-                    <h5 class="card-text discount"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</h5>
-                </div>
-                    <a href="#" class="btn">Add to bag</a>
+        <section class="p-5">
+            <div class="container">
+                <div class="row single-product py-2 pe-md-2 align-items-center">
+                    <div class="col-md-6">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
+                    </div>
+                    <div class="col-md-6 text-start p-4 mt-2">
+                        <span class="badge fs-5">Sale</span>
+                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                        <div class="fs-5 mb-3 sale-container-lg px-2">
+                            Sale Price! &nbsp;
+                            <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
+                        </div>
+                        <p class="lead mb-5">{{ product.description }}.</p>
+                        <div class="d-flex flex-row align-items-center selection">
+                            <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
+                            <div class="dropdown mx-3">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Size
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">XS</a></li>
+                                    <li><a class="dropdown-item" href="#">S</a></li>
+                                    <li><a class="dropdown-item" href="#">M</a></li>
+                                    <li><a class="dropdown-item" href="#">L</a></li>
+                                    <li><a class="dropdown-item" href="#">XL</a></li>
+                                    <li><a class="dropdown-item" href="#">2XL</a></li>
+                                </ul>
+                                </div>
+                                <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Colour
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Heather Black</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        <button class="btn btn-bag flex-shrink-0 my-5" type="button">
+                            Add to bag
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
         {% else %}
 
-            <div class="col my2 py-lg-5">
-                <div class="card mx-auto">
-                    <div class="image">
-                        <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
-                    </div>
-                    
-                    <div class="card-body">
-                        <h4 class="card-title">{{ product.name }}</h4>
-                        <p class="card-text">{{ product.description }}</p>
-                        <h5 class="card-text">£{{ product.price }}</h5>
-                        <a href="#" class="btn">Add to bag</a>
-                    </div>
 
+
+        <section class="p-5">
+            <div class="container">
+                <div class="row single-product py-2 pe-md-2 align-items-center">
+                    <div class="col-md-6">
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
+                    </div>
+                    <div class="col-md-6 text-start p-4 mt-2">
+                        
+                        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                        <div class="fs-5 mb-3">
+                            <span class="card-text discount"></span>£{{ product.price }}</span>
+                        </div>
+                        <p class="lead mb-5">{{ product.description }}.</p>
+                        <div class="d-flex flex-row align-items-center selection">
+                            <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
+                            <div class="dropdown mx-3">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Size
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">XS</a></li>
+                                    <li><a class="dropdown-item" href="#">S</a></li>
+                                    <li><a class="dropdown-item" href="#">M</a></li>
+                                    <li><a class="dropdown-item" href="#">L</a></li>
+                                    <li><a class="dropdown-item" href="#">XL</a></li>
+                                    <li><a class="dropdown-item" href="#">2XL</a></li>
+                                </ul>
+                                </div>
+                                <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Colour
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Heather Black</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                    <li><a class="dropdown-item" href="#">Any</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        <button class="btn btn-bag flex-shrink-0 my-5" type="button">
+                            Add to bag
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
         {% endif %}
     </div>
 </div>

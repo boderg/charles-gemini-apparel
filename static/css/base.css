@@ -371,7 +371,7 @@ input.search:focus {
     font-size: 1rem;
 }
 
-.sale-container {
+.sale-container-sm {
     color: var(--secondary-colour);
     background-color: var(--primary-colour-translucent);
     border: var(--thin-border);
@@ -383,4 +383,72 @@ input.search:focus {
 
 .page-title {
     color: var(--background);
+}
+
+/*** Single Product ***/
+
+.single-product {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+}
+
+.single-product img {
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    background-color: var(--background-translucent);
+}
+
+.text-start {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.sale-container-lg {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    width: fit-content;
+    padding: 3px 0;
+    margin: 10px 0;
+
+}
+
+/*** Selection ***/
+
+.selection input {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selection input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.selection .btn,
+button.btn {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selection .btn:hover,
+button.btn:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+}
+
+.selection .btn:active,
+button.btn:active {
+    background-color: var(--primary-colour-translucent);
 }
