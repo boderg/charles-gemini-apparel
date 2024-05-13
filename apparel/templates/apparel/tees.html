@@ -7,7 +7,7 @@
     <div class="row">
 
         {% for product in products %}
-        {%if product.category.name == 'T-Shirts' %}
+        {% if product.category.name == 'T-Shirts' %}
         {% if product.discount %}
         <div class="col my2 py-lg-5">
             <div class="card mx-auto">
