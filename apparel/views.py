@@ -1,34 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product
-
-
-# def new(request):
-#     """A view to display the new designs page """
-#     products = Product.objects.all()
-#     page_title = 'New Designs'
-
-#     return render(request, 'apparel/new.html',
-#                   {'products': products, 'page_title': page_title})
-
-
-# def tees(request):
-#     """A view to display the tees page """
-#     products = Product.objects.all()
-#     page_title = 'Tees'
-
-#     return render(request, 'apparel/tees.html',
-#                   {'products': products, 'page_title': page_title})
-
-
-# def hoodies(request):
-#     """A view to display the hoodies page """
-#     products = Product.objects.all()
-#     page_title = 'Hoodies'
-
-#     return render(request, 'apparel/hoodies.html',
-#                   {'products': products, 'page_title': page_title})
+from .models import Product, Category
 
 
 def all_garments(request):
@@ -37,8 +10,14 @@ def all_garments(request):
 
     products = Product.objects.all()
     query = None
+    category = None
 
     if request.GET:
+        if 'category' in request.GET:
+            category = request.GET['category'].split(',')
+            products = products.filter(category__name__in=category)
+            category = Category.objects.filter(name__in=category)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -50,10 +29,13 @@ def all_garments(request):
                 name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    page_title = category[0].name if category else 'All Designs'
+
     context = {
         'products': products,
-        'page_title': 'All Designs',
         'search_term': query,
+        'current_category': category,
+        'page_title': page_title
     }
 
     return render(request, 'apparel/all_garments.html', context)

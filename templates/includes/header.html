@@ -21,9 +21,9 @@
                         </button>
                     <ul class="dropdown-menu mt-2">
                         <li><a class="dropdown-item" href="{% url 'all_garments' %}">All Designs</a></li>
-                        <li><a class="dropdown-item" href="#">New Designs</a></li>
-                        <li><a class="dropdown-item" href="#">Tee's</a></li>
-                        <li><a class="dropdown-item" href="#">Hoodies</a></li>
+                        <li><a class="dropdown-item" href="{% url 'all_garments' %}?category=New Designs">New Designs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'all_garments' %}?category=T-Shirts">Tee's</a></li>
+                        <li><a class="dropdown-item" href="{% url 'all_garments' %}?category=Hooded Tops">Hoodies</a></li>
                         <li>
                             <hr class="dropdown-divider w-75 mx-auto">
                         </li>
