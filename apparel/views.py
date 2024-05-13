@@ -29,16 +29,6 @@ from .models import Product
 #                   {'products': products, 'page_title': page_title})
 
 
-def garment(request, product_id):
-
-    """A view to display the garment page """
-
-    product = get_object_or_404(Product, pk=product_id)
-
-    return render(request, 'apparel/garment.html',
-                  {'product': product, 'page_title': product.name})
-
-
 def all_garments(request):
 
     """A view to display all garments, search queries and sorting """
@@ -47,6 +37,21 @@ def all_garments(request):
 
     context = {
         'products': products,
+        'page_title': 'All Designs',
     }
 
     return render(request, 'apparel/all_garments.html', context)
+
+
+def garment(request, product_id):
+
+    """A view to display the individual garment page """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+        'page_title': product.name,
+    }
+
+    return render(request, 'apparel/garment.html', context)
