@@ -6,12 +6,17 @@ class ProductAdmin(admin.ModelAdmin):
 
     list_display = (
         'name',
-        'category',
+        'get_category',
         'price',
         'discount',
         'description',
         'image',
         )
+
+    def get_category(self, obj):
+        return ", ".join([category.name for category in obj.category.all()])
+
+    get_category.short_description = 'Category'
 
     ordering = (
         'name',
