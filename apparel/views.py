@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Size
 
 
 def all_garments(request):
 
     """A view to display all garments, search queries and sorting """
 
-    products = Product.objects.all()
+    products = Product.objects.all()    
     query = None
     category = None
 
@@ -35,7 +35,7 @@ def all_garments(request):
         'products': products,
         'search_term': query,
         'current_category': category,
-        'page_title': page_title
+        'page_title': page_title,
     }
 
     return render(request, 'apparel/all_garments.html', context)
@@ -46,10 +46,14 @@ def garment(request, product_id):
     """A view to display the individual garment page """
 
     product = get_object_or_404(Product, pk=product_id)
+    colours = product.colours.all()
+    sizes = product.sizes.all()
 
     context = {
         'product': product,
         'page_title': product.name,
+        'colours': colours,
+        'sizes': sizes,
     }
 
     return render(request, 'apparel/garment.html', context)

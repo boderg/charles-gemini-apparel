@@ -21,24 +21,18 @@
             <p class="lead mb-5">{{ product.description }}.</p>
             <div class="d-flex flex-row align-items-center selection">
                 <input class="form-control text-left" id="inputQuantity" type="number" value="1"/>    
-                <select class="form-select mx-3 selector" aria-label="Default select example">
-                    <option selected>Select Size</option>
-                    <option value="1">XS</option>
-                    <option value="2">S</option>
-                    <option value="3">M</option>
-                    <option value="1">L</option>
-                    <option value="2">XL</option>
-                    <option value="3">2XL</option>
+                <select class="form-select mx-3 selector" aria-label="Size selector" name="size">
+                    <option selected hidden>Select Size</option>
+                    {% for size in sizes %}
+                    <option value="{{ size.id }}">{{ size.name }}</option>
+                    {% endfor %}
                     </select>
-                <select class="form-select selector" aria-label="Default select example">
-                    <option selected>Select Colour</option>
-                    <option value="1">Heather Black</option>
-                    <option value="2">Any</option>
-                    <option value="3">Any</option>
-                    <option value="1">Any</option>
-                    <option value="2">Any</option>
-                    <option value="3">Any</option>
-                    </select>
+                <select class="form-select selector" aria-label="Colour selector" name="colour">
+                    <option selected hidden>Select Colour</option>
+                    {% for colour in colours %}
+                    <option value="{{ colour.id }}">{{ colour.name }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <button class="btn btn-bag flex-shrink-0 my-5" type="button">
                 Add to bag
@@ -60,34 +54,20 @@
             </div>
             <p class="lead mb-5">{{ product.description }}.</p>
             <div class="d-flex flex-row align-items-center selection">
-                <input class="form-control text-left" id="inputQuantity" type="number" value="1" style="max-width: 4rem" />
-                <div class="dropdown mx-3">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Size
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">XS</a></li>
-                        <li><a class="dropdown-item" href="#">S</a></li>
-                        <li><a class="dropdown-item" href="#">M</a></li>
-                        <li><a class="dropdown-item" href="#">L</a></li>
-                        <li><a class="dropdown-item" href="#">XL</a></li>
-                        <li><a class="dropdown-item" href="#">2XL</a></li>
-                    </ul>
-                    </div>
-                    <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Colour
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Heather Black</a></li>
-                        <li><a class="dropdown-item" href="#">Any</a></li>
-                        <li><a class="dropdown-item" href="#">Any</a></li>
-                        <li><a class="dropdown-item" href="#">Any</a></li>
-                        <li><a class="dropdown-item" href="#">Any</a></li>
-                        <li><a class="dropdown-item" href="#">Any</a></li>
-                    </ul>
-                    </div>
-                </div>
+                <input class="form-control text-left" id="inputQuantity" type="number" value="1"/>    
+                <select class="form-select mx-3 selector" aria-label="Size selector" name="size">
+                    <option selected hidden>Select Size</option>
+                    {% for size in sizes %}
+                    <option value="{{ size.id }}">{{ size.name }}</option>
+                    {% endfor %}
+                    </select>
+                <select class="form-select selector" aria-label="Colour selector" name="colour">
+                    <option selected hidden>Select Colour</option>
+                    {% for colour in colours %}
+                    <option value="{{ colour.id }}">{{ colour.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <button class="btn btn-bag flex-shrink-0 my-5" type="button">
                 Add to bag
             </button>
