@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, Size
+from .models import Product, Category
 
 
 def all_garments(request):
 
     """A view to display all garments, search queries and sorting """
 
-    products = Product.objects.all()    
+    products = Product.objects.all()
     query = None
     category = None
 
