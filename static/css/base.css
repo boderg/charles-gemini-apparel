@@ -11,6 +11,7 @@
     --background-translucent: rgba(250, 250, 250, 0.5);
     --primary-colour: rgb(147, 255, 0);
     --primary-colour-translucent: rgba(147, 255, 0, 0.5);
+    --primary-colour-translucent-2: rgba(147, 255, 0, 0.3);
     --secondary-colour: rgb(55, 55, 55);
     --secondary-colour-translucent: rgba(55, 55, 55, 0.5);
 
@@ -205,11 +206,13 @@ input.search:focus {
 
 .image {
     margin: 3px;
+    background-color: var(--primary-colour-translucent-2);
 }
 
 .card-img-top {
     border-radius: var(--border-radius);
     border: var(--thin-border);
+    background-color: var(--primary-colour-translucent-2);
 }
 
 .card-body {
