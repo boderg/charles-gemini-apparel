@@ -1,0 +1,75 @@
+{% load static %}
+
+<div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Size Chart</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/modal/tee_product.webp' %}" style="width: 250px; margin-top: 100px" alt="">
+                    </div>
+                    <div class="col-md-8 ms-auto">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" 
+                                type="button" role="tab" aria-controls="home" aria-selected="true">
+                                Product Measurements
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" 
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                Measure Yourself
+                                </button>
+                            </li>
+                        </ul>
+                    <div class="tab-content mb-3">
+                        <div class="tab-pane p-3 active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            Measurements are provided by our suppliers. <br> Product measurements may vary by up to 2" (5 cm). <br>
+                            Pro tip! Measure one of your products at home and compare with the measurements you see in this guide. <br>
+                            <hr>
+                            A Length <br>
+                            <hr class="w-25">
+                            Place the end of the tape beside the collar at the top of the tee (Highest Point Shoulder). <br>
+                            Pull the tape measure to the bottom of the shirt. <br>
+                            <hr>
+                            B Width <br>
+                            <hr class="w-25">
+                            Place the end of the tape at the seam under the sleeve and pull the tape measure across the shirt to the seam under the opposite sleeve.
+                        </div>
+                        <div class="tab-pane p-3" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            Measurements are provided by our suppliers. <br> Product measurements may vary by up to 2" (5 cm). <br>
+                            Pro tip! Measure one of your products at home and compare with the measurements you see in this guide. <br>
+                            <hr>
+                            A Length <br>
+                            <hr class="w-25">
+                            Place the end of the tape beside the collar at the top of the tee (Highest Point Shoulder). <br>
+                            Pull the tape measure to the bottom of the shirt. <br>
+                            <hr>
+                            B Chest <br>
+                            <hr class="w-25">
+                            Measure yourself around the fullest part of your chest. Keep the tape measure horizontal.
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
