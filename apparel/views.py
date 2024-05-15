@@ -29,7 +29,7 @@ def all_garments(request):
                 name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
-    page_title = category[0].name if category else 'All Designs'
+    page_title = category[0].friendly_name if category else 'All Designs'
 
     context = {
         'products': products,
