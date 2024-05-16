@@ -1,0 +1,65 @@
+/*** Modal ***/
+
+.modal-content {
+    color: var(--secondary-colour);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);   
+    background-image: url('/static/images/modal/grey-wall.webp');
+}
+
+.modal .modal-header {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour-translucent);
+    border-bottom: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.modal .modal-body {
+    color: var(--secondary-colour);
+}
+
+.modal .text {
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.modal .modal-footer {
+    color: var(--secondary-colour);
+    background-color: var(--primary-colour-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.modal .modal-footer button:active {
+   background-color: var(--primary-colour-translucent-2);
+   color: var(--secondary-colour);
+}
+
+.modal .tab-pane {
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border)    
+}
+
+.modal .nav-tabs .nav-link {
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+} 
+
+.modal .nav-tabs .nav-link:focus,
+.modal .nav-tabs .nav-link:active {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-colour-translucent);
+}
+
+.modal img {
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    background-color: var(--primary-colour-translucent);
+}

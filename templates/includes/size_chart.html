@@ -1,75 +1,289 @@
 {% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+{% endblock %}
+
+<!-- templates/includes/size_chart.html -->
 
 <div class="modal fade" id="sizeModal" tabindex="-1" aria-labelledby="sizeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Size Chart</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Size Chart</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<!-- text container -->
+						<div class="col-12 text mx-auto mb-3 p-3">
+							<p>
+								Measurements are provided by our suppliers. <br> Product measurements may vary by up to
+								2" (5 cm). <br>
+								Hoodies run small. For the perfect fit, we recommend ordering one size larger than your
+								usual size. <br>
+								Pro tip! Measure one of your products at home and compare with the measurements you see
+								in this guide. <br>
+							</p>
+						</div>
+						<!-- image container -->
+						<div class="col-sm-12 col-lg-4 image-container">
+							<img src="{% static 'images/modal/tee_product.webp' %}" class="d-block w-100 my-2"
+								style="width: 225px;" alt="">
+							<img src="{% static 'images/modal/hoodie_product.webp' %}" class="d-block w-100 my-2"
+								style="width: 225px" alt="">
+						</div>
+						<!-- tabs -->
+						<div class="col-sm-12 col-lg-8 ms-auto">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<!-- size chart tab-->
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="chart-tab" data-bs-toggle="tab"
+										data-bs-target="#chart" type="button" role="tab" aria-controls="chart"
+										aria-selected="true">
+										Size Chart
+									</button>
+								</li>
+								<!-- product measurements tab-->
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="product-tab" data-bs-toggle="tab"
+										data-bs-target="#product" type="button" role="tab" aria-controls="product"
+										aria-selected="true">
+										Product Measurements
+									</button>
+								</li>
+								<!-- measure yourself tab-->
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="measure-tab" data-bs-toggle="tab"
+										data-bs-target="#measure" type="button" role="tab" aria-controls="measure"
+										aria-selected="false">
+										Measure Yourself
+									</button>
+								</li>
+							</ul>
+							<!-- size chart -->
+							<div class="tab-content mb-3">
+								<div class="tab-pane active" id="chart" role="tabpanel" aria-labelledby="chart-tab"
+									tabindex="0">
+									<!-- tees measurement tabs -->
+									<h5 class="mt-1 ms-2">Tees</h5>
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="nav-link active" id="tcm-tab" data-bs-toggle="tab"
+												data-bs-target="#tcm-tab-pane" type="button" role="tab"
+												aria-controls="tcm-tab-pane" aria-selected="true">Centimeters
+												(cm)</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="tin-tab" data-bs-toggle="tab"
+												data-bs-target="#tin-tab-pane" type="button" role="tab"
+												aria-controls="tin-tab-pane" aria-selected="false">Inches (in)</button>
+										</li>
+									</ul>
+									<div class="tab-content" id="myTabContent">
+										<div class="tab-pane fade show active" id="tcm-tab-pane" role="tabpanel"
+											aria-labelledby="tcm-tab" tabindex="0">
+											<!-- tees cm table -->
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Label Size</th>
+														<td>XS</td>
+														<td>S</td>
+														<td>M</td>
+														<td>L</td>
+														<td>XL</td>
+														<td>2XL</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>Length (A)</th>
+														<td>68.6</td>
+														<td>71</td>
+														<td>73.7</td>
+														<td>76.2</td>
+														<td>78.7</td>
+														<td>81.2</td>
+													</tr>
+													<tr>
+														<th>Width (B)</th>
+														<td>42</td>
+														<td>45.7</td>
+														<td>50.8</td>
+														<td>56</td>
+														<td>61</td>
+														<td>66</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-pane fade" id="tin-tab-pane" role="tabpanel"
+											aria-labelledby="tin-tab" tabindex="0">
+											<!-- tees in table -->
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Label Size</th>
+														<td>XS</td>
+														<td>S</td>
+														<td>M</td>
+														<td>L</td>
+														<td>XL</td>
+														<td>2XL</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>Length (A)</th>
+														<td>27</td>
+														<td>28</td>
+														<td>29</td>
+														<td>30</td>
+														<td>31</td>
+														<td>32</td>
+													</tr>
+													<tr>
+														<th>Width (B)</th>
+														<td>16</td>
+														<td>18</td>
+														<td>20</td>
+														<td>22</td>
+														<td>24</td>
+														<td>26</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<!-- hoodies mesurement tabs -->
+									<h5 class="mt-1 ms-2">Hoodies</h5>
+									<ul class="nav nav-tabs" id="myTab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button class="nav-link active" id="hcm-tab" data-bs-toggle="tab"
+												data-bs-target="#hcm-tab-pane" type="button" role="tab"
+												aria-controls="hcm-tab-pane" aria-selected="true">Centimeters
+												(cm)</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button class="nav-link" id="hin-tab" data-bs-toggle="tab"
+												data-bs-target="#hin-tab-pane" type="button" role="tab"
+												aria-controls="hin-tab-pane" aria-selected="false">Inches (in)</button>
+										</li>
+									</ul>
+									<div class="tab-content" id="myTabContent">
+										<div class="tab-pane fade show active" id="hcm-tab-pane" role="tabpanel"
+											aria-labelledby="hcm-tab" tabindex="0">
+											<!-- hoodies cm table -->
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Label Size</th>
+														<td>S</td>
+														<td>M</td>
+														<td>L</td>
+														<td>XL</td>
+														<td>2XL</td>
+														<td>3XL</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>Length (A)</th>
+														<td>68.6</td>
+														<td>71</td>
+														<td>73.7</td>
+														<td>76.2</td>
+														<td>78.7</td>
+														<td>81.3</td>
+													</tr>
+													<tr>
+														<th>Chest (B)</th>
+														<td>96.5 - 104</td>
+														<td>106.7 - 114.3</td>
+														<td>116.8 - 124.5</td>
+														<td>127 - 134.6</td>
+														<td>137.2 - 144.8</td>
+														<td>147.3 - 157.5</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tab-pane fade" id="hin-tab-pane" role="tabpanel"
+											aria-labelledby="hin-tab" tabindex="0">
+											<!-- hoodies in table -->
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Label Size</th>
 
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="{% static 'images/modal/tee_product.webp' %}" style="width: 250px; margin-top: 100px" alt="">
-                    </div>
-                    <div class="col-md-8 ms-auto">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" 
-                                type="button" role="tab" aria-controls="home" aria-selected="true">
-                                Product Measurements
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" 
-                                type="button" role="tab" aria-controls="profile" aria-selected="false">
-                                Measure Yourself
-                                </button>
-                            </li>
-                        </ul>
-                    <div class="tab-content mb-3">
-                        <div class="tab-pane p-3 active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                            Measurements are provided by our suppliers. <br> Product measurements may vary by up to 2" (5 cm). <br>
-                            Pro tip! Measure one of your products at home and compare with the measurements you see in this guide. <br>
-                            <hr>
-                            A Length <br>
-                            <hr class="w-25">
-                            Place the end of the tape beside the collar at the top of the tee (Highest Point Shoulder). <br>
-                            Pull the tape measure to the bottom of the shirt. <br>
-                            <hr>
-                            B Width <br>
-                            <hr class="w-25">
-                            Place the end of the tape at the seam under the sleeve and pull the tape measure across the shirt to the seam under the opposite sleeve.
-                        </div>
-                        <div class="tab-pane p-3" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                            Measurements are provided by our suppliers. <br> Product measurements may vary by up to 2" (5 cm). <br>
-                            Pro tip! Measure one of your products at home and compare with the measurements you see in this guide. <br>
-                            <hr>
-                            A Length <br>
-                            <hr class="w-25">
-                            Place the end of the tape beside the collar at the top of the tee (Highest Point Shoulder). <br>
-                            Pull the tape measure to the bottom of the shirt. <br>
-                            <hr>
-                            B Chest <br>
-                            <hr class="w-25">
-                            Measure yourself around the fullest part of your chest. Keep the tape measure horizontal.
-                        </div>
-                    </div>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                    
-                </div>
-              </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+														<td>S</td>
+														<td>M</td>
+														<td>L</td>
+														<td>XL</td>
+														<td>2XL</td>
+														<td>3XL</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>Length (A)</th>
+														<td>27</td>
+														<td>28</td>
+														<td>29</td>
+														<td>30</td>
+														<td>31</td>
+														<td>32</td>
+													</tr>
+													<tr>
+														<th>Width (B)</th>
+														<td>38 - 41</td>
+														<td>42 - 45</td>
+														<td>46 - 49</td>
+														<td>50 - 53</td>
+														<td>54 - 57</td>
+														<td>58 - 62</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- product measurements tab panel -->
+								<div class="tab-pane p-3" id="product" role="tabpanel" aria-labelledby="product-tab"
+									tabindex="0">
+									A Length <br>
+									<hr class="w-25">
+									Place the end of the tape beside the collar at the top of the tee (Highest Point
+									Shoulder). <br>
+									Pull the tape measure to the bottom of the shirt. <br>
+									<hr>
+									B Width <br>
+									<hr class="w-25">
+									Place the end of the tape at the seam under the sleeve and pull the tape measure
+									across the shirt to the seam under the opposite sleeve.
+								</div>
+								<!-- measure yourself tab panel -->
+								<div class="tab-pane p-3" id="measure" role="tabpanel" aria-labelledby="measure-tab"
+									tabindex="0">
+									A Length <br>
+									<hr class="w-25">
+									Place the end of the tape beside the collar at the top of the tee (Highest Point
+									Shoulder). <br>
+									Pull the tape measure to the bottom of the shirt. <br>
+									<hr>
+									B Chest <br>
+									<hr class="w-25">
+									Measure yourself around the fullest part of your chest. Keep the tape measure
+									horizontal.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer mt-3">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
