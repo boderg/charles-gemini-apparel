@@ -1,0 +1,88 @@
+/*** Login and Logout***/
+
+.login,
+.logout,
+.signup,
+.pw-reset {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.login-outer,
+.logout-outer,
+.signup-outer,
+.pw-reset-outer {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.login a,
+.login-outer a,
+.signup-outer a,
+.pw-reset-outer a {
+    color: var(--secondary-colour);
+    text-decoration: none;
+}
+
+.login a:hover,
+.login-outer a:hover,
+.signup-outer a:hover,
+.pw-reset-outer a:hover {
+    color: var(--primary-colour);
+    text-decoration: underline;
+}
+
+.login .button,
+.logout .button,
+.signup .button,
+.pw-reset .button {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);}
+
+.login .button:hover,
+.logout .button:hover,
+.signup .button:hover,
+.pw-reset .button:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.login .button:active,
+.logout .button:active,
+.signup .button:active,
+.pw-reset .button:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.login input,
+.signup input,
+.pw-reset input {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.login input:focus,
+.signup input:focus,
+.pw-reset input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.login .checkboxinput:focus {
+    background-color: var(--primary-colour-translucent);
+    color: var(--secondary-colour);
+}
+
+.login .form-check-input:checked {
+    background-color: var(--primary-colour-translucent);
+    color: var(--secondary-colour);
+    border: var(--thin-border);
+}
