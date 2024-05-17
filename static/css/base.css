@@ -15,12 +15,13 @@
     --secondary-colour: rgb(55, 55, 55);
     --secondary-colour-translucent: rgba(55, 55, 55, 0.5);
 
-    /** Box Shadows **/
+    /** Shadows **/
     --big-box-shadow: 1px 1px 10px rgb(55, 55, 55);
     --small-box-shadow: 1px 1px 5px rgb(55, 55, 55);
     --small-box-shadow-invert: 1px 1px 5px rgb(250, 250, 250);
     --big-inset-box-shadow: inset 1px 1px 5px rgb(55, 55, 55);
     --small-inset-box-shadow: inset 1px 1px 3px rgb(55, 55, 55);
+    --text-shadow: 1px 1px 1px rgb(55, 55, 55);
 
     /** Borders **/
     --thick-border: 3px solid rgb(55, 55, 55);

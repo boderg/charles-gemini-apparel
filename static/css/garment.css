@@ -92,3 +92,15 @@ button.btn:active {
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
 }
+
+.size-link {
+    color: var(--secondary-colour);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.size-link:hover {
+    color: var(--primary-colour);
+    text-decoration: underline;
+    text-shadow: var(--text-shadow);
+}
