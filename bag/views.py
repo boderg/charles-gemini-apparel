@@ -12,3 +12,15 @@ def bag(request):
     }
 
     return render(request, 'bag/bag.html', context)
+
+
+def bag_add(request):
+    pass
+
+
+def bag_delete(request):
+    pass
+
+
+def bag_update(request):
+    pass
