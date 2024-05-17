@@ -5,6 +5,14 @@
     <link rel="stylesheet" href="{% static 'css/garment.css' %}">
 {% endblock %}
 
+{% block extra_title %}
+    - {{ product.name }}
+{% endblock %}
+
+{% block banner %}
+    
+{% endblock %}
+
 {% block content %}
         
 <div class="container w-75 my-3 my-lg-5">
@@ -67,7 +75,7 @@
                     {% for size in sizes %}
                     <option value="{{ size.id }}">{{ size.name }}</option>
                     {% endfor %}
-                    </select>
+                </select>
                 <select class="form-select selector" aria-label="Colour selector" name="colour">
                     <option selected hidden>Select Colour</option>
                     {% for colour in colours %}

@@ -39,6 +39,12 @@
     <body>
         {% include 'includes/header.html' %}
 
+        <div class="banner">
+            <div class="col text-center p-1">
+                <h3>{% block banner %}{% endblock %}</h3>
+            </div>
+        </div>
+
         {% if messages %}
             <div class="message-container"></div>
         {% endif %}
