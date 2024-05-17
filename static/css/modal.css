@@ -32,6 +32,17 @@
     border: var(--thin-border);
 }
 
+.modal .modal-footer button {
+    color: var(--secondary-colour);
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.modal .modal-footer button:hover {
+    box-shadow: var(--small-box-shadow);
+}
+
 .modal .modal-footer button:active {
    background-color: var(--primary-colour-translucent-2);
    color: var(--secondary-colour);
@@ -62,4 +73,25 @@
     border-radius: var(--border-radius);
     border: var(--thin-border);
     background-color: var(--primary-colour-translucent);
+}
+
+.table {
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+}
+
+.table th {
+    background-color: var(--primary-colour-translucent);
+}
+
+.table td {
+    background-color: var(--background-translucent);
+}
+
+#tcm-tab, #hcm-tab {
+    border-left: none;
+}
+
+#main-tabs {
+    border-bottom: none;
 }
