@@ -75,16 +75,16 @@
     background-color: var(--primary-colour-translucent);
 }
 
-.table {
+.modal .table {
     color: var(--secondary-colour);
     background-color: var(--background-translucent);
 }
 
-.table th {
+.modal .table th {
     background-color: var(--primary-colour-translucent);
 }
 
-.table td {
+.modal .table td {
     background-color: var(--background-translucent);
 }
 

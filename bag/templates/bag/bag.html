@@ -16,7 +16,61 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive">
-                {{ bag_items }}
+               <table class="table table-sm table-borderless bag-table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="p-2">Product</th>
+                            <th scope="col" class="p-2">Details</th>
+                            <th scope="col" class="p-2 text-end">Price</th>
+                            <th scope="col" class="p-2 text-end">Qty</th>
+                            <th scope="col" class="p-2 text-end">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                        <tr>
+                            <td class="p-2">
+                                <img src="{{ item.product.image.url }}" alt="" class="img-fluid">
+                            </td>
+                            <td class="p-2">
+                                <p><strong>{{ item.product.name }}</strong><br><strong>Size: {{ item.size }}</strong><br><strong>Colour: {{ item.colour }}</strong></p>
+                            </td>
+                            <td class="p-2">
+                                <p class="text-end">£{{ item.product.price }}</p>
+                            </td>
+                            <td class="p-2">
+                                <p class="text-end">{{ item.quantity }}</p>
+                            </td>
+                            <td class="p-2">
+                                <p class="text-end">£{{ item.product.price }}</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5">
+                            <h6 class="text-end p-2">Bag Total: £{{ total|floatformat:2 }}</h6>
+                            <h6 class="text-end p-2">Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="text-end p-2">Grand Total: £{{ grand_total|floatformat:2 }}</h4>
+                            {% if free_delivery_delta > 0 %}
+                            <p class="text-end p-2">Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-start p-3 text-uppercase">
+                            <a href="{% url 'all_garments' %}" class="back-btn btn">
+                                <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="">
+                                <br> Continue Shopping
+                            </a>
+                        </td>
+                        <td colspan="3"></td>
+                        <td class="text-end p-3 text-uppercase">
+                            <a href="#" class="checkout-btn btn">
+                                <img src="{% static 'icons/credit-card-color-icon.svg' %}" class="checkout-icon" alt="">
+                                <br> Secure Checkout
+                            </a>
+                        </td>
+                    </tr>
+               </table>
             </div>
             {% else %}
             <div class="col-4 d-flex flex-column mx-auto my-3">

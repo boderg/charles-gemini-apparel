@@ -19,8 +19,8 @@ def bag_add(request, item_id):
     """Add the specified item and quantity to the shopping bag"""
 
     quantity = int(request.POST.get('quantity'))
-    colour = request.POST.get('colour')
-    size = request.POST.get('size')
+    colour = str(request.POST.get('colour'))
+    size = str(request.POST.get('size'))
 
     bag = request.session.get('bag', {})
 

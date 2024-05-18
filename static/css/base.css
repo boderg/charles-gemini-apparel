@@ -114,7 +114,8 @@ main {
 .shopping-icon,
 .login-icon,
 .logout-icon,
-.back-icon {
+.back-icon,
+.checkout-icon {
     height: 1.5rem;
 }
 
@@ -313,18 +314,46 @@ input.search:focus {
 
 /*** Shopping Bag ***/
 
-.back-btn {
+.back-btn,
+.checkout-btn {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
 }
 
-.back-btn:hover {
+.back-btn:hover,
+.checkout-btn:hover {
     background-color: var(--background);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
 }
 
-.back-btn:active {
+.back-btn:active,
+.checkout-btn:active {
     background-color: var(--primary-colour);
+}
+
+.img-fluid {
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary-colour-translucent-2);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.bag-table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.bag-table th {
+    background-color: var(--primary-colour-translucent);
+    border-bottom: var(--thin-border);
+}
+
+.bag-table td {
+    background-color: var(--background-translucent);
 }
