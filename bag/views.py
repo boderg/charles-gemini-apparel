@@ -33,7 +33,6 @@ def bag_add(request, item_id):
         bag[item_id] = {'quantity': 1, 'colour': colour, 'size': size}
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect('bag')
 
 
