@@ -95,3 +95,7 @@
 #main-tabs {
     border-bottom: none;
 }
+
+.modal .tab-pane-tee {
+    border-bottom: var(--thin-border);
+}

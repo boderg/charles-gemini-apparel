@@ -343,6 +343,13 @@ input.search:focus {
     border-radius: var(--border-radius);
 }
 
+.table-responsive {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+    padding: 5px;
+}
+
 .bag-table {
     border: var(--thin-border);
     border-radius: var(--border-radius);

@@ -6,16 +6,16 @@
 {% endblock %}
 
 {% block banner %}
-<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Bag Total: £{{ grand_total|floatformat:2 }}{% else %}£0.00{% endif %}</h4>
+<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Total: £{{ grand_total|floatformat:2 }}{% else %}£0.00{% endif %}</h4>
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div class="container pb-5">
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
             {% if bag_items %}
-            <div class="table-responsive">
+            <div class="table-responsive pb-0">
                <table class="table table-sm table-borderless bag-table">
                     <thead>
                         <tr>
@@ -32,7 +32,9 @@
                                 <img src="{{ item.product.image.url }}" alt="" class="img-fluid">
                             </td>
                             <td class="p-2">
-                                <p><strong>{{ item.product.name }}</strong><br><strong>Size: {{ item.size }}</strong><br><strong>Colour: {{ item.colour }}</strong></p>
+                                <p><strong>{{ item.product.name }}</strong></p>
+                                <p><strong>Size: {{ item.size_name }}</strong></p>
+                                <p><strong>Colour: {{ item.colour_name }}</strong></p>
                             </td>
                             <td class="p-2">
                                 <p class="text-end">£{{ item.product.price }}</p>
