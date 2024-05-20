@@ -39,13 +39,13 @@
                     <select class="form-select mx-3 selector" aria-label="Size selector" name="size" required>
                         <option selected hidden>Select Size</option>
                         {% for size in sizes %}
-                        <option value="{{ size.id }}">{{ size.name }}</option>
+                            <option value="{{ size.id }}">{{ size.name }}</option>
                         {% endfor %}
                         </select>
                     <select class="form-select selector" aria-label="Colour selector" name="colour" required>
                         <option selected hidden>Select Colour</option>
                         {% for colour in colours %}
-                        <option value="{{ colour.id }}">{{ colour.name }}</option>
+                            <option value="{{ colour.id }}">{{ colour.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -80,13 +80,13 @@
                     <select class="form-select mx-3 selector" aria-label="Size selector" name="size" required>
                         <option selected hidden>Select Size</option>
                         {% for size in sizes %}
-                        <option value="{{ size.id }}">{{ size.name }}</option>
+                            <option value="{{ size.id }}">{{ size.name }}</option>
                         {% endfor %}
                     </select>
                     <select class="form-select selector" aria-label="Colour selector" name="colour" required>
                         <option selected hidden>Select Colour</option>
                         {% for colour in colours %}
-                        <option value="{{ colour.id }}">{{ colour.name }}</option>
+                            <option value="{{ colour.id }}">{{ colour.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
