@@ -1,0 +1,55 @@
+/*** Shopping Bag ***/
+
+.fill-bag .btn-back,
+.bag-table .btn-back,
+.bag-table .btn-checkout {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.fill-bag .btn-back:hover,
+.bag-table .btn-back:hover,
+.bag-table .btn-checkout:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.fill-bag .btn-back:active,
+.bag-table .btn-back:active,
+.bag-table .btn-checkout:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.img-fluid {
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary-colour-translucent-2);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.table-responsive {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+    padding: 5px;
+}
+
+.bag-table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.bag-table th {
+    background-color: var(--primary-colour-translucent);
+    border-bottom: var(--thin-border);
+}
+
+.bag-table td {
+    background-color: var(--background-translucent);
+}

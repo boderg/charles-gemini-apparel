@@ -51,28 +51,6 @@
     box-shadow: var(--small-box-shadow);
 }
 
-.selection .btn,
-button.btn {
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    background-color: var(--background);
-    color: var(--secondary-colour);
-}
-
-.selection .btn:hover,
-button.btn:hover {
-    background-color: var(--background);
-    color: var(--secondary-colour);
-    box-shadow: var(--small-box-shadow);
-    transition: var(--transition-quick);
-    border: var(--thin-border);
-}
-
-.selection .btn:active,
-button.btn:active {
-    background-color: var(--primary-colour-translucent);
-}
-
 .selection .selector {
     border: var(--thin-border);
     border-radius: var(--border-radius);
@@ -93,33 +71,41 @@ button.btn:active {
     transition: var(--transition-quick);
 }
 
-.btn-size {
+.size-link-container .btn-size {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
     color: var(--secondary-colour);
 }
 
-.btn-size:hover {
+.size-link-container .btn-size:hover {
     background-color: var(--background);
     color: var(--secondary-colour);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
 }
 
-.btn-size:active {
+.size-link-container .btn-size:active {
     background-color: var(--primary-colour-translucent);
 }
 
-/* 
-.size-link {
+.form .btn-back,
+.form .btn-bag {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
     color: var(--secondary-colour);
-    text-decoration: none;
-    cursor: pointer;
 }
 
-.size-link:hover {
-    color: var(--primary-colour);
-    text-decoration: underline;
-    text-shadow: var(--text-shadow);
-} */
+.form .btn-back:hover,
+.form .btn-bag:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.form .btn-back:active,
+.form .btn-bag:active {
+    background-color: var(--primary-colour-translucent);
+}

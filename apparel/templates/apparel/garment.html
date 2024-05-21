@@ -50,7 +50,7 @@
                     </select>
                 </div>
                 <div class="size-link-container mt-2">
-                    <a class="size-link" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
+                    <a class="btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
                 </div>
                 <button class="btn btn-bag flex-shrink-0 my-5" type="submit">
                     Add to bag
@@ -74,25 +74,28 @@
             <p class="lead mb-5">{{ product.description }}.</p>
             <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
                 {% csrf_token %}
-                <div class="d-flex flex-row align-items-center selection">
+                <div class="d-flex flex-row align-items-center selection form-group">
                     <input class="form-control text-left" name="quantity" type="number" value="1" 
-                    min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/>    
+                        min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
                     <select class="form-select mx-3 selector" aria-label="Size selector" name="size" required>
                         <option selected hidden>Select Size</option>
                         {% for size in sizes %}
-                            <option value="{{ size.id }}">{{ size.name }}</option>
+                        <option value="{{ size.id }}">{{ size.name }}</option>
                         {% endfor %}
                     </select>
                     <select class="form-select selector" aria-label="Colour selector" name="colour" required>
                         <option selected hidden>Select Colour</option>
                         {% for colour in colours %}
-                            <option value="{{ colour.id }}">{{ colour.name }}</option>
+                        <option value="{{ colour.id }}">{{ colour.name }}</option>
                         {% endfor %}
-                    </select>
+                    </select>   
                 </div>
                 <div class="size-link-container mt-2">
                     <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
                 </div>
+                <a href="{% url 'all_garments' %}" class="btn btn-back flex-shrink-0 my-5" type="submit">
+                    Keep Shopping
+                </a>
                 <button class="btn btn-bag flex-shrink-0 my-5" type="submit">
                     Add to bag
                 </button>
