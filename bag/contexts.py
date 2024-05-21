@@ -5,28 +5,26 @@ from apparel.models import Product, Colour, Size
 
 
 def bag_contents(request):
-
     """ Returns the contents of the shopping bag """
-
     bag_items = []
     total = 0
     item_count = 0
     bag = request.session.get('bag', {})
 
-    for item_id, item_details in bag.items():
-        product = get_object_or_404(Product, pk=item_id)
+    for item_key, item_details in bag.items():
+        product = get_object_or_404(Product, pk=item_details['item_id'])
+        colour = get_object_or_404(Colour, pk=item_details['colour'])
+        size = get_object_or_404(Size, pk=item_details['size'])
+
         total += item_details['quantity'] * product.price
         item_count += item_details['quantity']
-        colour_name = Colour.objects.get(
-            id=item_details['colour']).name if item_details['colour'] else None
-        size_name = Size.objects.get(
-            id=item_details['size']).name if item_details['size'] else None
+
         bag_items.append({
-            'item_id': item_id,
+            'item_id': item_details['item_id'],
             'quantity': item_details['quantity'],
             'product': product,
-            'colour_name': colour_name,
-            'size_name': size_name,
+            'colour_name': colour.name,
+            'size_name': size.name,
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:

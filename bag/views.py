@@ -1,17 +1,14 @@
 from django.shortcuts import render, redirect
+from .contexts import bag_contents
 
 
 def bag(request):
 
-    """ A view that renders the bag contents page """
+    """A view that renders the bag contents page"""
 
     page_title = 'Shopping Bag'
-    bag = request.session.get('bag', {})
-
-    context = {
-        'page_title': page_title,
-        'bag': bag,
-    }
+    context = bag_contents(request)
+    context['page_title'] = page_title
 
     return render(request, 'bag/bag.html', context)
 
@@ -21,18 +18,20 @@ def bag_add(request, item_id):
     """Add the specified item and quantity to the shopping bag"""
 
     quantity = int(request.POST.get('quantity'))
-    colour = request.POST.get('colour')
-    size = request.POST.get('size')
+    colour_id = request.POST.get('colour')
+    size_id = request.POST.get('size')
 
     bag = request.session.get('bag', {})
 
-    if item_id in bag:
-        bag[item_id]['quantity'] += quantity
-        if colour and size:
-            bag[item_id]['colour'] = colour
-            bag[item_id]['size'] = size
+    # Create a unique key for each combination of item, color, and size
+    item_key = f"{item_id}_{colour_id}_{size_id}"
+
+    if item_key in bag:
+        bag[item_key]['quantity'] += quantity
     else:
-        bag[item_id] = {'quantity': quantity, 'colour': colour, 'size': size}
+        bag[item_key] = {
+            'item_id': item_id, 'quantity': quantity,
+            'colour': colour_id, 'size': size_id}
 
     request.session['bag'] = bag
     return redirect('bag')

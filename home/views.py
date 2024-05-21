@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 
 def index(request):
+
     """A view to display the home page """
 
     page_title = 'Home'
