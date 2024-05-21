@@ -88,14 +88,20 @@
     background-color: var(--background-translucent);
 }
 
-#tcm-tab, #hcm-tab {
+.modal #hcm-tab,
+.modal #tcm-tab {
     border-left: none;
 }
 
-#main-tabs {
-    border-bottom: none;
+.modal #hcm-tab-pane,
+.modal #tcm-tab-pane,
+.modal #hin-tab-pane,
+.modal #tin-tab-pane {
+    border-right: none;
+    border-left: none;
 }
 
-.modal .tab-pane-tee {
-    border-bottom: var(--thin-border);
+.modal #hin-tab-pane,
+.modal #hcm-tab-pane {
+    border-bottom: none;
 }
