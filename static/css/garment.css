@@ -93,6 +93,25 @@ button.btn:active {
     transition: var(--transition-quick);
 }
 
+.btn-size {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.btn-size:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.btn-size:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+/* 
 .size-link {
     color: var(--secondary-colour);
     text-decoration: none;
@@ -103,4 +122,4 @@ button.btn:active {
     color: var(--primary-colour);
     text-decoration: underline;
     text-shadow: var(--text-shadow);
-}
+} */
