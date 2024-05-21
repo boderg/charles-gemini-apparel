@@ -23,41 +23,51 @@
                <table class="table table-sm table-borderless bag-table">
                     <thead>
                         <tr>
-                            <th scope="col" class="p-2">Product</th>
-                            <th scope="col" class="p-2">Details</th>
-                            <th scope="col" class="p-2 text-end">Price</th>
-                            <th scope="col" class="p-2 text-end">Qty</th>
-                            <th scope="col" class="p-2 text-end">Subtotal</th>
+                            <th scope="col" class="p-md-2">Product</th>
+                            <th scope="col" class="p-md-2">Details</th>
+                            <th scope="col" class="p-md-2 text-end">Price</th>
+                            <th scope="col" class="p-md-2 text-center">Qty</th>
+                            <th scope="col" class="p-md-2 text-end">Subtotal</th>
                         </tr>
                     </thead>
                     {% for item in bag_items %}
                         <tr>
-                            <td class="p-2">
+                            <td class="p-md-2">
                                 <img src="{{ item.product.image.url }}" alt="" class="img-fluid">
                             </td>
-                            <td class="p-2">
+                            <td class="p-md-2">
                                 <p><strong>{{ item.product.name }}</strong></p>
                                 <p><strong>Size: {{ item.size_name }}</strong></p>
                                 <p><strong>Colour: {{ item.colour_name }}</strong></p>
                             </td>
-                            <td class="p-2">
+                            <td class="p-md-2">
                                 <p class="text-end">£{{ item.product.price }}</p>
                             </td>
-                            <td class="p-2">
-                                <p class="text-end">{{ item.quantity }}</p>
+                            <td class="p-md-2">
+
+                                <div class="input-group input-group-sm w-50 mx-auto">
+                                    <button class="btn btn-down" type="button" id="button-addon1" onclick="decreaseQuantity('{{ item.id }}')">
+                                        -
+                                    </button>
+                                    <input type="number" class="form-control addon text-center" value="{{ item.quantity }}" min="1" id="quantity-{{ item.id }}">
+                                    <button class="btn btn-up" type="button" id="button-addon2" onclick="increaseQuantity('{{ item.id }}')">
+                                        +
+                                    </button>
+                                </div>
+
                             </td>
-                            <td class="p-2">
+                            <td class="p-md-2">
                                 <p class="text-end">£{{ item.product.price }}</p>
                             </td>
                         </tr>
                     {% endfor %}
                     <tr>
                         <td colspan="5">
-                            <h6 class="text-end p-2">Bag Total: £{{ total|floatformat:2 }}</h6>
-                            <h6 class="text-end p-2">Delivery: £{{ delivery|floatformat:2 }}</h6>
-                            <h4 class="text-end p-2">Grand Total: £{{ grand_total|floatformat:2 }}</h4>
+                            <h6 class="text-end p-md-2">Bag Total: £{{ total|floatformat:2 }}</h6>
+                            <h6 class="text-end p-md-2">Delivery: £{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="text-end p-md-2">Grand Total: £{{ grand_total|floatformat:2 }}</h4>
                             {% if free_delivery_delta > 0 %}
-                            <p class="text-end p-2">Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</p>
+                            <p class="text-end p-md-2">Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</p>
                             {% endif %}
                         </td>
                     </tr>
@@ -93,4 +103,8 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/bag.js' %}"></script>
 {% endblock %}

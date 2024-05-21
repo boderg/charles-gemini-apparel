@@ -39,18 +39,6 @@
     max-width: 4rem;
 }
 
-.selection input:hover {
-    background-color: var(--background);
-    color: var(--secondary-colour);
-    box-shadow: var(--small-box-shadow);
-    transition: var(--transition-quick);
-}
-
-.selection input:focus {
-    border: var(--thin-border);
-    box-shadow: var(--small-box-shadow);
-}
-
 .selection .selector {
     border: var(--thin-border);
     border-radius: var(--border-radius);
@@ -107,5 +95,25 @@
 
 .form .btn-back:active,
 .form .btn-bag:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.selection .btn-down,
+.selection .btn-up {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+}
+
+.selection .btn-down:hover,
+.selection .btn-up:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.selection .btn-down:active,
+.selection .btn-up:active {
     background-color: var(--primary-colour-translucent);
 }

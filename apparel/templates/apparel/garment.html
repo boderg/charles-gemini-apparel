@@ -23,36 +23,51 @@
         <div class="col-md-6">
             <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
         </div>
-        <div class="col-md-6 text-start p-4 mt-2">
-            <span class="badge fs-5">Sale</span>
+        <div class="col-md-6 text-start p-3 my-auto">
+            <span class="badge fs-5 mb-2">Sale</span>
             <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
             <div class="fs-5 mb-3 sale-container-lg px-2">
                 Sale Price! &nbsp;
                 <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
             </div>
-            <p class="lead mb-5">{{ product.description }}.</p>
+            <p class="lead mb-5">{{ product.description }}</p>
             <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
                 {% csrf_token %}
-                <div class="d-flex flex-row align-items-center selection">
-                    <input class="form-control text-left" name="quantity" type="number" value="1" 
-                    min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/>    
-                    <select class="form-select mx-3 selector" aria-label="Size selector" name="size" required>
-                        <option selected hidden>Select Size</option>
-                        {% for size in sizes %}
+                <div class="row align-items-center selection form-group">
+                    <div class="input-group mb-3">
+                        <button class="btn btn-down" type="button" id="button-addon1" onclick="decreaseQuantity('{{ item.id }}')">
+                            -
+                        </button>
+                        <input class="form-control text-left" name="quantity" type="number" value="1" 
+                        min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
+                        <button class="btn btn-up" type="button" id="button-addon2" onclick="increaseQuantity('{{ item.id }}')">
+                            +
+                        </button>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <select class="form-select selector" aria-label="Size selector" name="size" required>
+                            <option selected hidden>Select Size</option>
+                            {% for size in sizes %}
                             <option value="{{ size.id }}">{{ size.name }}</option>
-                        {% endfor %}
+                            {% endfor %}
                         </select>
-                    <select class="form-select selector" aria-label="Colour selector" name="colour" required>
-                        <option selected hidden>Select Colour</option>
-                        {% for colour in colours %}
+                        <div class="size-link-container ms-3">
+                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
+                        </div>
+                    </div>
+                    <div>
+                        <select class="form-select selector" aria-label="Colour selector" name="colour" required>
+                            <option selected hidden>Select Colour</option>
+                            {% for colour in colours %}
                             <option value="{{ colour.id }}">{{ colour.name }}</option>
-                        {% endfor %}
-                    </select>
+                            {% endfor %}
+                        </select>   
+                    </div>  
                 </div>
-                <div class="size-link-container mt-2">
-                    <a class="btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
-                </div>
-                <button class="btn btn-bag flex-shrink-0 my-5" type="submit">
+                <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
+                    Keep Shopping
+                </a>
+                <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
                     Add to bag
                 </button>
             </form>
@@ -65,38 +80,50 @@
         <div class="col-md-6">
             <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
         </div>
-        <div class="col-md-6 text-start p-4 mt-2">
+        <div class="col-md-6 text-start p-3 my-auto">
             
             <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
             <div class="fs-5 mb-3">
                 <span class="card-text discount"></span>£{{ product.price }}</span>
             </div>
-            <p class="lead mb-5">{{ product.description }}.</p>
+            <p class="lead mb-5">{{ product.description }}</p>
             <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
                 {% csrf_token %}
-                <div class="d-flex flex-row align-items-center selection form-group">
-                    <input class="form-control text-left" name="quantity" type="number" value="1" 
+                <div class="row align-items-center selection form-group">
+                    <div class="input-group input-group-sm mb-3">
+                        <button class="btn btn-down" type="button" id="button-addon1" onclick="decreaseQuantity('{{ item.id }}')">
+                            -
+                        </button>
+                        <input class="form-control text-left" name="quantity" type="number" value="1" 
                         min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
-                    <select class="form-select mx-3 selector" aria-label="Size selector" name="size" required>
-                        <option selected hidden>Select Size</option>
-                        {% for size in sizes %}
-                        <option value="{{ size.id }}">{{ size.name }}</option>
-                        {% endfor %}
-                    </select>
-                    <select class="form-select selector" aria-label="Colour selector" name="colour" required>
-                        <option selected hidden>Select Colour</option>
-                        {% for colour in colours %}
-                        <option value="{{ colour.id }}">{{ colour.name }}</option>
-                        {% endfor %}
-                    </select>   
+                        <button class="btn btn-up" type="button" id="button-addon2" onclick="increaseQuantity('{{ item.id }}')">
+                            +
+                        </button>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-3">
+                        <select class="form-select selector" aria-label="Size selector" name="size" required>
+                            <option selected hidden>Select Size</option>
+                            {% for size in sizes %}
+                            <option value="{{ size.id }}">{{ size.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="size-link-container ms-3">
+                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
+                        </div>
+                    </div>
+                    <div>
+                        <select class="form-select selector" aria-label="Colour selector" name="colour" required>
+                            <option selected hidden>Select Colour</option>
+                            {% for colour in colours %}
+                            <option value="{{ colour.id }}">{{ colour.name }}</option>
+                            {% endfor %}
+                        </select>   
+                    </div>  
                 </div>
-                <div class="size-link-container mt-2">
-                    <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
-                </div>
-                <a href="{% url 'all_garments' %}" class="btn btn-back flex-shrink-0 my-5" type="submit">
+                <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
                     Keep Shopping
                 </a>
-                <button class="btn btn-bag flex-shrink-0 my-5" type="submit">
+                <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
                     Add to bag
                 </button>
             </form>

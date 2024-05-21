@@ -53,3 +53,27 @@
 .bag-table td {
     background-color: var(--background-translucent);
 }
+
+.bag-table .btn-up,
+.bag-table .btn-down {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.bag-table .btn-up:hover,
+.bag-table .btn-down:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.bag-table .btn-up:active,
+.bag-table .btn-down:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.bag-table .addon {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
