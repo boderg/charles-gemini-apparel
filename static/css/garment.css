@@ -39,6 +39,11 @@
     max-width: 4rem;
 }
 
+.selection input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
 .selection .selector {
     border: var(--thin-border);
     border-radius: var(--border-radius);
@@ -116,4 +121,9 @@
 .selection .btn-down:active,
 .selection .btn-up:active {
     background-color: var(--primary-colour-translucent);
+}
+
+.no-hover {
+    pointer-events: none;
+    background-color: var(--secondary-colour-translucent);
 }

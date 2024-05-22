@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+    // Script for increasing and decreasing quantity in the garment page
+    // when the plus and minus buttons are clicked
+
+    $(document).ready(function() {
+        $('.increase-qty').click(function (e) {
+            e.preventDefault();
+            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+            var currentValue = parseInt($(closestInput).val());
+            if (currentValue != 99) { 
+                $(closestInput).val(currentValue + 1);
+            }
+            if (currentValue +1 == 99) {
+                $(this).addClass('no-hover');
+            } else {
+                $('.decrease-qty').removeClass('no-hover');
+            }
+        });
+    
+        $('.decrease-qty').click(function (e) {
+            e.preventDefault();
+            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+            var currentValue = parseInt($(closestInput).val());
+            if (currentValue > 1) {
+                $(closestInput).val(currentValue - 1);
+            }
+            if (currentValue -1 == 1) {
+                $(this).addClass('no-hover');
+            } else {
+                $('.increase-qty').removeClass('no-hover');
+            }
+        });
+    });
+
+</script>
