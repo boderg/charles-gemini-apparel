@@ -105,3 +105,9 @@
 .modal #hcm-tab-pane {
     border-bottom: none;
 }
+
+.modal-header .measure-icon {
+    height: 1.5rem;
+    border: none;
+    background-color: transparent;
+}

@@ -110,7 +110,7 @@ main {
     background-color: var(--secondary-colour-translucent);
     border-bottom: var(--thin-border);
 }
-
+.menu-icon,
 .shopping-icon,
 .login-icon,
 .logout-icon,

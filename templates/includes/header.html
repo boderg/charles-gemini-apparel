@@ -4,12 +4,12 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid py-lg-3 px-lg-5"> 
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="navbar-brand" href="{% url 'home' %}" title="Home">
                 <img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo">
             </a>
             <button class="navbar-toggler btn mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" 
-                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span><img src="{% static 'icons/three-horizontal-lines-icon.svg' %}" class="search-icon py-1" alt=""></span>
+                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation" title="Menu">
+                <span><img src="{% static 'icons/three-horizontal-lines-icon.svg' %}" class="menu-icon py-1" alt="menu icon"></span>
             </button>
 
 
@@ -60,19 +60,19 @@
                 <h3 class="page-title">{{ page_title }}</h3>
 
                 <li class="nav-item">
-                    <a class="nav-link btn mx-2 mx-md-5" href="{% url 'bag' %}">
-                       <img src="{% static 'icons/shopping-bag-icon.svg' %}" class="shopping-icon px-2" alt="">
+                    <a class="nav-link btn mx-2 mx-md-5" href="{% url 'bag' %}" title="Shopping Bag">
+                       <img src="{% static 'icons/shopping-bag-icon.svg' %}" class="shopping-icon px-2" alt="shopping bag icon">
                     </a>
                 </li>
 
                 <li class="nav-item">
                     {% if request.user.is_authenticated %}
-                        <a class="nav-link btn me-1 me-md-5" href="{% url 'account_logout' %}">
-                            <img src="{% static 'icons/sign-out-icon.svg' %}" class="logout-icon px-2" alt="">
+                        <a class="nav-link btn me-1 me-md-5" href="{% url 'account_logout' %}" title="Sign Out">
+                            <img src="{% static 'icons/sign-out-icon.svg' %}" class="logout-icon px-2" alt="sign out icon">
                         </a>
                     {% else %}
-                        <a class="nav-link btn me-1 me-md-5" href="{% url 'account_login' %}">
-                            <img src="{% static 'icons/log-in-icon.svg' %}" class="login-icon px-2" alt="">
+                        <a class="nav-link btn me-1 me-md-5" href="{% url 'account_login' %}" title="Sign In">
+                            <img src="{% static 'icons/log-in-icon.svg' %}" class="login-icon px-2" alt="sign in icon">
                         </a>
                     {% endif %}
                 </li>

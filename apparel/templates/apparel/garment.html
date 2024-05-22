@@ -58,7 +58,9 @@
                             {% endfor %}
                         </select>
                         <div class="size-link-container ms-3">
-                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
+                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
+                                <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> Guide</span>
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -120,11 +122,14 @@
                             {% endfor %}
                         </select>
                         <div class="size-link-container ms-3">
-                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a>
+                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
+                            <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> Guide</span>
+                            </a>
                         </div>
                     </div>
                     <div>
                         <select class="form-select selector" aria-label="Colour selector" name="colour" required>
+                            <span><img src="{% static 'icons/colors-icon.svg' %}" class="colors-icon px-2" alt="colors icon"> Select Colour</span>
                             <option selected hidden value="">Select Colour</option>
                             {% for colour in colours %}
                             <option value="{{ colour.id }}">{{ colour.name }}</option>
