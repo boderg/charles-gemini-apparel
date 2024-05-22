@@ -154,6 +154,5 @@
 {% endblock %}
 
 {% block extra_js %}
-{{ block.super }}
-{% include 'apparel/includes/quantity_script.html' %}
+    <script src="{% static 'js/quantity.js' %}"></script>
 {% endblock %}
