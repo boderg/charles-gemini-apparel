@@ -27,6 +27,8 @@
                             <th scope="col" class="p-md-2">Details</th>
                             <th scope="col" class="p-md-2 text-end">Price</th>
                             <th scope="col" class="p-md-2 text-center">Qty</th>
+                            <th scope="col" class="p-md-2 text-center">Update</th>
+                            <th scope="col" class="p-md-2 text-center">Delete</th>
                             <th scope="col" class="p-md-2 text-end">Subtotal</th>
                         </tr>
                     </thead>
@@ -43,18 +45,32 @@
                             <td class="p-md-2">
                                 <p class="text-end">£{{ item.product.price }}</p>
                             </td>
+                            
                             <td class="p-md-2">
-
-                                <div class="input-group input-group-sm w-50 mx-auto">
-                                    <button class="btn btn-down" type="button" id="button-addon1" onclick="decreaseQuantity('{{ item.id }}')">
-                                        -
-                                    </button>
-                                    <input type="number" class="form-control addon text-center" value="{{ item.quantity }}" min="1" id="quantity-{{ item.id }}" title="Quantity">
-                                    <button class="btn btn-up" type="button" id="button-addon2" onclick="increaseQuantity('{{ item.id }}')">
-                                        +
-                                    </button>
-                                </div>
-
+                                <form action="" method="POST" class="form update-form">
+                                    {% csrf_token %}
+                                    <div class="form-group selection w-50 mx-auto">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-sm btn-down decrease-qty" data-item-id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}" type="button">
+                                                    <span><i class="fas fa-minus fa-sm"></i></span>
+                                                </button>
+                                            </div>
+                                            <input class="form-control form-control-sm qty_input text-center" name="quantity" type="number" value="{{ item.quantity }}" title="Quantity"
+                                            min="1" max="99" data-item-_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"/> 
+                                            <div class="input-group-append">
+                                                <button class="btn btn-sm btn-up increase-qty" data-item-id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}" type="button">
+                                                    <span><i class="fas fa-plus fa-sm"></i></span>
+                                                </button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </form>
+                            <td class="text-center">
+                                <a href="" class="update-link btn btn-link"><img src="{% static 'icons/exchange-refresh-icon.svg' %}" class="update-icon" alt="update icon"></a>
+                            </td>
+                            <td class="text-center">
+                                <a href="" class="remove-link btn btn-link" id="remove_{{ item.item_id }}"><img src="{% static 'icons/trash-bin-icon.svg' %}" class="bin-icon" alt="bin icon"></a>
                             </td>
                             <td class="p-md-2">
                                 <p class="text-end">£{{ item.product.price }}</p>
@@ -62,7 +78,7 @@
                         </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5">
+                        <td colspan="7">
                             <h6 class="text-end p-md-2">Bag Total: £{{ total|floatformat:2 }}</h6>
                             <h6 class="text-end p-md-2">Delivery: £{{ delivery|floatformat:2 }}</h6>
                             <h4 class="text-end p-md-2">Grand Total: £{{ grand_total|floatformat:2 }}</h4>
@@ -72,16 +88,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="text-start p-3 text-uppercase">
+                        <td colspan="2" class="text-start p-3 text-uppercase">
                             <a href="{% url 'all_garments' %}" class="btn btn-back">
-                                <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="">
+                                <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="back arrow icon">
                                 <br> Continue Shopping
                             </a>
                         </td>
-                        <td colspan="3"></td>
-                        <td class="text-end p-3 text-uppercase">
+                        <td colspan="2"></td>
+                        <td colspan="3" class="text-end p-3 text-uppercase">
                             <a href="#" class="btn btn-checkout">
-                                <img src="{% static 'icons/credit-card-color-icon.svg' %}" class="checkout-icon" alt="">
+                                <img src="{% static 'icons/credit-card-color-icon.svg' %}" class="checkout-icon" alt="credit card icon">
                                 <br> Secure Checkout
                             </a>
                         </td>
@@ -91,10 +107,10 @@
             {% else %}
             <div class="col-4 d-flex flex-column fill-bag mx-auto my-3">
                 <h2 class="text-center mt-3">Your bag is empty!</h2>
-                <img src="{% static 'icons/sad-face-icon.svg' %}" class="sad-face-icon mt-3 mb-5" alt="">
+                <img src="{% static 'icons/sad-face-icon.svg' %}" class="sad-face-icon mt-3 mb-5" alt="sad face icon">
                 <h2 class="text-center mt-3">Let's fill it!</h2>
                 <a href="{% url 'all_garments' %}" class="btn btn-back w-md-25 mx-auto my-3">
-                   <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt=""> 
+                   <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="back arrow icon"> 
                     <br> Fill your Bag
                 </a>
             </div>
@@ -105,6 +121,27 @@
 
 {% endblock %}
 
-{% block extra_js %}
-    <script src="{% static 'js/bag.js' %}"></script>
+{% block postloadjs %}
+    <script src="{% static 'js/quantity.js' %}"></script>
+    <script text="text/javascript">
+        // Update quantity on click
+        $('.update-link').click(function(e) {
+            var form = $(this).prev('.update-form');
+            form.submit();
+        });
+
+        // Remove item and reload on click
+        $('.remove-item').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var url = "/bag/remove/" + itemId + "/";
+            var data = {
+                'csrfmiddlewaretoken': csrfToken
+            };
+            $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+        });
+    </script>
 {% endblock %}

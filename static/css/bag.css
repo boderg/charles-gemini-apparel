@@ -72,8 +72,28 @@
     background-color: var(--primary-colour-translucent);
 }
 
-.bag-table .addon {
+.no-hover {
+    pointer-events: none;
+    background-color: var(--secondary-colour-translucent);
+}
+
+.selection input {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selection input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.update-icon,
+.bin-icon {
+    height: 1.9rem;
+    padding: 3px;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);   
 }
