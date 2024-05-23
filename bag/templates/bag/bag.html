@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/bag.css' %}">
@@ -85,11 +86,11 @@
                             </td>
                             
                             <td class="p-md-2">
-                                <p class="text-end">£{{ item.product.price }}</p>
+                                <p class="text-end">£{{ item.product.price|floatformat:2 }}</p>
                             </td>
                             
                             <td class="p-md-2">
-                                <p class="text-end">£{{ item.product.price }}</p>
+                                <p class="text-end">£{{ item|item_subtotal|floatformat:2 }}</p>
                             </td>
                             
                         </tr>
