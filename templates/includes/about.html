@@ -1,0 +1,67 @@
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+{% endblock %}
+
+<!-- templates/includes/size_chart.html -->
+
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5">About</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body about-body">
+                <div class="row p-2">
+                    <div class="col-sm-12 col-lg-12 main-container px-2">
+                        <div class="row p-2">
+                            <div class="col-sm-12 col-lg-4 image-container p-2">
+                                <img src="{% static 'images/logos/lime_logo_square.webp' %}" class="image-fluid" alt="about image">
+                            </div>
+                            <div class="col-sm-12 col-lg-8 text-container p-2">
+                                <h3>Charles Gemini Apparel</h3>
+                                <p>Charles Gemini Apparel is an independent, small business based in London. <br>
+                                    We primarily sell t-shirts and hooded sweatshirts with custom in house designs. <br>
+                                    All our designs are printed on premium quality fabric and are available in various sizes and colours. <br>
+                                    Please view our size guide for an indication of our sizes and their fit. <br>
+                                    Feel free to contact us via the contact form, there is a link in then shop now dropdown. 
+                                </p>
+                            </div>
+                            <div class="col-sm-12 col-lg-12 text-container mt-2 p-2">  
+                                <p>Thank you for visiting our site and we hope you find something you like. <br>
+                                    Please check back regularly for new designs and products. <br>
+                                    We are always looking to improve our products and services so any feedback is welcome. <br>
+                                    We hope you enjoy your shopping experience with us.
+                                </p>
+                                <p>© 2024 Charles Gemini Apparel.</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-12 text-container mt-2 p-2"> 
+                                <p>Charles Gemini Apparel is a trading name of Charles Gemini Ltd. <br>
+                                    Registered in England and Wales. Company No. 12345678. <br>
+                                    Registered office: 123 Fake Street, London, SW1A 1AA. <br>
+                                    VAT No. 123 4567 89.
+                                </p>
+                                <p>This site was designed and built by Simon Boylan for their Code Institute Milestone Project 4. <br>
+                                    Visit my GitHub profile here:  
+                                    <a href="https://github.com/boderg" target="_blank" class="btn btn-social-icon btn-github p-1"
+                                    rel="noopener" aria-label="GitHub - Opens in a new tab">
+                                    <img src="{% static 'icons/github-icon.svg' %}" alt="GitHub Icon" class="social-icon p-1">
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+						
+							
+									
+			</div>					
+				<div class="modal-footer mt-3">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
