@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block banner %}
-    Free delivery on orders over £{{ free_delivery_threshold }}*
+<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Bag Total: £{{ grand_total|floatformat:2 }}{% else %}£0.00{% endif %}</h4>
 {% endblock %}
 
 {% block content %}

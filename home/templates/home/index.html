@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block banner %}
+    Free delivery on orders over £{{ free_delivery_threshold }}*
+{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid align-self-center text-center my-2">
