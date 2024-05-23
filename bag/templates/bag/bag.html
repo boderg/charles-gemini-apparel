@@ -37,7 +37,7 @@
                             
                             <td class="p-md-2">
                                 <p><strong>{{ item.product.name }}</strong></p>
-                                <form action="{% url 'bag_update' item.item_id %}" method="POST" class="form update-form">
+                                <form action="{% url 'bag_update_or_delete' item.item_id %}" method="POST" class="form update-form">
                                     {% csrf_token %}
                                     <div class="form-group pb-2">
                                         <!-- <label for="size_{{ item.item_id }}">Size:</label> -->
@@ -73,8 +73,13 @@
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                    <button type="submit" class="btn btn-link"><img src="{% static 'icons/exchange-refresh-icon.svg' %}" class="update-icon" alt="update icon"></button>
-                                     <a href="" class="remove-link btn btn-link" id="remove_{{ item.item_id }}"><img src="{% static 'icons/trash-bin-icon.svg' %}" class="bin-icon" alt="bin icon"></a>
+                                        <input type="hidden" name="action" value="update">
+                                        <button type="submit" class="btn btn-link">
+                                            <img src="{% static 'icons/exchange-refresh-icon.svg' %}" class="update-icon" alt="update icon">
+                                        </button>
+                                        <button type="submit" name="action" value="delete" class="btn btn-link">
+                                            <img src="{% static 'icons/trash-bin-icon.svg' %}" class="bin-icon" alt="bin icon">
+                                        </button>
                                     </div>
                                 </form>
                             </td>

@@ -37,35 +37,36 @@ def bag_add(request, item_id):
     return redirect('bag')
 
 
-def bag_delete(request):
-    pass
+def bag_update_or_delete(request, item_id):
 
+    """Update or delete the specified item in the shopping bag"""
 
-def bag_update(request, item_id):
-
-    """Update the specified item's size, color,
-        and quantity in the shopping bag"""
-    quantity = int(request.POST.get('quantity'))
+    action = request.POST.get('action')
     colour_id = request.POST.get('colour')
     size_id = request.POST.get('size')
-
     bag = request.session.get('bag', {})
 
-    # Find the item in the bag
-    for item_key in list(bag.keys()):
-        if item_key.startswith(f"{item_id}_"):
+    if action == 'delete':
+        # Find and delete the item
+        item_key = f"{item_id}_{colour_id}_{size_id}"
+        if item_key in bag:
             del bag[item_key]
-            break
-
-    # Create a new item key
-    item_key = f"{item_id}_{colour_id}_{size_id}"
-
-    bag[item_key] = {
-        'item_id': item_id,
-        'quantity': quantity,
-        'colour': colour_id,
-        'size': size_id
-    }
+    else:
+        # Update the item
+        quantity = int(request.POST.get('quantity'))
+        # Remove the old item entry
+        for item_key in list(bag.keys()):
+            if item_key.startswith(f"{item_id}_"):
+                del bag[item_key]
+                break
+        # Create a new item key
+        item_key = f"{item_id}_{colour_id}_{size_id}"
+        bag[item_key] = {
+            'item_id': item_id,
+            'quantity': quantity,
+            'colour': colour_id,
+            'size': size_id
+        }
 
     request.session['bag'] = bag
     return redirect('bag')
