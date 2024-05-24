@@ -24,8 +24,14 @@
                                 <p>Charles Gemini Apparel is an independent, small business based in London. <br>
                                     We primarily sell t-shirts and hooded sweatshirts with custom in house designs. <br>
                                     All our designs are printed on premium quality fabric and are available in various sizes and colours. <br>
-                                    Please view our size guide for an indication of our sizes and their fit. <br>
-                                    Feel free to contact us via the contact form, there is a link in then shop now dropdown. 
+                                    Please view our size guide for an indication of our sizes and their fit.
+                                    <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
+                                        <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"></span>
+                                    </a> <br>
+                                    Feel free to contact us via the contact form. 
+                                    <a class="size-link btn btn-form" href="#" title="Size Guide">
+                                        <span><img src="{% static 'icons/form-icon.svg' %}" class="form-icon" alt="form icon"></span>
+                                    </a>
                                 </p>
                             </div>
                             <div class="col-sm-12 col-lg-12 text-container mt-2 p-2">  
@@ -43,7 +49,7 @@
                                     VAT No. 123 4567 89.
                                 </p>
                                 <p>This site was designed and built by Simon Boylan for their Code Institute Milestone Project 4. <br>
-                                    Visit my GitHub profile here:  
+                                    Visit my GitHub profile here:
                                     <a href="https://github.com/boderg" target="_blank" class="btn btn-social-icon btn-github p-1"
                                     rel="noopener" aria-label="GitHub - Opens in a new tab">
                                     <img src="{% static 'icons/github-icon.svg' %}" alt="GitHub Icon" class="social-icon p-1">

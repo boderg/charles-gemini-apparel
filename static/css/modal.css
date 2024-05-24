@@ -161,3 +161,27 @@
 .modal-body .social-icon:active {
     background-color: var(--primary-colour-translucent);
 }
+
+.modal-body .measure-icon,
+.modal-body .form-icon {
+    height: 1.5rem;
+    border: none;
+    background-color: transparent;
+}
+
+.modal-body .size-link {
+    color: var(--secondary-colour);
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.modal-body .size-link:hover {
+    box-shadow: var(--small-box-shadow);
+}
+
+.modal-body .size-link:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+
