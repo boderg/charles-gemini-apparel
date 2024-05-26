@@ -336,3 +336,9 @@ input.search:focus {
     border-radius: var(--border-radius);
     box-shadow: var(--small-box-shadow);
 }
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

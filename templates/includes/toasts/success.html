@@ -1,11 +1,39 @@
 <div class="toast custom-toast" role="alert" data-bs-autohide="false" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Success!</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      {{ message }}
-    </div>
-  </div>
+	<div class="toast-header">
+		<img src="..." class="rounded me-2" alt="...">
+		<strong class="me-auto">Success!</strong>
+		<!-- <small>11 mins ago</small> -->
+		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	</div>
+	<div class="toast-body">
+		<div class="row">
+			<div class="col">
+				{{ message }}
+				<hr>
+			</div>
+		</div>
+		{% if grand_total %}
+		<p>Your Bag ( {{ item_count }} items ) </p>
+		<div class="bag-notification-wrapper">
+			{% for item in bag_items %}
+			<div class="row">
+				<div class="col-3">
+					<img class="w-100" src="{{ item.product.image.url }}" alt="">
+				</div>
+				<div class="col-9">
+					<p>{{ item.product.name }}</p>
+					<p>Colour: {{ item.colour_name }}</p>
+					<p>Size: {{ item.size_name }}</p>
+					<p>Qty: {{ item.quantity }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="row">
+			<div class="col">
+				<strong>Total: £{{ grand_total|floatformat:2 }}</strong>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
