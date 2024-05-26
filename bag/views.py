@@ -30,14 +30,16 @@ def bag_add(request, item_id):
     # Create a unique key for each combination of item, color, and size
     item_key = f"{item_id}_{colour_id}_{size_id}"
 
+    colour = Colour.objects.get(pk=colour_id)
+    size = Size.objects.get(pk=size_id)
+
     if item_key in bag:
         bag[item_key]['quantity'] += quantity
     else:
         bag[item_key] = {
             'item_id': item_id, 'quantity': quantity,
             'colour': colour_id, 'size': size_id}
-        colour = Colour.objects.get(pk=colour_id)
-        size = Size.objects.get(pk=size_id)
+
     messages.success(request, f'{bag[item_key]["quantity"]} x\
             {product.name} in colour {colour.name} and size {size.name}\
                 has been added to your bag.')
