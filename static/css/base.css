@@ -342,3 +342,10 @@ input.search:focus {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+.item-count {
+    background-color: var(--primary-colour);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    
+}

@@ -61,7 +61,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link btn mx-2 mx-md-5" href="{% url 'bag' %}" title="Shopping Bag">
-                       <img src="{% static 'icons/shopping-bag-icon.svg' %}" class="shopping-icon px-2" alt="shopping bag icon">
+                        <img src="{% static 'icons/shopping-bag-icon.svg' %}" class="shopping-icon px-2" alt="shopping bag icon">
+                        {% if item_count %}
+                            <span class="item-count p-1"><small>x {{ item_count }}</small></span>
+                        {% endif %}
                     </a>
                 </li>
 
@@ -79,7 +82,6 @@
               </ul>
         </div>
     </div>
-
 
     <div>
         {% include 'includes/size_guide.html' %}
