@@ -64,6 +64,10 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(
         'apparel.Product', null=False, blank=False, on_delete=models.CASCADE)
+    colour = models.ForeignKey(
+        'apparel.Colour', null=True, blank=True, on_delete=models.SET_NULL)
+    size = models.ForeignKey(
+        'apparel.Size', null=True, blank=True, on_delete=models.SET_NULL)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
