@@ -344,7 +344,7 @@ input.search:focus {
 }
 
 .item-count {
-    background-color: var(--primary-colour);
+    background-color: var(--primary-colour-translucent);
     border-radius: var(--border-radius);
     border: var(--thin-border);
     

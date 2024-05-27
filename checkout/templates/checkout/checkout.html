@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+    - {{ page_title }}
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container m-5 mx-auto  p-lg-5 p-2">
+    <div class="row m-1 m-lg-0">
+        <div class="col-md-12">
+            <h3>Please fill out the form below to complete your order</h3>
+        </div>
+    </div>
+    <div class="row m-2 m-lg-0">
+        <div class="col-lg-6 form-container p-2">
+            <p class="small text-muted">*All fields are required</p>
+            <form action="{% url 'checkout' %}" method="post" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="px-3 mb-3">
+                    <legend class="fieldset-label small px-2 w-auto">Contact Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset class="px-3 mb-3">
+                    <legend class="fieldset-label small px-2 w-auto">Billing and Delivery Information</legend>
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <div class="form-check form-check-inline">
+                        {% if user.is_authenticated %}
+                            <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
+                            <label class="form-check-label" for="id-save-info">Save this information for next time</label>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
+                            <a href="{% url 'account_login' %}" class="text-info">Log In</a> to save this information
+                        {% endif %}
+                        
+                    </div>
+                </fieldset>
+                <fieldset class="px-3"></fieldset>
+            </form>
+        </div>
+        <div class="col-lg-6 summary-container p-2">
+            
+            <div class="bag-summary p-2 p-lg-5">
+                <p>Your Bag ( {{ item_count }} items ) </p>
+                {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-3">
+                        <img class="w-100 bag-summary-img" src="{{ item.product.image.url }}" alt="">
+                    </div>
+                    <div class="col-9">
+                        <p>{{ item.product.name }}</p>
+                        <p>Colour: {{ item.colour_name }}</p>
+                        <p>Size: {{ item.size_name }}</p>
+                        <p>Qty: {{ item.quantity }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col px-2 px-lg-5 m-3 bag-summary">
+                    <strong>Order Total: £{{ order_total|floatformat:2 }}</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col px-2 px-lg-5 m-3 bag-summary">
+                    <strong>Delivery: £{{ delivery_cost|floatformat:2 }}</strong>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col px-2 px-lg-5 m-3 bag-summary">
+                    <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+			
+			</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script src="{% static 'js/quantity.js' %}"></script>
+{% endblock %}

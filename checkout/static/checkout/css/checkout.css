@@ -1,0 +1,55 @@
+.container {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.form-container {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+}
+
+.summary-container {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+    background-color: var(--background-translucent);
+}
+
+#payment-form input {
+    color: var(--secondary-colour);
+    background-color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+#payment-form .form-control::placeholder {
+    color: var(--secondary-colour-translucent);
+}
+
+#payment-form .form-control:focus {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.bag-summary-img {
+    background-color: var(--primary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.bag-summary {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    color: var(--secondary-colour);
+    background-color: var(--background);
+}
+
+.text-info {
+    color: var(--primary-colour) !important;
+    text-shadow: var(--text-shadow);
+}
