@@ -31,9 +31,9 @@
                 <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
             </div>
             <p class="lead mb-5">{{ product.description }}</p>
-            <form action="#" class="form" method="POST">
+            <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
                 {% csrf_token %}
-
+                
                 <div class="form-group selection">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

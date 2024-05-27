@@ -86,7 +86,11 @@
                             </td>
                             
                             <td class="p-md-2">
-                                <p class="text-end">£{{ item.product.price|floatformat:2 }}</p>
+                                {% if item.discount_price %}
+                                    <p class="text-end"><strike>£{{ item.original_price|floatformat:2 }}</strike> £{{ item.discount_price|floatformat:2 }}</p>
+                                {% else %}
+                                    <p class="text-end">£{{ item.product.price|floatformat:2 }}</p>
+                                {% endif %}
                             </td>
                             
                             <td class="p-md-2">

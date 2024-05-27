@@ -16,7 +16,9 @@ def bag_contents(request):
         colour = get_object_or_404(Colour, pk=item_details['colour'])
         size = get_object_or_404(Size, pk=item_details['size'])
 
-        total += item_details['quantity'] * product.price
+        item_price = product.discount_price if product.discount else product.price
+        total += item_details['quantity'] * item_price
+
         item_count += item_details['quantity']
 
         bag_items.append({
@@ -25,6 +27,9 @@ def bag_contents(request):
             'product': product,
             'colour_name': colour.name,
             'size_name': size.name,
+            'price': item_price,
+            'original_price': product.price,
+            'discount_price': product.discount_price if product.discount else None,
         })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
