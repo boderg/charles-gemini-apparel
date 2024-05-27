@@ -38,14 +38,15 @@ def bag_add(request, item_id):
     else:
         bag[item_key] = {
             'item_id': item_id, 'quantity': quantity,
-            'colour': colour_id, 'size': size_id}
+            'colour': colour_id, 'size': size_id,
+            }
 
     messages.success(request, f'{bag[item_key]["quantity"]} x\
             {product.name} in colour {colour.name} and size {size.name}\
                 has been added to your bag.')
 
     request.session['bag'] = bag
-    return redirect('bag')
+    return redirect('all_garments')
 
 
 def bag_update_or_delete(request, item_id):
@@ -85,7 +86,7 @@ def bag_update_or_delete(request, item_id):
                 'item_id': item_id,
                 'quantity': quantity,
                 'colour': colour_id,
-                'size': size_id
+                'size': size_id,
             }
             colour = Colour.objects.get(pk=colour_id)
             size = Size.objects.get(pk=size_id)
