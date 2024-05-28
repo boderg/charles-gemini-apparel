@@ -101,7 +101,7 @@
                     {% endfor %}
                     <tr>
                         <td colspan="4">
-                            <h6 class="text-end p-md-2">Bag Total: £{{ total|floatformat:2 }}</h6>
+                            <h6 class="text-end p-md-2">Order Total: £{{ total|floatformat:2 }}</h6>
                             <h6 class="text-end p-md-2">Delivery: £{{ delivery|floatformat:2 }}</h6>
                             <h4 class="text-end p-md-2">Grand Total: £{{ grand_total|floatformat:2 }}</h4>
                             {% if free_delivery_delta > 0 %}
@@ -110,16 +110,16 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="text-start p-3 text-uppercase">
+                        <td colspan="2" class="text-start p-3">
                             <a href="{% url 'all_garments' %}" class="btn btn-back">
-                                <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="back arrow icon">
-                                <br> Continue Shopping
+                               <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                                 Continue Shopping
                             </a>
                         </td>
-                        <td colspan="2" class="text-end p-3 text-uppercase">
+                        <td colspan="2" class="text-end p-3">
                             <a href="{% url 'checkout' %}" class="btn btn-checkout">
-                                <img src="{% static 'icons/credit-card-color-icon.svg' %}" class="checkout-icon" alt="credit card icon">
-                                <br> Secure Checkout
+                                <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
+                                 Secure Checkout
                             </a>
                         </td>
                     </tr>

@@ -114,10 +114,10 @@ main {
 .shopping-icon,
 .login-icon,
 .logout-icon,
-.back-icon,
-.checkout-icon {
+.checkout-icon{
     height: 1.5rem;
 }
+
 
 .sad-face-icon {
     height: 10rem;
