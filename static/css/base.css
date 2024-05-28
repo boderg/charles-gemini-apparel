@@ -110,21 +110,30 @@ main {
     background-color: var(--secondary-colour-translucent);
     border-bottom: var(--thin-border);
 }
-.menu-icon,
-.shopping-icon,
-.login-icon,
-.logout-icon,
-.checkout-icon{
-    height: 1.5rem;
-}
 
-
-.sad-face-icon {
-    height: 10rem;
+.item-count {
+    background-color: var(--primary-colour-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
 }
 
 .page-title {
     color: var(--background);
+}
+
+/*** Icons ***/
+
+.menu-icon,
+.shopping-icon,
+.login-icon,
+.logout-icon,
+.checkout-icon, 
+.search-icon{
+    height: 1.5rem;
+}
+
+.sad-face-icon {
+    height: 10rem;
 }
  
 /*** Logo ***/
@@ -204,10 +213,6 @@ input.search:focus {
     background-color: var(--background);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
-}
-
-.search-icon {
-    height: 1.5rem;
 }
 
 /*** Main Content ***/
@@ -310,42 +315,4 @@ input.search:focus {
     width: 50%;
     padding: 3px 0;
     margin: 10px 0;
-}
-
-.message-container {
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    margin: 1rem;
-    z-index: 99999999999;
-}
-
-.toast-header {
-    color: var(--secondary-colour);
-    background-color: var(--primary-colour-translucent);
-}
-
-.toast-body {
-    background-color: var(--background);
-    color: var(--secondary-colour);
-}
-
-.custom-toast {
-    overflow: visible;
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--small-box-shadow);
-}
-
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.item-count {
-    background-color: var(--primary-colour-translucent);
-    border-radius: var(--border-radius);
-    border: var(--thin-border);
-    
 }

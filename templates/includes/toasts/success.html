@@ -1,3 +1,9 @@
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/toasts.css' %}">
+{% endblock %}
+
 <div class="toast custom-toast" role="alert" data-bs-autohide="true" aria-live="assertive" aria-atomic="true">
 	<div class="toast-header">
 		<img src="..." class="rounded me-2" alt="...">
@@ -35,5 +41,11 @@
 			</div>
 		</div>
 		{% endif %}
+	</div>
+	<div class="checkout-button">
+		<a href="{% url 'checkout' %}" class="btn btn-checkout w-100">
+			<img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
+			Secure Checkout
+		</a>
 	</div>
 </div>
