@@ -117,3 +117,10 @@
     border: var(--thin-border);
     box-shadow: var(--small-inset-box-shadow);
 }
+
+@media screen and (min-width: 768px) {
+    .form-group .selector,
+    .input-group {
+        width: 50%;    
+    }
+}
