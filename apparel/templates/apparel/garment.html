@@ -86,7 +86,11 @@
 
     <div class="row single-product py-2 pe-md-2 align-items-center">
         <div class="col-md-6">
+            {% if product.image %}
             <img class="card-img-top" src="{{ product.image.url }}" alt="Item image"/>
+            {% else %}
+            <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="Item image"/>
+            {% endif %}
         </div>
         <div class="col-md-6 text-start p-3 my-auto">
             

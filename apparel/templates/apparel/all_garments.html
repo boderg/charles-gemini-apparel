@@ -19,7 +19,11 @@
             <div class="card mx-auto my-2">
                 <div class="image">
                     <span class="badge position-absolute">Sale</span>
+                    {% if product.image %}
                     <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a new design">
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel" alt="Image of a new design">
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{ product.name }}</h4>
@@ -38,7 +42,11 @@
         <div class="col my2 py-lg-5">
             <div class="card mx-auto my-2">
                 <div class="image">
+                    {% if product.image %}
                     <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a new design">
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel" alt="Image of a new design">
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{ product.name }}</h4>
