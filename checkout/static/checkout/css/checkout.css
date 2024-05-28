@@ -53,3 +53,30 @@
     color: var(--primary-colour) !important;
     text-shadow: var(--text-shadow);
 }
+
+.summary-container .btn-back,
+.submit-button .btn-next {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.summary-container .btn-back:hover,
+.submit-button .btn-next:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.summary-container .btn-back:active,
+.submit-button .btn-next:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.exclamation-icon,
+.payment-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}

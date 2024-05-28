@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static '/checkout/css/checkout.css' %}">
@@ -22,8 +23,9 @@
         </div>
     </div>
     <div class="row m-2 m-lg-0">
-        <div class="col-lg-6 form-container p-2">
-            <p class="small text-muted">*All fields are required</p>
+        <div class="col-lg-6 form-container p-2 order-last">
+            <h3 class="pt-2 ps-3">Checkout</h3>
+            <p class="small text-muted ps-3">*All fields are required</p>
             <form action="{% url 'checkout' %}" method="post" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="px-3 mb-3">
@@ -51,23 +53,43 @@
                         
                     </div>
                 </fieldset>
-                <fieldset class="px-3"></fieldset>
+                <fieldset class="px-3">
+                    <legend class="fieldset-label small px-2 w-auto">Payment Details</legend>
+                    <div class="card-element"></div>
+                    <div class="card-errors"></div>
+                </fieldset>
+                <div class="submit-button text-end px-2 px-lg-5 m-3">
+                    <button id="submit-button" class="btn btn-next">
+                        <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="payment-icon" alt="payment icon"> 
+                        Complete Order
+                    </button>
+                    <p class="small mt-3 ">
+                        <span><img src="{% static 'icons/exclamation-warning-round-icon.svg' %}" class="exclamation-icon" alt="exclamation icon"></span>
+                        <span>Your card will be charged £{{ grand_total|floatformat:2 }}</span>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="col-lg-6 summary-container p-2">
             
-            <div class="bag-summary p-2 p-lg-5">
+            <div class="bag-summary pt-1 pt-lg-2 ps-3">
+                <h3>Order Summary</h3>
                 <p>Your Bag ( {{ item_count }} items ) </p>
                 {% for item in bag_items %}
                 <div class="row">
                     <div class="col-3">
+                        {% if item.product.image %}
                         <img class="w-100 bag-summary-img" src="{{ item.product.image.url }}" alt="">
+                        {% else %}
+                        <img class="w-100 bag-summary-img" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="">
+                        {% endif %}
                     </div>
                     <div class="col-9">
-                        <p>{{ item.product.name }}</p>
-                        <p>Colour: {{ item.colour_name }}</p>
-                        <p>Size: {{ item.size_name }}</p>
-                        <p>Qty: {{ item.quantity }}</p>
+                        <p>{{ item.product.name }}
+                        <br>Colour: {{ item.colour_name }}
+                        <br>Size: {{ item.size_name }}
+                        <br>Qty: {{ item.quantity }}</p>
+                        <p>Item Total: £{{ item|item_subtotal|floatformat:2 }}</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -75,12 +97,15 @@
             <hr>
             <div class="row">
                 <div class="col px-2 px-lg-5 m-3 bag-summary">
-                    <strong>Order Total: £{{ order_total|floatformat:2 }}</strong>
+                    <strong>Order Total: £{{ total|floatformat:2 }}</strong>
                 </div>
             </div>
             <div class="row">
                 <div class="col px-2 px-lg-5 m-3 bag-summary">
-                    <strong>Delivery: £{{ delivery_cost|floatformat:2 }}</strong>
+                    <strong>Delivery: £{{ delivery|floatformat:2 }}</strong> <br>
+                    {% if free_delivery_delta > 0 %}
+                    <small>Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</small>
+                    {% endif %}
                 </div>
             </div>
             <hr>
@@ -90,8 +115,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-			
+                <div class="col px-2 px-lg-5 m-3 text-end">
+                    <a href="{% url 'bag' %}" class="btn btn-back">
+                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                         Change Your Order
+                    </a>
 			</div>
         </div>
     </div>
