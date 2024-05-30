@@ -80,3 +80,25 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+
+/*** Stripe ***/
+
+.StripeElement,
+.stripe-style-input {
+    font-family: var(--main-font) !important;
+    height: 40px;
+    padding: 10px 12px;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    box-shadow: var(--small-inset-box-shadow);
+ }
+ 
+.StripeElement--webkit-autofill {
+    background-color: var(--background) !important;
+}
