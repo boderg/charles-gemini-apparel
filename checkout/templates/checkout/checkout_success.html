@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bag_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/checkout/css/checkout_success.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+    - {{ page_title }}
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container m-5 mx-auto p-2">
+    <div class="row m-1 m-lg-0">
+        <div class="col-md-12 text-center order-details mb-2 p-3">
+            <h3>Thank you for your order</h3>
+            <hr>
+            <p>Your order number is: {{ order.order_number }} <br>
+                A confirmation email will be sent to: {{ order.email }} <br>
+                Your order details are below: <br>
+                
+            </p>
+        </div>
+    </div>
+    <div class="row m-1 m-lg-0">
+        <div class="item-details"> 
+            <div class="col text-center p-3">
+                <h4>Your Order ( {{ item_count }} items ) </h4>
+                <hr>
+            </div>
+        <div class="row m-3"> 
+        {% for item in bag_items %} 
+         
+            <div class="col-md-3 mb-3 image-container">
+                <img class="w-100" src="{{ item.product.image.url }}" alt="">
+            </div>
+        
+            <div class="col-md-3 ps-5">
+                <h5>{{ item.product.name }}</h5>
+                <p><strong>Colour: </strong>{{ item.colour_name }}</p>
+                <p><strong>Size: </strong>{{ item.size_name }}</p>
+                <p><strong>Qty: </strong>{{ item.quantity }}</p>
+                <p><strong>Price: £ </strong>{{ item.product.price|floatformat:2 }}</p>
+            </div>
+       
+        {% endfor %}  
+        </div>    
+        <div class="row m-1">
+            <div class="col text-end mb-3 px-3">
+                <strong>Subtotal: £{{ total|floatformat:2 }}</strong><br>
+                <strong>Delivery: £{{ delivery|floatformat:2 }}</strong><br>
+                <strong>Order Total: £{{ grand_total|floatformat:2 }}</strong>
+                <hr>
+            </div>
+            
+
+            <div class="row">
+                <div class="col m-2 text-center">
+                    <a href="{% url 'bag' %}" class="btn btn-back">
+                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                         Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
