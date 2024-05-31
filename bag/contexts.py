@@ -5,7 +5,9 @@ from apparel.models import Product, Colour, Size
 
 
 def bag_contents(request):
+
     """ Returns the contents of the shopping bag """
+
     bag_items = []
     total = 0
     item_count = 0

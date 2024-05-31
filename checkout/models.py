@@ -31,10 +31,9 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        """
-        Update grand total each time a line item is added,
-        accounting for delivery costs.
-        """
+
+        """ Update grand total each time a line item is added,
+        accounting for delivery costs. """
 
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
@@ -47,6 +46,7 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
+
         """ Override the original save method to set the order number
         if it hasn't been set already. """
 
