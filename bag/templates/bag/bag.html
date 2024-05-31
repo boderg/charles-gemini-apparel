@@ -44,7 +44,7 @@
                                 <p><strong>{{ item.product.name }}</strong></p>
                                 <form action="{% url 'bag_update_or_delete' item.item_id %}" method="POST" class="form update-form">
                                     {% csrf_token %}
-                                    <div class="form-group pb-2">
+                                    <div class="form-group pb-2 selection">
                                         <!-- <label for="size_{{ item.item_id }}">Size:</label> -->
                                         <select name="size" id="size_{{ item.item_id }}" class="form-control form-control-sm selector mx-auto">
                                             {% for size in item.product.sizes.all %}
@@ -52,7 +52,7 @@
                                             {% endfor %}
                                         </select>
                                     </div>
-                                    <div class="form-group pb-2">
+                                    <div class="form-group pb-2 selection">
                                         <!-- <label for="colour_{{ item.item_id }}">Colour:</label> -->
                                         <select name="colour" id="colour_{{ item.item_id }}" class="form-control form-control-sm selector mx-auto">
                                             {% for colour in item.product.colours.all %}
