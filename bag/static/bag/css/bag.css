@@ -1,5 +1,9 @@
 /*** Shopping Bag ***/
 
+.back-icon {
+    width: 2rem;
+}
+
 .fill-bag .btn-back,
 .bag-table .btn-back,
 .bag-table .btn-checkout {
