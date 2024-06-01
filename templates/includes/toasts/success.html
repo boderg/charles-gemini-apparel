@@ -1,12 +1,12 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/toasts.css' %}">
+<link rel="stylesheet" href="{% static 'css/toasts/success.css' %}">
 {% endblock %}
 
 <div class="toast custom-toast" role="alert" data-bs-autohide="true" aria-live="assertive" aria-atomic="true">
-	<div class="toast-header">
-		<img src="..." class="rounded me-2" alt="...">
+	<div class="toast-header success-header">
+		<img src="{% static 'icons/approve-accept-icon.svg' %}" class="rounded me-2 success-icon" alt="success icon">
 		<strong class="me-auto">Success!</strong>
 		<!-- <small>11 mins ago</small> -->
 		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -42,10 +42,12 @@
 		</div>
 		{% endif %}
 	</div>
+	{% if bag_items %}
 	<div class="checkout-button">
 		<a href="{% url 'checkout' %}" class="btn btn-checkout w-100">
 			<img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
 			Secure Checkout
 		</a>
 	</div>
+	{% endif %}
 </div>

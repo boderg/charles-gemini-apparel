@@ -14,6 +14,10 @@
     --primary-colour-translucent-2: rgba(147, 255, 0, 0.3);
     --secondary-colour: rgb(55, 55, 55);
     --secondary-colour-translucent: rgba(55, 55, 55, 0.5);
+    --warning-colour: #f9e154;
+    --error-colour: #c83232;
+    --info-colour: #40a6ce;
+    --success-colour: #93ff00;
 
     /** Shadows **/
     --big-box-shadow: 1px 1px 10px rgb(55, 55, 55);
