@@ -54,6 +54,8 @@ def checkout(request):
                 )
                 line_item.save()
 
+            request.session['bag'] = {}
+
             return redirect('checkout_success',
                             order_number=order.order_number)
         else:
@@ -88,13 +90,14 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'order_successful': False
     }
 
     return render(request, template, context)
 
 
 def checkout_success(request, order_number):
-    order = Order.objects.get(order_number=order_number)
+    order = get_object_or_404(Order, order_number=order_number)
     order_line_items = order.lineitems.all()
 
     delivery = order.delivery_cost
@@ -107,6 +110,10 @@ def checkout_success(request, order_number):
         'order_line_items': order_line_items,
         'delivery': delivery,
         'total': total,
+        'order_successful': True
     }
 
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}')
     return render(request, template, context)

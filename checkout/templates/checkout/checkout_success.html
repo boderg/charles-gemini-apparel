@@ -31,11 +31,11 @@
     <div class="row m-1 m-lg-0">
         <div class="item-details"> 
             <div class="col text-center p-3">
-                <h4>Your Order ( {{ item_count }} items ) </h4>
+                <h4>Your Order ( {{ order_line_items|length }} items ) </h4>
                 <hr>
             </div>
         <div class="row m-3"> 
-        {% for item in bag_items %} 
+        {% for item in order_line_items %} 
          
             <div class="col-md-3 mb-3 image-container">
                 <img class="w-100" src="{{ item.product.image.url }}" alt="">
@@ -46,7 +46,7 @@
                 <p><strong>Colour: </strong>{{ item.colour_name }}</p>
                 <p><strong>Size: </strong>{{ item.size_name }}</p>
                 <p><strong>Qty: </strong>{{ item.quantity }}</p>
-                <p><strong>Price: £ </strong>{{ item.product.price|floatformat:2 }}</p>
+                <p><strong>Price: £ </strong>{{ item.lineitem_total|floatformat:2 }}</p>
             </div>
        
         {% endfor %}  
@@ -62,7 +62,7 @@
 
             <div class="row">
                 <div class="col m-2 text-center">
-                    <a href="{% url 'bag' %}" class="btn btn-back">
+                    <a href="{% url 'all_garments' %}" class="btn btn-back">
                         <span><i class="fas fa-arrow-left fa-lg"></i></span>
                          Continue Shopping
                     </a>

@@ -42,7 +42,7 @@
 		</div>
 		{% endif %}
 	</div>
-	{% if bag_items %}
+	{% if bag_items and not order_successful %}
 	<div class="checkout-button">
 		<a href="{% url 'checkout' %}" class="btn btn-checkout w-100">
 			<img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
