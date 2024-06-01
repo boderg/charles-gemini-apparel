@@ -1,5 +1,4 @@
 
-
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -16,8 +15,8 @@ var style = {
         }
     },
     invalid: {
-        color: '#fa3127',
-        iconColor: '#fa3127'
+        color: '#c83232',
+        iconColor: '#c83232',
     }
 };
 
@@ -29,10 +28,10 @@ card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
     if (event.error) {
         var html = `
-            <span class="icon" style="color: #fa3127;">
+            <span class="icon" style="color: var(--error-colour);">
                 <i class="fas fa-times"></i>
             </span>
-            <span class="error" style="color: #fa3127;">
+            <span class="error" style="color: var(--error-colour);">
                 ${event.error.message}
             </span>`
         $(displayError).html(html);
@@ -55,10 +54,10 @@ form.addEventListener('submit', function(ev) {
         if (result.error) {
             var displayError = document.getElementById('card-errors');
             var html = `
-                <span class="icon" style="color: #fa3127;">
+                <span class="icon" style="color: var(--error-colour);">
                     <i class="fas fa-times"></i>
                 </span>
-                <span class="error" style="color: #fa3127;">
+                <span class="error" style="color: var(--error-colour);">
                     ${result.error.message}
                 </span>`;
             $(displayError).html(html);
