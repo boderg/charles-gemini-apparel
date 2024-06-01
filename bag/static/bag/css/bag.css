@@ -102,6 +102,18 @@
     background-color: var(--background);   
 }
 
+.update-icon:hover,
+.bin-icon:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.update-icon:active,
+.bin-icon:active {
+    background-color: var(--primary-colour-translucent);
+}
+
 .selector {
     border: var(--thin-border);
     border-radius: var(--border-radius);
