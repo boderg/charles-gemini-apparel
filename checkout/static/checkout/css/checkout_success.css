@@ -10,7 +10,8 @@
     background-color: var(--background-translucent);
 }
 
-.item-details {
+.item-details-container,
+.address-container {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background-translucent);

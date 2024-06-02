@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.db.models import Sum
 
 from checkout.models import Order, OrderLineItem
 from .forms import OrderForm
@@ -30,12 +31,15 @@ def checkout(request):
         }
 
         order_form = OrderForm(form_data)
+
         if order_form.is_valid():
             order = order_form.save(commit=False)
+
             bag_contents_data = bag_contents(request)
             order.order_total = bag_contents_data['total']
             order.delivery_cost = bag_contents_data['delivery']
             order.grand_total = bag_contents_data['grand_total']
+
             order.save()
 
             # Create order line items
@@ -44,13 +48,14 @@ def checkout(request):
                     Product, pk=item_details['item_id'])
                 colour = get_object_or_404(Colour, pk=item_details['colour'])
                 size = get_object_or_404(Size, pk=item_details['size'])
+                quantity = item_details['quantity']
+
                 line_item = OrderLineItem(
                     order=order,
                     product=product,
                     colour=colour,
                     size=size,
-                    quantity=item_details['quantity'],
-                    lineitem_total=item_details['quantity'] * product.price
+                    quantity=quantity,
                 )
                 line_item.save()
 
@@ -100,6 +105,7 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     order_line_items = order.lineitems.all()
 
+    subtotal = order.order_total
     delivery = order.delivery_cost
     total = order.grand_total
 
@@ -110,7 +116,8 @@ def checkout_success(request, order_number):
         'order_line_items': order_line_items,
         'delivery': delivery,
         'total': total,
-        'order_successful': True
+        'subtotal': subtotal,
+        'order_successful': True,
     }
 
     messages.success(request, f'Order successfully processed! \

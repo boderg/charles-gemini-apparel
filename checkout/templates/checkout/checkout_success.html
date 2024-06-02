@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load bag_tools %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static '/checkout/css/checkout_success.css' %}">
@@ -22,16 +21,17 @@
             <h3>Thank you for your order</h3>
             <hr>
             <p>Your order number is: {{ order.order_number }} <br>
+                Order Date: {{ order.date }} <br>
                 A confirmation email will be sent to: {{ order.email }} <br>
                 Your order details are below: <br>
-                
             </p>
+            <hr>
         </div>
     </div>
     <div class="row m-1 m-lg-0">
-        <div class="item-details"> 
+        <div class="item-details-container"> 
             <div class="col text-center p-3">
-                <h4>Your Order ( {{ order_line_items|length }} items ) </h4>
+                <h4>Your Order: </h4>
                 <hr>
             </div>
         <div class="row m-3"> 
@@ -46,26 +46,62 @@
                 <p><strong>Colour: </strong>{{ item.colour_name }}</p>
                 <p><strong>Size: </strong>{{ item.size_name }}</p>
                 <p><strong>Qty: </strong>{{ item.quantity }}</p>
-                <p><strong>Price: £ </strong>{{ item.lineitem_total|floatformat:2 }}</p>
+                {% if item.product.discount %}
+                    <p><strong>Item Price: £</strong><del>{{ item.product.price|floatformat:2 }}</del> £{{ item.product.discount_price|floatformat:2 }}</p>
+                    <p><strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}</p>
+                {% else %}
+                    <p><strong>Item Price: £</strong>{{ item.product.price|floatformat:2 }}</p>
+                    <p><strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}</p>
+                {% endif %}
+
             </div>
        
         {% endfor %}  
         </div>    
         <div class="row m-1">
             <div class="col text-end mb-3 px-3">
-                <strong>Subtotal: £{{ total|floatformat:2 }}</strong><br>
+                <strong>Subtotal: £{{ subtotal|floatformat:2 }}</strong><br>
                 <strong>Delivery: £{{ delivery|floatformat:2 }}</strong><br>
-                <strong>Order Total: £{{ grand_total|floatformat:2 }}</strong>
+                <strong>Order Total: £{{ total|floatformat:2 }}</strong>
                 <hr>
             </div>
-            
-
-            <div class="row">
-                <div class="col m-2 text-center">
-                    <a href="{% url 'all_garments' %}" class="btn btn-back">
-                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                         Continue Shopping
-                    </a>
+        </div>
+    </div>
+    <div class="address-container m-2 mx-auto p-2">
+        <div class="row m-1">
+            <div class="col-6 text-center p-3">
+                <h5>Delivery Info:</h5>
+            </div>
+            <div class="col-6 text-center p-3">
+                <h5>Billing Info:</h5>
+            </div>
+            <hr>
+            <div class="col-6 text-center p-2">
+                <small>{{ order.full_name }}<br>
+                    {{ order.street_address1 }}<br>
+                    {{ order.street_address2 }}<br>
+                    {{ order.town_or_city }}<br>
+                    {{ order.county }}<br>
+                    {{ order.postcode }}<br>
+                    {{ order.country }}</small>
+            </div>
+            <div class="col-6 text-center p-2">
+                <small>{{ order.full_name }}<br>
+                    {{ order.street_address1 }}<br>
+                    {{ order.street_address2 }}<br>
+                    {{ order.town_or_city }}<br>
+                    {{ order.county }}<br>
+                    {{ order.postcode }}<br>
+                    {{ order.country }}</small>
+            </div>
+            <hr>
+                <div class="row">
+                    <div class="col m-2 text-center">
+                        <a href="{% url 'all_garments' %}" class="btn btn-back">
+                            <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                            Continue Shopping
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

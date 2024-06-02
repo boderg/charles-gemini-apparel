@@ -10,6 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'get_sizes',
         'price',
         'discount',
+        'discount_price',
         'get_category',
         'description',
         'image',
