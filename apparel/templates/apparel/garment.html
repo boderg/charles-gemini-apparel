@@ -28,7 +28,7 @@
             <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
             <div class="fs-5 mb-3 sale-container-lg px-2">
                 Sale Price! &nbsp;
-                <span class="card-text discount text-center"><strike>£{{ product.price }}</strike> &nbsp;£{{ product.discount_price }}</span>
+                <span class="card-text discount text-center"><del>£{{ product.price }}</del> &nbsp;£{{ product.discount_price }}</span>
             </div>
             <p class="lead mb-5">{{ product.description }}</p>
             <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
