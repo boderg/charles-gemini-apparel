@@ -102,3 +102,23 @@
 .StripeElement--webkit-autofill {
     background-color: var(--background) !important;
 }
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-colour-translucent);
+    z-index: 9999;
+}
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary-colour-translucent);
+}
