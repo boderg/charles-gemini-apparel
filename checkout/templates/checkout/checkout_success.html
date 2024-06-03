@@ -79,19 +79,31 @@
             <div class="col-6 text-center p-2">
                 <small>{{ order.full_name }}<br>
                     {{ order.street_address1 }}<br>
+                {% if order.street_address2 %}
                     {{ order.street_address2 }}<br>
+                {% endif %}
                     {{ order.town_or_city }}<br>
+                {% if order.county %}
                     {{ order.county }}<br>
+                {% endif %}
+                {% if order.postcode %}
                     {{ order.postcode }}<br>
+                {% endif %}
                     {{ order.country }}</small>
             </div>
             <div class="col-6 text-center p-2">
                 <small>{{ order.full_name }}<br>
                     {{ order.street_address1 }}<br>
+                {% if order.street_address2 %}
                     {{ order.street_address2 }}<br>
+                {% endif %}
                     {{ order.town_or_city }}<br>
+                {% if order.county %}
                     {{ order.county }}<br>
+                {% endif %}
+                {% if order.postcode %}
                     {{ order.postcode }}<br>
+                {% endif %}
                     {{ order.country }}</small>
             </div>
             <hr>
