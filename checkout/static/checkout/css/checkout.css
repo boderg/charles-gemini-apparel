@@ -113,6 +113,17 @@ select option[value=""] {
     color: var(--secondary-colour-translucent) !important;
 }
 
+.form-check-input:checked {
+    color: var(--secondary-colour);
+    border: var(--thin-border);
+}
+
+.form-check-input:focus {
+    color: var(--secondary-colour);
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
 #loading-overlay {
     display: none;
     position: fixed;
