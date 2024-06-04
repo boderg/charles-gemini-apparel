@@ -10,22 +10,22 @@
 {% endblock %}
 
 {% block banner %}
-
+<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Bag Total: £{{ grand_total|floatformat:2 }}{% endif %}</h4>
 {% endblock %}
 
 {% block content %}
 
-<div class="container m-5 mx-auto  p-lg-5 p-2">
+<div class="container m-5 mx-auto p-2">
     <div class="row m-1 m-lg-0">
-        <div class="col">
+        <div class="col form-container p-2 p-md-3">
             <p>Default Delivery Information</p>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn float-right">Update Information</button>
+                <button class="btn btn-update float-end">Update Information</button>
             </form>
         </div>
-        <div class="col">
+        <div class="col form-container p-2 p-md-3">
             <p>Order History</p>
             {{ orders }}
         </div>

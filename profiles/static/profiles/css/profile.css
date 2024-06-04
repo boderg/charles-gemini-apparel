@@ -1,3 +1,33 @@
+.container {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.form-container {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update {
+    background-color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update:active {
+    background-color: var(--primary-colour-translucent) !important;
+}
+
 #profile-update-form .form-control,
 #id_default_country {
     color: var(--secondary-colour);
