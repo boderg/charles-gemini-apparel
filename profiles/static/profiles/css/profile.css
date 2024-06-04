@@ -1,0 +1,24 @@
+#profile-update-form .form-control,
+#id_default_country {
+    color: var(--secondary-colour);
+    background-color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+#profile-update-form .form-control:focus,
+#id_default_country:focus {
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+#profile-update-forminput::placeholder {
+    color: var(--secondary-colour-translucent);
+}
+
+#id_default_country option:not(:first-child) {
+    color: var(--secondary-colour);
+}
+
+#id_default_country option:first-child {
+    color: var(--secondary-colour-translucent);
+}

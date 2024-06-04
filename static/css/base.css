@@ -207,6 +207,10 @@ input.search:focus {
     box-shadow: var(--small-inset-box-shadow);
 }
 
+input[name='q']::placeholder {
+    color: var(--secondary-colour-translucent);
+}
+
 .search-btn {
     border: var(--thin-border);
     border-radius: var(--border-radius);
