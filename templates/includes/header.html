@@ -27,7 +27,11 @@
                         <li>
                             <hr class="dropdown-divider w-75 mx-auto">
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Account</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Account</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                        {% endif %}
                         <li><a class="dropdown-item" href="{% url 'bag' %}">Shopping Bag</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
                         <li><a class="dropdown-item" href="#">Contact</a></li>
