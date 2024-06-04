@@ -31,7 +31,7 @@
 .img-fluid {
     width: 200px;
     height: 200px;
-    background-color: var(--primary-colour-translucent-2);
+    background-color: var(--primary-colour-translucent);
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
@@ -50,7 +50,7 @@
 }
 
 .bag-table th {
-    background-color: var(--primary-colour-translucent);
+    background-color: var(--primary-colour-translucent-3);
     border-bottom: var(--thin-border);
 }
 

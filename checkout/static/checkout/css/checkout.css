@@ -103,6 +103,16 @@
     background-color: var(--background) !important;
 }
 
+select,
+select option {
+    color: var(--secondary-colour);
+}
+
+select:invalid,
+select option[value=""] {
+    color: var(--secondary-colour-translucent) !important;
+}
+
 #loading-overlay {
     display: none;
     position: fixed;

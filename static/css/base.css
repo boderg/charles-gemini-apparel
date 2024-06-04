@@ -8,10 +8,12 @@
 
     /** Colours **/
     --background: rgb(250, 250, 250);
-    --background-translucent: rgba(250, 250, 250, 0.7);
+    --background-translucent: rgba(250, 250, 250, 0.75);
+    --background-translucent-2: rgba(250, 250, 250, 0.5);
     --primary-colour: rgb(147, 255, 0);
     --primary-colour-translucent: rgba(147, 255, 0, 0.5);
     --primary-colour-translucent-2: rgba(147, 255, 0, 0.3);
+    --primary-colour-translucent-3: rgba(147, 255, 0, 0.7);
     --secondary-colour: rgb(55, 55, 55);
     --secondary-colour-translucent: rgba(55, 55, 55, 0.5);
     --warning-colour: #f9e154;
@@ -28,7 +30,6 @@
     --text-shadow: 1px 1px 1px rgb(55, 55, 55);
 
     /** Borders **/
-    --thick-border: 3px solid rgb(55, 55, 55);
     --thin-border: 1px solid rgb(55, 55, 55);
     --border-radius: 3px;
 
@@ -58,11 +59,11 @@ h1, h2, h3, h4, h5, h6, p, a, label, input, textarea, button, select, div {
 
 main {
     flex: 1 0 auto;
-    background-color: var(--background-translucent);    
+    background-color: var(--background-translucent-2);    
 }
 
 .banner {
-    background-color: var(--background-translucent);
+    background-color: var(--background-translucent-2);
 }
 
 /*** Navbar ***/
