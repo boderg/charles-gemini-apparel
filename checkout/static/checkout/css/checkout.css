@@ -21,7 +21,6 @@
 
 #payment-form input {
     color: var(--secondary-colour);
-    background-color: var(--background);
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
@@ -114,12 +113,11 @@ select option[value=""] {
 }
 
 .form-check-input:checked {
-    color: var(--secondary-colour);
     border: var(--thin-border);
+    background-color: var(--secondary-colour);
 }
 
 .form-check-input:focus {
-    color: var(--secondary-colour);
     border: var(--thin-border);
     box-shadow: var(--small-inset-box-shadow);
 }
