@@ -8,7 +8,9 @@ from .models import Order, OrderLineItem
 from apparel.models import Product, Colour, Size
 from profiles.models import UserProfile
 
+import stripe
 import time
+import json
 
 
 class StripeWH_Handler:
@@ -23,10 +25,10 @@ class StripeWH_Handler:
 
         cust_email = order.email
         subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            'confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
+            'confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
@@ -50,12 +52,15 @@ class StripeWH_Handler:
         """
         intent = event.data.object
         pid = intent.id
-        bag = intent.metadata.bag
+        bag = json.loads(intent.metadata.get('bag', '{}'))
         save_info = intent.metadata.save_info
 
-        billing_details = intent.charges.data[0].billing_details
+        charges = stripe.Charge.list(payment_intent=intent.id)
+        billing_details = charges.data[0].\
+            billing_details if charges.data else None
+        grand_total = round(charges.data[0].amount / 100, 2) \
+            if charges.data else None
         shipping_details = intent.shipping
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
