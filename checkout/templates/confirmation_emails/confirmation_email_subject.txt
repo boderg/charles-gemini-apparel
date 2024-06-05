@@ -1,0 +1,1 @@
+Charles Gemini Apparel onfirmation for Order Number {{ order.order_number }}
