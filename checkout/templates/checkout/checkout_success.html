@@ -109,10 +109,17 @@
             <hr>
                 <div class="row">
                     <div class="col m-2 text-center">
+                        {% if from_profile %}
+                        <a href="{% url 'profile' %}" class="btn btn-back">
+                            <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                            Back to Profile
+                        </a>
+                        {% else %}
                         <a href="{% url 'all_garments' %}" class="btn btn-back">
                             <span><i class="fas fa-arrow-left fa-lg"></i></span>
                             Continue Shopping
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

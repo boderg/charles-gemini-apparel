@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import UserProfile
-from .forms import UserProfileForm
 from django.contrib import messages
+
+from .models import UserProfile
+from checkout.models import Order
+
+from .forms import UserProfileForm
 
 
 def profile(request):
@@ -26,6 +29,36 @@ def profile(request):
         'form': form,
         'orders': orders,
         'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+def order_history(request, order_number):
+
+    """ A view to return the order history page """
+
+    order = get_object_or_404(Order, order_number=order_number)
+    order_line_items = order.lineitems.all()
+
+    subtotal = order.order_total
+    delivery = order.delivery_cost
+    total = order.grand_total
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'page_title': 'Order History',
+        'order': order,
+        'order_line_items': order_line_items,
+        'delivery': delivery,
+        'total': total,
+        'subtotal': subtotal,
+        'from_profile': True,
     }
 
     return render(request, template, context)

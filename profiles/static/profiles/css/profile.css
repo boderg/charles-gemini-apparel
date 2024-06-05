@@ -1,3 +1,19 @@
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
+.table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.table a {
+    color: var(--primary-colour);
+    text-shadow: var(--text-shadow);
+    text-decoration: none;
+}
+
 .container {
     background-color: var(--secondary-colour-translucent);
     border: var(--thin-border);
