@@ -252,21 +252,21 @@ input[name='q']::placeholder {
     color: var(--secondary-colour);
 }
 
-.card-body .btn {
+.card-body .btn-view {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
     color: var(--secondary-colour);
 }
 
-.card-body .btn:hover {
+.card-body .btn-view:hover {
     background-color: var(--background);
     color: var(--secondary-colour);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
 }
 
-.card-body .btn:active {
+.card-body .btn-view:active {
     background-color: var(--primary-colour-translucent);
 }
 
@@ -277,6 +277,24 @@ input[name='q']::placeholder {
 
 .carousel-indicators button {
     color: var(--secondary-colour);
+}
+
+.admin-buttons .btn-delete:hover {
+    background-color: var(--error-colour);
+    color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.admin-buttons .btn-edit:hover {
+    background-color: var(--info-colour);
+    color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
 }
 
 /*** Footer ***/
@@ -301,6 +319,25 @@ input[name='q']::placeholder {
 }
 
 .social-icon:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.btn-admin {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.btn-admin:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-admin:active {
     background-color: var(--primary-colour-translucent);
 }
 
