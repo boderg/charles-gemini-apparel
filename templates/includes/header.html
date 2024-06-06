@@ -36,6 +36,9 @@
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
                         <li><a class="dropdown-item" href="#">Contact</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#sizeModal">Size Guide</a></li>
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'add_garment' %}">Product Management</a></li>
+                        {% endif %}
                     </ul>
                     </li>
                 </ul> 
