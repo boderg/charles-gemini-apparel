@@ -80,9 +80,9 @@
                 <div class="row">
                     <div class="col-3">
                         {% if item.product.image %}
-                        <img class="w-100 bag-summary-img" src="{{ item.product.image.url }}" alt="">
+                        <img class="w-100 bag-summary-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                         {% else %}
-                        <img class="w-100 bag-summary-img" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="">
+                        <img class="w-100 bag-summary-img" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
                         {% endif %}
                     </div>
                     <div class="col-9">

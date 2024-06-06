@@ -34,9 +34,9 @@
                         <tr>
                             <td class="pt-5">
                                 {% if item.product.image %}
-                                <img src="{{ item.product.image.url }}" alt="" class="img-fluid h-auto">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid h-auto">
                                 {% else %}
-                                <img src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="" class="img-fluid h-auto">
+                                <img src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}" class="img-fluid h-auto">
                                 {% endif %}
                             </td>
                             

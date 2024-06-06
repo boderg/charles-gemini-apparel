@@ -20,9 +20,9 @@
                 <div class="image">
                     <span class="badge position-absolute">Sale</span>
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a new design">
+                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="{{ item.product.name }}">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel" alt="Image of a new design">
+                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel p-5" alt="{{ item.product.name }}">
                     {% endif %}
                 </div>
                 <div class="card-body">
@@ -43,9 +43,9 @@
             <div class="card mx-auto my-2">
                 <div class="image">
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="Image of a new design">
+                    <img src="{{ product.image.url }}" class="card-img-top apparel" alt="{{ item.product.name }}">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel" alt="Image of a new design">
+                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel" alt="{{ item.product.name }}">
                     {% endif %}
                 </div>
                 <div class="card-body">
