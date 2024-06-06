@@ -73,7 +73,7 @@ def add_garment(request):
             product.colours.set(form.cleaned_data['colours'])
             product.sizes.set(form.cleaned_data['sizes'])
             messages.success(request, 'Garment added successfully!')
-            return redirect(reverse('add_garment'))
+            return redirect(reverse('garment', args=[product.id]))
         else:
             messages.error(
                 request, 'Failed to add garment. \
@@ -88,3 +88,46 @@ def add_garment(request):
     }
 
     return render(request, template, context)
+
+
+def edit_garment(request, product_id):
+
+    """ A view to edit garments in the store """
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            product = form.save(commit=False)
+            product.save()
+            product.category.set(form.cleaned_data['category'])
+            product.colours.set(form.cleaned_data['colours'])
+            product.sizes.set(form.cleaned_data['sizes'])
+            messages.success(request, 'Garment updated successfully!')
+            return redirect(reverse('garment', args=[product.id]))
+        else:
+            messages.error(
+                request, 'Failed to update garment. \
+                    Please ensure the form is valid.')
+    else:
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'apparel/edit_garment.html'
+    context = {
+        'form': form,
+        'product': product,
+        'page_title': 'Product Management',
+    }
+
+    return render(request, template, context)
+
+
+def delete_garment(request, product_id):
+
+    """ A view to delete garments from the store """
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Garment deleted successfully!')
+    return redirect(reverse('all_garments'))

@@ -32,9 +32,22 @@
                     Sale!
                     <h5 class="card-text discount"><del>£{{ product.price }}</del> &nbsp;£{{ product.discount_price }}</h5>
                 </div>
-                    <a href="{% url 'garment' product.id %}" class="btn">
+                    <a href="{% url 'garment' product.id %}" class="btn btn-view">
                         View Product
                     </a>
+                    {% if request.user.is_superuser %}
+                    <hr>
+                    <small>Admin Only</small>
+                        <div class="mt-2 admin-buttons">
+                            <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
+                                Edit Product
+                            </a>
+                            <a href="{% url 'delete_garment' product.id %}" class="btn btn-delete btn-sm">
+                                Delete Product
+                            </a>
+                        </div>
+                    <hr>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -52,9 +65,22 @@
                     <h4 class="card-title">{{ product.name }}</h4>
                     <p class="card-text">{{ product.description }}</p>
                     <h5 class="card-text">£{{ product.price }}</h5>
-                    <a href="{% url 'garment' product.id %}" class="btn">
+                    <a href="{% url 'garment' product.id %}" class="btn btn-view">
                         View Product
                     </a>
+                    {% if request.user.is_superuser %}
+                    <hr>
+                    <small>Admin Only</small>
+                        <div class="mt-2 admin-buttons">
+                            <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
+                                Edit Product
+                            </a>
+                            <a href="{% url 'delete_garment' product.id %}" class="btn btn-delete btn-sm">
+                                Delete Product
+                            </a>
+                        </div>
+                    <hr>
+                    {% endif %}
                 </div>
             </div>
         </div>
