@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def all_garments(request):
@@ -57,3 +58,17 @@ def garment(request, product_id):
     }
 
     return render(request, 'apparel/garment.html', context)
+
+
+def add_garment(request):
+
+    """ A view to add new garments to the store """
+
+    form = ProductForm()
+    template = 'apparel/add_garment.html'
+    context = {
+        'form': form,
+        'page_title': 'Product Management',
+    }
+
+    return render(request, template, context)
