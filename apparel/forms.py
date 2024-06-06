@@ -7,15 +7,22 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
+    colours = forms.ModelMultipleChoiceField(
+        queryset=Colour.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    sizes = forms.ModelMultipleChoiceField(
+        queryset=Size.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+
+    category = forms.ModelMultipleChoiceField(
+        queryset=Category.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+    )
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        categories = Category.objects.all()
-        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
-
-        self.fields['category'].choices = friendly_names
-        colours = Colour.objects.all()
-        self.fields['colours'].choices = [(c.id, c.name) for c in colours]
-        sizes = Size.objects.all()
-        self.fields['sizes'].choices = [(s.id, s.name) for s in sizes]
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'

@@ -64,7 +64,23 @@ def add_garment(request):
 
     """ A view to add new garments to the store """
 
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save(commit=False)
+            product.save()
+            product.category.set(form.cleaned_data['category'])
+            product.colours.set(form.cleaned_data['colours'])
+            product.sizes.set(form.cleaned_data['sizes'])
+            messages.success(request, 'Garment added successfully!')
+            return redirect(reverse('add_garment'))
+        else:
+            messages.error(
+                request, 'Failed to add garment. \
+                    Please ensure the form is valid.')
+    else:
+        form = ProductForm()
+
     template = 'apparel/add_garment.html'
     context = {
         'form': form,
