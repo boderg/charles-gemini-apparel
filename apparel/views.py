@@ -84,7 +84,7 @@ def add_garment(request):
     template = 'apparel/add_garment.html'
     context = {
         'form': form,
-        'page_title': 'Product Management',
+        'page_title': 'Add New Garment',
     }
 
     return render(request, template, context)
@@ -117,7 +117,7 @@ def edit_garment(request, product_id):
     context = {
         'form': form,
         'product': product,
-        'page_title': 'Product Management',
+        'page_title': 'Garment Editor',
     }
 
     return render(request, template, context)
