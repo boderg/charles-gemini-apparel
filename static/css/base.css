@@ -235,13 +235,12 @@ input[name='q']::placeholder {
 
 .image {
     margin: 3px;
-    background-color: var(--primary-colour-translucent-2);
 }
 
 .card-img-top {
     border-radius: var(--border-radius);
     border: var(--thin-border);
-    background-color: var(--primary-colour-translucent-2);
+    background-color: var(--primary-colour-translucent);
 }
 
 .card-body {
