@@ -83,21 +83,6 @@
                     Add to bag
                 </button>
             </form>
-
-            {% if request.user.is_superuser %}
-            <hr>
-            <small>Admin Only</small>
-                <div class="mt-2 admin-buttons">
-                    <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
-                        Edit Product
-                    </a>
-                    <a href="{% url 'delete_garment' product.id %}" class="btn btn-delete btn-sm">
-                        Delete Product
-                    </a>
-                </div>
-            <hr>
-            {% endif %}
-
         </div>
     </div>
 
@@ -169,21 +154,6 @@
                     Add to bag
                 </button>
             </form>
-
-            {% if request.user.is_superuser %}
-            <hr>
-            <small>Admin Only</small>
-                <div class="mt-2 admin-buttons">
-                    <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
-                        Edit Product
-                    </a>
-                    <a href="{% url 'delete_garment' product.id %}" class="btn btn-delete btn-sm">
-                        Delete Product
-                    </a>
-                </div>
-                <hr>
-            {% endif %}
-
         </div>
     </div>
     
