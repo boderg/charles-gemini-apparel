@@ -128,8 +128,7 @@
     background-color: var(--secondary-colour-translucent);
 }
 
-.size-link-container .measure-icon,
-.selector .colors-icon {
+.size-link-container .measure-icon {
     height: 1.25rem;
     border: none;
 }
