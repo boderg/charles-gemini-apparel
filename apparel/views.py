@@ -131,3 +131,19 @@ def delete_garment(request, product_id):
     product.delete()
     messages.success(request, 'Garment deleted successfully!')
     return redirect(reverse('all_garments'))
+
+
+def list_garments(request):
+
+    """ A view to display all the garments """
+
+    products = Product.objects.all()
+    page_title = 'Garment Selection'
+
+    template = 'apparel/list_garments.html'
+    context = {
+        'products': products,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)

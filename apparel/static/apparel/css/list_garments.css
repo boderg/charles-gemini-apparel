@@ -1,0 +1,33 @@
+.container {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.product-list {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.edit-img {
+    width: 75px;
+    height: 75px;
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    background-color: var(--primary-colour-translucent);
+}
+
+.product-list li {
+    list-style-type: none;
+}
+
+.product-list li a {
+    text-decoration: none;
+    color: var(--secondary-colour);
+}
+
+.product-list li a:hover {
+    color: var(--primary-colour);
+    text-shadow: var(--text-shadow);
+}
