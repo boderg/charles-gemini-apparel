@@ -16,4 +16,8 @@ urlpatterns = [
     path('list_colours/', views.list_colours, name='list_colours'),
     path('delete_colour/<int:colour_id>/',
          views.delete_colour, name='delete_colour'),
+    path('add_size/', views.add_size, name='add_size'),
+    path('edit_size/<int:size_id>/', views.edit_size, name='edit_size'),
+    path('list_sizes/', views.list_sizes, name='list_sizes'),
+    path('delete_size/<int:size_id>/', views.delete_size, name='delete_size'),
 ]

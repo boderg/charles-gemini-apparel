@@ -226,3 +226,80 @@ def delete_colour(request, colour_id):
     messages.success(request, 'Colour deleted successfully!')
     return redirect(reverse('list_colours'))
 
+
+def add_size(request):
+
+    """ A view to add new sizes to the store """
+
+    if request.method == 'POST':
+        size_form = SizeForm(request.POST)
+        if size_form.is_valid():
+            size_form.save()
+            messages.success(request, 'Size added successfully!')
+            return redirect(reverse('add_size'))
+        else:
+            messages.error(
+                request, 'Failed to add size. \
+                    Please ensure the form is valid.')
+    else:
+        size_form = SizeForm()
+
+    template = 'apparel/add_size.html'
+    context = {
+        'size_form': size_form,
+        'page_title': 'Add New Size',
+    }
+
+    return render(request, template, context)
+
+
+def edit_size(request, size_id):
+
+    """ A view to edit sizes in the store """
+
+    size = get_object_or_404(Size, pk=size_id)
+    if request.method == 'POST':
+        size_form = SizeForm(request.POST, instance=size)
+        if size_form.is_valid():
+            size_form.save()
+            messages.success(request, 'Size updated successfully!')
+            return redirect(reverse('list_sizes'))
+        else:
+            messages.error(
+                request, 'Failed to update size. \
+                    Please ensure the form is valid.')
+    else:
+        size_form = SizeForm(instance=size)
+        messages.info(request, f'You are editing {size.name}')
+
+    template = 'apparel/edit_size.html'
+    context = {
+        'size_form': size_form,
+        'size': size,
+        'page_title': 'Size Editor',
+    }
+
+    return render(request, template, context)
+
+
+def list_sizes(request):
+
+    """ A view to display all the sizes """
+
+    sizes = Size.objects.all()
+    page_title = 'Size Selection'
+
+    template = 'apparel/list_sizes.html'
+    context = {
+        'sizes': sizes,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)
+
+
+def delete_size(request, size_id):
+    size = get_object_or_404(Size, pk=size_id)
+    size.delete()
+    messages.success(request, 'Size deleted successfully!')
+    return redirect(reverse('list_sizes'))

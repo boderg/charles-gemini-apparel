@@ -27,3 +27,9 @@ class ColourForm(forms.ModelForm):
     class Meta:
         model = Colour
         fields = ['name']
+
+
+class SizeForm(forms.ModelForm):
+    class Meta:
+        model = Size
+        fields = ['name']
