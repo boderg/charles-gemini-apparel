@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/apparel/css/add_garment.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+    - {{ page_title }}
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container m-5 mx-auto p-3">
+    <div class="row m-1 m-lg-0">
+        <div class="col col-md-6">
+            <h3>Add a Category</h3>
+        </div>
+    </div>
+    <div class="row m-1 m-lg-0">
+        <div class="col col-md-6 form-container p-3">
+            <form action="{% url 'add_category' %}" method="POST" class="form">
+                {% csrf_token %}
+                {{ category_form | crispy }}
+                <button type="submit" class="btn btn-submit">Add Category</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

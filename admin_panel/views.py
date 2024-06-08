@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from apparel.models import Product, Colour, Size
-from admin_panel.forms import ProductForm, ColourForm, SizeForm
+from apparel.models import Product, Category, Colour, Size
+from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 
 
 def admin_panel(request):
@@ -259,3 +259,81 @@ def delete_size(request, size_id):
     size.delete()
     messages.success(request, 'Size deleted successfully!')
     return redirect(reverse('list_sizes'))
+
+
+def add_category(request):
+
+    """ A view to add new categories to the store """
+
+    if request.method == 'POST':
+        category_form = CategoryForm(request.POST)
+        if category_form.is_valid():
+            category_form.save()
+            messages.success(request, 'Category added successfully!')
+            return redirect(reverse('add_category'))
+        else:
+            messages.error(
+                request, 'Failed to add category. \
+                    Please ensure the form is valid.')
+    else:
+        category_form = CategoryForm()
+
+    template = 'admin_panel/add_category.html'
+    context = {
+        'category_form': category_form,
+        'page_title': 'Add New Category',
+    }
+
+    return render(request, template, context)
+
+
+def edit_category(request, category_id):
+
+    """ A view to edit categories in the store """
+
+    category = get_object_or_404(Category, pk=category_id)
+    if request.method == 'POST':
+        category_form = CategoryForm(request.POST, instance=category)
+        if category_form.is_valid():
+            category_form.save()
+            messages.success(request, 'Category updated successfully!')
+            return redirect(reverse('list_categories'))
+        else:
+            messages.error(
+                request, 'Failed to update category. \
+                    Please ensure the form is valid.')
+    else:
+        category_form = CategoryForm(instance=category)
+        messages.info(request, f'You are editing {category.name}')
+
+    template = 'admin_panel/edit_category.html'
+    context = {
+        'category_form': category_form,
+        'category': category,
+        'page_title': 'Category Editor',
+    }
+
+    return render(request, template, context)
+
+
+def list_categories(request):
+
+    """ A view to display all the categories """
+
+    categories = Category.objects.all()
+    page_title = 'Category Selection'
+
+    template = 'admin_panel/list_categories.html'
+    context = {
+        'categories': categories,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)
+
+
+def delete_category(request, category_id):
+    category = get_object_or_404(Category, pk=category_id)
+    category.delete()
+    messages.success(request, 'Category deleted successfully!')
+    return redirect(reverse('list_categories'))

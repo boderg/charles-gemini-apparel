@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'apparel/css/list_garments.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container m-5 mx-auto p-3">
+    <h3 class="text-start p-3">Select a Category to Edit</h3>
+    <div class="row m1 m-lg-0">
+        <div class="col product-list p-3">
+            <ul>
+                {% for category in categories %}
+                <li>
+                    <h5>{{ category.name }}</h5>
+
+                    {% if request.user.is_superuser %}
+                        <div class="mt-2 admin-buttons">
+                            <a href="{% url 'edit_category' category.id %}" class="btn btn-edit btn-sm">
+                                Edit Category
+                            </a>
+                            <a href="{% url 'delete_category' category.id %}" class="btn btn-delete btn-sm">
+                                Delete Category
+                            </a>
+                        </div>
+                        <hr>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <li>No categories to display.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+  {% endblock %}
