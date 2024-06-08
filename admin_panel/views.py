@@ -82,7 +82,7 @@ def edit_garment(request, product_id):
                 request, 'Failed to update garment. \
                     Please ensure the form is valid.')
     else:
-        form = ProductForm(request.POST, request.FILES, instance=product)
+        form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
 
     template = 'admin_panel/edit_garment.html'
