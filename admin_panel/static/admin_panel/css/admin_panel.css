@@ -1,0 +1,28 @@
+.container {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.admin-card {
+    background-color: var(--background-translucent);
+}
+
+.admin-card:hover {
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.admin-card:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.admin-btn {
+    background-color: none;
+    color: none;
+    border: none;
+    border-radius: none;
+    width: 100%;
+}
