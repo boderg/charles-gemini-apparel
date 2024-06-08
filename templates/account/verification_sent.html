@@ -1,14 +1,25 @@
-{% extends "account/base_entrance.html" %}
-{% load i18n %}
-{% load allauth %}
-{% block head_title %}
-    {% trans "Verify Your Email Address" %}
-{% endblock head_title %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Verify Your Email Address" %}
-    {% endelement %}
-    <p>
-        {% blocktrans %}We have sent an email to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification email in your main inbox, check your spam folder. Please contact us if you do not receive the verification email within a few minutes.{% endblocktrans %}
-    </p>
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 login-outer p-3 p-lg-5">
+                <h1 class="title">
+                    Verify Your Email
+                </h1>
+                <div class="confirm-inner p-3 p-lg-5">
+                    <p>
+                        We have sent an email to you for verification. Follow the link provided to finalize the signup process. <br> 
+                        If you do not see the verification email in your main inbox, check your spam folder. <br> 
+                        Please contact us if you do not receive the verification email within a few minutes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
