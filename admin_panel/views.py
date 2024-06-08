@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from apparel.models import Product, Category, Colour, Size
 from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 
 
+@login_required
 def admin_panel(request):
 
     """A view that renders the admin panel page"""
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     template = 'admin_panel/admin_panel.html'
     page_title = 'Admin Panel'
@@ -16,9 +22,14 @@ def admin_panel(request):
     return render(request, template, context)
 
 
+@login_required
 def add_garment(request):
 
     """ A view to add new garments to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -46,9 +57,14 @@ def add_garment(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_garment(request, product_id):
 
     """ A view to edit garments in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -79,9 +95,14 @@ def edit_garment(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def list_garments(request):
 
     """ A view to display all the garments """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     products = Product.objects.all()
     page_title = 'Garment Selection'
@@ -95,9 +116,14 @@ def list_garments(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_garment(request, product_id):
 
     """ A view to delete garments from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
@@ -105,9 +131,14 @@ def delete_garment(request, product_id):
     return redirect(reverse('all_garments'))
 
 
+@login_required
 def add_colour(request):
 
     """ A view to add new colours to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         colour_form = ColourForm(request.POST)
@@ -131,9 +162,14 @@ def add_colour(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_colour(request, colour_id):
 
     """ A view to edit colours in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     colour = get_object_or_404(Colour, pk=colour_id)
     if request.method == 'POST':
@@ -160,9 +196,14 @@ def edit_colour(request, colour_id):
     return render(request, template, context)
 
 
+@login_required
 def list_colours(request):
 
     """ A view to display all the colours """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     colours = Colour.objects.all()
     page_title = 'Colour Selection'
@@ -176,16 +217,29 @@ def list_colours(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_colour(request, colour_id):
+
+    """ A view to delete colours from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     colour = get_object_or_404(Colour, pk=colour_id)
     colour.delete()
     messages.success(request, 'Colour deleted successfully!')
     return redirect(reverse('list_colours'))
 
 
+@login_required
 def add_size(request):
 
     """ A view to add new sizes to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         size_form = SizeForm(request.POST)
@@ -209,9 +263,14 @@ def add_size(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_size(request, size_id):
 
     """ A view to edit sizes in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     size = get_object_or_404(Size, pk=size_id)
     if request.method == 'POST':
@@ -238,9 +297,14 @@ def edit_size(request, size_id):
     return render(request, template, context)
 
 
+@login_required
 def list_sizes(request):
 
     """ A view to display all the sizes """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     sizes = Size.objects.all()
     page_title = 'Size Selection'
@@ -254,16 +318,29 @@ def list_sizes(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_size(request, size_id):
+
+    """ A view to delete sizes from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     size = get_object_or_404(Size, pk=size_id)
     size.delete()
     messages.success(request, 'Size deleted successfully!')
     return redirect(reverse('list_sizes'))
 
 
+@login_required
 def add_category(request):
 
     """ A view to add new categories to the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     if request.method == 'POST':
         category_form = CategoryForm(request.POST)
@@ -287,9 +364,14 @@ def add_category(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_category(request, category_id):
 
     """ A view to edit categories in the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     category = get_object_or_404(Category, pk=category_id)
     if request.method == 'POST':
@@ -316,9 +398,14 @@ def edit_category(request, category_id):
     return render(request, template, context)
 
 
+@login_required
 def list_categories(request):
 
     """ A view to display all the categories """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
     categories = Category.objects.all()
     page_title = 'Category Selection'
@@ -332,7 +419,15 @@ def list_categories(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_category(request, category_id):
+
+    """ A view to delete categories from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully!')
