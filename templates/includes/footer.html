@@ -41,17 +41,7 @@
 
         {% if request.user.is_superuser %}
         <div class="btn-group dropup mx-2">
-            <button type="button" class="btn btn-admin" data-bs-toggle="dropdown" aria-expanded="false">
-              Site Admin
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'add_garment' %}">Add a Garment</a></li>
-                <li><a class="dropdown-item" href="{% url 'list_garments' %}">Edit a Garment</a></li>
-                <li><a class="dropdown-item" href="{% url 'add_colour' %}">Add a Colour</a></li>
-                <li><a class="dropdown-item" href="{% url 'list_colours' %}">Edit a Colour</a></li>
-                <li><a class="dropdown-item" href="{% url 'add_size' %}">Add a Size</a></li>
-                <li><a class="dropdown-item" href="{% url 'list_sizes' %}">Edit a Size</a></li>
-            </ul>
+            <a class="btn btn-admin" href="{% url 'admin_panel' %}">Admin Panel</a>
           </div>
           {% endif %}
 
