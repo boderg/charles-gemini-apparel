@@ -22,5 +22,8 @@ class ProductForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple,
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+
+class ColourForm(forms.ModelForm):
+    class Meta:
+        model = Colour
+        fields = ['name']

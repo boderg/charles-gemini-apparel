@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Colour, Size
+from .forms import ProductForm, ColourForm, SizeForm
 
 
 def all_garments(request):
@@ -147,3 +147,82 @@ def list_garments(request):
     }
 
     return render(request, template, context)
+
+
+def add_colour(request):
+
+    """ A view to add new colours to the store """
+
+    if request.method == 'POST':
+        colour_form = ColourForm(request.POST)
+        if colour_form.is_valid():
+            colour_form.save()
+            messages.success(request, 'Colour added successfully!')
+            return redirect(reverse('add_colour'))
+        else:
+            messages.error(
+                request, 'Failed to add colour. \
+                    Please ensure the form is valid.')
+    else:
+        colour_form = ColourForm()
+
+    template = 'apparel/add_colour.html'
+    context = {
+        'colour_form': colour_form,
+        'page_title': 'Add New Colour',
+    }
+
+    return render(request, template, context)
+
+
+def edit_colour(request, colour_id):
+
+    """ A view to edit colours in the store """
+
+    colour = get_object_or_404(Colour, pk=colour_id)
+    if request.method == 'POST':
+        colour_form = ColourForm(request.POST, instance=colour)
+        if colour_form.is_valid():
+            colour_form.save()
+            messages.success(request, 'Colour updated successfully!')
+            return redirect(reverse('list_colours'))
+        else:
+            messages.error(
+                request, 'Failed to update colour. \
+                    Please ensure the form is valid.')
+    else:
+        colour_form = ColourForm(instance=colour)
+        messages.info(request, f'You are editing {colour.name}')
+
+    template = 'apparel/edit_colour.html'
+    context = {
+        'colour_form': colour_form,
+        'colour': colour,
+        'page_title': 'Colour Editor',
+    }
+
+    return render(request, template, context)
+
+
+def list_colours(request):
+
+    """ A view to display all the colours """
+
+    colours = Colour.objects.all()
+    page_title = 'Colour Selection'
+
+    template = 'apparel/list_colours.html'
+    context = {
+        'colours': colours,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)
+
+
+def delete_colour(request, colour_id):
+    colour = get_object_or_404(Colour, pk=colour_id)
+    colour.delete()
+    messages.success(request, 'Colour deleted successfully!')
+    return redirect(reverse('list_colours'))
+
