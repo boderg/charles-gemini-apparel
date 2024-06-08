@@ -269,9 +269,10 @@ input[name='q']::placeholder {
     background-color: var(--primary-colour-translucent);
 }
 
-.carousel-image {
+.carousel-item .carousel-image {
     border-radius: var(--border-radius);
     border: var(--thin-border);
+    background-color: var(--primary-colour-translucent);
 }
 
 .carousel-indicators button {
