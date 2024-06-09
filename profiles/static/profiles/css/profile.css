@@ -9,9 +9,16 @@
 }
 
 .table a {
-    color: var(--primary-colour);
-    text-shadow: var(--text-shadow);
+    color: var(--secondary-colour);
     text-decoration: none;
+}
+
+.table a:hover {
+    background-color: var(--secondary-colour);
+    color: var(--primary-colour);
+    padding: 2px;
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
 }
 
 .container {
