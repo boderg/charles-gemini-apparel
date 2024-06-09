@@ -3,8 +3,8 @@
 .modal-content {
     color: var(--secondary-colour);
     border: var(--thin-border);
-    border-radius: var(--border-radius);   
-    background-image: url('/static/images/backgrounds/white_bricks.webp');
+    border-radius: var(--border-radius);  
+    background-image: url('/static/images/backgrounds/4879447.webp');
 }
 
 .modal .modal-header {
@@ -117,7 +117,7 @@
 /*** About ***/
 
 #aboutModal .modal-content {
-    background-image: url('/static/images/backgrounds/white_bricks.webp');
+    background-image: url('/static/images/backgrounds/4879447.webp');
 }
 
 .modal-body .main-container {
