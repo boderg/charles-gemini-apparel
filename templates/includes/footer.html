@@ -2,20 +2,37 @@
 
 <div class="row footer">
 
-    <div class="col-8 offset-1 my-5">
-        <p>&copy; Copyright 2024 Charles Gemini Apparel</p>
+    <div class="col-4 offset-1 mt-2">
         <p>Designed & built by Simon Boylan for Code Institute Milestone Project 4.</p>
         <p>Visit my GitHub profile here:
             <a href="https://github.com/boderg" target="_blank" rel="noopener" aria-label="GitHub - Opens in a new tab">
-            <img src="{% static 'icons/github-icon.svg' %}" alt="GitHub Icon" class="social-icon p-1"></a>
-        </p>
-        <p>* Free delivery on orders over £{{ free_delivery_threshold }} applies to UK residents only</p>
-        
+                <img src="{% static 'icons/github-icon.svg' %}" alt="GitHub Icon" class="social-icon p-1">
+            </a>
+        </p>        
+        <p>&copy; Copyright 2024 Charles Gemini Apparel</p>
     </div>
     
+
+    <div class="col-3 mt-2">
+        <div class="btn-group">
+            <a class="btn btn-newsletter" href="{% url 'newsletter_signup' %}">Sign up for our newsletter</a>
+        </div>
+        <div class="mt-2">
+            <p>Sign up for our newsletter and be the first to know about exclusive offers and new products.</p>
+            <p>* Free delivery on orders over £{{ free_delivery_threshold }} applies to UK residents only</p>
+        </div>
+    </div>
+
+    <div class="col-1 mt-2">
+        {% if request.user.is_superuser %}
+        <div class="btn-group">
+            <a class="btn btn-admin" href="{% url 'admin_panel' %}">Admin Panel</a>
+        </div>
+        {% endif %}
+    </div>
       
 
-    <div class="col-2 my-5 social-icons">
+    <div class="col-2 social-icons">
         <ul class="list-inline social-links">
             <li class="list-inline-item">
                 <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook - Opens in a new tab">
@@ -38,14 +55,5 @@
                 </a>
             </li>
         </ul>
-
-        {% if request.user.is_superuser %}
-        <div class="btn-group dropup mx-2">
-            <a class="btn btn-admin" href="{% url 'admin_panel' %}">Admin Panel</a>
-          </div>
-          {% endif %}
-
     </div>
-    
-
 </div>

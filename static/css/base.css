@@ -303,7 +303,8 @@ input[name='q']::placeholder {
 .footer {
     flex-shrink: 0;
     background-color: var(--primary-colour-translucent);
-    border-top: var(--thin-border);  
+    border-top: var(--thin-border); 
+    padding-top: 20px; 
 }
 
 .social-icon{
@@ -323,14 +324,16 @@ input[name='q']::placeholder {
     background-color: var(--primary-colour-translucent);
 }
 
-.btn-admin {
+.btn-admin,
+.btn-newsletter {
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
     color: var(--secondary-colour);
 }
 
-.btn-admin:hover {
+.btn-admin:hover,
+.btn-newsletter:hover {
     background-color: var(--background);
     box-shadow: var(--small-box-shadow);
     transition: var(--transition-quick);
@@ -338,7 +341,8 @@ input[name='q']::placeholder {
     border-radius: var(--border-radius);
 }
 
-.btn-admin:active {
+.btn-admin:active,
+.btn-newsletter:active {
     background-color: var(--primary-colour-translucent);
 }
 
