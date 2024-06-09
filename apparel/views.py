@@ -29,6 +29,11 @@ def all_garments(request):
                 name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+        if not products:
+            messages.error(
+                request, "No garments found matching your search criteria!")
+            return redirect(reverse('all_garments'))
+
     page_title = category[0].friendly_name if category else 'All Designs'
 
     context = {
