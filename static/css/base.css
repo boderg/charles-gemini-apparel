@@ -186,6 +186,10 @@ ul.dropdown-menu {
     background-color: var(--background);
 }
 
+.dropdown .btn:active {
+    background-color: var(--primary-colour-translucent);
+}
+
 .dropdown-item:hover {
     background-color: var(--primary-colour-translucent);
 }
