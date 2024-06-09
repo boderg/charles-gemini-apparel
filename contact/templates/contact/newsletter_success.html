@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+    - {{ page_title }}
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container form-container m-5 mx-auto p-lg-5 p-2">
+    <div class="row m-1 m-lg-0">
+        <div class="col text-start mx-auto">
+            <h3>Your subscription has been successful!</h3>
+        </div>
+    </div>
+    <div class="row m-2 m-lg-0">
+        <div class="col text-container mx-auto p-5">
+            <h5 class="text-center">
+                Thank you for subscribing. <br> 
+                You will now receive our latest news and offers. 
+            </h5>
+            <p class="text-center" id="redirect" data-url="{% url 'all_garments' %}">
+                Redirecting you to the All Designs page in <span id="countdown">10</span> seconds...
+            </p>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'contact/js/success_timer.js' %}"></script>
+{% endblock %}

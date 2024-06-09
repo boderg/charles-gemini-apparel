@@ -35,3 +35,37 @@ def contact_success(request):
         'page_title': page_title
     }
     return render(request, template, context)
+
+
+def newsletter_signup(request):
+
+    """ View to display newsletter signup form """
+
+    page_title = 'Newsletter Signup'
+    if request.method == 'POST':
+        newsletter_form = NewsletterForm(request.POST)
+        if newsletter_form.is_valid():
+            newsletter_form.save()
+            messages.success(request, 'Thank you for subscribing!')
+            return redirect('newsletter_success')
+    else:
+        newsletter_form = NewsletterForm()
+
+    template = 'contact/newsletter_signup.html'
+    context = {
+        'page_title': page_title,
+        'newsletter_form': newsletter_form
+    }
+    return render(request, template, context)
+
+
+def newsletter_success(request):
+
+    """ View to display newsletter success page """
+
+    page_title = 'Newsletter Success'
+    template = 'contact/newsletter_success.html'
+    context = {
+        'page_title': page_title
+    }
+    return render(request, template, context)

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
+{% block extra_title %}
+    - {{ page_title }}
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container form-container m-5 mx-auto p-lg-5 p-2">
+    <div class="row m-1 m-lg-0">
+        <div class="col text-start mx-auto">
+            <h3>Please sign up for our newsletter</h3>
+        </div>
+    </div>
+    <div class="row m-2 m-lg-0">
+        <div class="col mx-auto">
+            <form action="{% url 'newsletter_signup' %}" method="POST" class="form p-3">
+                {% csrf_token %}
+                {{ newsletter_form | crispy }}
+
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}
