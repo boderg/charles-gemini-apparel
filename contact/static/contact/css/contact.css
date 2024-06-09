@@ -1,0 +1,51 @@
+.form-container {
+    background-color: var(--secondary-colour-translucent);
+    color: var(--secondary-colour);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.form {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    color: var(--secondary-colour);
+    border: var(--thin-border) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: var(--thin-border) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--small-inset-box-shadow) !important;
+}
+
+.btn-submit {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.btn-submit:hover {
+    border: var(--thin-border);
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.btn-submit:active {
+    background-color: var(--primary-colour-translucent) !important;
+}
+
+.text-container {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
