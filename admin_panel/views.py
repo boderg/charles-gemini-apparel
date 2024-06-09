@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from apparel.models import Product, Category, Colour, Size
 from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
+from contact.models import ContactForm
 
 
 @login_required
@@ -432,3 +433,39 @@ def delete_category(request, category_id):
     category.delete()
     messages.success(request, 'Category deleted successfully!')
     return redirect(reverse('list_categories'))
+
+
+@login_required
+def contact_list(request):
+
+    """ A view to display all the contacts """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    contacts = ContactForm.objects.all()
+    page_title = 'Contact List'
+
+    template = 'admin_panel/contact_list.html'
+    context = {
+        'contacts': contacts,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_contact(request, contact_id):
+
+    """ A view to delete contacts from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    contact = get_object_or_404(ContactForm, pk=contact_id)
+    contact.delete()
+    messages.success(request, 'Contact deleted successfully!')
+    return redirect(reverse('contact_list'))
