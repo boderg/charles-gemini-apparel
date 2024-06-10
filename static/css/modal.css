@@ -22,6 +22,7 @@
 
 .modal .modal-body {
     color: var(--secondary-colour);
+    background-color: var(--body-background);
 }
 
 .modal .text {

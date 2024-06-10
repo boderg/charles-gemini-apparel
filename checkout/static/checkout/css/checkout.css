@@ -36,7 +36,7 @@
 }
 
 .bag-summary-img {
-    background-color: var(--primary-colour-translucent);
+    background-color: var(--body-background-translucent);
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
@@ -49,8 +49,15 @@
 }
 
 .text-info {
+    color: var(--secondary-colour) !important;
+    text-decoration: none;
+}
+
+.text-info:hover {
     color: var(--primary-colour) !important;
-    text-shadow: var(--text-shadow);
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
 }
 
 .summary-container .btn-back,
@@ -58,6 +65,7 @@
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--background);
+    padding: 2px;
 }
 
 .summary-container .btn-back:hover,

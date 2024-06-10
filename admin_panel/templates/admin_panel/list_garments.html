@@ -13,9 +13,12 @@
             <ul>
                 {% for product in products %}
                 <li>
-                    <a href="{% url 'edit_garment' product.id %}">
+                    <a href="{% url 'edit_garment' product.id %}" class="image-link">
                     <img class="edit-img m-1" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    {{ product.name }}</a>
+                    </a>
+                    <a href="{% url 'edit_garment' product.id %}" class="name-link">
+                        {{ product.name }}
+                    </a>
                     {{ product.description }}
 
                     {% if request.user.is_superuser %}

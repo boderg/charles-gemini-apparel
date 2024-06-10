@@ -60,7 +60,7 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <div class="submit-button text-end px-2 px-lg-5 m-3">
-                    <button id="submit-button" class="btn btn-next">
+                    <button id="submit-button" class="btn btn-next p-2">
                         <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="payment-icon" alt="payment icon"> 
                         Complete Order
                     </button>
@@ -117,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col px-2 px-lg-5 m-3 text-end">
-                    <a href="{% url 'bag' %}" class="btn btn-back">
+                    <a href="{% url 'bag' %}" class="btn btn-back p-2">
                         <span><i class="fas fa-arrow-left fa-lg"></i></span>
                          Change Your Order
                     </a>

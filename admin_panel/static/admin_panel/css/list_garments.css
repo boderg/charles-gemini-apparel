@@ -15,7 +15,7 @@
     height: 75px;
     border-radius: var(--border-radius);
     border: var(--thin-border);
-    background-color: var(--primary-colour-translucent);
+    background-color: var(--body-background-translucent);
 }
 
 .product-list li {
@@ -27,7 +27,11 @@
     color: var(--secondary-colour);
 }
 
-.product-list li a:hover {
+.product-list li .name-link:hover {
     color: var(--primary-colour);
-    text-shadow: var(--text-shadow);
+    text-decoration: none;
+    background-color: var(--secondary-colour-translucent);
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+    padding: 2px;
 }
