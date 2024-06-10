@@ -1,1 +1,1 @@
-web: gunicorn charles-gemini-apparel.wsgi:application
+web: gunicorn main.wsgi:application
