@@ -1,0 +1,77 @@
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
+.table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.table a {
+    color: var(--secondary-colour);
+    text-decoration: none;
+}
+
+.table a:hover {
+    background-color: var(--secondary-colour);
+    color: var(--primary-colour);
+    padding: 2px;
+    border-radius: var(--border-radius);
+    border: var(--thin-border);
+}
+
+.container {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.form-container {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update {
+    background-color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-update:active {
+    background-color: var(--primary-colour-translucent) !important;
+}
+
+#profile-update-form .form-control,
+#id_default_country {
+    color: var(--secondary-colour);
+    background-color: var(--background);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+#profile-update-form .form-control:focus,
+#id_default_country:focus {
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+#profile-update-forminput::placeholder {
+    color: var(--secondary-colour-translucent);
+}
+
+#id_default_country option:not(:first-child) {
+    color: var(--secondary-colour);
+}
+
+#id_default_country option:first-child {
+    color: var(--secondary-colour-translucent);
+}

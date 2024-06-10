@@ -1,0 +1,119 @@
+/*** Login and Logout***/
+
+.login,
+.logout,
+.signup,
+.pw-reset {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.login-outer,
+.logout-outer,
+.signup-outer,
+.pw-reset-outer,
+.confirm-outer {
+    background-color: var(--secondary-colour-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.login a,
+.login-outer a,
+.signup-outer a,
+.pw-reset-outer a {
+    color: var(--secondary-colour);
+    text-decoration: none;
+}
+
+.login a:hover,
+.login-outer a:hover,
+.signup-outer a:hover,
+.pw-reset-outer a:hover {
+    color: var(--primary-colour);
+    text-decoration: underline;
+    text-shadow: var(--text-shadow);
+    padding: 2px;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.login .button,
+.logout .button,
+.signup .button,
+.pw-reset .button,
+.confirm .button {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.login .button:hover,
+.logout .button:hover,
+.signup .button:hover,
+.pw-reset .button:hover,
+.confirm .button:hover {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.login .button:active,
+.logout .button:active,
+.signup .button:active,
+.pw-reset .button:active,
+.confirm .button:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.login input,
+.signup input,
+.pw-reset input {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.login input:focus,
+.signup input:focus,
+.pw-reset input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.login .checkboxinput:focus {
+    background-color: var(--primary-colour-translucent);
+    color: var(--secondary-colour);
+}
+
+.login .form-check-input:checked {
+    background-color: var(--primary-colour-translucent);
+    color: var(--secondary-colour);
+    border: var(--thin-border);
+}
+
+.confirm-inner {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.confirm-inner a {
+    color: var(--secondary-colour);
+    text-decoration: none;
+}
+
+.confirm-inner a:hover {
+    color: var(--primary-colour);
+    text-decoration: underline;
+    text-shadow: var(--text-shadow);
+    background-color: var(--secondary-colour-translucent);
+    padding: 2px;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}

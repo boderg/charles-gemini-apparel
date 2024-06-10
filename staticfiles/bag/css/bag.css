@@ -1,0 +1,142 @@
+/*** Shopping Bag ***/
+
+.back-icon {
+    width: 2rem;
+}
+
+.fill-bag .btn-back,
+.bag-table .btn-back,
+.bag-table .btn-checkout {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.fill-bag .btn-back:hover,
+.bag-table .btn-back:hover,
+.bag-table .btn-checkout:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.fill-bag .btn-back:active,
+.bag-table .btn-back:active,
+.bag-table .btn-checkout:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.img-fluid {
+    width: 200px;
+    height: 200px;
+    background-color: var(--body-background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.table-responsive {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+    padding: 5px;
+}
+
+.bag-table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.bag-table th {
+    background-color: var(--background-translucent-2);
+    border-bottom: var(--thin-border);
+}
+
+.bag-table td {
+    background-color: var(--background-translucent);
+}
+
+.bag-table .btn-up,
+.bag-table .btn-down {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.bag-table .btn-up:hover,
+.bag-table .btn-down:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.bag-table .btn-up:active,
+.bag-table .btn-down:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.no-hover {
+    pointer-events: none;
+    background-color: var(--secondary-colour-translucent);
+}
+
+.selection input {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selection input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+.update-icon,
+.bin-icon {
+    height: 1.9rem;
+    padding: 3px;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);   
+}
+
+.update-icon:hover,
+.bin-icon:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.update-icon:active,
+.bin-icon:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.selector {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selector:hover {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.selector:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
+}
+
+@media screen and (min-width: 768px) {
+    .form .selection .input-group,
+    .form .selection .selector {
+        width: 50%;
+    }
+}

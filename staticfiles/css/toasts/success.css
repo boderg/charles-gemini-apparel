@@ -1,0 +1,52 @@
+.message-container {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    margin: 1rem;
+    z-index: 99999999999;
+}
+
+.success-header {
+    color: var(--secondary-colour);
+    background-color: var(--success-colour);
+    border-radius: var(--border-radius);
+    border-bottom: var(--thin-border);
+}
+
+.toast-header .success-icon {
+    width: 1rem;
+}
+
+.toast-body {
+    background-color: var(--background);
+    color: var(--secondary-colour);
+    border-radius: var(--border-radius);
+}
+
+.custom-toast {
+    overflow: visible;
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-box-shadow);
+}
+
+.checkout-button {
+    border-top: var(--thin-border);
+    background-color: var(--primary-colour-translucent);
+}
+
+.checkout-button:hover {
+    background-color: var(--background-translucent);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+}
+
+.checkout-button:active {
+    background-color: var(--primary-colour-translucent);
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
