@@ -15,17 +15,11 @@ def admin_panel(request):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    if request.method == 'GET':
-        page_title = 'Admin Panel'
-        context = {
-            'page_title': page_title
-        }
-        return render(request, 'admin_panel/admin_panel.html', context)
-
-    else:
-        messages.error(request, 'The page requested is \
-                       not available at this time.')
-        return render(reverse('home'))
+    page_title = 'Admin Panel'
+    context = {
+        'page_title': page_title
+    }
+    return render(request, 'admin_panel/admin_panel.html', context)
 
 
 @login_required
