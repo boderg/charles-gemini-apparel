@@ -15,12 +15,11 @@ def admin_panel(request):
     #     messages.error(request, 'Sorry, only store owners can do that.')
     #     return redirect(reverse('home'))
 
-    template = 'admin_panel/admin_panel.html'
     page_title = 'Admin Panel'
     context = {
         'page_title': page_title
     }
-    return render(request, template, context)
+    return render(request, 'admin_panel/admin_panel.html', context)
 
 
 @login_required
