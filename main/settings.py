@@ -36,6 +36,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 ALLOWED_HOSTS = [
     'charles-gemini-apparel-6a23d410a6ee.herokuapp.com',
+    'charles-gemini-apparel-6a23d410a6ee.herokuapp.com/admin_panel/',
     'localhost', '127.0.0.1']
 
 
