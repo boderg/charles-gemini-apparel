@@ -6,20 +6,28 @@ from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 from contact.models import ContactForm
 
 
-# @login_required
+@login_required
 def admin_panel(request):
-
+    print("Request method:", request.method)
     """A view that renders the admin panel page"""
 
-    # if not request.user.is_superuser:
-    #     messages.error(request, 'Sorry, only store owners can do that.')
-    #     return redirect(reverse('home'))
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
 
-    page_title = 'Admin Panel'
-    context = {
-        'page_title': page_title
-    }
-    return render(request, 'admin_panel/admin_panel.html', context)
+    if request.method == 'GET':
+        print("Admin panel accessed")
+        page_title = 'Admin Panel'
+        context = {
+            'page_title': page_title
+        }
+        return render(request, 'admin_panel/admin_panel.html', context)
+
+    else:
+        print("Bad request received")
+        messages.error(request, 'The page requested is \
+                       not available at this time.')
+        return render(reverse('home'))
 
 
 @login_required
