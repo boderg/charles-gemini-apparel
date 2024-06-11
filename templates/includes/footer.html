@@ -24,11 +24,11 @@
     </div>
 
     <div class="col-1 mt-2">
-        
+        {% if request.user.is_superuser %}
         <div class="btn-group">
             <a class="btn btn-admin" href="{% url 'admin_panel' %}">Admin Panel</a>
         </div>
-        
+        {% endif %}
     </div>
       
 
