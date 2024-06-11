@@ -32,10 +32,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://charles-gemini-apparel-6a23d410a6ee.herokuapp.com']
+    'https://charles-gemini-apparel-6a23d410a6ee.herokuapp.com/*']
 
 ALLOWED_HOSTS = [
-    'charles-gemini-apparel-6a23d410a6ee.herokuapp.com',
+    'charles-gemini-apparel-6a23d410a6ee.herokuapp.com/*',
     'localhost', '127.0.0.1']
 
 
