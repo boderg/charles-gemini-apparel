@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'charles-gemini-apparel.herokuapp.com',
+    'charles-gemini-apparel-6a23d410a6ee.herokuapp.com',
     'localhost', '127.0.0.1']
 
 
