@@ -6,14 +6,14 @@ from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 from contact.models import ContactForm
 
 
-@login_required
+# @login_required
 def admin_panel(request):
 
     """A view that renders the admin panel page"""
 
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+    # if not request.user.is_superuser:
+    #     messages.error(request, 'Sorry, only store owners can do that.')
+    #     return redirect(reverse('home'))
 
     template = 'admin_panel/admin_panel.html'
     page_title = 'Admin Panel'
