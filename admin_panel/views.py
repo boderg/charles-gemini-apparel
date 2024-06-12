@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from apparel.models import Product, Category, Colour, Size
 from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
-from contact.models import ContactForm
+from contact.models import ContactForm, Newsletter
 
 
 @login_required
@@ -468,3 +468,39 @@ def delete_contact(request, contact_id):
     contact.delete()
     messages.success(request, 'Contact deleted successfully!')
     return redirect(reverse('contact_list'))
+
+
+@login_required
+def newsletter_list(request):
+
+    """ A view to display all the newsletter subscribers """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    newsletters = Newsletter.objects.all()
+    page_title = 'Subscribers'
+
+    template = 'admin_panel/newsletter_list.html'
+    context = {
+        'newsletters': newsletters,
+        'page_title': page_title,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_newsletter(request, newsletter_id):
+
+    """ A view to delete newsletter subscribers from the store """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
+    newsletter.delete()
+    messages.success(request, 'Subscriber deleted successfully!')
+    return redirect(reverse('newsletter_list'))

@@ -33,4 +33,7 @@ urlpatterns = [
     path('contact_list/', views.contact_list, name='contact_list'),
     path('delete_contact/<int:contact_id>/',
          views.delete_contact, name='delete_contact'),
+    path('newsletter_list/', views.newsletter_list, name='newsletter_list'),
+    path('delete_newsletter/<int:newsletter_id>/',
+         views.delete_newsletter, name='delete_newsletter'),
 ]
