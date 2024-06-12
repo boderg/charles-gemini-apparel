@@ -44,3 +44,25 @@ input[type="file"],
     background-color: var(--background);
     color: var(--secondary-colour);
 }
+
+input[type="file"]:focus,
+.form-control:focus,
+.input-group-text:focus,
+.form-check-input:focus {
+    box-shadow: var(--small-inset-box-shadow) !important;
+    border-color: var(--secondary-colour) !important;
+}
+
+.form-check-input {
+    padding: .35rem !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--secondary-colour) !important;
+    border-color: var(--secondary-colour) !important;
+}
+
+.form-check-input:focus {
+    box-shadow: var(--small-inset-box-shadow) !important;
+    border-color: var(--secondary-colour) !important;
+}
