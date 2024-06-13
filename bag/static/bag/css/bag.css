@@ -41,6 +41,7 @@
     border-radius: var(--border-radius);
     background-color: var(--secondary-colour-translucent);
     padding: 5px;
+    box-shadow: var(--big-box-shadow);
 }
 
 .bag-table {

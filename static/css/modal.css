@@ -12,6 +12,7 @@
     background-color: var(--primary-colour-translucent);
     border-bottom: var(--thin-border);
     border-radius: var(--border-radius);
+    box-shadow: var(--small-box-shadow);
 }
 
 .modal-header .measure-icon {
@@ -37,6 +38,7 @@
     background-color: var(--primary-colour-translucent);
     border-radius: var(--border-radius);
     border: var(--thin-border);
+    box-shadow: var(--small-box-shadow);
 }
 
 .modal .modal-footer button {
@@ -125,6 +127,7 @@
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--secondary-colour-translucent);
+    box-shadow: var(--small-box-shadow);
 }
 
 .modal-body .image-container {

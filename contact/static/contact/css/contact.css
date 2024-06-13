@@ -3,6 +3,7 @@
     color: var(--secondary-colour);
     border-radius: var(--border-radius);
     border: var(--thin-border);
+    box-shadow: var(--big-box-shadow);
 }
 
 .form {

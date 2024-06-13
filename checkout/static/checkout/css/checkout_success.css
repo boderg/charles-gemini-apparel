@@ -2,6 +2,7 @@
     border: var(--thin-border);
     border-radius: var(--border-radius);
     background-color: var(--secondary-colour-translucent);
+    box-shadow: var(--big-box-shadow);
 }
 
 .order-details {

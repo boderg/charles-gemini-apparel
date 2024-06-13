@@ -5,6 +5,7 @@
     border: var(--thin-border);
     border-radius: var(--border-radius);
     color: var(--secondary-colour);
+    box-shadow: var(--big-box-shadow);
 }
 
 .single-product img {
