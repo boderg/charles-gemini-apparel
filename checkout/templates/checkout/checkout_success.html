@@ -47,8 +47,8 @@
         
             <div class="col-md-3 ps-5">
                 <h5>{{ item.product.name }}</h5>
-                <p><strong>Colour: </strong>{{ item.colour_name }}</p>
-                <p><strong>Size: </strong>{{ item.size_name }}</p>
+                <p><strong>Colour: </strong>{{ item.colour }}</p>
+                <p><strong>Size: </strong>{{ item.size }}</p>
                 <p><strong>Qty: </strong>{{ item.quantity }}</p>
                 {% if item.product.discount %}
                     <p><strong>Item Price: £</strong><del>{{ item.product.price|floatformat:2 }}</del> £{{ item.product.discount_price|floatformat:2 }}</p>
