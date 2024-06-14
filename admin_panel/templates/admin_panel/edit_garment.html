@@ -27,6 +27,12 @@
                 class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
+
+                {{ formset.management_form }}
+                {% for image_form in formset %}
+                    {{ image_form | crispy }}
+                {% endfor %}
+
                 <div class="float-end edit-buttons">
                     <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
                         <span><i class="fas fa-arrow-left fa-lg"></i></span>

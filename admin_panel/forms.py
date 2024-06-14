@@ -1,5 +1,11 @@
 from django import forms
 from apparel.models import Product, Category, Colour, Size
+from django.forms import modelformset_factory
+
+from .models import ProductImage
+
+ProductImageFormSet = modelformset_factory(
+        ProductImage, fields=('image',), extra=1, max_num=5)
 
 
 class CategoryForm(forms.ModelForm):

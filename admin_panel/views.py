@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from apparel.models import Product, Category, Colour, Size
 from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 from contact.models import ContactForm, Newsletter
+from .models import ProductImage
+from .forms import ProductImageFormSet
 
 
 @login_required
@@ -33,8 +35,15 @@ def add_garment(request):
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save(commit=False)
+        formset = ProductImageFormSet(
+            request.POST, request.FILES, queryset=ProductImage.objects.none())
+        if form.is_valid() and formset.is_valid():
+            product = form.save()
+            for image_form in formset:
+                if image_form.cleaned_data:
+                    image = image_form.save(commit=False)
+                    image.product = product
+                    image.save()
             product.save()
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
@@ -47,10 +56,12 @@ def add_garment(request):
                     Please ensure the form is valid.')
     else:
         form = ProductForm()
+        formset = ProductImageFormSet(queryset=ProductImage.objects.none())
 
     template = 'admin_panel/add_garment.html'
     context = {
         'form': form,
+        'formset': formset,
         'page_title': 'Add New Garment',
     }
 
@@ -69,8 +80,15 @@ def edit_garment(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            product = form.save(commit=False)
+        formset = ProductImageFormSet(
+            request.POST, request.FILES, queryset=ProductImage.objects.none())
+        if form.is_valid() and formset.is_valid():
+            product = form.save()
+            for image_form in formset:
+                if image_form.cleaned_data:
+                    image = image_form.save(commit=False)
+                    image.product = product
+                    image.save()
             product.save()
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
@@ -83,12 +101,15 @@ def edit_garment(request, product_id):
                     Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
+        formset = ProductImageFormSet(
+            queryset=ProductImage.objects.filter(product=product))
         messages.info(request, f'You are editing {product.name}')
 
     template = 'admin_panel/edit_garment.html'
     context = {
         'form': form,
         'product': product,
+        'formset': formset,
         'page_title': 'Garment Editor',
     }
 
