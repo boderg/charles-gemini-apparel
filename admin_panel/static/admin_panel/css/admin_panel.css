@@ -57,3 +57,9 @@ input[type="text"] {
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
+
+input[type="text"]:focus {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-inset-box-shadow);
+}
