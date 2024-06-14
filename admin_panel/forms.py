@@ -37,7 +37,14 @@ class ProductForm(forms.ModelForm):
 class ColourForm(forms.ModelForm):
     class Meta:
         model = Colour
-        fields = ['name']
+        fields = ['name', 'swatch']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].widget.attrs[
+            'placeholder'] = 'Enter a colour name'
+        self.fields['swatch'].widget.attrs[
+            'placeholder'] = 'Enter a hex color code'
 
 
 class SizeForm(forms.ModelForm):

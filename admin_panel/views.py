@@ -185,12 +185,13 @@ def edit_colour(request, colour_id):
     else:
         colour_form = ColourForm(instance=colour)
         messages.info(request, f'You are editing {colour.name}')
-
+    
     template = 'admin_panel/edit_colour.html'
     context = {
         'colour_form': colour_form,
         'colour': colour,
         'page_title': 'Colour Editor',
+        'swatch': colour.swatch,
     }
 
     return render(request, template, context)

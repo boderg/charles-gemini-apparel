@@ -4,6 +4,7 @@ from django.db import models
 # Colour model
 class Colour(models.Model):
     name = models.CharField(max_length=200)
+    swatch = models.CharField(max_length=7, null=True, blank=True)
 
     def __str__(self):
         return self.name

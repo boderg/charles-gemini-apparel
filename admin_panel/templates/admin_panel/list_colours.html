@@ -14,7 +14,7 @@
                 {% for colour in colours %}
                 <li>
                     <h5>{{ colour.name }}</h5>
-
+                    <div class="colour-swatch" style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
                     {% if request.user.is_superuser %}
                         <div class="mt-2 admin-buttons">
                             <a href="{% url 'edit_colour' colour.id %}" class="btn btn-edit btn-sm">
