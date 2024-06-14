@@ -133,3 +133,8 @@
     height: 1.25rem;
     border: none;
 }
+
+.colour-swatch {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}

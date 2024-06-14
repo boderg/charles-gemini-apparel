@@ -78,12 +78,20 @@
                 </div>
                 <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
                     <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                    Keep Shopping
+                    All Designs
                 </a>
                 <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
                     <span><i class="fas fa-plus fa-lg"></i></span>
                     Add to bag
                 </button>
+                <div class="row">
+                    <div class="col-12 d-flex flex-row align-items-center gap-3 swatches">
+                        {% for colour in colours %}
+                        <div class="colour-swatch" title="{{ colour.name }}"
+                        style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
+                        {% endfor %}
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -139,22 +147,43 @@
                     </div>
                     <div>
                         <select class="form-select selector" aria-label="Colour selector" name="colour" required>
-                            <span><img src="{% static 'icons/colors-icon.svg' %}" class="colors-icon px-2" alt="colors icon"> Select Colour</span>
-                            <option selected hidden value="">Select Colour</option>
+                            <span>
+                                <img src="{% static 'icons/colors-icon.svg' %}" class="colors-icon px-2" alt="colors icon"> 
+                                Select Colour
+                            </span>
+                            <option selected hidden value="">
+                                Select Colour
+                            </option>
                             {% for colour in colours %}
-                            <option value="{{ colour.id }}">{{ colour.name }}</option>
+                            <option value="{{ colour.id }}">
+                                {{ colour.name }}
+                            </option>
                             {% endfor %}
                         </select>   
                     </div>  
                 </div>
                 <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
-                    <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                    <span>
+                        <i class="fas fa-arrow-left fa-lg"></i>
+                    </span>
                     All Designs
                 </a>
                 <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
-                   <span><i class="fas fa-plus fa-lg"></i></span>
+                   <span>
+                    <i class="fas fa-plus fa-lg"></i>
+                    </span>
                     Add to bag
                 </button>
+                <div class="row">
+                    <div>
+                        Available Colours
+                    </div>
+                    <div class="col-12 d-flex flex-row align-items-center gap-3 swatches">
+                        {% for colour in colours %}
+                        <div class="colour-swatch" title="{{ colour.name }}"
+                        style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
+                        {% endfor %}
+                    </div>
             </form>
         </div>
     </div>
