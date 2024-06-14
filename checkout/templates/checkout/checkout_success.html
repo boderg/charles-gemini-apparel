@@ -38,7 +38,7 @@
         {% for item in order_line_items %} 
          
             <div class="col-md-3 mb-3 image-container">
-                {% if product.image %}
+                {% if item.product.image %}
                 <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 {% else %}
                 <img class="w-100 p-3" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">

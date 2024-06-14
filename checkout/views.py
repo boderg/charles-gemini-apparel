@@ -78,6 +78,7 @@ def checkout(request):
                     colour=colour,
                     size=size,
                     quantity=quantity,
+                    image=product.image.url,
                 )
                 line_item.save()
 

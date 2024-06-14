@@ -79,6 +79,7 @@ class OrderLineItem(models.Model):
     size = models.ForeignKey(
         'apparel.Size', null=True, blank=True, on_delete=models.SET_NULL)
     quantity = models.IntegerField(null=False, blank=False, default=0)
+    image = models.URLField(max_length=1024, null=True, blank=True)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
         null=False, blank=False, editable=False)
