@@ -138,3 +138,7 @@
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
+
+.carousel-img {
+    background-color: var(--body-background-translucent);
+}
