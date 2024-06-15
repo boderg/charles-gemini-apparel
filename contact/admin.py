@@ -3,15 +3,16 @@ from .models import ContactForm, Newsletter
 
 
 class ContactFormAdmin(admin.ModelAdmin):
-    list_display = (
+    readonly_fields = (
         'name',
         'email',
         'date_sent',
+        'message',
     )
 
 
 class NewsletterAdmin(admin.ModelAdmin):
-    list_display = (
+    readonly_fields = (
         'email',
         'date_added',
     )
