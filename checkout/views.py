@@ -63,13 +63,18 @@ def checkout(request):
                         colour = get_object_or_404(
                             Colour, pk=item_details['colour'])
                         size = get_object_or_404(Size, pk=item_details['size'])
+                        product_image = product.productimage_set.first()
+                        if product_image:
+                            image = product_image.image
+                        else:
+                            image = None
                         OrderLineItem.objects.create(
                             order=order,
                             product=product,
                             colour=colour,
                             size=size,
                             quantity=item_details['quantity'],
-                            image=product.image.url,
+                            image=image,
                         )
 
                     request.session['bag'] = {}

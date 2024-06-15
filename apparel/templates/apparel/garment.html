@@ -21,8 +21,8 @@
 
     <div class="row single-product py-2 pe-md-2 align-items-center">
         <div class="col-md-6">
-            {% if product.image %}
-            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ item.product.name }}"/>
+            {% if product.productimage_set.all %}
+            <img class="card-img-top" src="{{ product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}"/>
             {% else %}
             <img class="card-img-top p-5" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
             {% endif %}
@@ -100,8 +100,8 @@
 
     <div class="row single-product py-2 pe-md-2 align-items-center">
         <div class="col-md-6">
-            {% if product.image %}
-            <img class="card-img-top" src="{{ product.image.url }}" alt="{{ item.product.name }}"/>
+            {% if product.productimage_set.all %}
+            <img class="card-img-top" src="{{ product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}"/>
             {% else %}
             <img class="card-img-top p-5" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
             {% endif %}

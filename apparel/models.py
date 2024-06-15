@@ -41,8 +41,6 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, blank=True)
     colours = models.ManyToManyField(Colour, blank=True)
     sizes = models.ManyToManyField(Size, blank=True)
-    image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     # Discounts
     discount = models.BooleanField(default=False)
     discount_price = models.DecimalField(
@@ -50,3 +48,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# Image model
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='product_images/')
+
+    def __str__(self):
+        return self.product.name

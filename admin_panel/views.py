@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from apparel.models import Product, Category, Colour, Size
 from admin_panel.forms import ProductForm, CategoryForm, ColourForm, SizeForm
 from contact.models import ContactForm, Newsletter
-from .models import ProductImage
+from apparel.models import ProductImage
 from .forms import ProductImageFormSet
 
 
@@ -206,7 +206,7 @@ def edit_colour(request, colour_id):
     else:
         colour_form = ColourForm(instance=colour)
         messages.info(request, f'You are editing {colour.name}')
-    
+
     template = 'admin_panel/edit_colour.html'
     context = {
         'colour_form': colour_form,

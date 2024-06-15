@@ -14,7 +14,7 @@
                 {% for product in products %}
                 <li>
                     <a href="{% url 'edit_garment' product.id %}" class="image-link">
-                    <img class="edit-img m-1" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="edit-img m-1" src="{{ product.productimage_set.all.0.image.url }}" alt="{{ product.name }}">
                     </a>
                     <a href="{% url 'edit_garment' product.id %}" class="name-link">
                         {{ product.name }}

@@ -8,7 +8,7 @@ def all_garments(request):
 
     """A view to display all garments, search queries and sorting """
 
-    products = Product.objects.all()
+    products = Product.objects.all().prefetch_related('productimage_set')
     query = None
     category = None
 
