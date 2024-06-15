@@ -40,8 +40,8 @@ def checkout(request):
         if order_form.is_valid():
             bag = request.session.get('bag', {})
             if not bag:
-                messages.error(request,
-                               "There's nothing in your bag at the moment")
+                messages.error(
+                    request, "There's nothing in your bag at the moment")
                 return redirect(reverse('products'))
 
             try:
@@ -56,6 +56,7 @@ def checkout(request):
                     order.grand_total = bag_contents_data['grand_total']
                     order.save()
 
+                    # Save order line items
                     for item_key, item_details in bag.items():
                         product = get_object_or_404(
                             Product, pk=item_details['item_id'])
@@ -76,19 +77,19 @@ def checkout(request):
                     return redirect(reverse(
                         'checkout_success', args=[order.order_number]))
             except Exception as e:
-                messages.error(request,
-                               'An error occurred while processing your order.\
-                                Please try again.')
+                messages.error(
+                    request, 'An error occurred while processing your order. \
+                        Please try again.')
                 return redirect(reverse('checkout'))
 
         else:
-            messages.error(request,
-                           'There was an error with your form. \
-                            Please double check your information.')
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+
     else:
         if not request.session.get('bag'):
-            messages.error(request,
-                           "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -117,7 +118,7 @@ def checkout(request):
 
     if not settings.STRIPE_PUBLIC_KEY:
         messages.warning(request, 'Stripe public key is missing. \
-                         Did you forget to set it in your environment?')
+            Did you forget to set it in your environment?')
 
     return render(request, 'checkout/checkout.html', {
         'page_title': 'Checkout',
