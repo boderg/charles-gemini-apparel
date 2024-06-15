@@ -5,7 +5,7 @@ from django.forms import modelformset_factory
 from apparel.models import ProductImage
 
 ProductImageFormSet = modelformset_factory(
-        ProductImage, fields=('image',), extra=1, max_num=5)
+        ProductImage, fields=('image',), min_num=5, max_num=5, can_delete=True)
 
 
 class CategoryForm(forms.ModelForm):

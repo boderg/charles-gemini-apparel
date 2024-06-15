@@ -42,6 +42,13 @@
                 </div>
             </form>
         </div>
+        <div class="col col-md-6">
+            {% for image in product.productimage_set.all %}
+            <div class="img-container mx-auto w-50 mb-3">
+                <img src="{{ image.image.url }}" alt="{{ product.name }}" class="img-fluid">
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

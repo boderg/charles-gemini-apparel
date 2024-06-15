@@ -67,3 +67,9 @@ input[type="file"]:focus,
     box-shadow: var(--small-inset-box-shadow) !important;
     border-color: var(--secondary-colour) !important;
 }
+
+.img-container {
+    background-color: var(--body-background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}

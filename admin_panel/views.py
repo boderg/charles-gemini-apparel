@@ -87,8 +87,9 @@ def edit_garment(request, product_id):
             for image_form in formset:
                 if image_form.cleaned_data:
                     image = image_form.save(commit=False)
-                    image.product = product
-                    image.save()
+                    if not image.id:
+                        image.product = product
+                        image.save()
             product.save()
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
