@@ -60,7 +60,7 @@ def add_garment(request):
                 # Add default image if the first image field is not populated
                 default_image = ProductImage(
                     product=product,
-                    image='path/to/default/image.jpg'  # noqa: Replace with actual path to default image
+                    image='image-not-found-icon.svg'  # noqa: Replace with actual path to default image
                 )
                 default_image.save()
 
