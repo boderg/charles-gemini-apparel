@@ -26,7 +26,6 @@ def admin_panel(request):
 
 @login_required
 def add_garment(request):
-
     """ A view to add new garments to the store """
 
     if not request.user.is_superuser:
@@ -37,23 +36,42 @@ def add_garment(request):
         form = ProductForm(request.POST, request.FILES)
         formset = ProductImageFormSet(
             request.POST, request.FILES, queryset=ProductImage.objects.none())
+
         if form.is_valid() and formset.is_valid():
             product = form.save()
-            for image_form in formset:
-                if image_form.cleaned_data:
-                    image = image_form.save(commit=False)
-                    image.product = product
-                    image.save()
-            product.save()
+            existing_images = set()
+
+            # Flag to check if the first image field is populated
+            first_image_populated = False
+
+            for i, image_form in enumerate(formset):
+                if image_form.cleaned_data and \
+                   image_form.cleaned_data.get('image'):
+                    image = image_form.cleaned_data['image']
+                    if i == 0:
+                        first_image_populated = True
+                    if image not in existing_images:
+                        product_image = image_form.save(commit=False)
+                        product_image.product = product
+                        product_image.save()
+                        existing_images.add(image)
+
+            if not first_image_populated:
+                # Add default image if the first image field is not populated
+                default_image = ProductImage(
+                    product=product,
+                    image='path/to/default/image.jpg'  # noqa: Replace with actual path to default image
+                )
+                default_image.save()
+
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
             product.sizes.set(form.cleaned_data['sizes'])
             messages.success(request, 'Garment added successfully!')
             return redirect(reverse('garment', args=[product.id]))
         else:
-            messages.error(
-                request, 'Failed to add garment. \
-                    Please ensure the form is valid.')
+            messages.error(request, 'Failed to add garment. \
+                           Please ensure the form is valid.')
     else:
         form = ProductForm()
         formset = ProductImageFormSet(queryset=ProductImage.objects.none())
