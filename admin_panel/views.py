@@ -84,18 +84,16 @@ def edit_garment(request, product_id):
             request.POST, request.FILES, queryset=ProductImage.objects.none())
         if form.is_valid() and formset.is_valid():
             product = form.save()
+            existing_images = set(
+                product.productimage_set.values_list('image', flat=True))
             for image_form in formset:
-                if image_form.cleaned_data:
-                    image = image_form.save(commit=False)
-                    if image.id:  # If image already exists, update it
-                        existing_image = ProductImage.objects.get(id=image.id)
-                        if image.image:  # Check if an image file is present
-                            existing_image.image = image.image
-                            existing_image.save()
-                    else:  # If image does not exist, create a new one
-                        if image.image:  # Check if an image file is present
-                            image.product = product
-                            image.save()
+                if image_form.cleaned_data and \
+                   image_form.cleaned_data.get('image'):
+                    image = image_form.cleaned_data['image']
+                    if image not in existing_images:
+                        product_image = image_form.save(commit=False)
+                        product_image.product = product
+                        product_image.save()
             product.save()
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
@@ -112,11 +110,16 @@ def edit_garment(request, product_id):
             queryset=ProductImage.objects.filter(product=product))
         messages.info(request, f'You are editing {product.name}')
 
+    first_image = formset.forms[0].instance if formset.forms else None
+    first_image_url = first_image.image.url if first_image and \
+        first_image.image else 'product_images/image-not-found-icon.svg'
+
     template = 'admin_panel/edit_garment.html'
     context = {
         'form': form,
         'product': product,
         'formset': formset,
+        'first_image_url': first_image_url,
         'page_title': 'Garment Editor',
     }
 
