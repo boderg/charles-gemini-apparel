@@ -55,8 +55,7 @@ class ProductImage(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE)
     image = models.ImageField(
-        upload_to='product_images/', blank=True, null=True,
-        default='product_images/image-not-found-icon.svg')
+        upload_to='product_images/', blank=True, null=True)
 
     def __str__(self):
         return self.product.name
