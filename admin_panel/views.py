@@ -87,9 +87,15 @@ def edit_garment(request, product_id):
             for image_form in formset:
                 if image_form.cleaned_data:
                     image = image_form.save(commit=False)
-                    if not image.id:
-                        image.product = product
-                        image.save()
+                    if image.id:  # If image already exists, update it
+                        existing_image = ProductImage.objects.get(id=image.id)
+                        if image.image:  # Check if an image file is present
+                            existing_image.image = image.image
+                            existing_image.save()
+                    else:  # If image does not exist, create a new one
+                        if image.image:  # Check if an image file is present
+                            image.product = product
+                            image.save()
             product.save()
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
