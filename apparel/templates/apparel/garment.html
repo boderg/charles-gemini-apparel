@@ -15,21 +15,21 @@
 
 {% block content %}
         
-<div class="container w-75 my-3 my-lg-5">
+<div class="container col-11 col-md-8 mx-auto my-3 my-lg-5">
 
     {% if product.discount %}
 
-    <div class="row single-product py-2 pe-md-2 align-items-center">
-        <div class="col-md-6">
+    <div class="row single-product p-2 align-items-center">
+        <div class="col-md-6 p-1 ps-md-1">
             {% if product.productimage_set.all %}
             
             {% include 'includes/product_carousel.html' %}
 
             {% else %}
-            <img class="card-img-top p-5" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
+            <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
             {% endif %}
         </div>
-        <div class="col-md-6 text-start p-3 my-auto">
+        <div class="col-md-6 text-start p-3 mt-2">
             <span class="badge fs-5 mb-2">Sale</span>
             <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
             <div class="fs-5 mb-3 sale-container-lg px-2">
@@ -100,17 +100,17 @@
 
     {% else %}
 
-    <div class="row single-product py-2 pe-md-2 align-items-center">
-        <div class="col-md-6">
+    <div class="row single-product p-2 align-items-center">
+        <div class="col-md-6 p-1 ps-md-1">
             {% if product.productimage_set.all %}
            
             {% include 'includes/product_carousel.html' %}
 
             {% else %}
-            <img class="card-img-top p-5" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
+            <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
             {% endif %}
         </div>
-        <div class="col-md-6 text-start p-3 my-auto">
+        <div class="col-md-6 text-start p-3 mt-2">
             
             <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
             <div class="fs-5 mb-3">

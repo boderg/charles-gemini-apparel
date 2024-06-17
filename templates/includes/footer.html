@@ -2,7 +2,7 @@
 
 <div class="row footer">
 
-    <div class="col-4 offset-1 mt-2">
+    <div class="col-12 col-md-4 offset-md-1 mt-2 px-5 px-md-0">
         <p>Designed & built by Simon Boylan for Code Institute Milestone Project 4.</p>
         <p>Visit my GitHub profile here:
             <a href="https://github.com/boderg" target="_blank" rel="noopener" aria-label="GitHub - Opens in a new tab">
@@ -13,7 +13,7 @@
     </div>
     
 
-    <div class="col-3 mt-2">
+    <div class="col-12 col-md-3 mt-2 px-5 px-md-0">
         <div class="btn-group">
             <a class="btn btn-newsletter" href="{% url 'newsletter_signup' %}">Sign up for our newsletter</a>
         </div>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="col-1 mt-2">
+    <div class="col-12 col-md-1 mt-2 px-5 px-md-0">
         {% if request.user.is_superuser %}
         <div class="btn-group">
             <a class="btn btn-admin" href="{% url 'admin_panel' %}">Admin Panel</a>
@@ -32,7 +32,7 @@
     </div>
       
 
-    <div class="col-2 social-icons">
+    <div class="col-12 col-md-1 col-lg-2 px-5 px-md-0 social-icons">
         <ul class="list-inline social-links">
             <li class="list-inline-item">
                 <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook - Opens in a new tab">
