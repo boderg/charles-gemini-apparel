@@ -88,57 +88,69 @@ def add_garment(request):
 
 @login_required
 def edit_garment(request, product_id):
-
-    """ A view to edit garments in the store """
+    """ A view to edit existing garments in the store """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         formset = ProductImageFormSet(
-            request.POST, request.FILES, queryset=ProductImage.objects.none())
+            request.POST, request.FILES,
+            queryset=ProductImage.objects.filter(product=product))
+
         if form.is_valid() and formset.is_valid():
             product = form.save()
-            existing_images = set(
-                product.productimage_set.values_list('image', flat=True))
+            existing_images = set(ProductImage.objects.filter(
+                product=product).values_list('image', flat=True))
+            new_images = set()
+
             for image_form in formset:
                 if image_form.cleaned_data and \
                    image_form.cleaned_data.get('image'):
                     image = image_form.cleaned_data['image']
+                    new_images.add(image)
                     if image not in existing_images:
                         product_image = image_form.save(commit=False)
                         product_image.product = product
                         product_image.save()
-            product.save()
+                    else:
+                        existing_images.remove(image)
+
+            # Remove images that are no longer in the formset
+            for image in existing_images:
+                ProductImage.objects.filter(
+                    product=product, image=image).delete()
+
+            if not new_images:
+                # Add default image if no new images were added
+                default_image, created = ProductImage.objects.get_or_create(
+                    product=product,
+                    defaults={'image': 'image-not-found-icon.svg'}  # noqa: Replace with actual path to default image
+                )
+
             product.category.set(form.cleaned_data['category'])
             product.colours.set(form.cleaned_data['colours'])
             product.sizes.set(form.cleaned_data['sizes'])
             messages.success(request, 'Garment updated successfully!')
             return redirect(reverse('garment', args=[product.id]))
         else:
-            messages.error(
-                request, 'Failed to update garment. \
-                    Please ensure the form is valid.')
+            messages.error(request, 'Failed to update garment. \
+                           Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         formset = ProductImageFormSet(
             queryset=ProductImage.objects.filter(product=product))
-        messages.info(request, f'You are editing {product.name}')
-
-    first_image = formset.forms[0].instance if formset.forms else None
-    first_image_url = first_image.image.url if first_image and \
-        first_image.image else 'product_images/image-not-found-icon.svg'
 
     template = 'admin_panel/edit_garment.html'
     context = {
         'form': form,
-        'product': product,
         'formset': formset,
-        'first_image_url': first_image_url,
-        'page_title': 'Garment Editor',
+        'product': product,
+        'page_title': 'Edit Garment',
     }
 
     return render(request, template, context)
