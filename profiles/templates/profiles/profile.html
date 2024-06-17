@@ -18,7 +18,11 @@
 <div class="container m-5 mx-auto p-2">
     <h3 class="text-start p-3">User Account Info</h3>
     <div class="row m-1 m-lg-0">
-        <div class="col form-container p-2 p-md-3">
+        <hr>
+        <div class="col-12">
+            <h4 class="p-3">{{ user.username.capitalize }}'s Profile</h4>
+        </div>
+        <div class="col-12 col-md-6 form-container p-2 p-md-3">
             <p>Default Delivery Information</p>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}

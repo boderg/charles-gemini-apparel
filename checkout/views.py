@@ -107,7 +107,7 @@ def checkout(request):
         if request.user.is_authenticated:
             profile = UserProfile.objects.filter(user=request.user).first()
             initial_data = {
-                'full_name': request.user.get_full_name(),
+                'full_name': request.user.get_full_name,
                 'email': request.user.email,
                 'phone_number': profile.default_phone_number,
                 'country': profile.default_country,
@@ -144,6 +144,7 @@ def checkout_success(request, order_number):
 
         if request.session.get('save_info'):
             UserProfileForm({
+                'default_full_name': order.full_name,
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
