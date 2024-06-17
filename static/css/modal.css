@@ -188,4 +188,12 @@
     background-color: var(--primary-colour-translucent);
 }
 
+/** Delete Modal **/
 
+.btn-modal-delete:hover {
+    color: var(--background) !important;
+    background-color: var(--error-colour);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--small-box-shadow);
+}

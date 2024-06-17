@@ -20,7 +20,9 @@
                             <a href="{% url 'edit_colour' colour.id %}" class="btn btn-edit btn-sm">
                                 Edit Colour
                             </a>
-                            <a href="{% url 'delete_colour' colour.id %}" class="btn btn-delete btn-sm">
+                            <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                            data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ colour.name }}"
+                            data-delete-url="{% url 'delete_colour' colour.id %}">
                                 Delete Colour
                             </a>
                         </div>
@@ -35,5 +37,6 @@
     </div>
 </div>
 
+{% include 'includes/delete_modal.html' %}
 
-  {% endblock %}
+{% endblock %}

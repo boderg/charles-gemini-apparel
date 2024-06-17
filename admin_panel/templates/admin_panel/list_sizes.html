@@ -20,7 +20,9 @@
                             <a href="{% url 'edit_size' size.id %}" class="btn btn-edit btn-sm">
                                 Edit Size
                             </a>
-                            <a href="{% url 'delete_size' size.id %}" class="btn btn-delete btn-sm">
+                            <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                            data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ size.name }}"
+                            data-delete-url="{% url 'delete_size' size.id %}">
                                 Delete Size
                             </a>
                         </div>
@@ -35,5 +37,6 @@
     </div>
 </div>
 
+{% include 'includes/delete_modal.html' %}
 
-  {% endblock %}
+{% endblock %}
