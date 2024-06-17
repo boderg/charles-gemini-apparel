@@ -36,3 +36,20 @@
     border: var(--thin-border);
     padding: 2px;
 }
+
+@media screen and (max-width: 768px) {
+    .btn-delete {
+        background-color: var(--error-colour)!important;
+        color: var(--background) !important;
+        border: var(--thin-border);
+        border-radius: var(--border-radius);
+    }
+
+    .btn-edit {
+        background-color: var(--info-colour) !important;
+        color: var(--background) !important;
+        border: var(--thin-border);
+        border-radius: var(--border-radius);
+    }
+    
+}

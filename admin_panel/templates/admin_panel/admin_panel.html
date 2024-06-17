@@ -15,7 +15,7 @@
 
 {% block content %}
 
-<div class="container m-5 mx-auto p-3">
+<div class="container col-11 m-5 mx-auto p-3">
     <div class="row m-1 m-lg-0">
         <div class="col col-md-6">
             <h3>Admin Panel</h3>
@@ -28,7 +28,7 @@
                     <div class="card admin-card mx-auto mb-2">
                         <div class="row m-1 m-lg-0">
                             <div class="col">
-                                <a href="{% url 'add_category' %}" class="btn btn-lg admin-btn text-start">Add Category</a>                                
+                                <a href="{% url 'add_garment' %}" class="btn btn-lg admin-btn text-start">Add Garment</a>                                
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="card admin-card mx-auto mb-2">
                         <div class="row m-1 m-lg-0">
                             <div class="col">
-                                <a href="{% url 'list_categories' %}" class="btn btn-lg admin-btn text-start">Edit Category</a>                                
+                                <a href="{% url 'list_garments' %}" class="btn btn-lg admin-btn text-start">Edit Garment</a>                                
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="card admin-card mx-auto mb-2">
                         <div class="row m-1 m-lg-0">
                             <div class="col">
-                                <a href="{% url 'add_garment' %}" class="btn btn-lg admin-btn text-start">Add Garment</a>                                
+                                <a href="{% url 'add_category' %}" class="btn btn-lg admin-btn text-start">Add Category</a>                                
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="card admin-card mx-auto mb-2">
                         <div class="row m-1 m-lg-0">
                             <div class="col">
-                                <a href="{% url 'list_garments' %}" class="btn btn-lg admin-btn text-start">Edit Garment</a>
+                                <a href="{% url 'list_categories' %}" class="btn btn-lg admin-btn text-start">Edit Category</a>
                             </div>
                         </div>
                     </div>

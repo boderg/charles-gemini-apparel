@@ -29,3 +29,17 @@
     border-radius: var(--border-radius);
     box-shadow: var(--small-box-shadow);
 }
+
+@media screen and (max-width: 480px) {
+    .message-container {
+        top: 50px;
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .message-container {
+        top: 50px;
+        right: 10px;
+    }
+}

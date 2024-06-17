@@ -163,6 +163,14 @@ img.logo {
     transition: var(--transition-quick);
 }
 
+@media screen and (max-width: 768px) {
+    img.logo {
+        width: 75%;
+        height: auto;
+    }
+    
+}
+
 /*** Dropdown Menu ***/
 
 ul.dropdown-menu {

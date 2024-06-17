@@ -73,3 +73,9 @@ input[type="file"]:focus,
     border: var(--thin-border);
     border-radius: var(--border-radius);
 }
+
+.image-container {
+    background-color: var(--background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}

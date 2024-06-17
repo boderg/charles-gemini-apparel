@@ -3,8 +3,8 @@
 <header>
 
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid py-lg-3 px-lg-5"> 
-            <a class="navbar-brand" href="{% url 'home' %}" title="Home">
+        <div class="container-fluid"> 
+            <a class="navbar-brand text-center px-md-5" href="{% url 'home' %}" title="Home">
                 <img src="{% static 'images/logos/white_logo_long.webp' %}" alt="Charles Gemini Apparel Logo" class="logo">
             </a>
             <button class="navbar-toggler btn mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" 
@@ -41,7 +41,7 @@
                 </ul> 
 
 
-                <form class="d-flex ms-md-3 mt-2" method="GET" action="{% url 'all_garments' %}" title="Search">
+                <form class="d-flex ms-md-5 mt-2" method="GET" action="{% url 'all_garments' %}" title="Search">
                     <div class="input-group">
                         <input class="form-control search" type="text" name="q" placeholder="Search our site" aria-label="Search">
                         <div class="input-group-append">

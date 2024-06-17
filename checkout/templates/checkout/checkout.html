@@ -16,25 +16,25 @@
 
 {% block content %}
 
-<div class="container m-5 mx-auto p-lg-5 p-2">
+<div class="container col-11 m-5 mx-auto p-lg-5">
     <div class="row m-1 m-lg-0">
         <div class="col-md-12 text-end">
             <h3>Please fill out the form below to complete your order</h3>
         </div>
     </div>
     <div class="row m-2 m-lg-0">
-        <div class="col-lg-6 form-container p-2 order-last">
+        <div class="col-lg-6 form-container p-2 mt-2 mt-md-0 order-last">
             <h3 class="pt-2 ps-3">Checkout</h3>
             <p class="small text-muted ps-3">*All fields are required</p>
             <form action="{% url 'checkout' %}" method="post" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="px-3 mb-3">
+                <fieldset class="px-1 px-md-3 mb-3">
                     <legend class="fieldset-label small px-2 w-auto">Contact Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
-                <fieldset class="px-3 mb-3">
+                <fieldset class="px-1 px-md-3 mb-3">
                     <legend class="fieldset-label small px-2 w-auto">Billing and Delivery Information</legend>
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
@@ -53,7 +53,7 @@
                         
                     </div>
                 </fieldset>
-                <fieldset class="px-3">
+                <fieldset class="px-1 px-md-3">
                     <legend class="fieldset-label small px-2 w-auto">Payment Details</legend>
                     <div id="card-element"></div>
                     <div id="card-errors"></div>

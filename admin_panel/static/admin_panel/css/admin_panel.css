@@ -63,3 +63,10 @@ input[type="text"]:focus {
     border-radius: var(--border-radius);
     box-shadow: var(--small-inset-box-shadow);
 }
+
+.form-container {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background-translucent);
+    color: var(--secondary-colour);
+}
