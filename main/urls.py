@@ -30,3 +30,6 @@ urlpatterns = [
     path('admin_panel/', include('admin_panel.urls')),
     path('contact/', include('contact.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home.views.error_404'
+handler500 = 'home.views.error_500'

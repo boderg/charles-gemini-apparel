@@ -137,13 +137,17 @@ main {
 .login-icon,
 .logout-icon,
 .checkout-icon, 
-.search-icon{
+.search-icon {
     height: 1.5rem;
 }
 
-.sad-face-icon {
+/* .back-icon {
+    height: 2rem;
+} */
+
+/* .sad-face-icon {
     height: 10rem;
-}
+} */
  
 /*** Logo ***/
 
@@ -266,24 +270,6 @@ input[name='q']::placeholder {
     border-radius: var(--border-radius);
     background-color: var(--background-translucent);
     color: var(--secondary-colour);
-}
-
-.card-body .btn-view {
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    background-color: var(--background);
-    color: var(--secondary-colour);
-}
-
-.card-body .btn-view:hover {
-    background-color: var(--background);
-    color: var(--secondary-colour);
-    box-shadow: var(--small-box-shadow);
-    transition: var(--transition-quick);
-}
-
-.card-body .btn-view:active {
-    background-color: var(--primary-colour-translucent);
 }
 
 .carousel-item .carousel-image {

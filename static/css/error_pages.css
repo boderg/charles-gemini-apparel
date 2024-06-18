@@ -1,0 +1,25 @@
+.back-icon {
+    width: 2rem;
+}
+
+.sad-face-icon {
+    height: 10rem;
+}
+
+.btn-back {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+}
+
+.btn-back:hover {
+    background-color: var(--background);
+    box-shadow: var(--small-box-shadow);
+    transition: var(--transition-quick);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+.btn-back:active {
+    background-color: var(--primary-colour-translucent) !important;
+}
