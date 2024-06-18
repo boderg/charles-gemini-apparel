@@ -1,0 +1,14 @@
+<h6 class="text-end p-md-2">
+    Order Total: £{{ total|floatformat:2 }}
+</h6>
+<h6 class="text-end p-md-2">
+    Delivery: £{{ delivery|floatformat:2 }}
+</h6>
+<h4 class="text-end p-md-2">
+    Grand Total: £{{ grand_total|floatformat:2 }}
+</h4>
+{% if free_delivery_delta > 0 %}
+    <p class="text-end p-md-2">
+        Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!
+    </p>
+{% endif %}

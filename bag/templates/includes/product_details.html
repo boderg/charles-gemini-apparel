@@ -1,0 +1,47 @@
+{% load static %}
+
+    <form action="{% url 'bag_update_or_delete' item.item_id %}" method="POST" class="form update-form">
+        {% csrf_token %}
+        <div class="form-group pb-2 selection">
+            <!-- <label for="size_{{ item.item_id }}">Size:</label> -->
+            <select name="size" id="size_{{ item.item_id }}" class="form-control form-control-sm selector mx-auto">
+                {% for size in item.product.sizes.all %}
+                    <option value="{{ size.id }}" {% if size.name == item.size_name %}selected{% endif %}>{{ size.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group pb-2 selection">
+            <!-- <label for="colour_{{ item.item_id }}">Colour:</label> -->
+            <select name="colour" id="colour_{{ item.item_id }}" class="form-control form-control-sm selector mx-auto">
+                {% for colour in item.product.colours.all %}
+                    <option value="{{ colour.id }}" {% if colour.name == item.colour_name %}selected{% endif %}>{{ colour.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group selection">
+            <!-- <label for="id_qty_{{ item.item_id }}">Quantity:</label> -->
+            <div class="input-group mx-auto">
+                <div class="input-group-prepend">
+                    <button class="btn btn-sm btn-down decrease-qty" data-item-id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}" type="button">
+                        <span><i class="fas fa-minus fa-sm"></i></span>
+                    </button>
+                </div>
+                <input class="form-control form-control-sm qty_input text-center" name="quantity" type="number" value="{{ item.quantity }}" title="Quantity"
+                min="1" max="99" data-item-_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"/> 
+                <div class="input-group-append">
+                    <button class="btn btn-sm btn-up increase-qty" data-item-id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}" type="button">
+                        <span><i class="fas fa-plus fa-sm"></i></span>
+                    </button>
+                </div>  
+            </div>
+        </div>
+        <div class="text-center mt-2">
+            <input type="hidden" name="action" value="update">
+            <button type="submit" class="btn btn-sm btn-link">
+                <span>Update <img src="{% static 'icons/exchange-refresh-icon.svg' %}" class="update-icon" alt="update icon"></span>
+            </button>
+            <button type="submit" name="action" value="delete" class="btn btn-sm btn-link">
+                <span><img src="{% static 'icons/trash-bin-icon.svg' %}" class="bin-icon" alt="bin icon"> Remove</span>
+            </button>
+        </div>
+    </form>

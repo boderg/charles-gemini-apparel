@@ -1,0 +1,12 @@
+{% if item.discount_price %}
+    <p class="text-end">
+        <del>
+            £{{ item.original_price|floatformat:2 }}
+        </del> 
+        £{{ item.discount_price|floatformat:2 }}
+    </p>
+{% else %}
+    <p class="text-end">
+        £{{ item.product.price|floatformat:2 }}
+    </p>
+{% endif %}

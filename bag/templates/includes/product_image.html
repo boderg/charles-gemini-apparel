@@ -1,0 +1,5 @@
+{% if item.product.productimage_set.all %}
+    <img src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}" class="img-fluid h-auto">
+{% else %}
+    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}" class="img-fluid h-auto p-3">
+{% endif %}
