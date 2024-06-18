@@ -7,7 +7,7 @@ def index(request):
 
     page_title = 'Home'
 
-    return render(request, 'home/indes.html', {'page_title': page_title})
+    return render(request, 'home/index.html', {'page_title': page_title})
 
 
 def error_404(request, exception):
