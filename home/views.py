@@ -16,7 +16,7 @@ def error_404(request, exception):
 
     template = '404.html'
     context = {
-        'page_title': 'Error 404',
+        'page_title': 'Error 404: Page Not Found',
     }
 
     return render(request, template, context)
@@ -28,7 +28,7 @@ def error_500(request):
 
     template = '500.html'
     context = {
-        'page_title': 'Error 500',
+        'page_title': 'Error 500: Internal Server Error',
     }
 
     return render(request, template, context)

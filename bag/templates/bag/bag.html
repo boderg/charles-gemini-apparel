@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block banner %}
-
+    {% if not bag_items %} Ooops! {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -146,7 +146,7 @@
             {% else %}
             <!-- Empty Bag Message -->
             <div class="col-md-4 d-flex flex-column fill-bag mx-auto my-3">
-                <h2 class="text-center mt-3">Your bag is empty!</h2>
+                <h2 class="text-center mt-3">Did you forget to put something in your bag?</h2>
                 <img src="{% static 'icons/sad-face-icon.svg' %}" class="sad-face-icon mt-3 mb-5" alt="sad face icon">
                 <h2 class="text-center mt-3">Let's fill it!</h2>
                 <a href="{% url 'all_garments' %}" class="btn btn-back mx-auto my-3">
