@@ -9,16 +9,14 @@
     - {{ page_title }}
 {% endblock %}
 
-{% block banner %}
-
-{% endblock %}
-
 {% block content %}
 
 <div class="container col-11 m-5 mx-auto p-3">
     <div class="row m-1 m-lg-0">
         <div class="col-12 col-md-6">
-            <h3>Edit a Garment</h3>
+            <h3>
+                Edit a Garment
+            </h3>
         </div>
     </div>
     <div class="row m-1 m-lg-0">
@@ -27,28 +25,31 @@
                 class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-
                 {{ formset.management_form }}
                 {% for image_form in formset %}
                     {{ image_form | crispy }}
                 {% endfor %}
-
                 <div class="float-end edit-buttons">
                     <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
-                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                        <span>
+                            <i class="fas fa-arrow-left fa-lg"></i>
+                        </span>
                         Back to Garments
                     </a>
-                    <button type="submit" class="btn btn-submit">Edit Garment</button>
+                    <button type="submit" class="btn btn-submit">
+                        Edit Garment
+                    </button>
                 </div>
             </form>
         </div>
         <div class="col-12 col-md-6 mt-2 mt-md-0 image-container">
             {% for image in product.productimage_set.all %}
-            <div class="img-container mx-auto w-50 mb-3 mt-3">
-                <img src="{{ image.image.url }}" alt="{{ product.name }}" class="img-fluid">
-            </div>
+                <div class="img-container mx-auto w-50 mb-3 mt-3">
+                    <img src="{{ image.image.url }}" alt="{{ product.name }}" class="img-fluid">
+                </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 {% endblock %}

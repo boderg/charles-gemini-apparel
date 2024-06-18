@@ -9,16 +9,14 @@
     - {{ page_title }}
 {% endblock %}
 
-{% block banner %}
-
-{% endblock %}
-
 {% block content %}
 
 <div class="container col-11 m-5 mx-auto p-3">
     <div class="row m-1 m-lg-0">
         <div class="col col-md-6">
-            <h3>Add a Garment</h3>
+            <h3>
+                Add a Garment
+            </h3>
         </div>
     </div>
     <div class="row m-1 m-lg-0">
@@ -27,27 +25,23 @@
                 class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-
                 {{ formset.management_form }}
                 {% for image_form in formset %}
                     {{ image_form | crispy }}
-                    
                 {% endfor %}
-               
-
                 <div class="float-end edit-buttons">
                     <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
-                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                        <span>
+                            <i class="fas fa-arrow-left fa-lg"></i>
+                        </span>
                         Back to Garments
                     </a>
-                    <button type="submit" class="btn btn-submit">Add Garment</button>
+                    <button type="submit" class="btn btn-submit">
+                        Add Garment
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block postloadjs %}
-  
 {% endblock %}

@@ -1,4 +1,5 @@
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/modal.css' %}">
 {% endblock %}
@@ -9,22 +10,31 @@
 	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5">Delete <span class="itemName"></span></h1>
+				<h1 class="modal-title fs-5">
+                    Delete 
+                    <span class="itemName"></span>
+                </h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body about-body">
-
-
-                <h5>Are you sure you want to delete <span class="itemName"></span>?</h5>
-                <p>This action cannot be undone.</p>
+                <h5>
+                    Are you sure you want to delete 
+                    <span class="itemName"></span>?
+                </h5>
+                <p>
+                    This action cannot be undone.
+                </p>
                 <form id="deleteForm" action="" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-modal-delete">Delete <span class="itemName"></span></button>
-                </form>
-
-                			
+                    <button type="submit" class="btn btn-modal-delete">
+                        Delete 
+                        <span class="itemName"></span>
+                    </button>
+                </form>                			
                 <div class="modal-footer mt-3">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
                 </div>
             </div>					
 		</div>

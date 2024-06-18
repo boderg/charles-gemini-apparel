@@ -6,34 +6,38 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container col-11 m-5 mx-auto p-2">
-    <h3 class="text-start p-3">Select a Subscriber</h3>
+    <h3 class="text-start p-3">
+        Select a Subscriber
+    </h3>
     <div class="row m1 m-lg-0">
         <div class="col product-list mx-2 p-0 p-md-3 pt-3">
             <ul>
                 {% for newsletter in newsletters %}
-                <li>
-                    <p>{{ newsletter.email }}</p>
-
-                    {% if request.user.is_superuser %}
-                        <div class="mt-2 admin-buttons">
-                            <!-- <a href="#" class="btn btn-edit btn-sm">
-                                Reply to Contact
-                            </a> -->
-                            <a href="{% url 'delete_newsletter' newsletter.id %}" class="btn btn-delete btn-sm">
-                                Delete Subscriber
-                            </a>
-                        </div>
-                        <hr>
-                    {% endif %}
-                </li>
+                    <li>
+                        <p>
+                            {{ newsletter.email }}
+                        </p>
+                        {% if request.user.is_superuser %}
+                            <div class="mt-2 admin-buttons">
+                                <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ newsletter.email }}"
+                                    data-delete-url="{% url 'delete_newsletter' newsletter.id %}">
+                                    Delete Subscriber
+                                </a>
+                            </div>
+                            <hr>
+                        {% endif %}
+                    </li>
                 {% empty %}
-                <li>No contacts to display.</li>
+                    <li>No contacts to display.</li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 </div>
 
+{% include 'includes/delete_modal.html' %}
 
-  {% endblock %}
+{% endblock %}

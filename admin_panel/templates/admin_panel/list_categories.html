@@ -6,31 +6,35 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container col-11 m-5 mx-auto p-2">
-    <h3 class="text-start p-3">Select a Category to Edit</h3>
+    <h3 class="text-start p-3">
+        Select a Category to Edit
+    </h3>
     <div class="row m1 m-lg-0">
         <div class="col product-list mx-2 p-0 p-md-3 pt-3">
             <ul>
                 {% for category in categories %}
-                <li>
-                    <h5>{{ category.name }}</h5>
-
-                    {% if request.user.is_superuser %}
-                        <div class="mt-2 admin-buttons">
-                            <a href="{% url 'edit_category' category.id %}" class="btn btn-edit btn-sm">
-                                Edit Category
-                            </a>
-                            <a href="#deleteModal" class="btn btn-delete btn-sm" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ category.name }}"
-                            data-delete-url="{% url 'delete_category' category.id %}">
-                                Delete Category
-                            </a>
-                        </div>
-                        <hr>
-                    {% endif %}
-                </li>
+                    <li>
+                        <h5>
+                            {{ category.name }}
+                        </h5>
+                        {% if request.user.is_superuser %}
+                            <div class="mt-2 admin-buttons">
+                                <a href="{% url 'edit_category' category.id %}" class="btn btn-edit btn-sm">
+                                    Edit Category
+                                </a>
+                                <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ category.name }}"
+                                    data-delete-url="{% url 'delete_category' category.id %}">
+                                    Delete Category
+                                </a>
+                            </div>
+                            <hr>
+                        {% endif %}
+                    </li>
                 {% empty %}
-                <li>No categories to display.</li>
+                    <li>No categories to display.</li>
                 {% endfor %}
             </ul>
         </div>

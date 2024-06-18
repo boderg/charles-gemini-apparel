@@ -7,30 +7,34 @@
 
 {% block content %}
 <div class="container col-11 m-5 mx-auto p-2">
-    <h3 class="text-start p-3">Select a Colour to Edit</h3>
+    <h3 class="text-start p-3">
+        Select a Colour to Edit
+    </h3>
     <div class="row m1 m-lg-0">
         <div class="col product-list mx-2 p-0 p-md-3 pt-3">
             <ul>
                 {% for colour in colours %}
-                <li>
-                    <h5>{{ colour.name }}</h5>
-                    <div class="colour-swatch" style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
-                    {% if request.user.is_superuser %}
-                        <div class="mt-2 admin-buttons">
-                            <a href="{% url 'edit_colour' colour.id %}" class="btn btn-edit btn-sm">
-                                Edit Colour
-                            </a>
-                            <a href="#deleteModal" class="btn btn-delete btn-sm" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ colour.name }}"
-                            data-delete-url="{% url 'delete_colour' colour.id %}">
-                                Delete Colour
-                            </a>
-                        </div>
-                        <hr>
-                    {% endif %}
-                </li>
+                    <li>
+                        <h5>
+                            {{ colour.name }}
+                        </h5>
+                        <div class="colour-swatch" style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
+                        {% if request.user.is_superuser %}
+                            <div class="mt-2 admin-buttons">
+                                <a href="{% url 'edit_colour' colour.id %}" class="btn btn-edit btn-sm">
+                                    Edit Colour
+                                </a>
+                                <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ colour.name }}"
+                                    data-delete-url="{% url 'delete_colour' colour.id %}">
+                                    Delete Colour
+                                </a>
+                            </div>
+                            <hr>
+                        {% endif %}
+                    </li>
                 {% empty %}
-                <li>No colours to display.</li>
+                    <li>No colours to display.</li>
                 {% endfor %}
             </ul>
         </div>

@@ -26,6 +26,7 @@ def admin_panel(request):
 
 @login_required
 def add_garment(request):
+
     """ A view to add new garments to the store """
 
     if not request.user.is_superuser:
@@ -60,7 +61,7 @@ def add_garment(request):
                 # Add default image if the first image field is not populated
                 default_image = ProductImage(
                     product=product,
-                    image='image-not-found-icon.svg'  # noqa: Replace with actual path to default image
+                    image='image-not-found-icon.svg'
                 )
                 default_image.save()
 
@@ -88,6 +89,7 @@ def add_garment(request):
 
 @login_required
 def edit_garment(request, product_id):
+
     """ A view to edit existing garments in the store """
 
     if not request.user.is_superuser:
@@ -129,7 +131,7 @@ def edit_garment(request, product_id):
                 # Add default image if no new images were added
                 default_image, created = ProductImage.objects.get_or_create(
                     product=product,
-                    defaults={'image': 'image-not-found-icon.svg'}  # noqa: Replace with actual path to default image
+                    defaults={'image': 'image-not-found-icon.svg'}
                 )
 
             product.category.set(form.cleaned_data['category'])

@@ -6,37 +6,39 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="container col-11 m-5 mx-auto p-2">
-    <h3 class="text-start p-3">Select a Garment to Edit</h3>
+    <h3 class="text-start p-3">
+        Select a Garment to Edit
+    </h3>
     <div class="row m1 m-lg-0">
         <div class="col product-list mx-2 p-0 p-md-3 pt-3">
             <ul>
                 {% for product in products %}
-                <li>
-                    <a href="{% url 'edit_garment' product.id %}" class="image-link">
-                    <img class="edit-img m-1" src="{{ product.productimage_set.all.0.image.url }}" alt="{{ product.name }}">
-                    </a>
-                    <a href="{% url 'edit_garment' product.id %}" class="name-link">
-                        {{ product.name }}
-                    </a>
-                    {{ product.description }}
-
-                    {% if request.user.is_superuser %}
-                        <div class="mt-2 admin-buttons">
-                            <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
-                                Edit Product
-                            </a>
-                            <a href="#deleteModal" class="btn btn-delete btn-sm" 
-                            data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ product.name }}"
-                            data-delete-url="{% url 'delete_garment' product.id %}">
-                                Delete Product
-                            </a>
-                        </div>
-                        <hr>
-                    {% endif %}
-                </li>
+                    <li>
+                        <a href="{% url 'edit_garment' product.id %}" class="image-link">
+                            <img class="edit-img m-1" src="{{ product.productimage_set.all.0.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <a href="{% url 'edit_garment' product.id %}" class="name-link">
+                            {{ product.name }}
+                        </a>
+                        {{ product.description }}
+                        {% if request.user.is_superuser %}
+                            <div class="mt-2 admin-buttons">
+                                <a href="{% url 'edit_garment' product.id %}" class="btn btn-edit btn-sm">
+                                    Edit Product
+                                </a>
+                                <a href="#deleteModal" class="btn btn-delete btn-sm" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal" data-item-name="{{ product.name }}"
+                                    data-delete-url="{% url 'delete_garment' product.id %}">
+                                    Delete Product
+                                </a>
+                            </div>
+                            <hr>
+                        {% endif %}
+                    </li>
                 {% empty %}
-                <li>No garments to display.</li>
+                    <li>No garments to display.</li>
                 {% endfor %}
             </ul>
         </div>
@@ -46,4 +48,3 @@
 {% include 'includes/delete_modal.html' %}
 
 {% endblock %}
-
