@@ -10,190 +10,86 @@
 {% endblock %}
 
 {% block banner %}
-<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Bag Total: £{{ grand_total|floatformat:2 }}{% endif %}</h4>
+    <h4 class="font-weight-bold text-end me-5">
+        {% if grand_total %}
+            Bag Total: £{{ grand_total|floatformat:2 }}
+        {% endif %}
+    </h4>
 {% endblock %}
 
 {% block content %}
-        
-<div class="container col-11 col-md-8 mx-auto my-3 my-lg-5">
+    <div class="container col-11 col-md-8 mx-auto my-3 my-lg-5">
 
-    {% if product.discount %}
-
-    <div class="row single-product p-2 align-items-center">
-        <div class="col-md-6 p-1 ps-md-1">
-            {% if product.productimage_set.all %}
-            
-            {% include 'includes/product_carousel.html' %}
-
-            {% else %}
-            <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
-            {% endif %}
-        </div>
-        <div class="col-md-6 text-start p-3 mt-2">
-            <span class="badge fs-5 mb-2">Sale</span>
-            <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
-            <div class="fs-5 mb-3 sale-container-lg px-2">
-                Sale Price! &nbsp;
-                <span class="card-text discount text-center"><del>£{{ product.price }}</del> &nbsp;£{{ product.discount_price }}</span>
-            </div>
-            <p class="lead mb-5">{{ product.description }}</p>
-            <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
-                {% csrf_token %}
-                
-                <div class="form-group selection">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-down decrease-qty" data-item-id="{{ product.id }}" id="decrease-qty_{{ product.id }}" type="button">
-                                <span class="icon"><i class="fas fa-minus"></i></span>
-                            </button>
-                        </div>
-                        <input class="form-control qty_input text-left" name="quantity" type="number" value="1" title="Quantity"
-                        min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
-                        <div class="input-group-append">
-                            <button class="btn btn-up increase-qty" data-item-id="{{ product.id }}" id="increase-qty_{{ product.id }}" type="button">
-                                <span class="icon"><i class="fas fa-plus"></i></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-row align-items-center mb-3">
-                        <select class="form-select selector" aria-label="Size selector" name="size" required>
-                            <option selected hidden value="">Select Size</option>
-                            {% for size in sizes %}
-                            <option value="{{ size.id }}">{{ size.name }}</option>
-                            {% endfor %}
-                        </select>
-                        <div class="size-link-container ms-3">
-                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
-                                <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> Guide</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <select class="form-select selector" aria-label="Colour selector" name="colour" required>
-                            <option selected hidden value="">Select Colour</option>
-                            {% for colour in colours %}
-                            <option value="{{ colour.id }}">{{ colour.name }}</option>
-                            {% endfor %}
-                        </select>   
-                    </div>  
+        <!-- Sale Item -->
+        {% if product.discount %}
+            <div class="row single-product p-2 align-items-center">
+                <div class="col-md-6 p-1 ps-md-1">
+                    {% if product.productimage_set.all %}
+                        {% include 'includes/product_carousel.html' %}
+                    {% else %}
+                        <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
+                    {% endif %}
                 </div>
-                <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
-                    <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                    All Designs
-                </a>
-                <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
-                    <span><i class="fas fa-plus fa-lg"></i></span>
-                    Add to bag
-                </button>
-                <div class="row">
-                    <div class="col-12 d-flex flex-row align-items-center gap-3 swatches">
-                        {% for colour in colours %}
-                        <div class="colour-swatch" title="{{ colour.name }}"
-                        style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    {% else %}
-
-    <div class="row single-product p-2 align-items-center">
-        <div class="col-md-6 p-1 ps-md-1">
-            {% if product.productimage_set.all %}
-           
-            {% include 'includes/product_carousel.html' %}
-
-            {% else %}
-            <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
-            {% endif %}
-        </div>
-        <div class="col-md-6 text-start p-3 mt-2">
-            
-            <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
-            <div class="fs-5 mb-3">
-                <span class="card-text discount"></span>£{{ product.price }}</span>
-            </div>
-            <p class="lead mb-5">{{ product.description }}</p>
-            <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
-                {% csrf_token %}
-
-                <div class="form-group selection">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-down decrease-qty" data-item-id="{{ product.id }}" id="decrease-qty_{{ product.id }}" type="button">
-                                <span class="icon"><i class="fas fa-minus"></i></span>
-                            </button>
-                        </div>
-                        <input class="form-control qty_input text-center" name="quantity" type="number" value="1" title="Quantity"
-                        min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
-                        <div class="input-group-append">
-                            <button class="btn btn-up increase-qty" data-item-id="{{ product.id }}" id="increase-qty_{{ product.id }}" type="button">
-                                <span class="icon"><i class="fas fa-plus"></i></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-row align-items-center mb-3">
-                        <select class="form-select selector" aria-label="Size selector" name="size" required>
-                            <option selected hidden value="">Select Size</option>
-                            {% for size in sizes %}
-                            <option value="{{ size.id }}">{{ size.name }}</option>
-                            {% endfor %}
-                        </select>
-                        <div class="size-link-container ms-3">
-                            <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
-                            <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> Guide</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <select class="form-select selector" aria-label="Colour selector" name="colour" required>
-                            <span>
-                                <img src="{% static 'icons/colors-icon.svg' %}" class="colors-icon px-2" alt="colors icon"> 
-                                Select Colour
-                            </span>
-                            <option selected hidden value="">
-                                Select Colour
-                            </option>
-                            {% for colour in colours %}
-                            <option value="{{ colour.id }}">
-                                {{ colour.name }}
-                            </option>
-                            {% endfor %}
-                        </select>   
-                    </div>  
-                </div>
-                <a href="{% url 'all_garments' %}" class="btn btn-back my-3" type="submit">
-                    <span>
-                        <i class="fas fa-arrow-left fa-lg"></i>
+                <div class="col-md-6 text-start p-3 mt-2">
+                    <span class="badge fs-5 mb-2">
+                        Sale
                     </span>
-                    All Designs
-                </a>
-                <button class="btn btn-bag flex-shrink-0 my-3 ms-3" type="submit">
-                   <span>
-                    <i class="fas fa-plus fa-lg"></i>
-                    </span>
-                    Add to bag
-                </button>
-                <div class="row">
-                    <div>
-                        Available Colours
+                    <h1 class="display-5 fw-bolder">
+                        {{ product.name }}
+                    </h1>
+                    <div class="fs-5 mb-3 sale-container-lg px-2">
+                        Sale Price! &nbsp;
+                        <span class="card-text discount text-center">
+                            <del>
+                                £{{ product.price }}
+                            </del> 
+                            &nbsp;£{{ product.discount_price }}
+                        </span>
                     </div>
-                    <div class="col-12 d-flex flex-row align-items-center gap-3 swatches">
-                        {% for colour in colours %}
-                        <div class="colour-swatch" title="{{ colour.name }}"
-                        style="width: 50px; height: 50px; background-color: {{ colour.swatch }};"></div>
-                        {% endfor %}
+                    <p class="lead mb-5">
+                        {{ product.description }}
+                    </p>
+                    <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
+                        {% csrf_token %}
+                        {% include "includes/selectors.html" %}
+                        {% include "includes/buttons.html" %}
+                        {% include "includes/colour_swatches.html" %}
+                    </form>
+                </div>
+            </div>
+            
+        <!-- Regular Item -->
+        {% else %}
+            <div class="row single-product p-2 align-items-center">
+                <div class="col-md-6 p-1 ps-md-1">
+                    {% if product.productimage_set.all %}
+                        {% include 'includes/product_carousel.html' %}
+                    {% else %}
+                        <img class="card-img-top" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}"/>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 text-start p-3 mt-2">
+                    <h1 class="display-5 fw-bolder">
+                        {{ product.name }}
+                    </h1>
+                    <div class="fs-5 mb-3">
+                        <span class="card-text discount">
+                            £{{ product.price }}
+                        </span>
                     </div>
-            </form>
-        </div>
+                    <p class="lead mb-5">
+                        {{ product.description }}
+                    </p>
+                    <form action="{% url 'bag_add' product.id %}" class="form" method="POST">
+                        {% csrf_token %}
+                        {% include "includes/selectors.html" %}
+                        {% include "includes/buttons.html" %}
+                        {% include "includes/colour_swatches.html" %}
+                    </form>
+                </div>
+            </div>
+        {% endif %}
     </div>
-    {% endif %}
-</div>
-
 {% endblock %}
 
 {% block postloadjs %}

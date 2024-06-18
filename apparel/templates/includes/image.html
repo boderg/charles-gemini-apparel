@@ -1,0 +1,7 @@
+{% if product.productimage_set.all %}
+<a href="{% url 'garment' product.id %}">
+    <img src="{{ product.productimage_set.all.0.image.url }}" class="card-img-top apparel" alt="{{ item.product.name }}">
+</a>
+{% else %}
+<img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel p-5" alt="{{ item.product.name }}">
+{% endif %}

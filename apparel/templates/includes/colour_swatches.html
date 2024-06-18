@@ -1,0 +1,12 @@
+<div class="row">
+    <div>
+        Available Colours
+    </div>
+    <div class="col-12 d-flex flex-row align-items-center gap-3 swatches">
+        {% for colour in colours %}
+        <div class="colour-swatch" title="{{ colour.name }}"
+            style="width: 50px; height: 50px; background-color: {{ colour.swatch }};">
+        </div>
+        {% endfor %}
+    </div>
+</div>

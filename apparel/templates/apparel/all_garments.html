@@ -19,13 +19,7 @@
             <div class="card mx-auto my-2">
                 <div class="image">
                     <span class="badge position-absolute">Sale</span>
-                    {% if product.productimage_set.all %}
-                    <a href="{% url 'garment' product.id %}">
-                        <img src="{{ product.productimage_set.all.0.image.url }}" class="card-img-top apparel" alt="{{ item.product.name }}">
-                    </a>
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel p-5" alt="{{ item.product.name }}">
-                    {% endif %}
+                    {% include "includes/image.html" %}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{ product.name }}</h4>
@@ -44,13 +38,7 @@
         <div class="col my2 py-lg-5">
             <div class="card mx-auto my-2">
                 <div class="image">
-                    {% if product.productimage_set.all %}
-                    <a href="{% url 'garment' product.id %}">
-                        <img src="{{ product.productimage_set.all.0.image.url }}" class="card-img-top apparel" alt="{{ item.product.name }}">
-                    </a>
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}image-not-found-icon.svg" class="card-img-top apparel p-5" alt="{{ item.product.name }}">
-                    {% endif %}
+                   {% include "includes/image.html" %}
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{{ product.name }}</h4>
