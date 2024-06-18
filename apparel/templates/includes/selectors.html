@@ -5,14 +5,18 @@
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <button class="btn btn-down decrease-qty" data-item-id="{{ product.id }}" id="decrease-qty_{{ product.id }}" type="button">
-                <span class="icon"><i class="fas fa-minus"></i></span>
+                <span class="icon">
+                    <i class="fas fa-minus"></i>
+                </span>
             </button>
         </div>
         <input class="form-control qty_input text-center" name="quantity" type="number" value="1" title="Quantity"
         min="1" max="99" data-item-_id="{{ product.id }}" id="id_qty_{{ product.id }}"/> 
         <div class="input-group-append">
             <button class="btn btn-up increase-qty" data-item-id="{{ product.id }}" id="increase-qty_{{ product.id }}" type="button">
-                <span class="icon"><i class="fas fa-plus"></i></span>
+                <span class="icon">
+                    <i class="fas fa-plus"></i>
+                </span>
             </button>
         </div>
     </div>
@@ -20,14 +24,21 @@
     <!-- Size selector -->  
     <div class="d-flex flex-row align-items-center mb-3">
         <select class="form-select selector" aria-label="Size selector" name="size" required>
-            <option selected hidden value="">Select Size</option>
+            <option selected hidden value="">
+                Select Size
+            </option>
             {% for size in sizes %}
-            <option value="{{ size.id }}">{{ size.name }}</option>
+            <option value="{{ size.id }}">
+                {{ size.name }}
+            </option>
             {% endfor %}
         </select>
         <div class="size-link-container ms-3">
             <a class="size-link btn btn-size" data-bs-toggle="modal" data-bs-target="#sizeModal" title="Size Guide">
-            <span><img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> Guide</span>
+                <span>
+                    <img src="{% static 'icons/measuring-tape-icon.svg' %}" class="measure-icon" alt="size guide icon"> 
+                    Guide
+                </span>
             </a>
         </div>
     </div>
@@ -43,9 +54,9 @@
                 Select Colour
             </option>
             {% for colour in colours %}
-            <option value="{{ colour.id }}">
-                {{ colour.name }}
-            </option>
+                <option value="{{ colour.id }}">
+                    {{ colour.name }}
+                </option>
             {% endfor %}
         </select>   
     </div>  

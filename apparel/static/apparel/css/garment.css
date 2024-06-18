@@ -30,7 +30,7 @@
 
 }
 
-/*** Selection ***/
+/*** Selectors ***/
 
 .selection input {
     border: var(--thin-border);
@@ -83,6 +83,8 @@
     background-color: var(--primary-colour-translucent);
 }
 
+/*** Buttons ***/
+
 .form .btn-back,
 .form .btn-bag {
     border: var(--thin-border);
@@ -128,6 +130,8 @@
     pointer-events: none;
     background-color: var(--secondary-colour-translucent);
 }
+
+/*** Misc ***/
 
 .size-link-container .measure-icon {
     height: 1.25rem;

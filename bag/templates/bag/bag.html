@@ -11,7 +11,9 @@
 {% endblock %}
 
 {% block banner %}
-    {% if not bag_items %} Ooops! {% endif %}
+    {% if not bag_items %} 
+        Ooops! 
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -19,141 +21,159 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <!-- Small screens view -->
             {% if bag_items %}
-
-            <div class="d-block d-md-none checkout-container p-2">
-                <div class="row">
-                {% for item in bag_items %}
-                    <div class="col-11 text-center p-2 pt-3 mx-auto section-container">
-                        <a href="{% url 'all_garments' %}" class="btn btn-back p-2">
-                            <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                            Continue Shopping
-                        </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-checkout p-2">
-                            Secure Checkout
-                            <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
-                                
-                        </a>
-                        <hr>
-                        <p>A summary of the bag contents is below.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
-                        <div class="row">
-                        <!-- Product Image -->
-                            <div class="col-12">
-                                <p class="text-center">
-                                    <strong>
-                                        {{ item.product.name }}
-                                    </strong>
-                                </p>
-                            </div>
-                            <div class="col-6">
-                                <div class="bag-image">
-                                    {% include "includes/product_image.html" %}
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="text-end">
-                                    Item Price:
-                                    {% include "includes/product_price.html" %}
-                                    Subtotal: <br> 
-                                    £{{ item|item_subtotal|floatformat:2 }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>     
-                <div class="row">
-                    <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
-                        <!-- Product Details -->
-                        <div class="bag-details">
-                            {% include "includes/product_details.html" %}
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
-                        <!-- Product Price -->
-                        <div class="order-total">
-                            {% include "includes/order_total.html" %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}                   
-            </div>
-
-            <div class="table-responsive pb-0 d-none d-md-block">
-               <table class="table table-sm table-borderless bag-table">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="p-md-2">Product</th>
-                            <th scope="col" class="p-md-2 text-center">Details</th>
-                            <th scope="col" class="p-md-2 text-end">Price</th>
-                            <th scope="col" class="p-md-2 text-end">Subtotal</th>
-                        </tr>
-                    </thead>
+                <div class="d-block d-md-none checkout-container p-2">
+                    <div class="row">
                     {% for item in bag_items %}
-                        <tr>
-                            <!-- Product Image -->
-                            <td class="pt-2 ps-2">
-                               {% include "includes/product_image.html" %}
-                            </td>
-                            <!-- Product Details -->
-                            <td class="pt-2">
-                                <p class="text-center">
-                                    <strong>
-                                        {{ item.product.name }}
-                                    </strong>
-                                </p>
-                                {% include "includes/product_details.html" %}
-                            </td>
-                            <!-- Product Price -->
-                            <td class="pt-2">
-                               {% include "includes/product_price.html" %}
-                            </td>
-                            <!-- Product Subtotal -->
-                            <td class="pt-2">
-                                <p class="text-end">£{{ item|item_subtotal|floatformat:2 }}</p>
-                            </td>
-                            
-                        </tr>
-                    {% endfor %}
-                    <tr>
-                        <!-- Order Total -->
-                        <td colspan="4">
-                            {% include "includes/order_total.html" %}
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Continue Shopping and Secure Checkout Buttons -->
-                        <td colspan="2" class="text-start p-3">
+                        <div class="col-11 text-center p-2 pt-3 mx-auto section-container">
                             <a href="{% url 'all_garments' %}" class="btn btn-back p-2">
-                               <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                                 Continue Shopping
+                                <span>
+                                    <i class="fas fa-arrow-left fa-lg"></i>
+                                </span>
+                                Continue Shopping
                             </a>
-                        </td>
-                        <td colspan="2" class="text-end p-3">
                             <a href="{% url 'checkout' %}" class="btn btn-checkout p-2">
                                 Secure Checkout
                                 <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
                             </a>
-                        </td>
-                    </tr>
-               </table>
-            </div>
+                            <hr>
+                            <p>
+                                A summary of the bag contents is below.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
+                            <div class="row">
+                            <!-- Product Image -->
+                                <div class="col-12">
+                                    <p class="text-center">
+                                        <strong>
+                                            {{ item.product.name }}
+                                        </strong>
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bag-image">
+                                        {% include "includes/product_image.html" %}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-end">
+                                        Item Price:
+                                        {% include "includes/product_price.html" %}
+                                        Subtotal: <br> 
+                                        £{{ item|item_subtotal|floatformat:2 }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="row">
+                        <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
+                        <!-- Product Details -->
+                            <div class="bag-details">
+                                {% include "includes/product_details.html" %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
+                        <!-- Product Price -->
+                            <div class="order-total">
+                                {% include "includes/order_total.html" %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}                   
+                </div>
+                <!-- Large screens table view -->
+                <div class="table-responsive pb-0 d-none d-md-block">
+                <table class="table table-sm table-borderless bag-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="p-md-2">
+                                    Product
+                                </th>
+                                <th scope="col" class="p-md-2 text-center">
+                                    Details
+                                </th>
+                                <th scope="col" class="p-md-2 text-end">
+                                    Price
+                                </th>
+                                <th scope="col" class="p-md-2 text-end">
+                                    Subtotal
+                                </th>
+                            </tr>
+                        </thead>
+                        {% for item in bag_items %}
+                            <tr>
+                            <!-- Product Image -->
+                                <td class="pt-2 ps-2">
+                                {% include "includes/product_image.html" %}
+                                </td>
+                            <!-- Product Details -->
+                                <td class="pt-2">
+                                    <p class="text-center">
+                                        <strong>
+                                            {{ item.product.name }}
+                                        </strong>
+                                    </p>
+                                    {% include "includes/product_details.html" %}
+                                </td>
+                            <!-- Product Price -->
+                                <td class="pt-2">
+                                {% include "includes/product_price.html" %}
+                                </td>
+                            <!-- Product Subtotal -->
+                                <td class="pt-2">
+                                    <p class="text-end">
+                                        £{{ item|item_subtotal|floatformat:2 }}
+                                    </p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                        <!-- Order Total -->
+                            <td colspan="4">
+                                {% include "includes/order_total.html" %}
+                            </td>
+                        </tr>
+                        <tr>
+                        <!-- Continue Shopping and Secure Checkout Buttons -->
+                            <td colspan="2" class="text-start p-3">
+                                <a href="{% url 'all_garments' %}" class="btn btn-back p-2">
+                                    <span>
+                                        <i class="fas fa-arrow-left fa-lg"></i>
+                                    </span>
+                                    Continue Shopping
+                                </a>
+                            </td>
+                            <td colspan="2" class="text-end p-3">
+                                <a href="{% url 'checkout' %}" class="btn btn-checkout p-2">
+                                    Secure Checkout
+                                    <img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
+                                </a>
+                            </td>
+                        </tr>
+                </table>
+                </div>
             {% else %}
             <!-- Empty Bag Message -->
-            <div class="col-md-4 d-flex flex-column fill-bag mx-auto my-3">
-                <h2 class="text-center mt-3">Did you forget to put something in your bag?</h2>
-                <img src="{% static 'icons/sad-face-icon.svg' %}" class="sad-face-icon mt-3 mb-5" alt="sad face icon">
-                <h2 class="text-center mt-3">Let's fill it!</h2>
-                <a href="{% url 'all_garments' %}" class="btn btn-back mx-auto my-3">
-                   <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="back arrow icon"> 
-                    <br> Fill your Bag
-                </a>
-            </div>
+                <div class="col-md-4 d-flex flex-column fill-bag mx-auto my-3">
+                    <h2 class="text-center mt-3">
+                        Did you forget to put something in your bag?
+                    </h2>
+                    <img src="{% static 'icons/sad-face-icon.svg' %}" class="sad-face-icon mt-3 mb-5" alt="sad face icon">
+                    <h2 class="text-center mt-3">
+                        Let's fill it!
+                    </h2>
+                    <a href="{% url 'all_garments' %}" class="btn btn-back mx-auto my-3">
+                        <img src="{% static 'icons/back-arrow-icon.svg' %}" class="back-icon" alt="back arrow icon"> 
+                        <br> Fill your Bag
+                    </a>
+                </div>
             {% endif %}
         </div>
     </div>

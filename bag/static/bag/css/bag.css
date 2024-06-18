@@ -1,4 +1,4 @@
-/*** Shopping Bag ***/
+/*** Icons ***/
 
 .back-icon {
     width: 2rem;
@@ -7,6 +7,13 @@
 .sad-face-icon {
     height: 10rem;
 }
+
+.update-icon,
+.bin-icon {
+    height: 1.3rem;
+}
+
+/*** Buttons ***/
 
 .fill-bag .btn-back,
 .btn-back,
@@ -32,37 +39,6 @@
     background-color: var(--primary-colour-translucent) !important;
 }
 
-.img-fluid {
-    width: 200px;
-    height: 200px;
-    background-color: var(--body-background-translucent);
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-}
-
-.table-responsive {
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    background-color: var(--secondary-colour-translucent);
-    padding: 5px;
-    box-shadow: var(--big-box-shadow);
-}
-
-.bag-table {
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    background-color: var(--secondary-colour-translucent);
-}
-
-.bag-table th {
-    background-color: var(--background-translucent-2);
-    border-bottom: var(--thin-border);
-}
-
-.bag-table td {
-    background-color: var(--background-translucent);
-}
-
 .btn-up,
 .btn-down {
     border: var(--thin-border);
@@ -79,23 +55,6 @@
 .btn-up:active,
 .btn-down:active {
     background-color: var(--primary-colour-translucent);
-}
-
-.no-hover {
-    pointer-events: none;
-    background-color: var(--secondary-colour-translucent);
-}
-
-.selection input {
-    border: var(--thin-border);
-    border-radius: var(--border-radius);
-    background-color: var(--background);
-    color: var(--secondary-colour);
-}
-
-.selection input:focus {
-    border: var(--thin-border);
-    box-shadow: var(--small-inset-box-shadow);
 }
 
 .btn-link {
@@ -121,9 +80,58 @@
     border-radius: var(--border-radius) !important;
 }
 
-.update-icon,
-.bin-icon {
-    height: 1.3rem;
+/*** Images ***/
+
+.img-fluid {
+    width: 200px;
+    height: 200px;
+    background-color: var(--body-background-translucent);
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+}
+
+/*** Tables ***/
+
+.table-responsive {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+    padding: 5px;
+    box-shadow: var(--big-box-shadow);
+}
+
+.bag-table {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-colour-translucent);
+}
+
+.bag-table th {
+    background-color: var(--background-translucent-2);
+    border-bottom: var(--thin-border);
+}
+
+.bag-table td {
+    background-color: var(--background-translucent);
+}
+
+.no-hover {
+    pointer-events: none;
+    background-color: var(--secondary-colour-translucent);
+}
+
+/*** Selectors ***/
+
+.selection input {
+    border: var(--thin-border);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    color: var(--secondary-colour);
+}
+
+.selection input:focus {
+    border: var(--thin-border);
+    box-shadow: var(--small-inset-box-shadow);
 }
 
 .selector {
@@ -145,6 +153,8 @@
     border: var(--thin-border);
     box-shadow: var(--small-inset-box-shadow);
 }
+
+/*** Mobile view ***/
 
 .checkout-container {
     background-color: var(--secondary-colour-translucent);

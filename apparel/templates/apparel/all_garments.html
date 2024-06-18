@@ -6,7 +6,11 @@
 {% endblock %}
 
 {% block banner %}
-<h4 class="font-weight-bold text-end me-5">{% if grand_total %}Bag Total: £{{ grand_total|floatformat:2 }}{% endif %}</h4>
+<h4 class="font-weight-bold text-end me-5">
+    {% if grand_total %}
+        Bag Total: £{{ grand_total|floatformat:2 }}
+    {% endif %}
+</h4>
 {% endblock %}
 
 {% block content %}
@@ -14,43 +18,58 @@
 <div class="container-fluid self-align-center text-left my-2">
     <div class="row">
         {% for product in products %}
-        {% if product.discount %}
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto my-2">
-                <div class="image">
-                    <span class="badge position-absolute">Sale</span>
-                    {% include "includes/image.html" %}
+
+        <!-- Sale Items -->
+            {% if product.discount %}
+                <div class="col my2 py-lg-5">
+                    <div class="card mx-auto my-2">
+                        <div class="image">
+                            <span class="badge position-absolute">
+                                Sale
+                            </span>
+                            {% include "includes/image.html" %}
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                {{ product.name }}
+                            </h4>
+                            <p class="card-text">
+                                {{ product.description }}
+                            </p>
+                            <div class="sale-container-sm text-center">
+                                Sale!
+                            <h5 class="card-text discount">
+                                <del>
+                                    £{{ product.price }}
+                                </del> 
+                                &nbsp;£{{ product.discount_price }}
+                            </h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <p class="card-text">{{ product.description }}</p>
-                    <div class="sale-container-sm text-center">
-                    Sale!
-                    <h5 class="card-text discount"><del>£{{ product.price }}</del> &nbsp;£{{ product.discount_price }}</h5>
+            {% else %}
+            
+            <!-- Regular Items -->
+                <div class="col my2 py-lg-5">
+                    <div class="card mx-auto my-2">
+                        <div class="image">
+                        {% include "includes/image.html" %}
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                {{ product.name }}
+                            </h4>
+                            <p class="card-text">
+                                {{ product.description }}
+                            </p>
+                            <h5 class="card-text">
+                                £{{ product.price }}
+                            </h5>
+                        </div>
+                    </div>
                 </div>
-                    <!-- <a href="{% url 'garment' product.id %}" class="btn btn-view">
-                        View Product
-                    </a> -->
-                </div>
-            </div>
-        </div>
-        {% else %}
-        <div class="col my2 py-lg-5">
-            <div class="card mx-auto my-2">
-                <div class="image">
-                   {% include "includes/image.html" %}
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <p class="card-text">{{ product.description }}</p>
-                    <h5 class="card-text">£{{ product.price }}</h5>
-                    <!-- <a href="{% url 'garment' product.id %}" class="btn btn-view">
-                        View Product
-                    </a> -->
-                </div>
-            </div>
-        </div>
-        {% endif %}
+            {% endif %}
         {% endfor %}
     </div>
 </div>
