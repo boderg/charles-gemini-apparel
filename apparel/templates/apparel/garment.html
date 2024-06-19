@@ -10,11 +10,11 @@
 {% endblock %}
 
 {% block banner %}
-    <h4 class="font-weight-bold text-end me-5">
+    <h5 class="font-weight-bold text-end me-5">
         {% if grand_total %}
             Bag Total: £{{ grand_total|floatformat:2 }}
         {% endif %}
-    </h4>
+    </h5>
 {% endblock %}
 
 {% block content %}
