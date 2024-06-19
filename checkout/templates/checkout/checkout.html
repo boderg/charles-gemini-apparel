@@ -10,32 +10,38 @@
     - {{ page_title }}
 {% endblock %}
 
-{% block banner %}
-
-{% endblock %}
-
 {% block content %}
 
 <div class="container col-11 m-5 mx-auto p-lg-5">
     <div class="row m-1 m-lg-0">
         <div class="col-md-12 text-end">
-            <h3>Please fill out the form below to complete your order</h3>
+            <h3>
+                Please fill out the form below to complete your order
+            </h3>
         </div>
     </div>
     <div class="row m-2 m-lg-0">
         <div class="col-lg-6 form-container p-2 mt-2 mt-md-0 order-last">
-            <h3 class="pt-2 ps-3">Checkout</h3>
-            <p class="small text-muted ps-3">*All fields are required</p>
+            <h3 class="pt-2 ps-3">
+                Checkout
+            </h3>
+            <p class="small text-muted ps-3">
+                *All fields are required
+            </p>
             <form action="{% url 'checkout' %}" method="post" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="px-1 px-md-3 mb-3">
-                    <legend class="fieldset-label small px-2 w-auto">Contact Details</legend>
+                    <legend class="fieldset-label small px-2 w-auto">
+                        Contact Details
+                    </legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset class="px-1 px-md-3 mb-3">
-                    <legend class="fieldset-label small px-2 w-auto">Billing and Delivery Information</legend>
+                    <legend class="fieldset-label small px-2 w-auto">
+                        Billing and Delivery Information
+                    </legend>
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.town_or_city | as_crispy_field }}
@@ -45,16 +51,24 @@
                     <div class="form-check form-check-inline">
                         {% if user.is_authenticated %}
                             <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
-                            <label class="form-check-label" for="id-save-info">Save this information for next time</label>
+                            <label class="form-check-label" for="id-save-info">
+                                Save this information for next time
+                            </label>
                         {% else %}
-                            <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
-                            <a href="{% url 'account_login' %}" class="text-info">Log In</a> to save this information
+                            <a href="{% url 'account_signup' %}" class="text-info">
+                                Create an account
+                            </a> or
+                            <a href="{% url 'account_login' %}" class="text-info">
+                                Log In
+                            </a> 
+                            to save this information
                         {% endif %}
-                        
                     </div>
                 </fieldset>
                 <fieldset class="px-1 px-md-3">
-                    <legend class="fieldset-label small px-2 w-auto">Payment Details</legend>
+                    <legend class="fieldset-label small px-2 w-auto">
+                        Payment Details
+                    </legend>
                     <div id="card-element"></div>
                     <div id="card-errors"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
@@ -65,34 +79,45 @@
                         Complete Order
                     </button>
                     <p class="small mt-3 ">
-                        <span><img src="{% static 'icons/exclamation-warning-round-icon.svg' %}" class="exclamation-icon" alt="exclamation icon"></span>
-                        <span>Your card will be charged £{{ grand_total|floatformat:2 }}</span>
+                        <span>
+                            <img src="{% static 'icons/exclamation-warning-round-icon.svg' %}" class="exclamation-icon" alt="exclamation icon">
+                        </span>
+                        <span>
+                            Your card will be charged £{{ grand_total|floatformat:2 }}
+                        </span>
                     </p>
                 </div>
             </form>
         </div>
         <div class="col-lg-6 summary-container p-2">
-            
             <div class="bag-summary pt-1 pt-lg-2 ps-3">
-                <h3>Order Summary</h3>
-                <p>Your Bag ( {{ item_count }} items ) </p>
+                <h3>
+                    Order Summary
+                </h3>
+                <p>
+                    Your Bag ( {{ item_count }} items ) 
+                </p>
                 {% for item in bag_items %}
-                <div class="row">
-                    <div class="col-3">
-                        {% if item.product.productimage_set.all %}
-                        <img class="w-100 bag-summary-img" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
-                        {% else %}
-                        <img class="w-100 bag-summary-img p-2" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
-                        {% endif %}
+                    <div class="row">
+                        <div class="col-3">
+                            {% if item.product.productimage_set.all %}
+                                <img class="w-100 bag-summary-img" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                                <img class="w-100 bag-summary-img p-2" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                {{ item.product.name }}<br>
+                                Colour: {{ item.colour_name }}<br>
+                                Size: {{ item.size_name }}<br>
+                                Qty: {{ item.quantity }}
+                            </p>
+                            <p>
+                                Item Total: £{{ item|item_subtotal|floatformat:2 }}
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-9">
-                        <p>{{ item.product.name }}
-                        <br>Colour: {{ item.colour_name }}
-                        <br>Size: {{ item.size_name }}
-                        <br>Qty: {{ item.quantity }}</p>
-                        <p>Item Total: £{{ item|item_subtotal|floatformat:2 }}</p>
-                    </div>
-                </div>
                 {% endfor %}
             </div>
             <hr>
@@ -105,7 +130,7 @@
                 <div class="col px-2 px-lg-5 m-3 bag-summary">
                     <strong>Delivery: £{{ delivery|floatformat:2 }}</strong> <br>
                     {% if free_delivery_delta > 0 %}
-                    <small>Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</small>
+                        <small>Spend £{{ free_delivery_delta|floatformat:2 }} more and your delivery will be free!</small>
                     {% endif %}
                 </div>
             </div>
@@ -118,9 +143,12 @@
             <div class="row">
                 <div class="col px-2 px-lg-5 m-3 text-end">
                     <a href="{% url 'bag' %}" class="btn btn-back p-2">
-                        <span><i class="fas fa-arrow-left fa-lg"></i></span>
+                        <span>
+                            <i class="fas fa-arrow-left fa-lg"></i>
+                        </span>
                          Change Your Order
                     </a>
+                </div>
 			</div>
         </div>
     </div>
@@ -132,6 +160,7 @@
         </span>
     </h1>
 </div>
+
 {% endblock %}
 
 {% block postloadjs %}

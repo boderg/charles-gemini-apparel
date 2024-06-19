@@ -238,6 +238,8 @@ input[name='q']::placeholder {
 
 /*** Main Content ***/
 
+/*** Cards ***/
+
 .card {
     border: var(--thin-border);
     border-radius: var(--border-radius);
@@ -264,6 +266,8 @@ input[name='q']::placeholder {
     color: var(--secondary-colour);
 }
 
+/*** Carousel ***/
+
 .carousel-item .carousel-image {
     border-radius: var(--border-radius);
     border: var(--thin-border);
@@ -273,6 +277,8 @@ input[name='q']::placeholder {
 .carousel-indicators button {
     color: var(--secondary-colour);
 }
+
+/*** Admin Buttons ***/
 
 .admin-buttons .btn-delete:hover {
     background-color: var(--error-colour);

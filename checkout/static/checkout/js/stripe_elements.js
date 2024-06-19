@@ -1,3 +1,4 @@
+// Stripe Elements JS
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
@@ -33,7 +34,7 @@ card.addEventListener('change', function (event) {
             </span>
             <span class="error" style="color: var(--error-colour);">
                 ${event.error.message}
-            </span>`
+            </span>`;
         $(displayError).html(html);
     } else {
         displayError.textContent = '';
@@ -54,7 +55,7 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-    }
+    };
     var url = '/checkout/cache_checkout_data/';
     $.post(url, postData).done(function() {
         

@@ -36,18 +36,17 @@
         {% endblock %}
 
         <title>Charles Gemini Apparel {% block extra_title %}{% endblock %}</title>
-
     </head>
 
     <body>
         {% include 'includes/header.html' %}
-
-        <div class="banner">
-            <div class="col text-center p-1">
-                <h3>{% block banner %}{% endblock %}</h3>
+            <div class="banner">
+                <div class="col text-center p-1">
+                    <h3>
+                        {% block banner %}{% endblock %}
+                    </h3>
+                </div>
             </div>
-        </div>
-
         {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
@@ -67,20 +66,19 @@
         {% endif %}
 
         <main>
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
         </main>
 
         {% include 'includes/footer.html' %}
 
         {% block postloadjs %}
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('.toast').toast('show');
-            });
-        </script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.toast').toast('show');
+                });
+            </script>
         {% endblock %}
-
     </body>
 
 </html>

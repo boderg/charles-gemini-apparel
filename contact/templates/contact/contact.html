@@ -9,16 +9,14 @@
     - {{ page_title }}
 {% endblock %}
 
-{% block banner %}
-
-{% endblock %}
-
 {% block content %}
 
 <div class="col-11 col-md-6 container form-container my-5 mx-auto p-1 p-lg-5">
     <div class="row m-1 m-lg-0">
         <div class="col text-start mx-auto">
-            <h3>Please fill out the form below to contact us</h3>
+            <h3>
+                Please fill out the form below to contact us
+            </h3>
         </div>
     </div>
     <div class="row m-2 m-lg-0">
@@ -26,8 +24,9 @@
             <form action="{% url 'contact' %}" method="POST" class="form p-3">
                 {% csrf_token %}
                 {{ contact_form | crispy }}
-
-                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="submit" class="btn btn-submit">
+                    Submit
+                </button>
             </form>
         </div>
     </div>  

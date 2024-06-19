@@ -16,22 +16,32 @@
 {% block content %}
 
 <div class="container col-11 col-md-10 col-lg-8 m-5 mx-auto p-2">
-    <h3 class="text-start p-3">User Account Info</h3>
+    <h3 class="text-start p-3">
+        User Account Info
+    </h3>
     <div class="row m-1 m-lg-0">
         <hr>
         <div class="col-12">
-            <h4 class="p-3">{{ user.username.capitalize }}'s Profile</h4>
+            <h4 class="p-3">
+                {{ user.username.capitalize }}'s Profile
+            </h4>
         </div>
         <div class="col-12 col-md-6 form-container p-2 p-md-3">
-            <p>Default Delivery Information</p>
+            <p>
+                Default Delivery Information
+            </p>
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-update float-end">Update Information</button>
+                <button class="btn btn-update float-end">
+                    Update Information
+                </button>
             </form>
         </div>
         <div class="col-12 col-md-6 form-container mt-2 mt-md-0 p-2 p-md-3">
-            <p>Order History</p>
+            <p>
+                Order History
+            </p>
             <div class="order-history table-responsive">
                 <table class="table table-sm">
                     <thead>
@@ -46,10 +56,12 @@
                                 <tr>
                                     <td class="p-md-2">
                                         <a href="{% url 'order_history' order.order_number %}"
-                                        title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
+                                           title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
-                                    <td class="p-md-2">{{ order.date }}</td>
+                                    <td class="p-md-2">
+                                        {{ order.date }}
+                                    </td>
                                     <td class="p-md-2">
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
@@ -59,10 +71,11 @@
                                                 {{ item.colour.name }}
                                             </li>
                                             {% endfor %}
-                                        
                                         </ul>
                                     </td>
-                                    <td class="p-md-2">£{{ order.grand_total|floatformat:2 }}</td>
+                                    <td class="p-md-2">
+                                        £{{ order.grand_total|floatformat:2 }}
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>

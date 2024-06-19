@@ -1,3 +1,5 @@
+// countdown timer
+
 var countdown = document.getElementById('countdown');
 var seconds = 10;
 

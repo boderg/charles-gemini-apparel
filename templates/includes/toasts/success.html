@@ -1,14 +1,15 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/toasts/success.css' %}">
+	<link rel="stylesheet" href="{% static 'css/toasts/success.css' %}">
 {% endblock %}
 
 <div class="toast custom-toast" role="alert" data-bs-autohide="true" aria-live="assertive" aria-atomic="true">
 	<div class="toast-header success-header">
 		<img src="{% static 'icons/approve-accept-icon.svg' %}" class="rounded me-2 success-icon" alt="success icon">
-		<strong class="me-auto">Success!</strong>
-		<!-- <small>11 mins ago</small> -->
+		<strong class="me-auto">
+			Success!
+		</strong>
 		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 	</div>
 	<div class="toast-body">
@@ -19,22 +20,32 @@
 			</div>
 		</div>
 		{% if grand_total and not on_profile_page %}
-		<p>Your Bag ( {{ item_count }} items ) </p>
+		<p>
+			Your Bag ( {{ item_count }} items ) 
+		</p>
 		<div class="bag-notification-wrapper">
 			{% for item in bag_items %}
 			<div class="row">
 				<div class="col-3">
 					{% if item.product.productimage_set.all %}
-					<img class="w-100" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
+						<img class="w-100" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
 					{% else %}
-					<img class="w-100" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
+						<img class="w-100" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
 					{% endif %}
 				</div>
 				<div class="col-9">
-					<p>{{ item.product.name }}</p>
-					<p>Colour: {{ item.colour_name }}</p>
-					<p>Size: {{ item.size_name }}</p>
-					<p>Qty: {{ item.quantity }}</p>
+					<p>
+						{{ item.product.name }}
+					</p>
+					<p>
+						Colour: {{ item.colour_name }}
+					</p>
+					<p>
+						Size: {{ item.size_name }}
+					</p>
+					<p>
+						Qty: {{ item.quantity }}
+					</p>
 				</div>
 			</div>
 			{% endfor %}
@@ -47,11 +58,11 @@
 		{% endif %}
 	</div>
 	{% if bag_items and not order_successful and not on_profile_page %}
-	<div class="checkout-button">
-		<a href="{% url 'checkout' %}" class="btn btn-checkout w-100">
-			<img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
-			Secure Checkout
-		</a>
-	</div>
+		<div class="checkout-button">
+			<a href="{% url 'checkout' %}" class="btn btn-checkout w-100">
+				<img src="{% static 'icons/online-secure-payment-icon.svg' %}" class="checkout-icon" alt="credit card icon">
+				Secure Checkout
+			</a>
+		</div>
 	{% endif %}
 </div>

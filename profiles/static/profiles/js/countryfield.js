@@ -1,3 +1,5 @@
+// color of country field text
+
 let countrySelected = $('#id_default_country').val();
         if (!countrySelected) {
             $('#id_default_county').css('color', 'var(--secondary-colour-translucent)');

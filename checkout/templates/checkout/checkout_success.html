@@ -9,18 +9,17 @@
     - {{ page_title }}
 {% endblock %}
 
-{% block banner %}
-
-{% endblock %}
-
 {% block content %}
 
 <div class="container col-11 m-5 mx-auto p-2">
     <div class="row m-1 m-lg-0">
         <div class="col-md-12 text-center order-details mb-2 p-3">
-            <h3>Thank you for your order</h3>
+            <h3>
+                Thank you for your order
+            </h3>
             <hr>
-            <p>Your order number is: {{ order.order_number }} <br>
+            <p>
+                Your order number is: {{ order.order_number }} <br>
                 Order Date: {{ order.date }} <br>
                 A confirmation email will be sent to: {{ order.email }} <br>
                 Your order details are below: <br>
@@ -31,35 +30,49 @@
     <div class="row m-1 m-lg-0">
         <div class="item-details-container"> 
             <div class="col text-center p-3">
-                <h4>Your Order: </h4>
+                <h4>
+                    Your Order: 
+                </h4>
                 <hr>
             </div>
         <div class="row m-3"> 
         {% for item in order_line_items %} 
-         
             <div class="col-md-3 mb-3 image-container">
                 {% if item.product.productimage_set.all %}
-                <img class="w-100" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
+                    <img class="w-100" src="{{ item.product.productimage_set.all.0.image.url }}" alt="{{ item.product.name }}">
                 {% else %}
-                <img class="w-100 p-3" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
+                    <img class="w-100 p-3" src="{{ MEDIA_URL }}image-not-found-icon.svg" alt="{{ item.product.name }}">
                 {% endif %}
             </div>
-        
             <div class="col-md-3 ps-5">
-                <h5>{{ item.product.name }}</h5>
-                <p><strong>Colour: </strong>{{ item.colour }}</p>
-                <p><strong>Size: </strong>{{ item.size }}</p>
-                <p><strong>Qty: </strong>{{ item.quantity }}</p>
+                <h5>
+                    {{ item.product.name }}
+                </h5>
+                <p>
+                    <strong>Colour: </strong>{{ item.colour }}
+                </p>
+                <p>
+                    <strong>Size: </strong>{{ item.size }}
+                </p>
+                <p>
+                    <strong>Qty: </strong>{{ item.quantity }}
+                </p>
                 {% if item.product.discount %}
-                    <p><strong>Item Price: £</strong><del>{{ item.product.price|floatformat:2 }}</del> £{{ item.product.discount_price|floatformat:2 }}</p>
-                    <p><strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}</p>
+                    <p>
+                        <strong>Item Price: £</strong><del>{{ item.product.price|floatformat:2 }}</del> £{{ item.product.discount_price|floatformat:2 }}
+                    </p>
+                    <p>
+                        <strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}
+                    </p>
                 {% else %}
-                    <p><strong>Item Price: £</strong>{{ item.product.price|floatformat:2 }}</p>
-                    <p><strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}</p>
+                    <p>
+                        <strong>Item Price: £</strong>{{ item.product.price|floatformat:2 }}
+                    </p>
+                    <p>
+                        <strong>Item Total: £</strong>{{ item.lineitem_total|floatformat:2 }}
+                    </p>
                 {% endif %}
-
             </div>
-       
         {% endfor %}  
         </div>    
         <div class="row m-1">
@@ -74,10 +87,14 @@
     <div class="address-container m-2 mx-auto p-2">
         <div class="row m-1">
             <div class="col-6 text-center p-3">
-                <h5>Delivery Info:</h5>
+                <h5>
+                    Delivery Info:
+                </h5>
             </div>
             <div class="col-6 text-center p-3">
-                <h5>Billing Info:</h5>
+                <h5>
+                    Billing Info:
+                </h5>
             </div>
             <hr>
             <div class="col-6 text-center p-2">
@@ -114,15 +131,19 @@
                 <div class="row">
                     <div class="col m-2 text-center">
                         {% if from_profile %}
-                        <a href="{% url 'profile' %}" class="btn btn-back">
-                            <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                            Back to Profile
-                        </a>
+                            <a href="{% url 'profile' %}" class="btn btn-back">
+                                <span>
+                                    <i class="fas fa-arrow-left fa-lg"></i>
+                                </span>
+                                Back to Profile
+                            </a>
                         {% else %}
-                        <a href="{% url 'all_garments' %}" class="btn btn-back">
-                            <span><i class="fas fa-arrow-left fa-lg"></i></span>
-                            Continue Shopping
-                        </a>
+                            <a href="{% url 'all_garments' %}" class="btn btn-back">
+                                <span>
+                                    <i class="fas fa-arrow-left fa-lg"></i>
+                                </span>
+                                Continue Shopping
+                            </a>
                         {% endif %}
                     </div>
                 </div>
