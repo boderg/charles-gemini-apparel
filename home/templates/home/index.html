@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block banner %}
-    Free delivery on orders over £{{ free_delivery_threshold }}*
+   <h4 class="font-weight-bold">Free delivery on orders over £{{ free_delivery_threshold }}*</h4>
 {% endblock %}
 
 {% block content %}
@@ -30,9 +30,9 @@
         <div class="col my-2 py-lg-5">
             <div class="card mx-auto">
                 <div class="image">
-                    <a href="{% url 'all_garments' %}?category=New_Designs">
+                    <!-- <a href="{% url 'all_garments' %}?category=New_Designs"> -->
                         {% include 'includes/carousel.html' %}
-                    </a>
+                    <!-- </a> -->
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
