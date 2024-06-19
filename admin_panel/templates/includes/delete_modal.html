@@ -24,7 +24,7 @@
                 <p>
                     This action cannot be undone.
                 </p>
-                <form id="deleteForm" action="" method="post">
+                <form id="deleteForm" action="{{ delete_url }}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-modal-delete">
                         Delete 
