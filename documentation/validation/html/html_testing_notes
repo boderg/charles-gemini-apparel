@@ -1,0 +1,5 @@
+Html checking summary - 
+
+all add, edit and selection pages have a warning 'no header' - this is because of django templating to access the dynamic page titles {{ page_title }}
+
+all selection pages have an error 'bad value for attribute action' in the delete form - this is because of django templating to access urls - specifically {{ delete_url }} 
