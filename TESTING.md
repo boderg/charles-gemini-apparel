@@ -71,7 +71,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | bag | bag.css | ![screenshot](documentation/validation/css/bag/bag.png) | Passed! |
 | checkout | checkout.css | ![screenshot](documentation/validation/css/checkout/checkout.png) | Passed! |
 | checkout | checkout_success.css | ![screenshot](documentation/validation/css/checkout/checkout_success.png) | Passed! |
-| contact | contact.css | ![screenshot](documentation/validation/css/contact.png) | Passed! |
+| contact | contact.css | ![screenshot](documentation/validation/css/contact/contact.png) | Passed! |
 | profiles | profile.css | ![screenshot](documentation/validation/css/profiles/profile.png) | Passed! |
 | static | base.css | ![screenshot](documentation/validation/css/static/base.png) | Passed! |
 | static | error_pages.css | ![screenshot](documentation/validation/css/static/error_pages.png) | Passed! |
