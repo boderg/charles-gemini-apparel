@@ -11,12 +11,15 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 >[!NOTE]
 >
->*Validation was performed in two ways:*
+>*HTML Validation was performed in two ways:*
 >
 >1. From the live site the page source was inspected, copied and pasted into the validator.
 >2. From the live site the url was copied and pasted into the validator.
 >
 >These two methods were chosen for HTML validation due to the django content in the site being incompatible with the validator.
+
+<details>
+<summary>Click to view the HTML validation results for Charles Gemini Apparel</summary>
 
 | Directory | File | Screenshot Errors | Screenshot Method 1 | Screenshot Method 2 | Notes / Fixes |
 | --- | --- | --- | --- | --- | --- |
@@ -57,9 +60,14 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >- One filtered out warning for *'no header'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
 >- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
 
+</details>
+
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+<details>
+<summary>Click to view the CSS validation results for Charles Gemini Apparel</summary>
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -82,9 +90,14 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | static | success.css | ![screenshot](documentation/validation/css/toasts/success.png) | Passed! |
 | static | warning.css | ![screenshot](documentation/validation/css/toasts/warning.png) | Passed! |
 
+</details>
+
 ### JavaScript
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+<details>
+<summary>Click to view the JavaScript validation results for Charles Gemini Apparel</summary>
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -94,9 +107,14 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | profiles | countryfield.js | ![screenshot](documentation/validation/js/countryfield.png) | Passed! |
 | static | quantity.js | ![screenshot](documentation/validation/js/quantity.png) | Passed! |
 
+</details>
+
 ### Python
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+<details>
+<summary>Click to view the Python validation results for Charles Gemini Apparel</summary>
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
@@ -142,3 +160,5 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | profiles | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/models.py) | ![screenshot](documentation/validation/python/profiles/models.png) | Passed! |
 | profiles | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/urls.py) | ![screenshot](documentation/validation/python/profiles/urls.png) | Passed! |
 | profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/views.py) | ![screenshot](documentation/validation/python/profiles/views.png) | Passed! |
+
+</details>
