@@ -93,3 +93,52 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | contact | success_timer.js | ![screenshot](documentation/validation/js/success_timer.png) | Passed! |
 | profiles | countryfield.js | ![screenshot](documentation/validation/js/countryfield.png) | Passed! |
 | static | quantity.js | ![screenshot](documentation/validation/js/quantity.png) | Passed! |
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+| Directory | File | CI URL | Screenshot | Notes |
+| --- | --- | --- | --- | --- |
+| admin_panel | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/admin_panel/admin.py) | *Empty File* | *Nothing to note* |
+| admin_panel | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/admin_panel/forms.py) | ![screenshot](documentation/validation/python/admin_panel/forms.png) | Passed! |
+| admin_panel | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/admin_panel/models.py) | *Empty File* | *Nothing to note* |
+| admin_panel | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/admin_panel/urls.py) | ![screenshot](documentation/validation/python/admin_panel/urls.png) | Passed! |
+| admin_panel | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/admin_panel/views.py) | ![screenshot](documentation/validation/python/admin_panel/views.png) | Passed! |
+| apparel | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/apparel/admin.py) | ![screenshot](documentation/validation/python/apparel/admin.png) | Passed! |
+| apparel | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/apparel/forms.py) | ![screenshot](documentation/validation/python/apparel/forms.png) | Passed! |
+| apparel | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/apparel/models.py) | ![screenshot](documentation/validation/python/apparel/models.png) | Passed! |
+| apparel | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/apparel/urls.py) | ![screenshot](documentation/validation/python/apparel/urls.png) | Passed! |
+| apparel | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/apparel/views.py) | ![screenshot](documentation/validation/python/apparel/views.png) | Passed! |
+| bag | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/admin.py) | *Empty File* | *Nothing to note* |
+| bag | contexts.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/contexts.py) | ![screenshot](documentation/validation/python/bag/contexts.png) | Passed! |
+| bag | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/models.py) | *Empty File* | *Nothing to note* |
+| bag | bag_tools.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/python/bag/bag_tools.png) | Passed! |
+| bag | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/urls.py) | ![screenshot](documentation/validation/python/bag/urls.png) | Passed! |
+| bag | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/bag/views.py) | ![screenshot](documentation/validation/python/bag/views.png) | Passed! |
+| checkout | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/admin.py) | ![screenshot](documentation/validation/python/checkout/admin.png) | Passed! |
+| checkout | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/forms.py) | ![screenshot](documentation/validation/python/checkout/forms.png) | Passed! |
+| checkout | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/models.py) | ![screenshot](documentation/validation/python/checkout/models.png) | Passed! |
+| checkout | signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/signals.py) | ![screenshot](documentation/validation/python/checkout/signals.png) | Passed! |
+| checkout | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/urls.py) | ![screenshot](documentation/validation/python/checkout/urls.png) | Passed! |
+| checkout | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/views.py) | ![screenshot](documentation/validation/python/checkout/views.png) | Passed! |
+| checkout | webhook_handler.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/webhook_handler.py) | ![screenshot](documentation/validation/python/checkout/webhook_handler.png) | Passed! |
+| checkout | webhooks.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/checkout/webhooks.py) | ![screenshot](documentation/validation/python/checkout/webhooks.png) | Passed! |
+| contact | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/contact/admin.py) | ![screenshot](documentation/validation/python/contact/admin.png) | Passed! |
+| contact | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/contact/forms.py) | ![screenshot](documentation/validation/python/contact/forms.png) | Passed! |
+| contact | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/contact/models.py) | ![screenshot](documentation/validation/python/contact/models.png) | Passed! |
+| contact | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/contact/urls.py) | ![screenshot](documentation/validation/python/contact/urls.png) | Passed! |
+| contact | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/contact/views.py) | ![screenshot](documentation/validation/python/contact/views.png) | Passed! |
+|  | custom_storages.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/custom_storages.py) | ![screenshot](documentation/validation/python/custom_storages.png) | Passed! |
+| home | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/home/admin.py) | *Empty File* | *Nothing to Note* |
+| home | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/home/models.py) | *Empty File* | *Nothing to Note* |
+| home | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/home/urls.py) | ![screenshot](documentation/validation/python/home/urls.png) | Passed! |
+| home | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/home/views.py) | ![screenshot](documentation/validation/python/home/views.png) | Passed! |
+| main | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/main/settings.py) | ![screenshot](documentation/validation/python/main/settings.png) | Passed! |
+| main | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/main/urls.py) | ![screenshot](documentation/validation/python/main/urls.png) | Passed! |
+|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/manage.py) | ![screenshot](documentation/validation/python/manage.png) | Passed! |
+| profiles | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/admin.py) | *Empty File* | *Nothing to note* |
+| profiles | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/forms.py) | ![screenshot](documentation/validation/python/profiles/forms.png) | Passed! |
+| profiles | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/models.py) | ![screenshot](documentation/validation/python/profiles/models.png) | Passed! |
+| profiles | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/urls.py) | ![screenshot](documentation/validation/python/profiles/urls.png) | Passed! |
+| profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/views.py) | ![screenshot](documentation/validation/python/profiles/views.png) | Passed! |
