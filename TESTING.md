@@ -56,3 +56,28 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >
 >- One filtered out warning for *'no header'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
 >- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin_panel | add_garment.css | ![screenshot](documentation/validation/css/admin_panel/add_garment.png) | Passed! |
+| admin_panel | admin_panel.css | ![screenshot](documentation/validation/css/admin_panel/admin_panel.png) | Passed! |
+| admin_panel | edit_garment.css | ![screenshot](documentation/validation/css/admin_panel/edit_garment.png) | Passed! |
+| admin_panel | list_garments.css | ![screenshot](documentation/validation/css/admin_panel/list_garment.png) | Passed! |
+| apparel | garment.css | ![screenshot](documentation/validation/css/apparel/garment.png) | Passed! |
+| bag | bag.css | ![screenshot](documentation/validation/css/bag/bag.png) | Passed! |
+| checkout | checkout.css | ![screenshot](documentation/validation/css/checkout/checkout.png) | Passed! |
+| checkout | checkout_success.css | ![screenshot](documentation/validation/css/checkout/checkout_success.png) | Passed! |
+| contact | contact.css | ![screenshot](documentation/validation/css/contact.png) | Passed! |
+| profiles | profile.css | ![screenshot](documentation/validation/css/profiles/profile.png) | Passed! |
+| static | base.css | ![screenshot](documentation/validation/css/static/base.png) | Passed! |
+| static | error_pages.css | ![screenshot](documentation/validation/css/static/error_pages.png) | Passed! |
+| static | login.css | ![screenshot](documentation/validation/css/static/login.png) | Passed! |
+| static | modal.css | ![screenshot](documentation/validation/css/static/modal.png) | Passed! |
+| static | error.css | ![screenshot](documentation/validation/css/toasts/error.png) | Passed! |
+| static | info.css | ![screenshot](documentation/validation/css/toasts/info.png) | Passed! |
+| static | success.css | ![screenshot](documentation/validation/css/toasts/success.png) | Passed! |
+| static | warning.css | ![screenshot](documentation/validation/css/toasts/warning.png) | Passed! |
