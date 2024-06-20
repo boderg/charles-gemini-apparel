@@ -81,3 +81,15 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | static | info.css | ![screenshot](documentation/validation/css/toasts/info.png) | Passed! |
 | static | success.css | ![screenshot](documentation/validation/css/toasts/success.png) | Passed! |
 | static | warning.css | ![screenshot](documentation/validation/css/toasts/warning.png) | Passed! |
+
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
+
+| Directory | File | Screenshot | Notes |
+| --- | --- | --- | --- |
+| admin_panel | delete_modal.js | ![screenshot](documentation/validation/js/delete_modal.png) | Passed! |
+| checkout | stripe_elements.js | ![screenshot](documentation/validation/js/stripe_elements.png) | Passed! |
+| contact | success_timer.js | ![screenshot](documentation/validation/js/success_timer.png) | Passed! |
+| profiles | countryfield.js | ![screenshot](documentation/validation/js/countryfield.png) | Passed! |
+| static | quantity.js | ![screenshot](documentation/validation/js/quantity.png) | Passed! |
