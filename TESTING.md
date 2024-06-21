@@ -1,5 +1,6 @@
 # Testing
- 
+
+> [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
 ## Code Validation
@@ -8,6 +9,8 @@
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
+>[!NOTE]
+>
 >*HTML Validation was performed in two ways:*
 >
 >1. From the live site the page source was inspected, copied and pasted into the validator.
@@ -61,6 +64,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
+>[!NOTE]
+>
 >All files passed the CSS Jigsaw validation tests.
 
 <details>
@@ -93,6 +98,8 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
+>[!NOTE]
+>
 >All files passed the JShint validation tests.
 
 <details>
@@ -112,6 +119,8 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
+>[!NOTE]
+>
 >All files passed the PEP8 CI Python Linter validation tests.
 
 <details>
