@@ -27,7 +27,6 @@
             {% if bag_items %}
                 <div class="d-block d-md-none checkout-container p-2">
                     <div class="row">
-                    {% for item in bag_items %}
                         <div class="col-11 text-center p-2 pt-3 mx-auto section-container">
                             <a href="{% url 'all_garments' %}" class="btn btn-back p-2">
                                 <span>
@@ -46,9 +45,10 @@
                         </div>
                     </div>
                     <div class="row">
+                        {% for item in bag_items %}
                         <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
                             <div class="row">
-                            <!-- Product Image -->
+                                <!-- Product Image -->
                                 <div class="col-12">
                                     <p class="text-center">
                                         <strong>
@@ -56,29 +56,26 @@
                                         </strong>
                                     </p>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 col-md-4">
                                     <div class="bag-image">
                                         {% include "includes/product_image.html" %}
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="text-end">
+                                <div class="col-6 col-md-4">
+                                    <div class="text-end me-2 me-md-5 mt-3">
                                         Item Price:
                                         {% include "includes/product_price.html" %}
                                         Subtotal: <br> 
                                         £{{ item|item_subtotal|floatformat:2 }}
                                     </div>
                                 </div>
+                                <!-- Product Details -->
+                                <div class="bag-details col-12 col-md-4 mt-3 mb-3">
+                                    {% include "includes/product_details.html" %}
+                                </div>
                             </div>
                         </div>
-                    </div>     
-                    <div class="row">
-                        <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
-                        <!-- Product Details -->
-                            <div class="bag-details">
-                                {% include "includes/product_details.html" %}
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="row">
                         <div class="col-11 text-center p-2 mt-2 mx-auto section-container">
@@ -87,12 +84,12 @@
                                 {% include "includes/order_total.html" %}
                             </div>
                         </div>
-                    </div>
-                    {% endfor %}                   
+                    </div>                   
                 </div>
+
                 <!-- Large screens table view -->
-                <div class="table-responsive pb-0 d-none d-md-block">
-                <table class="table table-sm table-borderless bag-table">
+                <div class="d-none d-md-block table-responsive pb-0">
+                    <table class="table table-sm table-borderless bag-table">
                         <thead>
                             <tr>
                                 <th scope="col" class="p-md-2">Product</th>
@@ -105,10 +102,12 @@
                             <tr>
                             <!-- Product Image -->
                                 <td class="pt-2 ps-2">
-                                {% include "includes/product_image.html" %}
+                                    <hr>
+                                    {% include "includes/product_image.html" %}
                                 </td>
                             <!-- Product Details -->
                                 <td class="pt-2">
+                                    <hr>
                                     <p class="text-center">
                                         <strong>
                                             {{ item.product.name }}
@@ -118,10 +117,12 @@
                                 </td>
                             <!-- Product Price -->
                                 <td class="pt-2">
-                                {% include "includes/product_price.html" %}
+                                    <hr>
+                                    {% include "includes/product_price.html" %}
                                 </td>
                             <!-- Product Subtotal -->
                                 <td class="pt-2">
+                                    <hr>
                                     <p class="text-end">
                                         £{{ item|item_subtotal|floatformat:2 }}
                                     </p>
@@ -131,6 +132,7 @@
                         <tr>
                         <!-- Order Total -->
                             <td colspan="4">
+                                <hr>
                                 {% include "includes/order_total.html" %}
                             </td>
                         </tr>
@@ -151,8 +153,8 @@
                                 </a>
                             </td>
                         </tr>
-                </table>
-                </div>
+                    </table>
+                </div> 
             {% else %}
             <!-- Empty Bag Message -->
                 <div class="col-md-4 d-flex flex-column fill-bag mx-auto my-3">
