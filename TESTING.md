@@ -1,7 +1,6 @@
 # Testing
 
-> [!NOTE]  
-> Return back to the [README.md](README.md) file.
+Return back to the [README.md](README.md) file.
 
 ## Code Validation
 
@@ -199,7 +198,7 @@ I decided to use these three browsers as they use different platforms independan
 | Checkout | ![screenshot](documentation/browsers/chrome/checkout.png) | ![screenshot](documentation/browsers/firefox/checkout.png) | ![screenshot](documentation/browsers/safari/checkout.png) |
 | Checkout Success | ![screenshot](documentation/browsers/chrome/checkout_success.png) | ![screenshot](documentation/browsers/firefox/checkout_success.png) | ![screenshot](documentation/browsers/safari/checkout_success.png) |
 | Profile | ![screenshot](documentation/browsers/chrome/profile.png) | ![screenshot](documentation/browsers/firefox/profile.png) | ![screenshot](documentation/browsers/safari/profile.png) |
-| Admin Panel | ![screenshot](documentation/browsers/chrome/.png) | ![screenshot](documentation/browsers/firefox/.png) | ![screenshot](documentation/browsers/safari/.png) |
+| Admin Panel | ![screenshot](documentation/browsers/chrome/admin_panel.png) | ![screenshot](documentation/browsers/firefox/admin_panel.png) | ![screenshot](documentation/browsers/safari/admin_panel.png) |
 | Add, List, Edit Garment | ![screenshot](documentation/browsers/chrome/add_garment.png) | ![screenshot](documentation/browsers/firefox/list_garment.png) | ![screenshot](documentation/browsers/safari/edit_garment.png) |
 | Add, List, Edit Colour | ![screenshot](documentation/browsers/chrome/add_colour.png) | ![screenshot](documentation/browsers/firefox/list_colour.png) | ![screenshot](documentation/browsers/safari/edit_colour.png) |
 | Add, List, Edit Size | ![screenshot](documentation/browsers/chrome/add_size.png) | ![screenshot](documentation/browsers/firefox/list_size.png) | ![screenshot](documentation/browsers/safari/edit_size.png) |
@@ -208,5 +207,33 @@ I decided to use these three browsers as they use different platforms independan
 | Newsletter Signup, Newsletter List, Newsletter Success | ![screenshot](documentation/browsers/chrome/newsletter_signup.png) | ![screenshot](documentation/browsers/firefox/newsletter_list.png) | ![screenshot](documentation/browsers/safari/newsletter_success.png) |
 | About, Size Guide, Delete Modals | ![screenshot](documentation/browsers/chrome/about_modal.png) | ![screenshot](documentation/browsers/firefox/size_guide_modal.png) | ![screenshot](documentation/browsers/safari/delete_modal.png) |
 | Login, Logout, Signup | ![screenshot](documentation/browsers/chrome/login.png) | ![screenshot](documentation/browsers/firefox/logout.png) | ![screenshot](documentation/browsers/safari/signup.png) |
+
+</details>
+
+## Responsiveness
+
+I've tested the Charles Gemini Apparel deployed project on multiple devices to check for responsiveness issues.
+
+<details>
+<summary>Click to view the Responsiveness testing results for Charles Gemini Apparel</summary>
+
+| Page | Mobile (DevTools) | Tablet (DevTools) | 1080p Laptop | 1080p Monitor | Galaxy S10 plus | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| Home |  |  |  |  |  ||
+| All Designs |  |  |  |  |  ||
+| Garment |  |  |  |  |  ||
+| Bag |  |  |  |  |  ||
+| Checkout |  |  |  |  |  ||
+| Checkout Success |  |  |  |  |  ||
+| Profile |  |  |  |  |  ||
+| Admin Panel |  |  |  |  |  ||
+| Add, List, Edit Garment |  |  |  |  |  ||
+| Add, List, Edit Colour |  |  |  |  |  ||
+| Add, List, Edit Size |  |  |  |  |  ||
+| Add, List, Edit Category |  |  |  |  |  ||
+| Contact, Contact List, Contact Success |  |  |  |  |  ||
+| Subscriber, Subscriber List, Subscriber Success |  |  |  |  |  ||
+| About, Size Guide, Delete Modals |  |  |  |  |  ||
+| Login, Logout, Signup |  |  |  |  |  ||
 
 </details>
