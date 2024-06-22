@@ -176,9 +176,9 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 I've tested my deployed project on the following three browsers to check for compatibility issues:
 
-- Chrome
-- Firefox
-- Safari
+- [Chrome](https://www.google.com/chrome)
+- [Firefox](https://www.mozilla.org/en-GB/firefox/new/)
+- [Safari](https://www.apple.com/uk/safari/)
 
 I decided to use these three browsers as they use different platforms independant of each other.
 
@@ -244,7 +244,7 @@ I've tested the Charles Gemini Apparel deployed project on multiple devices to c
 
 ## Lighthouse Audit
 
-I've tested the Charles Gemini Apparel deployed project using the Lighthouse Audit tool to check for any major issues.
+I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Audit tool](https://developer.chrome.com/docs/lighthouse/overview) to check for any major issues.
 
 >[!NOTE]
 >
@@ -254,10 +254,10 @@ I've tested the Charles Gemini Apparel deployed project using the Lighthouse Aud
 >- The highest drops in performance on desktop appear to be in relation to the number of garment images on each page.
 >- These drops in performace could potentially be the result of a combination of image size and fetch time from the AWS S3 storage. 
 >- All garment images have been saved in webp format but could potentially be shrunk to smaller sizes to aid storage capacities and fetch times.
->- Accessability could be improved in some areas.
+>- Accessibility could be improved in some areas.
 >- Best practices and SEO are the same across the site with SEO needing some improvement.
 
-<detail>
+<details>
 <summary>Click to view the Lighthouse Audit test results for Charles Gemini Apparel</summary>
 
 | Page | Mobile | Desktop |
@@ -289,5 +289,31 @@ I've tested the Charles Gemini Apparel deployed project using the Lighthouse Aud
 | Contact List | ![screenshot](documentation/lighthouse/desktop/contact_list.png) | ![screenshot](documentation/lighthouse/mobile/contact_list.png) |
 | Newsletter | ![screenshot](documentation/lighthouse/desktop/newsletter.png) | ![screenshot](documentation/lighthouse/mobile/newsletter.png) |
 | Newsletter List | ![screenshot](documentation/lighthouse/desktop/newsletter_list.png) | ![screenshot](documentation/lighthouse/mobile/newsletter_list.png) |
+
+</details>
+
+## Wave Compatibility
+
+The Charles Gemini Apparel deployed site was tested using the [Wave Compatibility tester](https://wave.webaim.org/), however the Wave tester could only test pages that were not signed into as it does not have access to secured pages.
+The following results are from the non secured pages of the site.
+
+>[!NOTE]
+>
+>The errors noted by the tester are due to django templating.
+
+<details>
+<summary>Click to view the Wave accesibility test results for Charles Gemini Apparel</summary>
+
+| Page | Summary Screenshot | Contrast Screenshot |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/wave/home_summary.png) | ![screenshot](documentation/wave/home_contrast.png) |
+| All Designs | ![screenshot](documentation/wave/all_designs_summary.png) | ![screenshot](documentation/wave/all_designs_contrast.png) |
+| New Designs | ![screenshot](documentation/wave/new_designs_summary.png) | ![screenshot](documentation/wave/new_designs_contrast.png) |
+| Tees | ![screenshot](documentation/wave/tees_summary.png) | ![screenshot](documentation/wave/tees_contrast.png) |
+| Hoodies | ![screenshot](documentation/wave/hoodies_summary.png) | ![screenshot](documentation/wave/hoodies_contrast.png) |
+| Garment | ![screenshot](documentation/wave/garment_summary.png) | ![screenshot](documentation/wave/garment_contrast.png) |
+| Bag | ![screenshot](documentation/wave/bag_summary.png) | ![screenshot](documentation/wave/bag_contrast.png) |
+| Contact | ![screenshot](documentation/wave/contact_summary.png) | ![screenshot](documentation/wave/contact_contrast.png) |
+| Newsletter | ![screenshot](documentation/wave/newsletter_summary.png) | ![screenshot](documentation/wave/newsletter_contrast.png) |
 
 </details>
