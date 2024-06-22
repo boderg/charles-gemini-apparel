@@ -3,7 +3,7 @@
 <footer>
     <div class="row footer">
         <!-- Info -->
-        <div class="col-12 col-md-4 offset-md-1 mt-2 px-5 px-md-0">
+        <div class="col-12 col-lg-4 ms-md-5 mt-2 px-5 px-md-0">
             <p>
                 Designed & built by Simon Boylan for Code Institute Milestone Project 4.
             </p>
@@ -18,7 +18,7 @@
             </p>
         </div>
         <!-- Newsletter Signup Button -->
-        <div class="col-12 col-md-3 mt-2 px-5 px-md-0">
+        <div class="col-12 col-lg-3 ms-md-5 mt-2 px-5 px-md-0">
             <div class="btn-group">
                 <a class="btn btn-newsletter" href="{% url 'newsletter_signup' %}">
                     Sign up for our newsletter
@@ -34,7 +34,7 @@
             </div>
         </div>
         <!-- Admin Panel Button -->
-        <div class="col-12 col-md-1 mt-2 px-5 px-md-0">
+        <div class="col-12 col-lg-1 ms-md-5 mt-2 px-5 px-md-0">
             {% if request.user.is_superuser %}
                 <div class="btn-group">
                     <a class="btn btn-admin" href="{% url 'admin_panel' %}">
@@ -44,7 +44,7 @@
             {% endif %}
         </div>
         <!-- Social Media Icons -->
-        <div class="col-12 col-md-1 col-lg-2 px-5 px-md-0 social-icons">
+        <div class="col-12 col-lg-2 mt-2 mt-lg-0 px-5 px-md-0 text-center social-icons">
             <ul class="list-inline social-links">
                 <li class="list-inline-item">
                     <a href="http://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook - Opens in a new tab">
