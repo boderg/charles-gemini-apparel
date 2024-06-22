@@ -172,3 +172,41 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | profiles | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/boderg/charles-gemini-apparel/main/profiles/views.py) | ![screenshot](documentation/validation/python/profiles/views.png) | Passed! |
 
 </details>
+
+## Browser Compatibility
+
+I've tested my deployed project on the following three browsers to check for compatibility issues:
+
+- Chrome
+- Firefox
+- Safari
+
+I decided to use these three browsers as they use different platforms independant of each other.
+
+> [!NOTE]
+>
+>Charles Gemini Apparel behaved as expected on all browsers tested.
+
+<details>
+<summary>Click to view the Browser compatibility testing results for Charles Gemini Apparel</summary>
+
+| **Page** | **Chrome** | **Firefox** | **Safari** |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/browsers/chrome/home.png) | ![screenshot](documentation/browsers/firefox/home.png) | ![screenshot](documentation/browsers/safari/home.png) |
+| All Designs | ![screenshot](documentation/browsers/chrome/all_designs.png) | ![screenshot](documentation/browsers/firefox/all_designs.png) | ![screenshot](documentation/browsers/safari/all_designs.png) |
+| Garment | ![screenshot](documentation/browsers/chrome/garment.png) | ![screenshot](documentation/browsers/firefox/garment.png) | ![screenshot](documentation/browsers/safari/garment.png) |
+| Bag | ![screenshot](documentation/browsers/chrome/bag.png) | ![screenshot](documentation/browsers/firefox/bag.png) | ![screenshot](documentation/browsers/safari/bag.png) |
+| Checkout | ![screenshot](documentation/browsers/chrome/checkout.png) | ![screenshot](documentation/browsers/firefox/checkout.png) | ![screenshot](documentation/browsers/safari/checkout.png) |
+| Checkout Success | ![screenshot](documentation/browsers/chrome/checkout_success.png) | ![screenshot](documentation/browsers/firefox/checkout_success.png) | ![screenshot](documentation/browsers/safari/checkout_success.png) |
+| Profile | ![screenshot](documentation/browsers/chrome/profile.png) | ![screenshot](documentation/browsers/firefox/profile.png) | ![screenshot](documentation/browsers/safari/profile.png) |
+| Admin Panel | ![screenshot](documentation/browsers/chrome/.png) | ![screenshot](documentation/browsers/firefox/.png) | ![screenshot](documentation/browsers/safari/.png) |
+| Add, List, Edit Garment | ![screenshot](documentation/browsers/chrome/add_garment.png) | ![screenshot](documentation/browsers/firefox/list_garment.png) | ![screenshot](documentation/browsers/safari/edit_garment.png) |
+| Add, List, Edit Colour | ![screenshot](documentation/browsers/chrome/add_colour.png) | ![screenshot](documentation/browsers/firefox/list_colour.png) | ![screenshot](documentation/browsers/safari/edit_colour.png) |
+| Add, List, Edit Size | ![screenshot](documentation/browsers/chrome/add_size.png) | ![screenshot](documentation/browsers/firefox/list_size.png) | ![screenshot](documentation/browsers/safari/edit_size.png) |
+| Add, List, Edit Category | ![screenshot](documentation/browsers/chrome/add_category.png) | ![screenshot](documentation/browsers/firefox/list_category.png) | ![screenshot](documentation/browsers/safari/edit_category.png) |
+| Contact, Contact List, Contact Success | ![screenshot](documentation/browsers/chrome/contact.png) | ![screenshot](documentation/browsers/firefox/contact_list.png) | ![screenshot](documentation/browsers/safari/contact_success.png) |
+| Newsletter Signup, Newsletter List, Newsletter Success | ![screenshot](documentation/browsers/chrome/newsletter_signup.png) | ![screenshot](documentation/browsers/firefox/newsletter_list.png) | ![screenshot](documentation/browsers/safari/newsletter_success.png) |
+| About, Size Guide, Delete Modals | ![screenshot](documentation/browsers/chrome/about_modal.png) | ![screenshot](documentation/browsers/firefox/size_guide_modal.png) | ![screenshot](documentation/browsers/safari/delete_modal.png) |
+| Login, Logout, Signup | ![screenshot](documentation/browsers/chrome/login.png) | ![screenshot](documentation/browsers/firefox/logout.png) | ![screenshot](documentation/browsers/safari/signup.png) |
+
+</details>
