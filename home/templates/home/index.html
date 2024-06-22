@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block banner %}
-   <h4 class="font-weight-bold">Free delivery on orders over £{{ free_delivery_threshold }}*</h4>
+<h4 class="font-weight-bold">Free delivery on orders over £{{ free_delivery_threshold }}*</h4>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
             <div class="card mx-auto">
                 <div class="image">
                     <a href="{% url 'all_garments' %}?category=T-Shirts">
-                        <img src="{% static 'images/clothing/tee.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a tee shirt">
+                        <img src="{% static 'images/clothing/tee.webp' %}" class="card-img-top apparel" alt="Image tee shirt">
                     </a>
                 </div>
                 <div class="card-body">
@@ -30,9 +30,7 @@
         <div class="col my-2 py-lg-5">
             <div class="card mx-auto">
                 <div class="image">
-                    <!-- <a href="{% url 'all_garments' %}?category=New_Designs"> -->
                         {% include 'includes/carousel.html' %}
-                    <!-- </a> -->
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
@@ -49,7 +47,7 @@
             <div class="card mx-auto">
                 <div class="image"> 
                     <a href="{% url 'all_garments' %}?category=Hooded_Tops">
-                        <img src="{% static 'images/clothing/hoodie.webp' %}" class="card-img-top apparel" alt="Image of a person wearing a hoodie">
+                        <img src="{% static 'images/clothing/hoodie.webp' %}" class="card-img-top apparel" alt="Image of a hoodie">
                     </a>
                 </div>
                 <div class="card-body">
