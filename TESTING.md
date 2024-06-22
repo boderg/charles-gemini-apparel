@@ -241,3 +241,53 @@ I've tested the Charles Gemini Apparel deployed project on multiple devices to c
 | Login, Logout, Signup | ![screenshot](documentation/responsive/mobile_(dev_tools)/login.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/logout.png) | ![screenshot](documentation/responsive/1080p_laptop/signup.png) | ![screenshot](documentation/responsive/1080p_monitor/login.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/logout.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/signup.jpg) |
 
 </details>
+
+## Lighthouse Audit
+
+I've tested the Charles Gemini Apparel deployed project using the Lighthouse Audit tool to check for any major issues.
+
+>[!NOTE]
+>
+>*General notes for lighthouse audit results*
+>
+>- Mobile results have a significant drop in performance over desktop results.
+>- The highest drops in performance on desktop appear to be in relation to the number of garment images on each page.
+>- These drops in performace could potentially be the result of a combination of image size and fetch time from the AWS S3 storage. 
+>- All garment images have been saved in webp format but could potentially be shrunk to smaller sizes to aid storage capacities and fetch times.
+>- Accessability could be improved in some areas.
+>- Best practices and SEO are the same across the site with SEO needing some improvement.
+
+<detail>
+<summary>Click to view the Lighthouse Audit test results for Charles Gemini Apparel</summary>
+
+| Page | Mobile | Desktop |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/desktop/home.png) | ![screenshot](documentation/lighthouse/mobile/home.png) |
+| All Designs | ![screenshot](documentation/lighthouse/desktop/all_designs.png) | ![screenshot](documentation/lighthouse/mobile/all_designs.png) |
+| New Designs | ![screenshot](documentation/lighthouse/desktop/new_designs.png) | ![screenshot](documentation/lighthouse/mobile/new_designs.png) |
+| Tees | ![screenshot](documentation/lighthouse/desktop/tees.png) | ![screenshot](documentation/lighthouse/mobile/tees.png) |
+| Hoodies | ![screenshot](documentation/lighthouse/desktop/hoodies.png) | ![screenshot](documentation/lighthouse/mobile/hoodies.png) |
+| Garment | ![screenshot](documentation/lighthouse/desktop/garment.png) | ![screenshot](documentation/lighthouse/mobile/garment.png) |
+| Bag | ![screenshot](documentation/lighthouse/desktop/bag.png) | ![screenshot](documentation/lighthouse/mobile/bag.png) |
+| Checkout | ![screenshot](documentation/lighthouse/desktop/checkout.png) | ![screenshot](documentation/lighthouse/mobile/checkout.png) |
+| Checkout Success | ![screenshot](documentation/lighthouse/desktop/checkout_success.png) | ![screenshot](documentation/lighthouse/mobile/checkout_success.png) |
+| Profile | ![screenshot](documentation/lighthouse/desktop/profile.png) | ![screenshot](documentation/lighthouse/mobile/profile.png) |
+| Admin Panel | ![screenshot](documentation/lighthouse/desktop/admin_panel.png) | ![screenshot](documentation/lighthouse/mobile/admin_panel.png) |
+| Add Garment | ![screenshot](documentation/lighthouse/desktop/add_garment.png) | ![screenshot](documentation/lighthouse/mobile/add_garment.png) |
+| List Garment | ![screenshot](documentation/lighthouse/desktop/list_garment.png) | ![screenshot](documentation/lighthouse/mobile/list_garment.png) |
+| Edit Garment | ![screenshot](documentation/lighthouse/desktop/edit_garment.png) | ![screenshot](documentation/lighthouse/mobile/edit_garment.png) |
+| Add Colour | ![screenshot](documentation/lighthouse/desktop/add_colour.png) | ![screenshot](documentation/lighthouse/mobile/add_colour.png) |
+| List Colour | ![screenshot](documentation/lighthouse/desktop/list_colour.png) | ![screenshot](documentation/lighthouse/mobile/list_colour.png) |
+| Edit Colour | ![screenshot](documentation/lighthouse/desktop/edit_colour.png) | ![screenshot](documentation/lighthouse/mobile/edit_colour.png) |
+| Add Size | ![screenshot](documentation/lighthouse/desktop/add_size.png) | ![screenshot](documentation/lighthouse/mobile/add_size.png) |
+| List Size | ![screenshot](documentation/lighthouse/desktop/list_size.png) | ![screenshot](documentation/lighthouse/mobile/list_size.png) |
+| Edit Size | ![screenshot](documentation/lighthouse/desktop/edit_size.png) | ![screenshot](documentation/lighthouse/mobile/edit_size.png) |
+| Add Category | ![screenshot](documentation/lighthouse/desktop/add_category.png) | ![screenshot](documentation/lighthouse/mobile/add_category.png) |
+| List Category | ![screenshot](documentation/lighthouse/desktop/list_category.png) | ![screenshot](documentation/lighthouse/mobile/list_category.png) |
+| Edit Category | ![screenshot](documentation/lighthouse/desktop/edit_category.png) | ![screenshot](documentation/lighthouse/mobile/edit_category.png) |
+| Contact | ![screenshot](documentation/lighthouse/desktop/contact.png) | ![screenshot](documentation/lighthouse/mobile/contact.png) |
+| Contact List | ![screenshot](documentation/lighthouse/desktop/contact_list.png) | ![screenshot](documentation/lighthouse/mobile/contact_list.png) |
+| Newsletter | ![screenshot](documentation/lighthouse/desktop/newsletter.png) | ![screenshot](documentation/lighthouse/mobile/newsletter.png) |
+| Newsletter List | ![screenshot](documentation/lighthouse/desktop/newsletter_list.png) | ![screenshot](documentation/lighthouse/mobile/newsletter_list.png) |
+
+</details>
