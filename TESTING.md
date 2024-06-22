@@ -214,26 +214,30 @@ I decided to use these three browsers as they use different platforms independan
 
 I've tested the Charles Gemini Apparel deployed project on multiple devices to check for responsiveness issues.
 
+> [!NOTE]
+>
+>Charles Gemini Apparel behaved as expected on all responsive tests.
+
 <details>
 <summary>Click to view the Responsiveness testing results for Charles Gemini Apparel</summary>
 
-| Page | Mobile (DevTools) | Tablet (DevTools) | 1080p Laptop | 1080p Monitor | Galaxy S10 plus | Notes |
+| Page | Mobile (DevTools) | Tablet (DevTools) | 1080p Laptop | 1080p Monitor | 1440p UW Monitor | Samsung Galaxy S10+ |
 | --- | --- | --- | --- | --- | --- | --- |
-| Home |  |  |  |  |  ||
-| All Designs |  |  |  |  |  ||
-| Garment |  |  |  |  |  ||
-| Bag |  |  |  |  |  ||
-| Checkout |  |  |  |  |  ||
-| Checkout Success |  |  |  |  |  ||
-| Profile |  |  |  |  |  ||
-| Admin Panel |  |  |  |  |  ||
-| Add, List, Edit Garment |  |  |  |  |  ||
-| Add, List, Edit Colour |  |  |  |  |  ||
-| Add, List, Edit Size |  |  |  |  |  ||
-| Add, List, Edit Category |  |  |  |  |  ||
-| Contact, Contact List, Contact Success |  |  |  |  |  ||
-| Subscriber, Subscriber List, Subscriber Success |  |  |  |  |  ||
-| About, Size Guide, Delete Modals |  |  |  |  |  ||
-| Login, Logout, Signup |  |  |  |  |  ||
+| Home | ![screenshot](documentation/responsive/mobile_(dev_tools)/home.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/home.png) | ![screenshot](documentation/responsive/1080p_laptop/home.png) | ![screenshot](documentation/responsive/1080p_monitor/home.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/home.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/home.jpg) |
+| All Designs | ![screenshot](documentation/responsive/mobile_(dev_tools)/all_designs.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/all_designs.png) | ![screenshot](documentation/responsive/1080p_laptop/all_designs.png) | ![screenshot](documentation/responsive/1080p_monitor/all_designs.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/all_designs.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/all_designs.jpg) |
+| Garment | ![screenshot](documentation/responsive/mobile_(dev_tools)/garment.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/garment.png) | ![screenshot](documentation/responsive/1080p_laptop/garment.png) | ![screenshot](documentation/responsive/1080p_monitor/garment.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/garment.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/garment.jpg) |
+| Bag | ![screenshot](documentation/responsive/mobile_(dev_tools)/bag.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/bag.png) | ![screenshot](documentation/responsive/1080p_laptop/bag.png) | ![screenshot](documentation/responsive/1080p_monitor/bag.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/bag.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/bag.jpg) |
+| Checkout | ![screenshot](documentation/responsive/mobile_(dev_tools)/checkout.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/checkout.png) | ![screenshot](documentation/responsive/1080p_laptop/checkout.png) | ![screenshot](documentation/responsive/1080p_monitor/checkout.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/checkout.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/checkout.jpg) |
+| Checkout Success | ![screenshot](documentation/responsive/mobile_(dev_tools)/checkout_success.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/checkout_success.png) | ![screenshot](documentation/responsive/1080p_laptop/checkout_success.png) | ![screenshot](documentation/responsive/1080p_monitor/checkout_success.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/checkout_success.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/checkout_success.jpg) |
+| Profile | ![screenshot](documentation/responsive/mobile_(dev_tools)/profile.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/profile.png) | ![screenshot](documentation/responsive/1080p_laptop/profile.png) | ![screenshot](documentation/responsive/1080p_monitor/profile.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/profile.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/profile.jpg) |
+| Admin Panel | ![screenshot](documentation/responsive/mobile_(dev_tools)/admin_panel.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/admin_panel.png) | ![screenshot](documentation/responsive/1080p_laptop/admin_panel.png) | ![screenshot](documentation/responsive/1080p_monitor/admin_panel.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/admin_panel.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/admin_panel.jpg) |
+| Add, List, Edit Garment | ![screenshot](documentation/responsive/mobile_(dev_tools)/add_garment.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/list_garments.png) | ![screenshot](documentation/responsive/1080p_laptop/edit_garment.png) | ![screenshot](documentation/responsive/1080p_monitor/add_garment.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/list_garments.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/edit_garment.jpg) |
+| Add, List, Edit Colour | ![screenshot](documentation/responsive/mobile_(dev_tools)/add_colour.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/list_colours.png) | ![screenshot](documentation/responsive/1080p_laptop/edit_colour.png) | ![screenshot](documentation/responsive/1080p_monitor/add_colour.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/list_colours.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/edit_colour.jpg) |
+| Add, List, Edit Size | ![screenshot](documentation/responsive/mobile_(dev_tools)/add_size.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/list_sizes.png) | ![screenshot](documentation/responsive/1080p_laptop/edit_size.png) | ![screenshot](documentation/responsive/1080p_monitor/add_size.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/list_sizes.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/edit_size.jpg) |
+| Add, List, Edit Category | ![screenshot](documentation/responsive/mobile_(dev_tools)/add_category.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/list_categories.png) | ![screenshot](documentation/responsive/1080p_laptop/edit_category.png) | ![screenshot](documentation/responsive/1080p_monitor/add_category.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/list_categories.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/edit_category.jpg) |
+| Contact, Contact List, Contact Success | ![screenshot](documentation/responsive/mobile_(dev_tools)/contact.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/contact_list.png) | ![screenshot](documentation/responsive/1080p_laptop/contact_success.png) | ![screenshot](documentation/responsive/1080p_monitor/contact.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/contact_list.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/contact_success.jpg) |
+| Newsletter, Newsletter List, Newsletter Success | ![screenshot](documentation/responsive/mobile_(dev_tools)/newsletter_signup.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/newsletter_list.png) | ![screenshot](documentation/responsive/1080p_laptop/newsletter_success.png) | ![screenshot](documentation/responsive/1080p_monitor/newsletter_signup.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/newsletter_list.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/newsletter_success.jpg) |
+| About, Size Guide, Delete Modals | ![screenshot](documentation/responsive/mobile_(dev_tools)/about_modal.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/size_guide_modal.png) | ![screenshot](documentation/responsive/1080p_laptop/delete_modal.png) | ![screenshot](documentation/responsive/1080p_monitor/about_modal.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/size_guide_modal.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/delete_modal.jpg) |
+| Login, Logout, Signup | ![screenshot](documentation/responsive/mobile_(dev_tools)/login.png) | ![screenshot](documentation/responsive/tablet_(dev_tools)/logout.png) | ![screenshot](documentation/responsive/1080p_laptop/signup.png) | ![screenshot](documentation/responsive/1080p_monitor/login.png) | ![screenshot](documentation/responsive/1440p_ultra_wide_monitor/logout.png) | ![screenshot](documentation/responsive/samsung_galaxy_s10_plus/signup.jpg) |
 
 </details>
