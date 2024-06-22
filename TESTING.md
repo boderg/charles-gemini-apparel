@@ -190,7 +190,7 @@ I decided to use these three browsers as they use different platforms independan
 <details>
 <summary>Click to view the Browser compatibility testing results for Charles Gemini Apparel</summary>
 
-| **Page** | **Chrome** | **Firefox** | **Safari** |
+| Page | Chrome | Firefox | Safari |
 | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/browsers/chrome/home.png) | ![screenshot](documentation/browsers/firefox/home.png) | ![screenshot](documentation/browsers/safari/home.png) |
 | All Designs | ![screenshot](documentation/browsers/chrome/all_designs.png) | ![screenshot](documentation/browsers/firefox/all_designs.png) | ![screenshot](documentation/browsers/safari/all_designs.png) |
