@@ -19,11 +19,12 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >
 >*Pages marked with '#' had one or both of the following two warnings / errors noted and filtered out of the testing results for the following reasons:*
 >
->- One filtered out warning for *'no header'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
+>- One filtered out warning for *'no Top Nav Bar'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
 >- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
 
 <details>
 <summary>Click to view the HTML validation results for Charles Gemini Apparel</summary>
+<br>
 
 | Directory | File | Screenshot Errors | Screenshot Method 1 | Screenshot Method 2 | Notes / Fixes |
 | --- | --- | --- | --- | --- | --- |
@@ -69,6 +70,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 <details>
 <summary>Click to view the CSS validation results for Charles Gemini Apparel</summary>
+<br>
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -103,6 +105,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 <details>
 <summary>Click to view the JavaScript validation results for Charles Gemini Apparel</summary>
+<br>
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
@@ -124,6 +127,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 <details>
 <summary>Click to view the Python validation results for Charles Gemini Apparel</summary>
+<br>
 
 | Directory | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
@@ -188,6 +192,7 @@ I decided to use these three browsers as they use different platforms independan
 
 <details>
 <summary>Click to view the Browser compatibility testing results for Charles Gemini Apparel</summary>
+<br>
 
 | Page | Chrome | Firefox | Safari |
 | --- | --- | --- | --- |
@@ -220,6 +225,7 @@ I've tested the Charles Gemini Apparel deployed project on multiple devices to c
 
 <details>
 <summary>Click to view the Responsiveness testing results for Charles Gemini Apparel</summary>
+<br>
 
 | Page | Mobile (DevTools) | Tablet (DevTools) | 1080p Laptop | 1080p Monitor | 1440p UW Monitor | Samsung Galaxy S10+ |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -259,6 +265,7 @@ I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Au
 
 <details>
 <summary>Click to view the Lighthouse Audit test results for Charles Gemini Apparel</summary>
+<br>
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
@@ -303,6 +310,7 @@ The following results are from the non secured pages of the site.
 
 <details>
 <summary>Click to view the Wave accesibility test results for Charles Gemini Apparel</summary>
+<br>
 
 | Page | Summary Screenshot | Contrast Screenshot |
 | --- | --- | --- |
@@ -315,5 +323,83 @@ The following results are from the non secured pages of the site.
 | Bag | ![screenshot](documentation/wave/bag_summary.png) | ![screenshot](documentation/wave/bag_contrast.png) |
 | Contact | ![screenshot](documentation/wave/contact_summary.png) | ![screenshot](documentation/wave/contact_contrast.png) |
 | Newsletter | ![screenshot](documentation/wave/newsletter_summary.png) | ![screenshot](documentation/wave/newsletter_contrast.png) |
+
+</details>
+
+## Defensive Programming
+
+Defensive programming was manually tested for Charles Gemini Apparel with the below user acceptance testing:
+
+<details>
+<summary>Click to view the user acceptance test results for Charles Gemini Apparel</summary>
+<br>
+
+| Page | Section | Expectation | Test | Result | Fix | Screenshot |
+| --- | --- | --- | --- | --- | --- | --- |
+| Home | | | | | | |
+| | Top Nav Bar | The *Charles Gemini Logo* is expected to act as a home button when clicked and return the user to the *Home* page. | Tested the feature by navigating away from the home page and clicking the *Charles Gemini Logo*. | The feature behaved as expected, and retuned the user to the *Home* page. | Test concluded and passed. | ![screenshot](documentation/features/charles_gemini_logo.png) |
+| | Top Nav Bar | The *Shop Now!* button is expected to open a dropdown with navigation links to the site. | Tested the feature by clicking on the *Shop Now!* button and selecting each of the navigation links in the dropdown in turn. | The feature behaved as expected, and opened a dropdown with the site navigation links. Each link clicked opened the corresponding page or modal. | Test concluded and passed. | ![screenshot](documentation/features/shop_now_button.png) ![screenshot](documentation/features/shop_now_dropdown_highlighted.png) |
+| | Top Nav Bar | The *Search box and button* is expected to accept a criteria of terms based on the garment details and category names to search the site and return results based on that criteria. | Tested the feature by entering keywords and clicking the *Search box and button*. | The feature behaved as expected, and return results based on the search criteria or returns an error message informing the user that no garment was found. | Test concluded and passed. | ![screenshot](documentation/features/search_bar.png) |
+| | Bottom Nav Bar | The *Bag* button is expected to open the shopping bag page and display an item counter if any items are in the bag. | Tested the feature by clicking the *Bag* button when no items were in the bag and also by putting an item in the bag and clicking on the *Bag* button. | The feature behaved as expected, and returned the empty shopping bag page when no items were in the bag and returned the shopping bag with items when items were in the bag along with an item counter in the *Bag* button. | Test concluded and passed. | ![screenshot](documentation/features/bag_button.png) ![screenshot](documentation/features/bag_counter.png) |
+| | Bottom Nav Bar | The *Login / Logout* button is expected to open the *Login or Logout* page and change state to a *Login or Logout* button dependant on the users login status. | Tested the feature by clicking the *Login / Logout* button and logging in and out of the site. | The feature behaved as expected, and change state dependant on login status. | Test concluded and passed. | ![screenshot](documentation/features/login_button.png) ![screenshot](documentation/features/logout_button.png) |
+| | Main Body | The *Page links* are expected to open the associated page when the user clixks on the image.  | Test the feature by clicking on the links in turn. | The feature behaved as expected, and open the associated page connected with that link. | Tes cocluded and passed. | ![screenshot](documentation/features/page_links.png) |
+| | Main Body | The home page *Carousel* is expected to display a rotation of different images that can be stopped and manually rotated if required. | Tested the feature by hovering the mouse on the *Carousel* and by clicking the *Carousel Next and Previous* buttons. | The feature behaved as expected, and the *Carousel* stopped when the mouse was hovered on the images. The images were also able to be rotated manually using the *Carousel Next and Previous* buttons.  | Test concluded and passed. | ![screenshot](documentation/features/carousel.png) |
+| | Footer | The *Newsletter Signup* button is expected to open a page where the user can input and submit their email address to a mailing list. | Tested the feature by clicking on the *Newsletter Signup* button. | The feature behaved as expected, and opened the newsletter signup page. | Test concluded and passed.| ![screenshot](documentation/features/newsletter_signup_button.png) |
+| | Footer | The *Admin Panel* button is expected to open a page where the site *Administrator / Superuser* can administer various aspects of the site without having to log in to the backend server side. the button is also expected to be only visible when the superuser is logged in to the site. | Tested the feature by clicking on the *Admin Panel* button while logged in as the superuser. | The feature behaved as expected, and opened the Admin Panel page page. | Test concluded and passed.| ![screenshot](documentation/features/admin_panel_button.png) |
+| | Footer | The *GitHub* icon is expected to act as a button that opens the site creators *GitHub* profile in a new browser tab. | Tested the feature by clicking on the *GitHub* icon. | The feature behaved as expected, and opened the site creators *GitHub* profile in a new browser tab. | Test concluded and passed. | ![screenshot](documentation/features/github_icons.png) |
+| | Footer | The *Social Media* icons are expected to act as buttons that open the associated social media site in a new browser tab. | Tested the feature by clicking on the *Social Media* icons in turn. | The feature behaved as expected, and opened the associated social media pages in new browser tabs. | Test concluded and passed. | ![screenshot](documentation/features/social_icons.png) |
+| All Designs, New Designs, Tees and Hoodies | | | | | | |
+| | Garment Cards | The *Garment* images are expected to to act as buttons / links to open the page associated with the garment that is clicked. | Tested the feature by clicking on each *Garment* image in turn. | The feature behaved as expected, and opened the associated garment page. | Test concluded and passed. | ![screenshot](documentation/features/garment_images.png) |
+| Garment | | | | | | |
+| | Garment Card | The garment page *Carousel* is expected to display a rotation of the same image in different colours that can be stopped and manually rotated if required. | Tested the feature by hovering the mouse on the *Carousel* and by clicking the *Carousel Next and Previous* buttons. | The feature behaved as expected, and the *Carousel* stopped when the mouse was hovered on the images. The images were also able to be rotated manually using the *Carousel Next and Previous* buttons.  | Test concluded and passed. | ![screenshot](documentation/features/carousel.png) |
+| | Garment Card | The *Number Selector* is expected to increment or decrement the number of items that the user wants to add to the bag. It is also expected to not exceed the range of 1-99 inclusive. | Tested the feature by selecting different quantities and adding the item to the bag. Quantites outside the range were also tested by manual entry. | The feature behaved as expected, and incremented or decremented the quantity as desired and did not allow numbers outside the range to be used. | Test concluded and passed. | ![screenshot](documentation/features/number_selector.png) |
+| | Garment Card | The *Size Selector* dropdown is expected to open a dropdown selection of sizes that the user can select for the garment. | Tested the feature by clicking the *Size Selector* button and selecting a size then adding the item to the bag. | The feature behaved as expected, and the size selected was added to the bag with the item and quantity. | Test concluded and passed. | ![screenshot](documentation/features/size_selector.png) |
+| | Garment Card | The *Colour Selector* dropdown is expected to open a dropdown selection of colours that the user can select for the garment. | Tested the feature by clicking the *Colour Selector* button and selecting a colour then adding the item to the bag. | The feature behaved as expected, and the colour selected was added to the bag with the item and quantity. | Test concluded and passed. | ![screenshot](documentation/features/colour_selector.png) |
+| | Garment Card | The *Size Guide* button is expected to open the size guide modal. | Tested the feature by clicking the *Size Guide* button. | The feature behaved as expected, and opened the size guide modal. | Test concluded and passed. | ![screenshot](documentation/features/size_guide_button.png) |
+| | Garment Card | The *Add to bag* button is expected to add the selected item and put it in the shopping bag then redirect the user to the all designs page. | Tested the feature by clicking the *Add to bag* button. | The feature behaved as expected, and added the selected item to the bag then redirected the user to the all designs page. | Test concluded and passed. | ![screenshot](documentation/features/add_to_bag_button.png) |
+| | Garment Card | The *All Designs* button is expected to open the all designs page without saving the selected item. | Tested the feature by clicking the *All Designs* button. | The feature behaved as expected, and opened the all designs page without saving the item selection. | Test concluded and passed. | ![screenshot](documentation/features/all_designs.png) |
+| Shopping Bag | | | | | | |
+| | Bag Table | The *Size Selector* dropdown is expected to open a dropdown selection of sizes that the user can select for the garment. | Tested the feature by clicking the *Size Selector* button and selecting a size then adding the item to the bag. | The feature behaved as expected, and the size selected was added to the bag with the item and quantity. | Test concluded and passed. | ![screenshot](documentation/features/size_selector1.png) |
+| | Bag Table | The *Colour Selector* dropdown is expected to open a dropdown selection of colours that the user can select for the garment. | Tested the feature by clicking the *Colour Selector* button and selecting a colour then adding the item to the bag. | The feature behaved as expected, and the colour selected was added to the bag with the item and quantity. | Test concluded and passed. | ![screenshot](documentation/features/colour_selector1.png) |
+| | Bag Table | The *Number Selector* is expected to increment or decrement the number of items that the user wants to add to the bag. It is also expected to not exceed the range of 1-99 inclusive. | Tested the feature by selecting different quantities and adding the item to the bag. Quantites outside the range were also tested by manual entry. | The feature behaved as expected, and incremented or decremented the quantity as desired and did not allow numbers outside the range to be used. | Test concluded and passed. | ![screenshot](documentation/features/number_selector1.png) |
+| | Bag Table | The *Update* button is expected to update the selected item in the bag after the user has changed their size, colour and quantity selections. | Tested the feature by clicking the *Update* button. | The feature behaved as expected, and updated the item in the bag and reflected the updates in the adjusted shopping bag price structure. | Test concluded and passed. | ![screenshot](documentation/features/update_button.png) |
+| | Bag Table | The *Remove* button is expected to remove the selected item fromthe shopping bag. | Tested the feature by clicking the *Remove* button. | The feature behaved as expected, and removed the item selection from the shopping bag and redirected the user to the empty bag page if no other items were present in the bag. | Test concluded and passed. | ![screenshot](documentation/features/remove_button.png) |
+| | Bag Table | The *Continue Shopping* button is expected to return the user to the all designs page while saving the items already in the shopping bag. | Tested the feature by clicking the *Continue Shopping* button. | The feature behaved as expected, and returned the user to the all designs page saving the items already in the shopping bag. | Test concluded and passed. | ![screenshot](documentation/features/continue_shopping.png) |
+| | Bag Table | The *Secure Checkout* button is expected to add the items of the bag to the checkout and open the checkout page so the user can purchase the items. | Tested the feature by clicking the *Secure Checkout* button. | The feature behaved as expected, and opened the checkout page with all the selected items that were added to the bag. | Test concluded and passed. | ![screenshot](documentation/features/secure_checkout.png) |
+| Checkout | | | | | | |
+| | Order Summary | The *Change Your Order* button is expected to return the user to the shopping bag so they can edit their order. | Tested the feature by clicking the *Change Your Order* button. | The feature behaved as expected, and returned the user to the shopping bag. | Test concluded and passed. | ![screenshot](documentation/features/change_your_order_button.png) |
+| | Checkout Form | The *Checkout Form* is expected to store the details of the user for order and payment processing. | Tested the feature by entering details and completing a test sale and checking the *Stripe* dashboard and the order database. | The feature behaved as expected, and and stored the user details for the sale passing them to *Stripe and the order database. | Test concluded and passed. | ![screenshot](documentation/features/checkout_form.png) |
+| | Checkout Form | The *Save Info* checkbox is expected to save the details of the logged in user to their profile for future use. | Tested the feature by entering details and completing a test sale with the checkbox enabled while logged into the site. | The feature behaved as expected, and stored the user details to their profile for future. | Test concluded and passed. | ![screenshot](documentation/features/save_info.png) |
+| | Checkout Form | The *Create Account* link is expected to open the signup page to create a user profile when no user is logged in. | Tested the feature by clicking the link. | The feature behaved as expected, and opened the signup page. | Test concluded and passed. | ![screenshot](documentation/features/create_account_link.png) |
+| | Checkout Form | The *Login* link is expected to open the login page to allow a previous user to log in without creating new account details. | Tested the feature by clicking the link. | The feature behaved as expected, and opened the login page. | Test concluded and passed. | ![screenshot](documentation/features/login_link.png) |
+| | Checkout Form | The *Card Payment* input is expected to temporarily store the users card details for payment processing. | Tested the feature by entering test card details and processing a sale. | The feature behaved as expected, and temporarily stored the test card details before passing them to *Stripe for payment processing. | Test concluded and passed. | ![screenshot](documentation/features/card_details.png) |
+| | Checkout Form | The *Complete Order* button is expected to process the order and pass payment details to *Stripe*. | Tested the feature by clicking the *Complete Order* button. | The feature behaved as expected, and processed the order saving the order details to the database (and user profile if logged in), passing the card details to *Stripe*, sending a confirmation email to the user and passing the user to an checkout success page displaying an order summary. | Test concluded and passed. | ![screenshot](documentation/features/complete_order_button.png) |
+| Checkout Success | | | | | | |
+| | Order Summary | The *Continue Shopping* button is expected to return the user to the all designs page while saving the items already in the shopping bag. | Tested the feature by clicking the *Continue Shopping* button. | The feature behaved as expected, and returned the user to the all designs page saving the items already in the shopping bag. | Test concluded and passed. | ![screenshot](documentation/features/continue_shopping1.png) |
+| Admin Panel | | | | | | |
+| | Add Garment | The *Add Garment* button is expected to open the *Add Garment* page.| Tested the feature by clicking the *Add Garment* button. | The feature behaved as expected, and opened the *Add Garment* page. | Test concluded and passed. | ![screenshot](documentation/features/add_garment.png) |
+| | Edit Garment | The *Edit Garment* button is expected to open the *Garment Selection* page.| Tested the feature by clicking the *Edit Garment* button. | The feature behaved as expected, and opened the *Garment Selection* page. | Test concluded and passed. | ![screenshot](documentation/features/edit_garment.png) |
+| | Add Category | The *Add Category* button is expected to open the *Add Category* page.| Tested the feature by clicking the *Add Category* button. | The feature behaved as expected, and opened the *Add Category* page. | Test concluded and passed. | ![screenshot](documentation/features/add_category.png) |
+| | Edit Category | The *Edit Category* button is expected to open the *Category Selection* page.| Tested the feature by clicking the *Edit Category* button. | The feature behaved as expected, and opened the *Category Selection* page. | Test concluded and passed. | ![screenshot](documentation/features/edit_category.png) |
+| | Add Colour | The *Add Colour* button is expected to open the *Add Colour* page.| Tested the feature by clicking the *Add Colour* button. | The feature behaved as expected, and opened the *Add Colour* page. | Test concluded and passed. | ![screenshot](documentation/features/add_colour.png) |
+| | Edit Colour | The *Edit Colour* button is expected to open the *Colour Selection* page.| Tested the feature by clicking the *Edit Colour* button. | The feature behaved as expected, and opened the *Colour Selection* page. | Test concluded and passed. | ![screenshot](documentation/features/edit_colour.png) |
+| | Add Size | The *Add Size* button is expected to open the *Add Size* page.| Tested the feature by clicking the *Add Size* button. | The feature behaved as expected, and opened the *Add Size* page. | Test concluded and passed. | ![screenshot](documentation/features/add_size.png) |
+| | Edit Size | The *Edit Size* button is expected to open the *Size Selection* page.| Tested the feature by clicking the *Edit Size* button. | The feature behaved as expected, and opened the *Size Selection* page. | Test concluded and passed. | ![screenshot](documentation/features/edit_size.png) |
+| | Contact List | The *Contact List* button is expected to open the *Contact List* page.| Tested the feature by clicking the *Contact List* button. | The feature behaved as expected, and opened the *Contact List* page. | Test concluded and passed. | ![screenshot](documentation/features/contact_list.png) |
+| | Subscribers | The *Newsletter Subscribers* button is expected to open the *Newsletter Subscribers* page.| Tested the feature by clicking the *Subscribers* button. | The feature behaved as expected, and opened the *Newsletter Subscribers* page. | Test concluded and passed. | ![screenshot](documentation/features/subscribers.png) |
+| Add Garment and Edit Garment | | | | | | |
+|  | Add and Edit Garment Forms | The *Add and Edit Garment* forms are expected to allow the admin of the site to add or edit a garment respectively by utilising the inputs and checkboxes in the forms. | Tested the features by completing the form of each and clicking the *Add or Edit Garment* button at the bottom of the form. | The *Add and Edit* Garment forms behaved as expected, and either added a new garment or edited an exisiting garment depending on the form selected for use. | Test concluded and passed. | ![screenshot](documentation/features/add_garment_form.png)![screenshot](documentation/features/edit_garment_form.png) |
+| | Add and Edit Garment Forms | The *Back to Garments* button is expected to return the user to the all designs page without saving any changes to the forms. | Tested the feature by clicking the *Back to Garments* button. | The feature behaved as expected, and returned the user to the all designs page. | Test concluded and passed. | ![screenshot](documentation/features/back_to_garments_button.png) |
+| | Add and Edit Garment Forms | The *Add and Edit Garment* buttons are expected to submit the form and add a new garment or edit and existing garment. | Tested the feature by clicking the *Add and Edit Garment* buttons in turn after completing the forms. | The feature behaved as expected, and either added a new garment or edited and existing garment dependant on form selected and then returned the user to the garment page of the added or edited garment. | Test concluded and passed. | ![screenshot](documentation/features/add_garment_button.png) ![screenshot](documentation/features/edit_garment_button.png) |
+| Add and Edit Category, Colour and Size | | | | | | |
+| | Add and Edit Category Forms | The *Add and Edit Category* forms are expected to allow the admin of the site to add new or edit existing categories dependant on the selected. | Tested by completing each of forms in turn and clicking on the add or edit button on the form. | The features behaved as expected and either added new or edited existing categories based on the selected. | Test concluded and passed. | ![screenshot](documentation/features/add_category_form.png) ![screenshot](documentation/features/edit_category_form.png) |
+| | Add and Edit Category Forms | The *Add and Edit Category* buttons are expected to submit the form and add a new category or edit and existing category. | Tested the feature by clicking the *Add and Edit Category* buttons in turn after completing the forms. | The feature behaved as expected, and either added a new category or edited and existing category dependant on form selected and then returned the user to the category selection page of the added or edited category. | Test concluded and passed. | ![screenshot](documentation/features/add_category_button.png) ![screenshot](documentation/features/edit_category_button.png) |
+| | Add and Edit Colour Forms | The *Add and Edit Colour* forms are expected to allow the admin of the site to add new or edit existing colours dependant on the selected. | Tested by completing each of forms in turn and clicking on the add or edit button on the form. | The features behaved as expected and either added new or edited existing colours based on the selected. | Test concluded and passed. | ![screenshot](documentation/features/add_colour_form.png) ![screenshot](documentation/features/edit_colour_form.png) |
+| | Add and Edit Colour Forms | The *Add and Edit Colour* buttons are expected to submit the form and add a new colour or edit and existing colour. | Tested the feature by clicking the *Add and Edit Colour* buttons in turn after completing the forms. | The feature behaved as expected, and either added a new colour or edited and existing colour dependant on form selected and then returned the user to the colour selection page of the added or edited colour. | Test concluded and passed. | ![screenshot](documentation/features/add_colour_button.png) ![screenshot](documentation/features/edit_colour_button.png) |
+| | Add and Edit Size Forms | The *Add and Edit Size* forms are expected to allow the admin of the site to add new or edit existing sizes dependant on the selected. | Tested by completing each of forms in turn and clicking on the add or edit button on the form. | The features behaved as expected and either added new or edited existing sizes based on the selected. | Test concluded and passed. | ![screenshot](documentation/features/add_size_form.png) ![screenshot](documentation/features/edit_size_form.png) |
+| | Add and Edit Size Forms | The *Add and Edit Size* buttons are expected to submit the form and add a new size or edit and existing size. | Tested the feature by clicking the *Add and Edit Size* buttons in turn after completing the forms. | The feature behaved as expected, and either added a new size or edited and existing size dependant on form selected and then returned the user to the size selection page of the added or edited size. | Test concluded and passed. | ![screenshot](documentation/features/add_size_button.png) ![screenshot](documentation/features/edit_size_button.png) |
+| Edit Garment, Category, Colour and Size Selection | | | | | | |
+| | Listed Item | The *Edit Category / Colour / Size* button is expected to open the respective edit page.| Tested the feature by clicking the *Edit Category / Colour / Size* button. | The feature behaved as expected, and opened the respective edit page. | Test concluded and passed. | ![screenshot](documentation/features/edit_garment_button.png) ![screenshot](documentation/features/edit_category_button.png) ![screenshot](documentation/features/edit_colour_button.png) ![screenshot](documentation/features/edit_size_button.png) |
+| | Listed Item | The *Delete Category / Colour / Size* button is expected to open the respective delete confirmation modal.| Tested the feature by clicking the *Delete Category / Colour / Size* button. | The feature behaved as expected, and opened the respective delete confirmation modal. | Test concluded and passed. | ![screenshot](documentation/features/delete_garment_button.png) ![screenshot](documentation/features/delete_category_button.png) ![screenshot](documentation/features/delete_colour_button.png) ![screenshot](documentation/features/delete_size_button.png) |
 
 </details>
