@@ -12,7 +12,7 @@ Users of the Charles Gemini site are able to create user accounts where they can
 
 Users are able to send messages to the admin of the Charles Gemini Apparel site through a contact form and users can also sign up with their email to receive newsletters.
 
-Below is a mockup of the deployed Charles Gemini Apparel site.
+*Below is a mockup of the deployed Charles Gemini Apparel site.*
 
 ![screenshot](documentation/mockup.png)
 source: [amiresponsive](https://ui.dev/amiresponsive?url=https://charles-gemini-apparel-6a23d410a6ee.herokuapp.com)
@@ -31,7 +31,7 @@ The Charles Gemini Apparel site was then built using Django, Python, HTML, Boots
 
 The colour scheme chosen for the site was one that would be comfortable on the eye but also inviting, pleasing to navigate and easy to read.
 
-Below is a colour palette of the colours chosen to fit the scheme.
+*Below is a colour palette of the colours chosen to fit the scheme.*
 
 ![screenshot](documentation/colour_palette.png)
 source: [coolors.co](https://coolors.co/93ff00-373737-fafafa-bcdcf5)
@@ -84,3 +84,21 @@ I've used CSS `:root` variables to easily update the global colour scheme, borde
     --transition-quick: all 0.2s ease-in-out;
 }
 ```
+
+### Typography
+
+Only one font was chosen for the Charles Gemini Apparel site.
+
+[Cuprum](https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap)
+
+- This [Google](https://fonts.google.com/) font was chosen because it is the font used in the Logo, has a clean and modern style and scales nicely for the purpose of the site.
+
+Two sources were used for the icons acros the Charles Gemini Apparel site.
+
+[UXWing](https://uxwing.com/)
+
+- These icons were used across the Charles Gemini Apparel site as they add a certain style that compliments the site along with a splash of colour. They are also available as SVG's which allowed for easy colour changing to match the site as all black icons were re-coloured to `#373737` to match the font and the magnifying glass re-coloured from blue to `#93ff00`.
+
+[Font Awesome](https://fontawesome.com/)
+
+- A few Font Awesome icons were used, namely for the plus and minus buttons and the left arrow on some back buttons. These were used as there were either no UXWing equivalents or the UXWing equivqlent did not match the site aesthetic.
