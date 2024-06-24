@@ -89,7 +89,7 @@ I've used CSS `:root` variables to easily update the global colour scheme, borde
 
 Only one font was chosen for the Charles Gemini Apparel site.
 
-[Cuprum](https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap)
+[Cuprum](https://fonts.google.com/?query=cuprum)
 
 - This [Google](https://fonts.google.com/) font was chosen because it is the font used in the Logo, has a clean and modern style and scales nicely for the purpose of the site.
 
