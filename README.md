@@ -129,3 +129,30 @@ Two sources were used for the icons acros the Charles Gemini Apparel site.
 - As a site administrator, I should be able to edit existing product information, such as descriptions, pricing, and images, so that I can keep the website content accurate and up-to-date.
 - As a site administrator, I should be able to create and manage discounts, so that I can attract new customers.
 - As a site administrator, I should be able to view and manage customer contacts, so that I can send the relevant newsletter or contact reply.
+
+## Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+
+<details>
+<summary>Please click to view the Mobile wireframes for Charles Gemini Apparel</summary>
+
+| Page | Mobile | Tablet | Desktop |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/wireframes/mobile/home.png) | ![screenshot](documentation/wireframes/tablet/home.png) | ![screenshot](documentation/wireframes/desktop/home.png) |
+| All Designs (*New Designs, Tees and Hoodies follow the same format.*) | ![screenshot](documentation/wireframes/mobile/all_designs.png) | ![screenshot](documentation/wireframes/tablet/all_designs.png) | ![screenshot](documentation/wireframes/desktop/all_designs.png) |
+| Garment | ![screenshot](documentation/wireframes/mobile/garment.png) | ![screenshot](documentation/wireframes/tablet/garment.png) | ![screenshot](documentation/wireframes/desktop/garment.png) |
+| Empty Bag (*404 and 500 pages use the same format.*) | ![screenshot](documentation/wireframes/mobile/empty_bag.png) | ![screenshot](documentation/wireframes/tablet/empty_bag.png) | ![screenshot](documentation/wireframes/desktop/empty_bag.png)|
+| Bag | ![screenshot](documentation/wireframes/mobile/bag.png) | ![screenshot](documentation/wireframes/tablet/bag.png) | ![screenshot](documentation/wireframes/desktop/bag.png) |
+| Checkout | ![screenshot](documentation/wireframes/mobile/checkout.png) | ![screenshot](documentation/wireframes/tablet/checkout.png) | ![screenshot](documentation/wireframes/desktop/checkout.png) |
+| Checkout Success | ![screenshot](documentation/wireframes/mobile/checkout_success.png) | ![screenshot](documentation/wireframes/tablet/checkout_success.png) | ![screenshot](documentation/wireframes/desktop/checkout_success.png) |
+| Profile | ![screenshot](documentation/wireframes/mobile/profile.png) | ![screenshot](documentation/wireframes/tablet/profile.png) | ![screenshot](documentation/wireframes/desktop/profile.png) |
+| Admin Panel | ![screenshot](documentation/wireframes/mobile/admin_panel.png) | ![screenshot](documentation/wireframes/tablet/admin_panel.png) | ![screenshot](documentation/wireframes/desktop/admin_panel.png)  |
+| Add Garment | ![screenshot](documentation/wireframes/mobile/add_garment.png) | ![screenshot](documentation/wireframes/tablet/add_garment.png) | ![screenshot](documentation/wireframes/desktop/add_garment.png) |
+| Edit Garment (*Pre-populated version of add garment.*) | ![screenshot](documentation/wireframes/mobile/edit_garment.png) | ![screenshot](documentation/wireframes/tablet/edit_garment.png) | ![screenshot](documentation/wireframes/desktop/edit_garment.png) |
+| Selection Page (*The same format is used for all selection pages (garment, category, colour, size, contact and subscriber).*) | ![screenshot](documentation/wireframes/mobile/selection_page.png) | ![screenshot](documentation/wireframes/tablet/selection_page.png) | ![screenshot](documentation/wireframes/desktop/selection_page.png) |
+| Add / Edit Item (*The same format is used for the category, colour, and size pages. Edit pages are pre-populated.*) | ![screenshot](documentation/wireframes/mobile/add-edit_item.png) | ![screenshot](documentation/wireframes/tablet/add-edit_item.png) | ![screenshot](documentation/wireframes/desktop/add-edit_item.png) |
+| About Modal | ![screenshot](documentation/wireframes/mobile/about.png) | ![screenshot](documentation/wireframes/tablet/about.png) | ![screenshot](documentation/wireframes/desktop/about.png) |
+| Size Guide Modal | ![screenshot](documentation/wireframes/mobile/size_guide.png) |![screenshot](documentation/wireframes/tablet/size_guide.png)  | ![screenshot](documentation/wireframes/desktop/size_guide.png) |
+
+</details>
