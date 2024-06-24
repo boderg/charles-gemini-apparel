@@ -102,3 +102,30 @@ Two sources were used for the icons acros the Charles Gemini Apparel site.
 [Font Awesome](https://fontawesome.com/)
 
 - A few Font Awesome icons were used, namely for the plus and minus buttons and the left arrow on some back buttons. These were used as there were either no UXWing equivalents or the UXWing equivqlent did not match the site aesthetic.
+
+## User Stories
+
+### New Site Users
+
+- As a new site user, I would like to be able to easily browse through all the t-shirts and hooded tops on the website, filtered by category, so that I can quickly find something that interests me.
+- As a new site user, I would like to be able to search for t-shirts and hooded tops by keyword, so that I can see if you have what I'm looking for.
+- As a new site user, I would like to see a detailed product page with clear, high-resolution images, so that I can make a more informed choice.
+- As a new site user, I would like to be able to see the shirt or hoodie in different colors, so that I can ensure I choose the right one.
+- As a new site user, I would like to be able to see a size chart with clear measurements, so that I can ensure a proper fit.
+- As a new site user, I would like to be able to easily add items to my cart, so that I can securely purchase them.
+- As a new site user, I would like to be able to clearly see the total cost of my order, including any taxes and shipping fees, so that I can be better informed before finalizing the purchase.
+
+### Returning Site Users
+
+- As a returning site user, I would like to be able to create an account, so that I can save my shipping information and track my order history.
+- As a returning site user, I would like to be able to sign up for an email list to receive notifications, so that I can stay informed about new arrivals, promotions, and exclusive offers.
+- As a returning site user, I would like to have a way to contact the site admin, so that I can get resolutions to issues I may have with my account.
+- As a returning site user, I would like to contact the company, so that I can pass on suggestions or compliments.
+
+### Site Admin
+
+- As a site administrator, I should be able to have an easy site access method, so that I can add new t-shirt and hooded top designs to the website, including uploading high-quality images, descriptions, and pricing information.
+- As a site administrator, I should be able to create and manage product categories and collections, so that I can organize the website for easy browsing.
+- As a site administrator, I should be able to edit existing product information, such as descriptions, pricing, and images, so that I can keep the website content accurate and up-to-date.
+- As a site administrator, I should be able to create and manage discounts, so that I can attract new customers.
+- As a site administrator, I should be able to view and manage customer contacts, so that I can send the relevant newsletter or contact reply.
