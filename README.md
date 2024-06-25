@@ -305,3 +305,25 @@ Automated Newsletters
 )](https://inkscape.org/) used for re-colouring the uxwing svg icons. 
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
+
+## Database Design
+
+Charles Gemini Apparel uses a relational database.
+
+It was built during development using Django's built in SQLite3 database. For deployment all the built models were migrated over to a PostgreSQL database hosted by Code Institute.
+
+Below is a Database diagram that was built during the development of the Charles Gemini Apparel site,
+
+![screenshot](documentation/erd/cga_erd1.png)
+source: [dbdiagram.io](https://www.dbdiagram.io/)
+
+and a more comprehensive diagram created after deployment and testing.
+
+![screenshot](documentation/erd/cga_erd.png)
+source: [pygraphviz](https://pygraphviz.github.io/documentation/stable/install.html)
+
+## Testing
+
+>[!NOTE]
+>
+>For all testing, please refer to the [TESTING.md](TESTING.md) file.
