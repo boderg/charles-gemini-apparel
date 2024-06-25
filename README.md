@@ -256,4 +256,26 @@ To follow best practice, wireframes were developed for mobile, tablet, and deskt
 
 </details>
 
-![screenshot](documentation/features/)
+### Future Features
+
+Some future features that would be good to add to the site in the future:
+
+Payment Methods
+
+- Different types of payment methods e.g. Paypal, Klarna, etc.
+
+Reveiw System
+
+- An ability for users to review the products for others to make informed choices.
+
+Rating system
+
+- Similar to the review system but with a number or star system.
+
+Email return system
+
+- Somewhere admin and staff can return an email to the customer without using an external system.
+
+Automated Newsletters
+
+- Automate newsletters to send to the subscribers when new newsletters are created.
