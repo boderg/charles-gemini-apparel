@@ -136,6 +136,7 @@ To follow best practice, wireframes were developed for mobile, tablet, and deskt
 
 <details>
 <summary>Please click to view the Mobile wireframes for Charles Gemini Apparel</summary>
+<br>
 
 | Page | Mobile | Tablet | Desktop |
 | --- | --- | --- | --- |
@@ -156,3 +157,103 @@ To follow best practice, wireframes were developed for mobile, tablet, and deskt
 | Size Guide Modal | ![screenshot](documentation/wireframes/mobile/size_guide.png) |![screenshot](documentation/wireframes/tablet/size_guide.png)  | ![screenshot](documentation/wireframes/desktop/size_guide.png) |
 
 </details>
+
+## Features
+
+### Existing Features
+
+<details>
+<summary>Please click to view the Mobile wireframes for Charles Gemini Apparel</summary>
+<br>
+
+| Page | Section | Feature | Description | Screenshot |
+| --- | --- | --- | --- | --- |
+| Home | | | | |
+| | Top Nav| | | |
+| | | Charles Gemini Apparel Logo | This is the brand log and also doubles as the Home page button. | ![screenshot](documentation/features/charles_gemini_logo.png) |
+| | | Shop Now Button| This is the main navigation for the site. | ![screenshot](documentation/features/shop_now_button.png) |
+| | | Search Bar | This enables the user to search for products that are on the site. | ![screenshot](documentation/features/search_bar.png) |
+| | | Bottom Nav | | |
+| | | Shopping Bag Icon | This is set up as a button and takes the user to the shopping bag. It also displays as a counter to inform of the quantity of items in the bag. | ![screenshot](documentation/features/bag_button.png) ![screenshot](documentation/features/bag_counter.png) |
+| | | Login / Logout Icon | This is set up as a button and takes the user to the login or logout page dependant on whether the user is logged in or not. It is a dynamic button and switches between icons accordingly. | ![screenshot](documentation/features/login_button.png) ![screenshot](documentation/features/logout_button.png) |
+| | Main | | | |
+| | | Information Banner | This s a display tool that displays fixed messages and/or promotions, such as the free delivery message or the bag total. | ![screenshot](documentation/features/banner_1.png) ![screenshot](documentation/features/banner_2.png) |
+| | | Page Link Cards (Tees, New Designs and Hoodies) | These act as descriptors for the site and double as navigation to the Tees, New Designs and Hoodies pages respecively. the middle one is also a carousel rotating between its descriptor image and the brand logo. | ![screenshot](documentation/features/page_links.png) |
+| | Footer | | | |
+| | | Newsletter signup Button | This button navigates the user to a simple signup form where they can submit their email to receive email newsletters. | ![screenshot](documentation/features/newsletter_signup_button.png) |
+| | | Admin Panel Button | This button navigates authorised users to the sites front end admin panel. This button is only visible to authorised logged in users. | ![screenshot](documentation/features/admin_panel_button.png) |
+| | | GitHub Icon | This is set up as a button that opens the site creators GitHub repository on a separate page. | ![screenshot](documentation/features/github_icon.png) |
+| | | Social Media Icons | These icons are set up as buttons that open the associated social media sites on a new tab. These would ideally link to the social media pages of Charles Gemini Apparel. | ![screenshot](documentation/features/social_icons.png) |
+| All Designs, New Designs, Tees and Hoodies | | | | |
+| | Main | | | |
+| | |Garment Cards | These show a brief outline of the products along with price and and image. The image of the card is a link that navigates the user to the individual garment page. | ![screenshot](documentation/features/garment_images.png) |
+| Garment | | | | |
+| | Main | | | |
+| | | Garment Card | This displays all the information related to an individual garment, such as available sizes and colours, description, images and price. | ![screenshot](documentation/features/garment_card.png) |
+| | Garment Card Items | | | |
+| | | Image Carousel | This displays the item in all its available colours and rotates through each colour in turn. The images can be stopped and rotated manually or left to rotate automatically. | ![screenshot](documentation/features/image_carousel.png) |
+| | | Number Selector | This is set up to allow users to adjust the quantity of the product they want to purchase. It will not allow numbers outside of the range 1-99 to be used. the plus and minus buttons change to a darker grey and stop changing the number counter when they have reached the range limit. | ![screenshot](documentation/features/number_selector.png) |
+| | | Size Selector | This opens a dropdown list of selectable sizes and is to allow the user to select a size that suits them. | ![screenshot](documentation/features/size_selector.png) |
+| | | Size Guide Button | This is set to open a modal that contains an informative size guide for the user to make an informed choice about the sizing of the item that they are interested in. | ![screenshot](documentation/features/size_guide_button.png) |
+| | | Colour Selector | This opens a dropdown list of selectable colours the item is available in and is to allow the user to select a colour that suits them. | ![screenshot](documentation/features/colour_selector.png) |
+| | | Add to Bag Button | This is to allow the user to add their current item selection to the shopping bag. | ![screenshot](documentation/features/add_to_bag.png) |
+| | | All Designs Button | This is to allow users to navigate away from the item page without using the browsers back arrow nd without saving the current selection if any has been made. this navigates to the all designs page. | ![screenshot](documentation/features/all_designs.png) |
+| | | Available Colours | This displays colour swatches of the colours that the item is available in. | ![screenshot](documentation/features/colour_swatches.png) |
+| Shopping Bag | | | | |
+| | Bag Table | | | |
+| | | Number Selector | This is set up to allow users to change the quantity of the selcted item. It will not allow numbers outside of the range 1-99 to be used. the plus and minus buttons change to a darker grey and stop changing the number counter when they have reached the range limit. | ![screenshot](documentation/features/number_selector1.png) |
+| | | Size Selector | This opens a dropdown list of selectable sizes and is to allow the user to changethe selected size. | ![screenshot](documentation/features/size_selector1.png) |
+| | | Colour Selector | This opens a dropdown list of selectable colours the item is available in and is to allow the user to change the selected colour. | ![screenshot](documentation/features/colour_selector1.png) |
+| | | Update Button | This updates the shopping bag with newly changed colour, size or quantity if the user has changed the selected items in the bag. | ![screenshot](documentation/features/update_button.png) |
+| | | Remove Button | This allows the user to remove any item from the bag should they decide not to purchase or if they have added by mistake. | ![screenshot](documentation/features/remove_button.png) |
+| | | Continue Shopping Button | This allows the user to go back into the shop should they wish to browse and/or add other items prior to purchase. | ![screenshot](documentation/features/continue_shopping_button.png) |
+| | | Secure Checkout Button | This navigates the user to the payment window and puts the items from the bag into the checkout. | ![screenshot](documentation/features/secure_checkout_button.png) |
+| Checkout | | | | |
+| | Order Summary | | | |
+| | | Order Summary | This displays the order details to the user as a final sumamry before purchase. | ![screenshot](documentation/features/order_sumamry.png) |
+| | | Change Your Order Button | This allows the user to go back to the bag and make changes to the order before purchase. this is the final get out of the sale method before final purchase. | ![screenshot](documentation/features/change_your_order_button.png) |
+| | Checkout Form | | | |
+| | | Contact Details | this is where the user adds their contact details for the order. | ![screenshot](documentation/features/contact_details.png) |
+| | | Billing and Delivery Details | This is where the user adds their address for billing abd delivery purposes. | ![screenshot](documentation/features/billing_details.png) |
+| | | Create Account Link | This allows a non-registered user to create an account and save the details for quicker future purchases. | ![screenshot](documentation/features/create_account_link.png) |
+| | | Login Link | This allows a registered user to login and retrieve their details for the purchase. | ![screenshot](documentation/features/login_link.png) |
+| | | Card Payment Input | this allows the user to safely and securely use a credit / debit card for payment. | ![screenshot](documentation/features/card_details.png) |
+| | | Complete Order Button | This processes the payment and is an irreversible process once clicked. The users card will then be charged with the billed amount. | ![screenshot](documentation/features/complete_order_button.png) |
+| Checkout Success | | | | |
+| | Order Summary | | | |
+| | | Thank You | This displays thank you message with order number, date of order and confirmation email notification. | ![screenshot](documentation/features/thank_you.png) |
+| | | Your Order | This displays a confirmation of the ordered products, prices and totals. | ![screenshot](documentation/features/order_summary1.png) |
+| | | Delivery Info and Billing Info | This displays a confirmation of the address supplied for billing and delivery. | ![screenshot](documentation/features/billing_details1.png) |
+| | | Continue Shopping Button | This allows the user to go back into the shop after a purchase and is worder to entice users to make further purchases. | ![screenshot](documentation/features/continue_shopping1.png) |
+| My Profile | | | | |
+| | Default Delivery Information | | | |
+| | | Update Information Form and Button | This allows users to update their default delivery address when they have completed the form that the button is attached to. | ![screenshot](documentation/features/update_info.png) |
+| | Order History | | | |
+| | | Order Links | These are previous order numbers that have been formatted to act as links that open the associated order to allow users to view their previous orders. | ![screenshot](documentation/features/order_link.png) |
+| Admin Panel | | | | |
+| | Main | | | |
+| | | Admin Panel | This panel houses front end access buttons for the database admin of the site. These buttons access the front end pages that allow the admin of the site to add, remove and edit items in the store. | ![screenshot](documentation/features/admin_panel.png) |
+| Add and Edit Garment | | | | |
+| | Main | | | |
+| | | Add and Edit Garment Forms | These forms allow the site admin to add and edit garments. The add garment form opens empty while the edit garments form opens pre-populated with the selected garments details. | ![screenshot](documentation/features/add_garment_form.png) |
+| | | Add and Edit Garment Buttons | This submits the completed form to the database saving the new item or changed item and redirects the user to the items page. | ![screenshot](documentation/features/add_garment_button.png) ![screenshot](documentation/features/edit_garment_button.png) |
+| | | Back to Garments Button | Returns the site admin to the all designs page without saving the changed or newly added garment.  | ![screenshot](documentation/features/back_to_garments_button.png) |
+| Add and Edit Category, Colour and Size | | | | |
+| | Main | | | |
+| | | Add and Edit Category Forms | These forms allow the site admin to add new or edit existing categories dependant on the selected. The edit form is a pre-populated version of the add form. | ![screenshot](documentation/features/add_category_form.png) |
+| | | Add and Edit Colour Forms | These forms allow the site admin to add new or edit existing colours dependant on the selected. The edit form is a pre-populated version of the add form. | ![screenshot](documentation/features/add_colour_form.png) |
+| | | Add and Edit Size Forms | These forms allow the site admin to add new or edit existing sizes dependant on the selected. The edit form is a pre-populated version of the add form. | ![screenshot](documentation/features/add_size_form.png) |
+| Garment, Category, Colour and Size Selection | | | | |
+| | Main | | | |
+| | | Listed Items from garments, categories, colour and sizes | This is a listed display of the items that are available to edit or delete and is accessed from one of the main edit buttons on the admin panel. | ![screenshot](documentation/features/listed_item.png) |
+| | | Contact List and Subscribers | This is the same as the listed item but does not have the edit function. | ![screenshot](documentation/features/contact_item.png) |
+| | | Edit Button | This allows the admin access to the edit form for item that is selected from the listed items. | ![screenshot](documentation/features/blue_edit_category_button.png) ![screenshot](documentation/features/blue_edit_colour_button.png) ![screenshot](documentation/features/blue_edit_size_button.png) ![screenshot](documentation/features/blue_edit_garment_button.png) |
+| | | Delete Button | This allows the admin access to the delete function for item that is selected from the listed items, contact list and subscribers. | ![screenshot](documentation/features/red_delete_category_button.png) ![screenshot](documentation/features/red_delete_colour_button.png) ![screenshot](documentation/features/red_delete_size_button.png) ![screenshot](documentation/features/red_delete_garment_button.png) ![screenshot](documentation/features/red_delete_contact.png) ![screenshot](documentation/features/red_delete_subscriber.png) |
+| | Modals | | | |
+| | | Delete Modal | This accessed by the site admin when any of the admin delete buttons are clicked. This is to double confirm that the user wants to delete the item. | ![screenshot](documentation/features/delete_modal.png) |
+| | | About Modal | This modal is accessed by clicking the about link in main site navigation and displays information about the brand. | ![screenshot](documentation/features/about_modal.png) |
+| | | Size Guide Modal | This is accessed by clicking any of the size guide links and displays sizing information about the products. | ![screenshot](documentation/features/size_guide_modal.png) |
+
+</details>
+
+![screenshot](documentation/features/)
