@@ -263,11 +263,15 @@ To follow best practice, wireframes were developed for mobile, tablet, and deskt
 
 Some future features that would be good to add to the site in the future:
 
+Social login methods
+
+- Add social media login methods to existig allauth set up.
+
 Payment Methods
 
 - Different types of payment methods e.g. Paypal, Klarna, etc.
 
-Reveiw System
+Review System
 
 - An ability for users to review the products for others to make informed choices.
 
