@@ -457,7 +457,7 @@ The Stripe payment webhooks were tested in development using the Stripe CLI and 
 ## Bugs
 
 - Suspicious Operation (after AWS static file set up.)
-![screenshot](documentation/bugs/suspicious_operation_forward_slash.png)
+- ![screenshot](documentation/bugs/suspicious_operation_forward_slash.png)
   - To fix this I removed the forward slash at the front of the link.
   ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png)
 
