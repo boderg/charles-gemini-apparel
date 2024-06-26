@@ -21,8 +21,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >
 >*Pages marked with '#' had one or both of the following two warnings / errors noted and filtered out of the testing results for the following reasons:*
 >
->- One filtered out warning for *'no `h3` element'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
->- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
+>- One filtered out warning for *'no `h3` element'* - I believe this is because of the django templating used to access the dynamic page titles *{{ page_title }}*
+>- One filtered out error for *'bad value for attribute action'* in the delete form - I believe this is because of the django templating used to access urls - specifically *{{ delete_url }}*
 
 <details>
 <summary> Click to view the HTML validation results for Charles Gemini Apparel </summary>
@@ -416,6 +416,14 @@ Defensive programming was manually tested for Charles Gemini Apparel with the be
 
 </details>
 
+## Webhook Testing
+
+The Stripe payment webhooks were tested in development using the Stripe CLI and again when deployed with the Stipe dashboard to ensure they were working.
+
+| CLI Result | Dashboard Result |
+| --- | --- |
+| ![screenshot](documentation/webhooks/cli_webhook_test.png) | ![screenshot](documentation/webhooks/webhook_success.png) |
+
 ## User Story Testing
 
 <details>
@@ -445,3 +453,25 @@ Defensive programming was manually tested for Charles Gemini Apparel with the be
 | As a site administrator, I should be able to view and manage customer contacts, so that I can send the relevant newsletter or contact reply. | ![screenshot](documentation/features/contact_list.png) |
 
 </details>
+
+## Bugs
+
+- Suspicious Operation (after AWS static file set up.)
+![screenshot](documentation/bugs/suspicious_operation_forward_slash.png)
+  - To fix this I removed the forward slash at the front of the link.
+  ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png)
+
+- Double orders being created after sale using one stripe pid butdifferent order numbers.
+  - To fix this I tracked it down to the JQuery script. I removed the Google ajax JQuery script and replaced it with the most up to date script from the JQuery site.
+  ![screenshot](documentation/bugs/jquery_script.png)
+
+## Unfixed Bugs
+
+- When validating HTML the warning *'no `h3` element'* shows on some pages.
+  - I believe this is because of the django templating used to access the dynamic page titles *{{ page_title }}*
+
+- When validating HTML the error *'bad value for attribute action in the delete form'* shows.
+  - I beleive this is because of the django templating used to access urls - specifically *{{ delete_url }}*
+
+> [!NOTE]  
+> There are no other remaining bugs that I am aware of.
