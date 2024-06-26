@@ -360,7 +360,7 @@ This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net)
 
 To obtain my own Postgres Database from Code Institute, I followed these steps:
 
-- Signed-in to the CI LMS using my email address.
+- Signed in to the CI LMS using my email address.
 - An email was sent to me with my new Postgres Database.
 
 > [!CAUTION]  
