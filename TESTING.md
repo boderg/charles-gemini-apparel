@@ -242,7 +242,7 @@ Charles Gemini Apparel behaved as expected on all responsive tests.
 
 ## Lighthouse Audit
 
-I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Audit tool](https://developer.chrome.com/docs/lighthouse/overview) to check for any major issues.
+I've tested the Charles Gemini Apparel deployed project using the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) audit tool to check for any major issues.
 
 >[!NOTE]
 >
@@ -293,7 +293,7 @@ I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Au
 
 ## Wave Compatibility
 
-The Charles Gemini Apparel deployed site was tested using the [Wave Compatibility tester](https://wave.webaim.org/). 
+The Charles Gemini Apparel deployed site was tested using the [Wave](https://wave.webaim.org/) compatibility tester. 
 
 >[!NOTE]
 >
@@ -456,10 +456,14 @@ The Stripe payment webhooks were tested in development using the Stripe CLI and 
 
 ## Bugs
 
-| Bug | Screenshot | Fix | Screenshot |
-| --- | --- | --- | --- |
-| Suspicious Operation (after AWS static file set up.) | ![screenshot](documentation/bugs/suspicious_operation_forward_slash.png) | To fix this I removed the forward slash at the front of the link. | ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png) |
-| Double orders being created after sale using one stripe pid but different order numbers. | | To fix this I tracked it down to the JQuery script. I removed the Google ajax JQuery script and replaced it with the most up to date script from the JQuery site. | ![screenshot](documentation/bugs/jquery_script.png) |
+- Suspicious Operation (after AWS static file set up.)
+- ![screenshot](documentation/bugs/suspicious_operation_forward_slash.png)
+  - To fix this I removed the forward slash at the front of the link.
+  ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png)
+
+- Double orders being created after sale using one stripe pid butdifferent order numbers.
+  - To fix this I tracked it down to the JQuery script. I removed the Google ajax JQuery script and replaced it with the most up to date script from the JQuery site.
+  ![screenshot](documentation/bugs/jquery_script.png)
 
 ## Unfixed Bugs
 
