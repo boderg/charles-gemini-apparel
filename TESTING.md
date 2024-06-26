@@ -456,14 +456,10 @@ The Stripe payment webhooks were tested in development using the Stripe CLI and 
 
 ## Bugs
 
-- Suspicious Operation (after AWS static file set up.)
-![screenshot](documentation/bugs/suspicious_operation_forward_slash.png)
-  - To fix this I removed the forward slash at the front of the link.
-  ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png)
-
-- Double orders being created after sale using one stripe pid butdifferent order numbers.
-  - To fix this I tracked it down to the JQuery script. I removed the Google ajax JQuery script and replaced it with the most up to date script from the JQuery site.
-  ![screenshot](documentation/bugs/jquery_script.png)
+| Bug | Screenshot | Fix | Screenshot |
+| --- | --- | --- | --- |
+| Suspicious Operation (after AWS static file set up.) | ![screenshot](documentation/bugs/suspicious_operation_forward_slash.png) | To fix this I removed the forward slash at the front of the link. | ![screenshot](documentation/bugs/suspicious_operation_slash_removed.png) |
+| Double orders being created after sale using one stripe pid but different order numbers. | | To fix this I tracked it down to the JQuery script. I removed the Google ajax JQuery script and replaced it with the most up to date script from the JQuery site. | ![screenshot](documentation/bugs/jquery_script.png) |
 
 ## Unfixed Bugs
 
