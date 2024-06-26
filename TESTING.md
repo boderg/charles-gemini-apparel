@@ -25,7 +25,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
 
 <details>
-<summary>Click to view the HTML validation results for Charles Gemini Apparel</summary>
+<summary> Click to view the HTML validation results for Charles Gemini Apparel </summary>
 <br>
 
 | Directory | File | Screenshot Errors | Screenshot Method 1 | Screenshot Method 2 | Notes / Fixes |
@@ -69,7 +69,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 All files passed the CSS Jigsaw validation tests.
 
 <details>
-<summary>Click to view the CSS validation results for Charles Gemini Apparel</summary>
+<summary> Click to view the CSS validation results for Charles Gemini Apparel </summary>
 <br>
 
 | Directory | File | Screenshot | Notes |
@@ -102,7 +102,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 All files passed the JShint validation tests.
 
 <details>
-<summary>Click to view the JavaScript validation results for Charles Gemini Apparel</summary>
+<summary> Click to view the JavaScript validation results for Charles Gemini Apparel </summary>
 <br>
 
 | Directory | File | Screenshot | Notes |
@@ -122,7 +122,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 All files passed the PEP8 CI Python Linter validation tests.
 
 <details>
-<summary>Click to view the Python validation results for Charles Gemini Apparel</summary>
+<summary> Click to view the Python validation results for Charles Gemini Apparel </summary>
 <br>
 
 | Directory | File | CI URL | Screenshot | Notes |
@@ -185,7 +185,7 @@ I decided to use these three browsers as they use different platforms independan
 Charles Gemini Apparel behaved as expected on all browsers tested.
 
 <details>
-<summary>Click to view the Browser compatibility testing results for Charles Gemini Apparel</summary>
+<summary> Click to view the Browser compatibility testing results for Charles Gemini Apparel </summary>
 <br>
 
 | Page | Chrome | Firefox | Safari |
@@ -216,7 +216,7 @@ I've tested the Charles Gemini Apparel deployed project on multiple devices to c
 Charles Gemini Apparel behaved as expected on all responsive tests.
 
 <details>
-<summary>Click to view the Responsiveness testing results for Charles Gemini Apparel</summary>
+<summary> Click to view the Responsiveness testing results for Charles Gemini Apparel </summary>
 <br>
 
 | Page | Mobile (DevTools) | Tablet (DevTools) | 1080p Laptop | 1080p Monitor | 1440p UW Monitor | Samsung Galaxy S10+ |
@@ -256,7 +256,7 @@ I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Au
 >- Best practices and SEO are the same across the site with SEO needing some improvement.
 
 <details>
-<summary>Click to view the Lighthouse Audit test results for Charles Gemini Apparel</summary>
+<summary> Click to view the Lighthouse Audit test results for Charles Gemini Apparel </summary>
 <br>
 
 | Page | Mobile | Desktop |
@@ -304,7 +304,7 @@ The following results are from the non secured pages of the site.
 The errors noted by the tester are due to incopatibilities with django templating.
 
 <details>
-<summary>Click to view the Wave accesibility test results for Charles Gemini Apparel</summary>
+<summary> Click to view the Wave accesibility test results for Charles Gemini Apparel </summary>
 <br>
 
 | Page | Summary Screenshot | Contrast Screenshot |
@@ -326,7 +326,7 @@ The errors noted by the tester are due to incopatibilities with django templatin
 Defensive programming was manually tested for Charles Gemini Apparel with the below user acceptance testing:
 
 <details>
-<summary>Click to view the user acceptance test results for Charles Gemini Apparel</summary>
+<summary> Click to view the user acceptance test results for Charles Gemini Apparel </summary>
 <br>
 
 | Page | Section | Expectation | Test | Result | Fix | Screenshot |
@@ -418,6 +418,10 @@ Defensive programming was manually tested for Charles Gemini Apparel with the be
 
 ## User Story Testing
 
+<details>
+<summary> Click to view the user story test results for Charles Gemini Apparel </summary>
+<br>
+
 | User Story | Screenshot |
 | --- | --- |
 | New Site Users | |
@@ -439,3 +443,5 @@ Defensive programming was manually tested for Charles Gemini Apparel with the be
 | As a site administrator, I should be able to edit existing product information, such as descriptions, pricing, and images, so that I can keep the website content accurate and up-to-date. | ![screenshot](documentation/features/edit_garment_form.png) |
 | As a site administrator, I should be able to create and manage discounts, so that I can attract new customers. | ![screenshot](documentation/features/discount.png) |
 | As a site administrator, I should be able to view and manage customer contacts, so that I can send the relevant newsletter or contact reply. | ![screenshot](documentation/features/contact_list.png) |
+
+</details>
