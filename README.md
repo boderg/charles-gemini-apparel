@@ -310,14 +310,36 @@ Automated Newsletters
 
 Charles Gemini Apparel uses a relational database.
 
-It was built during development using Django's built in SQLite3 database. For deployment all the built models were migrated over to a PostgreSQL database hosted by Code Institute.
+I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
 
-Below is a Database diagram that was built during the development of the Charles Gemini Apparel site,
+The steps taken were as follows:
+
+- In the terminal: `sudo apt update`
+- then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
+- then type `Y` to proceed
+- then: `pip3 install django-extensions pygraphviz`
+- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
+
+```python
+INSTALLED_APPS = [
+    ...
+    'django_extensions',
+    ...
+]
+```
+
+- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
+- dragged the new `erd.png` file into my `documentation/` folder
+- removed `'django_extensions',` from my `INSTALLED_APPS`
+- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
+- source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
+
+Below is a Database diagram that was built during the development of the Charles Gemini Apparel site using [dbdiagram.io](https://www.dbdiagram.io/),
 
 ![screenshot](documentation/erd/cga_erd1.png)
 source: [dbdiagram.io](https://www.dbdiagram.io/)
 
-and a more comprehensive diagram created after deployment and testing.
+and a more comprehensive diagram created after deployment and testing using [pygraphviz](https://pygraphviz.github.io/documentation/stable/install.html).
 
 ![screenshot](documentation/erd/cga_erd.png)
 source: [pygraphviz](https://pygraphviz.github.io/documentation/stable/install.html)
