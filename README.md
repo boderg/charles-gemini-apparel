@@ -302,7 +302,7 @@ Automated Newsletters
 - [![Krita](https://img.shields.io/badge/Krita-grey?logo=Krita
 )](https://krita.org/en/) used for creating garment designs.
 - [![Inkscape](https://img.shields.io/badge/Inkscape-grey?logo=inkscape
-)](https://inkscape.org/) used for re-colouring the uxwing svg icons. 
+)](https://inkscape.org/) used for re-colouring the uxwing svg icons.
 - [![Font Awesome](https://img.shields.io/badge/Font_Awesome-grey?logo=fontawesome&logoColor=528DD7)](https://fontawesome.com) used for the icons.
 - [![ChatGPT](https://img.shields.io/badge/ChatGPT-grey?logo=chromatic&logoColor=75A99C)](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
@@ -692,3 +692,39 @@ There are no discernable differences visually between the local development Char
 There is one small speed difference between the local development Charles Gemini Apparel environment and the Heroku deployed Charles Gemini Apparel site.
 The Heroku deployed site is marginally slower due to static files being loaded from AWS and the eco dynos cause the site to go to sleep if inactive for a while.
 
+## Credits
+
+> [!NOTE]
+>
+> All brand logos and clothing designs were created by myself using the tools listed in the tools and technologies section and in the content and media sections below.
+
+Along side the aforementioned tools and technologies used in building the Charles Gemini Apparel site, I would like to acknowledge all applicable content that has aided the creation of Charles Gemini Apparel as outlined in the sections below.
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| Dee Mc [YouTube](https://www.youtube.com/@IonaFrisbee) | Settings and allauth | tutorials for general better understanding of django |
+| Codemy.com Django Wednesdays [You Tube](https://www.youtube.com/@Codemycom) | Apps | tutorials for a general better understanding of django |
+| [Canva](https://www.canva.com/) | Logo and Garment designs | tool for designing logos and imagery |
+| [NightCafe](https://creator.nightcafe.studio/) | Garment designs | tool for creating ai artwork |
+| [Dopely Colors](https://colors.dopely.top/color-name-finder) | Colour Swatches | tool to find the hex codes for the garment colours |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Freepik](https://www.freepik.com/free-vector/white-abstract-wallpaper_12066076.htm#fromView=search&page=28&position=41&uuid=2aafca47-2271-4abc-a30d-0359acbb5278) | Main Background | Image | abstract image to give background texture |
+| [Printful](https://www.printful.com/uk) | Garments and size guide | Images and text content | for the clothing mockups and the size guide images and info |
+| [UXWing](https://uxwing.com/) | Site wide | Icons | for the svg icons |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Chris Quinn](https://github.com/10xOXR) for their support throughout the development of this project.
+- I would like to thank my previous Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for their encouragement to continue my journey after my one project course had finished.
+- I would like to thank [Code Institute](https://codeinstitute.net) for giving me the opportunity to complete the 4P course.
+- I would like to thank my [Code Institute](https://codeinstitute.net) facilitator [Amy Richardson](https://github.com/amylour) for their advice and support.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support and general information that helps with my studies.
+- I would like to thank my fellow classmates for the invaluable sharing of knowledge.
+- I would like to thank my family, for their support and understanding, for believing in me, and allowing me to make this transition into software development.
