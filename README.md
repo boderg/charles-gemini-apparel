@@ -310,7 +310,7 @@ Automated Newsletters
 
 Charles Gemini Apparel uses a relational database.
 
-I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
+I have used `pygraphviz` and `django-extensions` to autogenerate an ERD.
 
 The steps taken were as follows:
 
@@ -328,8 +328,8 @@ INSTALLED_APPS = [
 ]
 ```
 
-- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
-- dragged the new `erd.png` file into my `documentation/` folder
+- In the terminal again: `python3 manage.py graph_models -a -o erd.png`
+- moved the new `erd.png` file into my `documentation/` folder
 - removed `'django_extensions',` from my `INSTALLED_APPS`
 - finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
 - source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)

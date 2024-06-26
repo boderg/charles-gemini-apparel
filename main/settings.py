@@ -61,7 +61,6 @@ INSTALLED_APPS = [
     # other apps
     'crispy_forms',
     'crispy_bootstrap5',
-    'django_extensions',
     'storages',
 
     # allauth apps
