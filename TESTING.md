@@ -242,7 +242,7 @@ Charles Gemini Apparel behaved as expected on all responsive tests.
 
 ## Lighthouse Audit
 
-I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Audit tool](https://developer.chrome.com/docs/lighthouse/overview) to check for any major issues.
+I've tested the Charles Gemini Apparel deployed project using the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) audit tool to check for any major issues.
 
 >[!NOTE]
 >
@@ -293,7 +293,7 @@ I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Au
 
 ## Wave Compatibility
 
-The Charles Gemini Apparel deployed site was tested using the [Wave Compatibility tester](https://wave.webaim.org/). 
+The Charles Gemini Apparel deployed site was tested using the [Wave](https://wave.webaim.org/) compatibility tester. 
 
 >[!NOTE]
 >
