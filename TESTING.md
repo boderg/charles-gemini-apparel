@@ -21,7 +21,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 >
 >*Pages marked with '#' had one or both of the following two warnings / errors noted and filtered out of the testing results for the following reasons:*
 >
->- One filtered out warning for *'no Top Nav Bar'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
+>- One filtered out warning for *'no `h3` element'* - this is because of django templating to access the dynamic page titles *{{ page_title }}*
 >- One filtered out error for *'bad value for attribute action'* in the delete form - this is because of django templating to access urls - specifically *{{ delete_url }}*
 
 <details>
@@ -66,9 +66,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
->[!NOTE]
->
->All files passed the CSS Jigsaw validation tests.
+All files passed the CSS Jigsaw validation tests.
 
 <details>
 <summary>Click to view the CSS validation results for Charles Gemini Apparel</summary>
@@ -101,9 +99,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
->[!NOTE]
->
->All files passed the JShint validation tests.
+All files passed the JShint validation tests.
 
 <details>
 <summary>Click to view the JavaScript validation results for Charles Gemini Apparel</summary>
@@ -123,9 +119,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
->[!NOTE]
->
->All files passed the PEP8 CI Python Linter validation tests.
+All files passed the PEP8 CI Python Linter validation tests.
 
 <details>
 <summary>Click to view the Python validation results for Charles Gemini Apparel</summary>
@@ -188,9 +182,7 @@ I've tested my deployed project on the following three browsers to check for com
 
 I decided to use these three browsers as they use different platforms independant of each other.
 
-> [!NOTE]
->
->Charles Gemini Apparel behaved as expected on all browsers tested.
+Charles Gemini Apparel behaved as expected on all browsers tested.
 
 <details>
 <summary>Click to view the Browser compatibility testing results for Charles Gemini Apparel</summary>
@@ -221,9 +213,7 @@ I decided to use these three browsers as they use different platforms independan
 
 I've tested the Charles Gemini Apparel deployed project on multiple devices to check for responsiveness issues.
 
-> [!NOTE]
->
->Charles Gemini Apparel behaved as expected on all responsive tests.
+Charles Gemini Apparel behaved as expected on all responsive tests.
 
 <details>
 <summary>Click to view the Responsiveness testing results for Charles Gemini Apparel</summary>
@@ -303,12 +293,15 @@ I've tested the Charles Gemini Apparel deployed project using the [Lighthouse Au
 
 ## Wave Compatibility
 
-The Charles Gemini Apparel deployed site was tested using the [Wave Compatibility tester](https://wave.webaim.org/), however the Wave tester could only test pages that were not signed into as it does not have access to secured pages.
-The following results are from the non secured pages of the site.
+The Charles Gemini Apparel deployed site was tested using the [Wave Compatibility tester](https://wave.webaim.org/). 
 
 >[!NOTE]
 >
->The errors noted by the tester are due to django templating.
+>The Wave tester could only test pages that were not signed into as it does not have access to secured pages.
+The following results are from the non secured pages of the site.
+>
+
+The errors noted by the tester are due to incopatibilities with django templating.
 
 <details>
 <summary>Click to view the Wave accesibility test results for Charles Gemini Apparel</summary>
@@ -422,3 +415,27 @@ Defensive programming was manually tested for Charles Gemini Apparel with the be
 | | Modal Main Body | The *Hoodies inches Size Guide* tab is expected to display the hoodies size guide in inches. | Tested the feature by clicking on the *Hoodies inches Size Guide* tab. | The feature behaved as expected, and displayed the hoodies size guide in inches. | Test concluded and passed. | ![screenshot](documentation/features/hoodies_inches.png) |
 
 </details>
+
+## User Story Testing
+
+| User Story | Screenshot |
+| --- | --- |
+| New Site Users | |
+| As a new site user, I would like to be able to easily browse through all the t-shirts and hooded tops on the website, filtered by category, so that I can quickly find something that interests me. | ![screenshot](documentation/features/search_bar.png) |
+| As a new site user, I would like to be able to search for t-shirts and hooded tops by keyword, so that I can see if you have what I'm looking for. | ![screenshot](documentation/features/search_bar.png) |
+| As a new site user, I would like to see a detailed product page with clear, high-resolution images, so that I can make a more informed choice. | ![screenshot](documentation/features/garment_card.png) |
+| As a new site user, I would like to be able to see the shirt or hoodie in different colors, so that I can ensure I choose the right one. | ![screenshot](documentation/features/garment_card.png) |
+| As a new site user, I would like to be able to see a size chart with clear measurements, so that I can ensure a proper fit. | ![screenshot](documentation/features/size_guide_modal.png) |
+| As a new site user, I would like to be able to easily add items to my cart, so that I can securely purchase them. | ![screenshot](documentation/features/add_to_bag.png) |
+| As a new site user, I would like to be able to clearly see the total cost of my order, including any taxes and shipping fees, so that I can be better informed before finalizing the purchase. | ![screenshot](documentation/features/order_sumamry.png) |
+| Returning Site Users | |
+|As a returning site user, I would like to be able to create an account, so that I can save my shipping information and track my order history. | ![screenshot](documentation/features/sign_up.png) |
+|As a returning site user, I would like to be able to sign up for an email list to receive notifications, so that I can stay informed about new arrivals, promotions, and exclusive offers. | ![screenshot](documentation/features/newsletter_signup_button.png) |
+|As a returning site user, I would like to have a way to contact the site admin, so that I can get resolutions to issues I may have with my account. | ![screenshot](documentation/features/contact_form.png) |
+|As a returning site user, I would like to contact the company, so that I can pass on suggestions or compliments. | ![screenshot](documentation/features/contact_form.png) |
+| Site Admin | |
+| As a site administrator, I should be able to have an easy site access method, so that I can add new t-shirt and hooded top designs to the website, including uploading high-quality images, descriptions, and pricing information. | ![screenshot](documentation/features/admin_panel_button.png) |
+| As a site administrator, I should be able to create and manage product categories and collections, so that I can organize the website for easy browsing. | ![screenshot](documentation/features/admin_panel.png) |
+| As a site administrator, I should be able to edit existing product information, such as descriptions, pricing, and images, so that I can keep the website content accurate and up-to-date. | ![screenshot](documentation/features/edit_garment_form.png) |
+| As a site administrator, I should be able to create and manage discounts, so that I can attract new customers. | ![screenshot](documentation/features/discount.png) |
+| As a site administrator, I should be able to view and manage customer contacts, so that I can send the relevant newsletter or contact reply. | ![screenshot](documentation/features/contact_list.png) |
