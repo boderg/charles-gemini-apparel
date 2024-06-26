@@ -684,3 +684,11 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/boderg/charles-gemini-apparel)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+There are no discernable differences visually between the local development Charles Gemin Apparel environment and the Heroku deployed Charles Gemini Apparel site.
+
+There is one small speed difference between the local development Charles Gemini Apparel environment and the Heroku deployed Charles Gemini Apparel site.
+The Heroku deployed site is marginally slower due to static files being loaded from AWS and the eco dynos cause the site to go to sleep if inactive for a while.
+
