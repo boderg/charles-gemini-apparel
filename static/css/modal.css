@@ -53,8 +53,8 @@
 }
 
 .modal .modal-footer button:active {
-   background-color: var(--primary-colour-translucent-2);
-   color: var(--secondary-colour);
+    background-color: var(--primary-colour-translucent-2);
+    color: var(--secondary-colour);
 }
 
 /*** Size Guide ***/
