@@ -249,10 +249,13 @@ To follow best practice, wireframes were developed for mobile, tablet, and deskt
 | | | Contact List and Subscribers | This is the same as the listed item but does not have the edit function. | ![screenshot](documentation/features/contact_item.png) |
 | | | Edit Button | This allows the admin access to the edit form for item that is selected from the listed items. | ![screenshot](documentation/features/blue_edit_category_button.png) ![screenshot](documentation/features/blue_edit_colour_button.png) ![screenshot](documentation/features/blue_edit_size_button.png) ![screenshot](documentation/features/blue_edit_garment_button.png) |
 | | | Delete Button | This allows the admin access to the delete function for item that is selected from the listed items, contact list and subscribers. | ![screenshot](documentation/features/red_delete_category_button.png) ![screenshot](documentation/features/red_delete_colour_button.png) ![screenshot](documentation/features/red_delete_size_button.png) ![screenshot](documentation/features/red_delete_garment_button.png) ![screenshot](documentation/features/red_delete_contact.png) ![screenshot](documentation/features/red_delete_subscriber.png) |
+| All | | | | |
 | | Modals | | | |
 | | | Delete Modal | This accessed by the site admin when any of the admin delete buttons are clicked. This is to double confirm that the user wants to delete the item. | ![screenshot](documentation/features/delete_modal.png) |
 | | | About Modal | This modal is accessed by clicking the about link in main site navigation and displays information about the brand. | ![screenshot](documentation/features/about_modal.png) |
 | | | Size Guide Modal | This is accessed by clicking any of the size guide links and displays sizing information about the products. | ![screenshot](documentation/features/size_guide_modal.png) |
+| | Toasts | | | |
+| | | Success, Warning, Info and Error Toasts | These pop up as an alert to the user to show an action is being performed. | ![screenshot](documentation/features/toast.png) |
 
 </details>
 
