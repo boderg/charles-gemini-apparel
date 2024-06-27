@@ -712,6 +712,7 @@ Along side the aforementioned tools and technologies used in building the Charle
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Code Institute](https://codeinstitute.net) | Apparel, Bag, Checkout and Profiles | Boutique Ado walkthrough used as a project build guide with some borrowed and adapted code |
 | [YouTube](https://www.youtube.com/@IonaFrisbee) | Settings and allauth | tutorials for general better understanding of django |
 | [You Tube](https://www.youtube.com/@Codemycom) | Apps | tutorials for a general better understanding of django |
 | [Canva](https://www.canva.com/) | Logo and Garment designs | tool for designing logos and imagery |
