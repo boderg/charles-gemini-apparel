@@ -1,3 +1,6 @@
+# All code in this bag app is created by me,
+# with help from the Code Institute's Boutique Ado project.
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .contexts import bag_contents
 from django.contrib import messages

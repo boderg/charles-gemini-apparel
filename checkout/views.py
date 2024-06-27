@@ -1,3 +1,6 @@
+# All code in this checkout app is created by me,
+# with help from the Code Institute's Boutique Ado project.
+
 from django.shortcuts import render, redirect, reverse, \
     get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST

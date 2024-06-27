@@ -1,3 +1,6 @@
+# All code in this apparel app is created by me,
+# with help from the Code Institute's Boutique Ado project.
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q

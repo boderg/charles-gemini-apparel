@@ -1,3 +1,5 @@
+# All code in this contact app is created by me
+
 from django.shortcuts import render, redirect
 from .forms import ContactForm, NewsletterForm
 from django.contrib import messages

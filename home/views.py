@@ -1,3 +1,5 @@
+# All code in this home app is created by me
+
 from django.shortcuts import render
 
 
