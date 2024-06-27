@@ -712,8 +712,8 @@ Along side the aforementioned tools and technologies used in building the Charle
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| Dee Mc [YouTube](https://www.youtube.com/@IonaFrisbee) | Settings and allauth | tutorials for general better understanding of django |
-| Codemy.com Django Wednesdays [You Tube](https://www.youtube.com/@Codemycom) | Apps | tutorials for a general better understanding of django |
+| [YouTube](https://www.youtube.com/@IonaFrisbee) | Settings and allauth | tutorials for general better understanding of django |
+| [You Tube](https://www.youtube.com/@Codemycom) | Apps | tutorials for a general better understanding of django |
 | [Canva](https://www.canva.com/) | Logo and Garment designs | tool for designing logos and imagery |
 | [NightCafe](https://creator.nightcafe.studio/) | Garment designs | tool for creating ai artwork |
 | [Dopely Colors](https://colors.dopely.top/color-name-finder) | Colour Swatches | tool to find the hex codes for the garment colours |
