@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 
 # Colour model
@@ -37,14 +38,17 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
+    price = models.DecimalField(
+        default=0, max_digits=5, decimal_places=2,
+        validators=[MinValueValidator(1)])
     category = models.ManyToManyField(Category, blank=True)
     colours = models.ManyToManyField(Colour, blank=True)
     sizes = models.ManyToManyField(Size, blank=True)
     # Discounts
     discount = models.BooleanField(default=False)
     discount_price = models.DecimalField(
-        default=0, max_digits=5, decimal_places=2)
+        default=0, max_digits=5, decimal_places=2,
+        validators=[MinValueValidator(1)])
 
     def __str__(self):
         return self.name
